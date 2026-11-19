@@ -6,7 +6,7 @@
 <title>数学Aの単元一覧 | 数ラボ鬼</title>
 <meta name="description" content="数学Aの難問の単元一覧。">
 <link rel="stylesheet" href="katex/katex.min.css">
-<link rel="stylesheet" href="style.css?v=20261120">
+<link rel="stylesheet" href="style.css?v=20261123">
 <!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
 <meta name="robots" content="noindex">
 </head>
@@ -32,6 +32,8 @@
 <script src="katex/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,14)+'px';}});}
+fitMath();window.addEventListener('resize',fitMath);window.addEventListener('load',fitMath);
 </script>
 <script src="oni-bg.js"></script>
 </body>

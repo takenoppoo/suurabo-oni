@@ -6,7 +6,7 @@
 <title>例題6 別冊（解答）｜式の展開 | 数ラボ鬼</title>
 <meta name="description" content="式の展開の練習問題6の解答。">
 <link rel="stylesheet" href="katex/katex.min.css">
-<link rel="stylesheet" href="style.css?v=20261120">
+<link rel="stylesheet" href="style.css?v=20261123">
 <!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
 
 </head>
@@ -28,7 +28,7 @@
 \[x^4+\frac1{x^4}=23^2-2=527\]</div><div class="abox sm"><p class="ah">【答案】</p>
 \[x^3+\frac1{x^3}=110,\ x^4+\frac1{x^4}=527\]
 <p class="ans-mark">答</p></div><div class="bar"><p><strong>(3)</strong>　\(x-\dfrac1x=2\) のとき、\(x^2+\dfrac1{x^2}\) と \(x^3-\dfrac1{x^3}\)</p><p>\(\left(x-\frac1x\right)^2=x^2-2+\frac1{x^2}\) より \(x^2+\frac1{x^2}=4+2=6\)。</p>
-\[x^3-\frac1{x^3}=\left(x-\frac1x\right)\left(x^2+1+\frac1{x^2}\right)=2\cdot7=14\]</div><div class="abox sm"><p class="ah">【答案】</p>
+\[\begin{aligned}&x^3-\frac1{x^3} \\ &= \left(x-\frac1x\right)\left(x^2+1+\frac1{x^2}\right) = 2\cdot7 = 14\end{aligned}\]</div><div class="abox sm"><p class="ah">【答案】</p>
 \[x^2+\frac1{x^2}=6,\ x^3-\frac1{x^3}=14\]
 <p class="ans-mark">答</p></div>
 <!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
@@ -44,6 +44,8 @@
 <script src="katex/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,14)+'px';}});}
+fitMath();window.addEventListener('resize',fitMath);window.addEventListener('load',fitMath);
 </script>
 <script src="oni-bg.js"></script>
 </body>

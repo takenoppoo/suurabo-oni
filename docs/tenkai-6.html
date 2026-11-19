@@ -6,7 +6,7 @@
 <title>例題6 対称式（x+\frac1x の利用）｜式の展開 | 数ラボ鬼</title>
 <meta name="description" content="式の展開の例題6。対称式（x+\frac1x の利用）。">
 <link rel="stylesheet" href="katex/katex.min.css">
-<link rel="stylesheet" href="style.css?v=20261120">
+<link rel="stylesheet" href="style.css?v=20261123">
 <!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
 
 </head>
@@ -21,11 +21,11 @@
 <!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る -->
 <h1 class="lh"><span class="lbadge">例題 6</span><span class="lsub">対称式（\(x+\frac1x\) の利用）</span></h1>
 <div class="qbox"><p>次の問いに答えよ。</p>
-\[x+\frac1x=3\ \text{のとき、}\ x^3+\frac1{x^3}\ \text{と}\ x^5+\frac1{x^5}\ \text{の値}\]</div>
+\[\begin{gathered}x+\frac1x=3\ \text{のとき、} \\ x^3+\frac1{x^3}\ \text{と}\ x^5+\frac1{x^5}\ \text{の値}\end{gathered}\]</div>
 <div class="bar"><h2>解き方（まず考え方）</h2><p>\(x\) の値を求めてはいけない（無理数になって大変）。\(x+\dfrac1x\) を 2 乗・3 乗して、<strong>小さい方から順に</strong>求める。</p>
 \[x^2+\frac1{x^2}=\left(x+\frac1x\right)^2-2\]
 \[x^3+\frac1{x^3}=\left(x+\frac1x\right)^3-3\left(x+\frac1x\right)\]<p class="small"><strong class="ok">コツ</strong>　階段を1段ずつ上る。いきなり5段目に飛ばず、2段目→3段目→5段目と積み上げる。</p></div>
-<div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> \(x^2+\dfrac1{x^2}\) を求める</div><div class="step-b">\[3^2-2=7\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> \(x^3+\dfrac1{x^3}\) を求める</div><div class="step-b">\[3^3-3\cdot3=18\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> \(x^5+\dfrac1{x^5}\) を求める（\(\left(x^2+\frac1{x^2}\right)\left(x^3+\frac1{x^3}\right)\) を展開）</div><div class="step-b">\[\left(x^2+\frac1{x^2}\right)\left(x^3+\frac1{x^3}\right)=x^5+\frac1{x^5}+x+\frac1x\]
+<div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> \(x^2+\dfrac1{x^2}\) を求める</div><div class="step-b">\[3^2-2=7\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> \(x^3+\dfrac1{x^3}\) を求める</div><div class="step-b">\[3^3-3\cdot3=18\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> \(x^5+\dfrac1{x^5}\) を求める（\(\left(x^2+\frac1{x^2}\right)\left(x^3+\frac1{x^3}\right)\) を展開）</div><div class="step-b">\[\begin{aligned}&\left(x^2+\frac1{x^2}\right)\left(x^3+\frac1{x^3}\right) \\ &= x^5+\frac1{x^5}+x+\frac1x\end{aligned}\]
 \[x^5+\frac1{x^5}=7\cdot18-3=123\]</div></div></div>
 <div class="abox "><p class="ah">【答案（テストに書く形）】</p>
 \[x^3+\frac1{x^3}=18,\quad x^5+\frac1{x^5}=123\]
@@ -45,6 +45,8 @@
 <script src="katex/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,14)+'px';}});}
+fitMath();window.addEventListener('resize',fitMath);window.addEventListener('load',fitMath);
 </script>
 <script src="oni-bg.js"></script>
 </body>

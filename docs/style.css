@@ -159,3 +159,7 @@ body{position:relative}
 .ecard:hover{background:var(--qbg)}
 .ecard .ebadge{align-self:flex-start;background:var(--navy);color:#fff;font-weight:700;padding:6px 14px;font-size:1rem;white-space:nowrap}
 .ecard .et{font-weight:700;font-size:1.1rem;line-height:1.6}
+
+/* はみ出し対策 */
+.katex-display{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.qbox,.bar,.abox,.ecard,.prac li{overflow-wrap:anywhere}

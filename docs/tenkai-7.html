@@ -6,7 +6,7 @@
 <title>例題7 展開公式と対称式（3文字）｜式の展開 | 数ラボ鬼</title>
 <meta name="description" content="式の展開の例題7。展開公式と対称式（3文字）。">
 <link rel="stylesheet" href="katex/katex.min.css">
-<link rel="stylesheet" href="style.css?v=20261120">
+<link rel="stylesheet" href="style.css?v=20261123">
 <!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
 
 </head>
@@ -21,9 +21,9 @@
 <!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る -->
 <h1 class="lh"><span class="lbadge">例題 7</span><span class="lsub">展開公式と対称式（3文字）</span></h1>
 <div class="qbox"><p>次の問いに答えよ。</p>
-\[a+b+c=3,\ \ a^2+b^2+c^2=5,\ \ a^3+b^3+c^3=9\ \text{のとき、}\ abc\ \text{の値}\]</div>
+\[\begin{gathered}a+b+c=3,\ a^2+b^2+c^2=5, \\ a^3+b^3+c^3=9\ \text{のとき、} \\ abc\ \text{の値}\end{gathered}\]</div>
 <div class="bar"><h2>解き方（まず考え方）</h2><p>まず \(ab+bc+ca\) を、\((a+b+c)^2\) の展開から求める。次に、次の公式に代入して \(abc\) を出す。</p>
-\[a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ca)\]<p class="small"><strong class="ok">コツ</strong>　「足した値」「2乗の和」「3乗の和」の3つの手がかりから、犯人 \(abc\) を割り出す推理。</p></div>
+\[\begin{aligned}&a^3+b^3+c^3-3abc \\ &= (a+b+c)(a^2+b^2+c^2-ab-bc-ca)\end{aligned}\]<p class="small"><strong class="ok">コツ</strong>　「足した値」「2乗の和」「3乗の和」の3つの手がかりから、犯人 \(abc\) を割り出す推理。</p></div>
 <div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> \(ab+bc+ca\) を求める</div><div class="step-b"><p>\((a+b+c)^2=a^2+b^2+c^2+2(ab+bc+ca)\) より</p>
 \[ab+bc+ca=\frac{9-5}{2}=2\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> 公式に代入する</div><div class="step-b">\[9-3abc=3(5-2)=9\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> \(abc\) を求める</div><div class="step-b"><p>\(-3abc=0\) より \(abc=0\)。</p></div></div></div>
 <div class="abox "><p class="ah">【答案（テストに書く形）】</p>
@@ -44,6 +44,8 @@
 <script src="katex/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,14)+'px';}});}
+fitMath();window.addEventListener('resize',fitMath);window.addEventListener('load',fitMath);
 </script>
 <script src="oni-bg.js"></script>
 </body>

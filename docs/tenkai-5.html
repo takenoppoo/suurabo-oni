@@ -6,7 +6,7 @@
 <title>例題5 展開（かたまりで置き換える）｜式の展開 | 数ラボ鬼</title>
 <meta name="description" content="式の展開の例題5。展開（かたまりで置き換える）。">
 <link rel="stylesheet" href="katex/katex.min.css">
-<link rel="stylesheet" href="style.css?v=20261120">
+<link rel="stylesheet" href="style.css?v=20261123">
 <!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
 
 </head>
@@ -21,12 +21,12 @@
 <!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る -->
 <h1 class="lh"><span class="lbadge">例題 5</span><span class="lsub">展開（かたまりで置き換える）</span></h1>
 <div class="qbox"><p>次の式を展開して整理せよ。</p>
-\[(a+b)^3+(b+c)^3+(c+a)^3-3(a+b)(b+c)(c+a)\]</div>
+\[\begin{aligned}&(a+b)^3 + (b+c)^3 + (c+a)^3 \\ &- 3(a+b)(b+c)(c+a)\end{aligned}\]</div>
 <div class="bar"><h2>解き方（まず考え方）</h2><p>3つの \(a+b,\ b+c,\ c+a\) が形を変えて何度も出てくる。それぞれ \(p,\ q,\ r\) とおくと \(p^3+q^3+r^3-3pqr\) の形になり、次の公式が使える。</p>
-\[p^3+q^3+r^3-3pqr=(p+q+r)(p^2+q^2+r^2-pq-qr-rp)\]<p class="small"><strong class="ok">コツ</strong>　引っ越しの段ボール箱。中身（式）をまとめて箱 \(p\)・\(q\)・\(r\) に入れてから運ぶと、持ちやすくなる。</p></div>
+\[\begin{aligned}p^3+q^3+r^3-3pqr&amp;=(p+q+r)\\ &amp;\quad\times(p^2+q^2+r^2\\ &amp;\qquad\quad-pq-qr-rp)\end{aligned}\]<p class="small"><strong class="ok">コツ</strong>　引っ越しの段ボール箱。中身（式）をまとめて箱 \(p\)・\(q\)・\(r\) に入れてから運ぶと、持ちやすくなる。</p></div>
 <div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> \(p=a+b,\ q=b+c,\ r=c+a\) とおく</div><div class="step-b"><p>\(p+q+r=2(a+b+c)\)。</p></div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> 後ろのかっこを \(a,\ b,\ c\) で表す</div><div class="step-b"><p>\(p^2+q^2+r^2-pq-qr-rp=\dfrac12\{(p-q)^2+(q-r)^2+(r-p)^2\}\)。</p>
 <p>\(p-q=a-c,\ q-r=b-a,\ r-p=c-b\) より</p>
-\[=\frac12\{(a-c)^2+(b-a)^2+(c-b)^2\}=a^2+b^2+c^2-ab-bc-ca\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> 公式の形にもどして展開する</div><div class="step-b">\[2(a+b+c)(a^2+b^2+c^2-ab-bc-ca)=2(a^3+b^3+c^3-3abc)\]</div></div></div>
+\[\begin{aligned}&= \frac12\{(a-c)^2+(b-a)^2+(c-b)^2\} \\ &= a^2+b^2+c^2-ab-bc-ca\end{aligned}\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> 公式の形にもどして展開する</div><div class="step-b">\[\begin{aligned}&2(a+b+c)(a^2+b^2+c^2-ab-bc-ca) \\ &= 2(a^3+b^3+c^3-3abc)\end{aligned}\]</div></div></div>
 <div class="abox "><p class="ah">【答案（テストに書く形）】</p>
 \[2a^3+2b^3+2c^3-6abc\]
 <p class="ans-mark">答</p></div>
@@ -45,6 +45,8 @@
 <script src="katex/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,14)+'px';}});}
+fitMath();window.addEventListener('resize',fitMath);window.addEventListener('load',fitMath);
 </script>
 <script src="oni-bg.js"></script>
 </body>

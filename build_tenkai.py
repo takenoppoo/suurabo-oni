@@ -3,9 +3,70 @@
 import re, html
 from tenkai_data import EX, FINAL, UNIT
 
+
+LIM = 26
+def _vis(t):
+    t = re.sub(r"\\(?:left|right|quad|qquad|Rightarrow|to|cdot|cdots|ldots|dfrac|frac|sqrt|text)", "", t)
+    t = re.sub(r"[{}\\ ]", "", t)
+    return sum(1.8 if ord(c) > 0x2000 else 1 for c in t)
+
+def _split_top(t, seps, paren=False):
+    """波かっこ・\\left\\right の外側にある seps の位置で分け、[(区切り, 本体)] を返す。"""
+    out, depth, i, start, sep = [], 0, 0, 0, ""
+    while i < len(t):
+        if t.startswith("\\left", i): depth += 1; i += 5; continue
+        if t.startswith("\\right", i): depth -= 1; i += 6; continue
+        if t[i] == "\\" and i + 1 < len(t) and t[i+1] in "{}": i += 2; continue
+        if paren and t[i] in "([": depth += 1; i += 1; continue
+        if paren and t[i] in ")]": depth -= 1; i += 1; continue
+        if t[i] == "{": depth += 1
+        elif t[i] == "}": depth -= 1
+        elif depth == 0:
+            hit = next((x for x in seps if t.startswith(x, i)), None)
+            if hit:
+                out.append((sep, t[start:i])); sep = hit; i += len(hit); start = i; continue
+        i += 1
+    out.append((sep, t[start:]))
+    return out
+
+def fmt(t):
+    """長い式を、等号・矢印・コンマの位置で折り返して複数行にする。"""
+    t = t.strip()
+    if "\\begin" in t or _vis(t) <= LIM: return t
+    m = t.find("\\text{のとき")
+    if m >= 0:
+        j = t.index("}", m) + 1
+        cond, rest = t[:m].rstrip(" \\"), t[j:].lstrip(" \\")
+        parts = [b.strip(" \\") for _, b in _split_top(cond, [","])]
+        lines, cur = [], ""
+        for k, p in enumerate(parts):
+            piece = p + ("," if k < len(parts) - 1 else "")
+            if cur and _vis(cur + piece) > LIM: lines.append(cur); cur = piece
+            else: cur = (cur + "\\ " + piece) if cur else piece
+        lines.append(cur + "\\ \\text{のとき、}")
+        lines.append(rest)
+        return "\\begin{gathered}" + " \\\\ ".join(lines) + "\\end{gathered}"
+    segs = _split_top(t, [",\\quad", ",\\ "])
+    if len(segs) > 1:
+        lines = [(b.strip() + ("," if k < len(segs) - 1 else "")) for k, (_, b) in enumerate(segs)]
+        return "\\begin{gathered}" + " \\\\ ".join(lines) + "\\end{gathered}"
+    segs = _split_top(t, ["\\Rightarrow", "\\to", "="])
+    if len(segs) <= 1:
+        segs = [x for x in _split_top(t, ["+", "-"], True)]
+        if len(segs) <= 1: return t
+    lines, cur = [], ""
+    for sep, body in segs:
+        piece = (sep + " " if sep else "") + body.strip()
+        if cur and _vis(cur + piece) > LIM: lines.append(cur); cur = "&" + piece
+        else: cur = (cur + " " + piece) if cur else piece
+    lines.append(cur)
+    if len(lines) == 1: return t
+    lines[0] = "&" + lines[0] if not lines[0].startswith("&") else lines[0]
+    return "\\begin{aligned}" + " \\\\ ".join(lines) + "\\end{aligned}"
+
 def tx(s):
     s = html.escape(s, quote=False)
-    s = re.sub(r"\$\$(.+?)\$\$", lambda m: "\n\\[" + m.group(1) + "\\]\n", s, flags=re.S)
+    s = re.sub(r"\$\$(.+?)\$\$", lambda m: "\n\\[" + fmt(m.group(1)) + "\\]\n", s, flags=re.S)
     s = re.sub(r"\$(.+?)\$", lambda m: "\\(" + m.group(1) + "\\)", s)
     s = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", s)
     out = []
@@ -18,7 +79,7 @@ def tx(s):
 def plain(s): return s.replace("$", "")
 
 def abox(ans, head="【答案（テストに書く形）】", cls=""):
-    return f'<div class="abox {cls}"><p class="ah">{head}</p>\n\\[{ans}\\]\n<p class="ans-mark">答</p></div>'
+    return f'<div class="abox {cls}"><p class="ah">{head}</p>\n\\[{fmt(ans)}\\]\n<p class="ans-mark">答</p></div>'
 
 GROUPS = [("係数を拾う", [1]), ("展開の工夫", [2, 3, 4]), ("かたまりで置き換える・対称式", [5, 6, 7, 8]), ("次数を下げる", [9])]
 def inl(s): return tx(s).replace("<p>", "").replace("</p>", "")

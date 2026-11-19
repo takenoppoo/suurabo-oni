@@ -6,7 +6,7 @@
 <title>例題8 条件式から値を出す（4乗の和）｜式の展開 | 数ラボ鬼</title>
 <meta name="description" content="式の展開の例題8。条件式から値を出す（4乗の和）。">
 <link rel="stylesheet" href="katex/katex.min.css">
-<link rel="stylesheet" href="style.css?v=20261120">
+<link rel="stylesheet" href="style.css?v=20261123">
 <!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
 
 </head>
@@ -21,12 +21,12 @@
 <!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る -->
 <h1 class="lh"><span class="lbadge">例題 8</span><span class="lsub">条件式から値を出す（4乗の和）</span></h1>
 <div class="qbox"><p>次の問いに答えよ。</p>
-\[a+b+c=0,\ \ a^2+b^2+c^2=6\ \text{のとき、}\ a^4+b^4+c^4\ \text{の値}\]</div>
+\[\begin{gathered}a+b+c=0,\ a^2+b^2+c^2=6\ \text{のとき、} \\ a^4+b^4+c^4\ \text{の値}\end{gathered}\]</div>
 <div class="bar"><h2>解き方（まず考え方）</h2><p>4乗の和は、2乗の和を2乗して、不要な部分を引く。</p>
-\[a^4+b^4+c^4=(a^2+b^2+c^2)^2-2(a^2b^2+b^2c^2+c^2a^2)\]
+\[\begin{aligned}&a^4+b^4+c^4 \\ &= (a^2+b^2+c^2)^2-2(a^2b^2+b^2c^2+c^2a^2)\end{aligned}\]
 <p>\(a^2b^2+b^2c^2+c^2a^2\) は、\((ab+bc+ca)^2\) の展開から作る。</p><p class="small"><strong class="ok">コツ</strong>　2乗の和を2乗すると「余計なおまけ」の項がついてくる。そのおまけだけを別に数えて引く。</p></div>
 <div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> \(ab+bc+ca\) を求める</div><div class="step-b">\[ab+bc+ca=\frac{0-6}{2}=-3\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> \(a^2b^2+b^2c^2+c^2a^2\) を求める</div><div class="step-b"><p>\((ab+bc+ca)^2=a^2b^2+b^2c^2+c^2a^2+2abc(a+b+c)\)。\(a+b+c=0\) なので</p>
-\[a^2b^2+b^2c^2+c^2a^2=(-3)^2=9\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> \(a^4+b^4+c^4\) を求める</div><div class="step-b">\[6^2-2\cdot9=36-18=18\]</div></div></div>
+\[\begin{aligned}&a^2b^2+b^2c^2+c^2a^2 \\ &= (-3)^2 = 9\end{aligned}\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> \(a^4+b^4+c^4\) を求める</div><div class="step-b">\[6^2-2\cdot9=36-18=18\]</div></div></div>
 <div class="abox "><p class="ah">【答案（テストに書く形）】</p>
 \[a^4+b^4+c^4=18\]
 <p class="ans-mark">答</p></div>
@@ -45,6 +45,8 @@
 <script src="katex/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,14)+'px';}});}
+fitMath();window.addEventListener('resize',fitMath);window.addEventListener('load',fitMath);
 </script>
 <script src="oni-bg.js"></script>
 </body>

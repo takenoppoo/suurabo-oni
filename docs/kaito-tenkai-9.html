@@ -6,7 +6,7 @@
 <title>例題9 別冊（解答）｜式の展開 | 数ラボ鬼</title>
 <meta name="description" content="式の展開の練習問題9の解答。">
 <link rel="stylesheet" href="katex/katex.min.css">
-<link rel="stylesheet" href="style.css?v=20261120">
+<link rel="stylesheet" href="style.css?v=20261123">
 <!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
 
 </head>
@@ -22,10 +22,10 @@
 <h1 class="lh"><span class="lbadge">別冊</span><span class="lsub">練習問題9の解答　次数下げ（無理数の値）</span></h1>
 <p class="small">まず自分で解いてから見ましょう。<a href="tenkai-9.html">← 問題にもどる</a></p>
 <div class="bar"><p><strong>(1)</strong>　\(x=\dfrac{\sqrt5-1}{2}\) のとき、\(x^3+2x^2-3\)</p><p>\(2x+1=\sqrt5\) より \(x^2+x-1=0\)。</p>
-\[x^3+2x^2-3=(x^2+x-1)(x+1)-2=-2\]</div><div class="abox sm"><p class="ah">【答案】</p>
+\[\begin{aligned}&x^3+2x^2-3 \\ &= (x^2+x-1)(x+1)-2 = -2\end{aligned}\]</div><div class="abox sm"><p class="ah">【答案】</p>
 \[-2\]
 <p class="ans-mark">答</p></div><div class="bar"><p><strong>(2)</strong>　\(x=\dfrac{\sqrt{17}-1}{2}\) のとき、\(x^3+x^2-4x+1\)</p><p>\(2x+1=\sqrt{17}\) より \(x^2+x-4=0\)。</p>
-\[x^3+x^2-4x+1=(x^2+x-4)x+1=1\]</div><div class="abox sm"><p class="ah">【答案】</p>
+\[\begin{aligned}&x^3+x^2-4x+1 = (x^2+x-4)x+1 \\ &= 1\end{aligned}\]</div><div class="abox sm"><p class="ah">【答案】</p>
 \[1\]
 <p class="ans-mark">答</p></div><div class="bar"><p><strong>(3)</strong>　\(x=\dfrac{1+\sqrt5}{2}\) のとき、\(x^3-x^2-x+4\)</p><p>\(2x-1=\sqrt5\) より \(x^2-x-1=0\)。</p>
 \[x^3-x^2-x+4=(x^2-x-1)x+4=4\]</div><div class="abox sm"><p class="ah">【答案】</p>
@@ -44,6 +44,8 @@
 <script src="katex/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,14)+'px';}});}
+fitMath();window.addEventListener('resize',fitMath);window.addEventListener('load',fitMath);
 </script>
 <script src="oni-bg.js"></script>
 </body>

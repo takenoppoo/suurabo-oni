@@ -6,7 +6,7 @@
 <title>例題2 別冊（解答）｜式の展開 | 数ラボ鬼</title>
 <meta name="description" content="式の展開の練習問題2の解答。">
 <link rel="stylesheet" href="katex/katex.min.css">
-<link rel="stylesheet" href="style.css?v=20261120">
+<link rel="stylesheet" href="style.css?v=20261123">
 <!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
 
 </head>
@@ -22,13 +22,13 @@
 <h1 class="lh"><span class="lbadge">別冊</span><span class="lsub">練習問題2の解答　展開の工夫（符号ちがいの組をつくる）</span></h1>
 <p class="small">まず自分で解いてから見ましょう。<a href="tenkai-2.html">← 問題にもどる</a></p>
 <div class="bar"><p><strong>(1)</strong>　\((x^2+2x+4)(x^2-2x+4)(x^4-4x^2+16)\)</p><p>\((x^2+4)^2-(2x)^2=x^4+4x^2+16\)。続けて</p>
-\[(x^4+16)^2-(4x^2)^2=x^8+32x^4+256-16x^4=x^8+16x^4+256\]</div><div class="abox sm"><p class="ah">【答案】</p>
+\[\begin{aligned}&(x^4+16)^2-(4x^2)^2 \\ &= x^8+32x^4+256-16x^4 \\ &= x^8+16x^4+256\end{aligned}\]</div><div class="abox sm"><p class="ah">【答案】</p>
 \[x^8+16x^4+256\]
 <p class="ans-mark">答</p></div><div class="bar"><p><strong>(2)</strong>　\((x^2+3x+9)(x^2-3x+9)(x^4-9x^2+81)\)</p><p>\((x^2+9)^2-(3x)^2=x^4+9x^2+81\)。続けて</p>
-\[(x^4+81)^2-(9x^2)^2=x^8+162x^4+6561-81x^4=x^8+81x^4+6561\]</div><div class="abox sm"><p class="ah">【答案】</p>
+\[\begin{aligned}&(x^4+81)^2-(9x^2)^2 \\ &= x^8+162x^4+6561-81x^4 \\ &= x^8+81x^4+6561\end{aligned}\]</div><div class="abox sm"><p class="ah">【答案】</p>
 \[x^8+81x^4+6561\]
 <p class="ans-mark">答</p></div><div class="bar"><p><strong>(3)</strong>　\((a^2+ab+b^2)(a^2-ab+b^2)(a^4-a^2b^2+b^4)\)</p><p>\((a^2+b^2)^2-(ab)^2=a^4+a^2b^2+b^4\)。続けて</p>
-\[(a^4+b^4)^2-(a^2b^2)^2=a^8+2a^4b^4+b^8-a^4b^4=a^8+a^4b^4+b^8\]</div><div class="abox sm"><p class="ah">【答案】</p>
+\[\begin{aligned}&(a^4+b^4)^2-(a^2b^2)^2 \\ &= a^8+2a^4b^4+b^8-a^4b^4 \\ &= a^8+a^4b^4+b^8\end{aligned}\]</div><div class="abox sm"><p class="ah">【答案】</p>
 \[a^8+a^4b^4+b^8\]
 <p class="ans-mark">答</p></div>
 <!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
@@ -44,6 +44,8 @@
 <script src="katex/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,14)+'px';}});}
+fitMath();window.addEventListener('resize',fitMath);window.addEventListener('load',fitMath);
 </script>
 <script src="oni-bg.js"></script>
 </body>
