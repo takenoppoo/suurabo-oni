@@ -40,7 +40,7 @@ def make(page, AD_TOP, AD_BTM):
 <p>例題で「考え方 → STEP」の手順をつかみ、同じ手順で練習問題を解きます。練習問題の解答は<a href="tenkai-kaitou.html">別冊（解答）</a>にあります。</p>
 <p class="dl">PDF：<a href="pdf/tenkai-mondai-hen.pdf">問題編</a>　<a href="pdf/tenkai-bessatsu.pdf">別冊（解答）</a></p></section>
 {cards}
-<p style="margin-top:18px"><a class="btn" href="tenkai-kaitou.html">別冊（解答）を見る</a></p>
+<p style="margin-top:18px"><a class="btn" href="tenkai-kaitou.html">解答を見る（別冊）</a></p>
 {AD_BTM}
 <div class="pn"><a href="subject-1.html">← 数学Iの単元一覧</a><span></span></div>
 """
@@ -61,9 +61,11 @@ def make(page, AD_TOP, AD_BTM):
 <div class="bar"><h2>解き方（まず考え方）</h2>{tx(e['idea'])}<p class="small"><strong class="ok">コツ</strong>　{inl(e['tip'])}</p></div>
 <div class="bar"><h2>解答</h2>{steps}</div>
 {abox(e['ans'])}
-<div class="bar"><h2>練習問題{i}</h2><ol class="prac big">{prac}</ol><p class="small">解答は<a href="tenkai-kaitou.html#a{i}">別冊（解答）</a>へ。</p></div>
+<div class="bar"><h2>練習問題{i}</h2><ol class="prac big">{prac}</ol></div>
+<p><a class="btn" href="tenkai-kaitou.html#a{i}">解答を見る（別冊）</a></p>
 {AD_BTM}
 {nav(i)}
+<p class="dl">PDF：<a href="pdf/tenkai-mondai-hen.pdf">問題編（全ページ）</a>　<a href="pdf/tenkai-bessatsu.pdf">別冊 練習問題の解答</a></p>
 """
         out[fname(i)] = page(f"例題{i} {plain(e['title'])}｜{UNIT}", f"{UNIT}の例題{i}。{plain(e['title'])}。", body)
     fin = "".join(f"<li>{inl(q)}</li>" for q, *_ in FINAL)
@@ -71,9 +73,11 @@ def make(page, AD_TOP, AD_BTM):
 <p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="tenkai.html">{UNIT}</a> ＞ 章末問題</p>
 {AD_TOP}
 <h1 class="lh"><span class="lbadge">章末問題</span><span class="lsub">{UNIT}</span></h1>
-<div class="bar"><p>例題1〜{n}で学んだ手順だけで解ける問題です。まず、どの例題の型かを見分けるところから始めましょう。</p><ol class="prac big">{fin}</ol><p class="small">解答は<a href="tenkai-kaitou.html#final">別冊（解答）</a>へ。</p></div>
+<div class="bar"><p>例題1〜{n}で学んだ手順だけで解ける問題です。まず、どの例題の型かを見分けるところから始めましょう。</p><ol class="prac big">{fin}</ol></div>
+<p><a class="btn" href="tenkai-kaitou.html#final">解答を見る（別冊）</a></p>
 {AD_BTM}
 <div class="pn"><a href="{fname(n)}">← 例題{n}</a><a href="tenkai.html">例題一覧</a><a href="tenkai-kaitou.html">別冊（解答） →</a></div>
+<p class="dl">PDF：<a href="pdf/tenkai-mondai-hen.pdf">問題編（全ページ）</a>　<a href="pdf/tenkai-bessatsu.pdf">別冊 練習問題の解答</a></p>
 """
     out["tenkai-final.html"] = page(f"章末問題｜{UNIT}", f"{UNIT}の章末問題。", body)
 
