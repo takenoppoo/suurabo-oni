@@ -96,5 +96,5 @@ from build_tenkai import make as make_tenkai
 pages.update(make_tenkai(page,AD_TOP,AD_BTM))
 for f,h in pages.items(): open(os.path.join(OUT,f),"w",encoding="utf-8").write(h)
 open(os.path.join(OUT,"robots.txt"),"w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n")
-open(os.path.join(OUT,"sitemap.xml"),"w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"<url><loc>{SITE_URL}/{f}</loc></url>\n" for f in ("index.html","about.html","contact.html","privacy.html","subject-1.html","tenkai.html","tenkai-kaitou.html","tenkai-final.html")+tuple(f"tenkai-{i}.html" for i in range(1,10)))+"</urlset>\n")
+open(os.path.join(OUT,"sitemap.xml"),"w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"<url><loc>{SITE_URL}/{f}</loc></url>\n" for f in ("index.html","about.html","contact.html","privacy.html","subject-1.html","tenkai.html","tenkai-final.html","kaito-tenkai-final.html")+tuple(f"tenkai-{i}.html" for i in range(1,10))+tuple(f"kaito-tenkai-{i}.html" for i in range(1,10)))+"</urlset>\n")
 print(len(pages),"pages")

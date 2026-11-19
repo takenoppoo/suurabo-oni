@@ -37,10 +37,9 @@ def make(page, AD_TOP, AD_BTM):
 {AD_TOP}
 <h1 class="lh"><span class="lbadge">数学I</span><span class="lsub">{UNIT}</span></h1>
 <section class="bar"><h2>この単元の進め方</h2>
-<p>例題で「考え方 → STEP」の手順をつかみ、同じ手順で練習問題を解きます。練習問題の解答は<a href="tenkai-kaitou.html">別冊（解答）</a>にあります。</p>
+<p>例題で「考え方 → STEP」の手順をつかみ、同じ手順で練習問題を解きます。練習問題の解答は、各例題ページの「解答を見る（別冊）」から見られます。</p>
 <p class="dl">PDF：<a href="pdf/tenkai-mondai-hen.pdf">問題編</a>　<a href="pdf/tenkai-bessatsu.pdf">別冊（解答）</a></p></section>
 {cards}
-<p style="margin-top:18px"><a class="btn" href="tenkai-kaitou.html">解答を見る（別冊）</a></p>
 {AD_BTM}
 <div class="pn"><a href="subject-1.html">← 数学Iの単元一覧</a><span></span></div>
 """
@@ -62,7 +61,7 @@ def make(page, AD_TOP, AD_BTM):
 <div class="bar"><h2>解答</h2>{steps}</div>
 {abox(e['ans'])}
 <div class="bar"><h2>練習問題{i}</h2><ol class="prac big">{prac}</ol></div>
-<p><a class="btn" href="tenkai-kaitou.html#a{i}">解答を見る（別冊）</a></p>
+<p><a class="btn" href="kaito-tenkai-{i}.html">解答を見る（別冊）</a></p>
 {AD_BTM}
 {nav(i)}
 <p class="dl">PDF：<a href="pdf/tenkai-mondai-hen.pdf">問題編（全ページ）</a>　<a href="pdf/tenkai-bessatsu.pdf">別冊 練習問題の解答</a></p>
@@ -74,28 +73,37 @@ def make(page, AD_TOP, AD_BTM):
 {AD_TOP}
 <h1 class="lh"><span class="lbadge">章末問題</span><span class="lsub">{UNIT}</span></h1>
 <div class="bar"><p>例題1〜{n}で学んだ手順だけで解ける問題です。まず、どの例題の型かを見分けるところから始めましょう。</p><ol class="prac big">{fin}</ol></div>
-<p><a class="btn" href="tenkai-kaitou.html#final">解答を見る（別冊）</a></p>
+<p><a class="btn" href="kaito-tenkai-final.html">解答を見る（別冊）</a></p>
 {AD_BTM}
-<div class="pn"><a href="{fname(n)}">← 例題{n}</a><a href="tenkai.html">例題一覧</a><a href="tenkai-kaitou.html">別冊（解答） →</a></div>
+<div class="pn"><a href="{fname(n)}">← 例題{n}</a><a href="tenkai.html">例題一覧</a><a href="kaito-tenkai-final.html">別冊（解答） →</a></div>
 <p class="dl">PDF：<a href="pdf/tenkai-mondai-hen.pdf">問題編（全ページ）</a>　<a href="pdf/tenkai-bessatsu.pdf">別冊 練習問題の解答</a></p>
 """
     out["tenkai-final.html"] = page(f"章末問題｜{UNIT}", f"{UNIT}の章末問題。", body)
 
-    ans = f"""
-<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="tenkai.html">{UNIT}</a> ＞ 別冊（解答）</p>
+    def kname(i): return f"kaito-tenkai-{i}.html"
+    PDFL = '<p class="dl">PDF：<a href="pdf/tenkai-mondai-hen.pdf">問題編（全ページ）</a>　<a href="pdf/tenkai-bessatsu.pdf">別冊 練習問題の解答</a></p>'
+    def kpage(key, label, title, inner, prev, nxt, desc):
+        ex_href = fname(key) if key != "final" else "tenkai-final.html"
+        body = f"""
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="tenkai.html">{UNIT}</a> ＞ <a href="{ex_href}">{label}</a> ＞ 別冊（解答）</p>
 {AD_TOP}
-<h1 class="lh"><span class="lbadge">別冊</span><span class="lsub">{UNIT}　練習問題・章末問題の解答</span></h1>
-<p class="small">まず自分で解いてから見ましょう。<a href="tenkai.html">← 問題編へもどる</a></p>
+<h1 class="lh"><span class="lbadge">別冊</span><span class="lsub">{title}</span></h1>
+<p class="small">まず自分で解いてから見ましょう。<a href="{ex_href}">← 問題にもどる</a></p>
+{inner}
+{AD_BTM}
+<div class="pn">{prev}<a href="{ex_href}">{label}にもどる</a>{nxt}</div>
+{PDFL}
 """
+        return page(f"{label} 別冊（解答）｜{UNIT}", desc, body)
     for i, e in enumerate(EX, 1):
-        ans += f'<section id="a{i}"><h2 class="sh">練習問題{i}の解答　{tx(e["title"]).replace("<p>","").replace("</p>","")}</h2>'
+        inner = ""
         for k, (p, (sol, a)) in enumerate(zip(e["prac"], e["pans"]), 1):
-            ans += f'<div class="bar"><p><strong>({k})</strong>　{tx(p).replace("<p>","").replace("</p>","")}</p>{tx(sol)}</div>{abox(a, "【答案】", "sm")}'
-        ans += "</section>"
-    ans += '<section id="final"><h2 class="sh">章末問題の解答</h2>'
+            inner += f'<div class="bar"><p><strong>({k})</strong>　{inl(p)}</p>{tx(sol)}</div>{abox(a, "【答案】", "sm")}'
+        prev = f'<a href="{kname(i-1)}">← 別冊 例題{i-1}</a>' if i > 1 else "<span></span>"
+        nxt = f'<a href="{kname(i+1)}">別冊 例題{i+1} →</a>' if i < n else '<a href="kaito-tenkai-final.html">別冊 章末問題 →</a>'
+        out[kname(i)] = kpage(i, f"例題{i}", f"練習問題{i}の解答　{inl(e['title'])}", inner, prev, nxt, f"{UNIT}の練習問題{i}の解答。")
+    inner = ""
     for k, (q, t, sol, a) in enumerate(FINAL, 1):
-        ans += f'<div class="bar"><p><strong>{k}.</strong>　{tx(q).replace("<p>","").replace("</p>","")}</p>{tx(sol)}<p class="small">（例題{t}の型）</p></div>{abox(a, "【答案】", "sm")}'
-    ans += f'</section>\n{AD_BTM}\n<div class="pn"><a href="tenkai.html">← 問題編へ</a><a href="subject-1.html">数学Iの単元一覧 →</a></div>'
-    p2 = page(f"{UNIT}（別冊・解答）", "「式の展開」の練習問題と章末問題の解答。", ans)
-    out["tenkai-kaitou.html"] = p2
+        inner += f'<div class="bar"><p><strong>{k}.</strong>　{inl(q)}</p>{tx(sol)}<p class="small">（例題{t}の型）</p></div>{abox(a, "【答案】", "sm")}'
+    out["kaito-tenkai-final.html"] = kpage("final", "章末問題", "章末問題の解答", inner, f'<a href="{kname(n)}">← 別冊 例題{n}</a>', '<a href="subject-1.html">数学Iの単元一覧 →</a>', f"{UNIT}の章末問題の解答。")
     return out
