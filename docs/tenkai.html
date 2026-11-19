@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>式の展開（問題編） | 数ラボ鬼</title>
+<meta name="description" content="数学Iの「式の展開」の難問。係数比べ・展開の工夫・対称式・次数下げを、例題の手順で練習できます。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ 式の展開</p>
+<!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る -->
+<h1 class="lh"><span class="lbadge">数学I</span><span class="lsub">式の展開（問題編）</span></h1>
+<section class="bar"><h2>この単元の進め方</h2>
+<p>例題を読んで「考え方 → STEP」の手順をつかみ、同じ手順で練習問題を解きます。練習問題の解答は<a href="tenkai-kaitou.html">別冊（解答）</a>にあります。</p>
+<p class="dl">PDF：<a href="pdf/tenkai-mondai-hen.pdf">問題編</a>　<a href="pdf/tenkai-bessatsu.pdf">別冊（解答）</a></p></section>
+<ul class="links"><li><a href="#ex1">例題1　係数比べ（共通テスト型）</a></li><li><a href="#ex2">例題2　展開の工夫（符号ちがいの組をつくる）</a></li><li><a href="#ex3">例題3　展開の工夫（指数がそろっているとき）</a></li><li><a href="#ex4">例題4　計算のくふう（1をかけて連鎖させる）</a></li><li><a href="#ex5">例題5　展開（かたまりで置き換える）</a></li><li><a href="#ex6">例題6　対称式（x+\frac1x の利用）</a></li><li><a href="#ex7">例題7　展開公式と対称式（3文字）</a></li><li><a href="#ex8">例題8　条件式から値を出す（4乗の和）</a></li><li><a href="#ex9">例題9　次数下げ（無理数の値）</a></li><li><a href="#final">章末問題</a></li></ul>
+
+<section id="ex1">
+<h2 class="sh">例題1　係数比べ（共通テスト型）</h2>
+<div class="qbox"><p>次の □ にあてはまる数を求めよ。</p>
+\[(x^2+ax+3)(x^2-2x+b)\]
+<p>を展開した式で、\(x^3\) の係数が 0、\(x\) の係数も 0 であるとき、\(a=\) ア、\(b=\) イ であり、\(x^2\) の係数は ウ である。</p></div>
+<div class="bar"><h2>解き方（まず考え方）</h2><p>全部を展開しない。ほしい項（\(x^3\)、\(x\)、\(x^2\)）がどの項とどの項のかけ算から出るかだけを拾う。</p><p class="small"><strong class="ok">コツ</strong>　宝探しで、掘る場所だけ決めて掘る。全面を掘り返さない。</p></div>
+<div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> \(x^3\) の係数から \(a\) を出す</div><div class="step-b"><p>\(x^2\times(-2x)\) と \(ax\times x^2\) から \((-2+a)x^3\)。\(-2+a=0\) より \(a=2\)。</p></div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> \(x\) の係数から \(b\) を出す</div><div class="step-b"><p>\(ax\times b\) と \(3\times(-2x)\) から \((ab-6)x\)。\(a=2\) を入れて \(2b-6=0\)、\(b=3\)。</p></div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> \(x^2\) の係数を出す</div><div class="step-b"><p>\(x^2\times b\)、\(ax\times(-2x)\)、\(3\times x^2\) から \(b-2a+3=3-4+3=2\)。</p></div></div></div>
+<div class="abox "><p class="ah">【答案（テストに書く形）】</p>
+\[a=2,\quad b=3,\quad x^2 \text{ の係数は } 2\]
+<p class="ans-mark">答</p></div>
+<div class="bar"><h2>練習問題1</h2><ol class="prac big"><li>\((x^2+ax+4)(x^2-3x+b)\) で \(x^3,\ x\) の係数が 0 のとき、\(a,\ b,\ x^2\) の係数</li><li>\((x^2+ax+2)(x^2+4x+b)\) で \(x^3,\ x\) の係数が 0 のとき、\(a,\ b,\ x^2\) の係数</li><li>\((x^2+ax-5)(x^2-2x+b)\) で \(x^3,\ x\) の係数が 0 のとき、\(a,\ b,\ x^2\) の係数</li></ol></div>
+</section>
+<section id="ex2">
+<h2 class="sh">例題2　展開の工夫（符号ちがいの組をつくる）</h2>
+<div class="qbox"><p>次の式を展開せよ。</p>
+\[(x^2+x+1)(x^2-x+1)(x^4-x^2+1)\]</div>
+<div class="bar"><h2>解き方（まず考え方）</h2><p>そのままかけると項が多く大変。\(x^2+x+1\) と \(x^2-x+1\) は、同じ部分 \(x^2+1\) に、符号だけちがう \(\pm x\) がついた形。</p>
+\[(A+B)(A-B)=A^2-B^2\]
+<p>が使える。</p><p class="small"><strong class="ok">コツ</strong>　左右で形が同じ靴と靴の「ペア」を先に見つけてしまう。ペアにすると中途半端な項が消える。</p></div>
+<div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> 最初の2つをペアにする</div><div class="step-b">\[(x^2+1+x)(x^2+1-x)=(x^2+1)^2-x^2=x^4+x^2+1\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> できた式と、残りの式をまたペアにする</div><div class="step-b"><p>\(x^4+x^2+1=(x^4+1)+x^2\)、\(x^4-x^2+1=(x^4+1)-x^2\) とみて、</p>
+\[(x^4+1)^2-(x^2)^2=x^8+2x^4+1-x^4=x^8+x^4+1\]</div></div></div>
+<div class="abox "><p class="ah">【答案（テストに書く形）】</p>
+\[(x^2+x+1)(x^2-x+1)(x^4-x^2+1)=x^8+x^4+1\]
+<p class="ans-mark">答</p></div>
+<div class="bar"><h2>練習問題2</h2><ol class="prac big"><li>\((x^2+2x+4)(x^2-2x+4)(x^4-4x^2+16)\)</li><li>\((x^2+3x+9)(x^2-3x+9)(x^4-9x^2+81)\)</li><li>\((a^2+ab+b^2)(a^2-ab+b^2)(a^4-a^2b^2+b^4)\)</li></ol></div>
+</section>
+<section id="ex3">
+<h2 class="sh">例題3　展開の工夫（指数がそろっているとき）</h2>
+<div class="qbox"><p>次の式を展開せよ。</p>
+\[(x-1)^3(x^2+x+1)^3\]</div>
+<div class="bar"><h2>解き方（まず考え方）</h2><p>指数がどちらも 3。\(A^3B^3=(AB)^3\) の逆を使って、先に \((x-1)(x^2+x+1)\) をかけてから 3 乗する。</p>
+\[(a-b)(a^2+ab+b^2)=a^3-b^3\]<p class="small"><strong class="ok">コツ</strong>　同じ数ずつ買うなら、まとめ買いしてから数える。1個ずつ展開してから足さない。</p></div>
+<div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> かっこの中だけ先にかける</div><div class="step-b">\[(x-1)(x^2+x+1)=x^3-1\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> 3乗の形にまとめる</div><div class="step-b">\[(x-1)^3(x^2+x+1)^3=(x^3-1)^3\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> \((A-B)^3\) の公式で展開する（\(A=x^3,\ B=1\)）</div><div class="step-b">\[x^9-3x^6+3x^3-1\]</div></div></div>
+<div class="abox "><p class="ah">【答案（テストに書く形）】</p>
+\[(x-1)^3(x^2+x+1)^3=(x^3-1)^3=x^9-3x^6+3x^3-1\]
+<p class="ans-mark">答</p></div>
+<div class="bar"><h2>練習問題3</h2><ol class="prac big"><li>\((x+1)^3(x^2-x+1)^3\)</li><li>\((x-2)^3(x^2+2x+4)^3\)</li><li>\((x+3)^2(x^2-3x+9)^2\)</li></ol></div>
+</section>
+<section id="ex4">
+<h2 class="sh">例題4　計算のくふう（1をかけて連鎖させる）</h2>
+<div class="qbox"><p>次の値を求めよ。</p>
+\[(2+1)(2^2+1)(2^4+1)(2^8+1)(2^{16}+1)\]</div>
+<div class="bar"><h2>解き方（まず考え方）</h2><p>そのままかけると大変。\(1=2-1\) をかけても値は変わらないことを使う。</p>
+\[(A-1)(A+1)=A^2-1\]
+<p>が次々に使える。</p><p class="small"><strong class="ok">コツ</strong>　ドミノ倒し。最初に「かけても変わらない 1」をおくと、1枚倒れるたびに次が倒れる。</p></div>
+<div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> \(1=2-1\) を式の前にかける</div><div class="step-b"><p>値は変わらない。</p>
+\[(2-1)(2+1)(2^2+1)(2^4+1)(2^8+1)(2^{16}+1)\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> 前から順に \((A-1)(A+1)=A^2-1\) を使う</div><div class="step-b">\[(2^2-1)(2^2+1)=2^4-1\ \to\ (2^4-1)(2^4+1)=2^8-1\ \to\ \cdots\ \to\ 2^{32}-1\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> 値を求める</div><div class="step-b"><p>\(2^{32}=4294967296\) より、\(4294967296-1=4294967295\)。</p></div></div></div>
+<div class="abox "><p class="ah">【答案（テストに書く形）】</p>
+\[2^{32}-1=4294967295\]
+<p class="ans-mark">答</p></div>
+<div class="bar"><h2>練習問題4</h2><ol class="prac big"><li>\((2+1)(2^2+1)(2^4+1)(2^8+1)\)</li><li>\((3+1)(3^2+1)(3^4+1)\)</li><li>\((2+1)(2^2+1)(2^4+1)(2^8+1)(2^{16}+1)(2^{32}+1)\)（\(2^{64}-1\) の形でよい）</li></ol></div>
+</section>
+<section id="ex5">
+<h2 class="sh">例題5　展開（かたまりで置き換える）</h2>
+<div class="qbox"><p>次の式を展開して整理せよ。</p>
+\[(a+b)^3+(b+c)^3+(c+a)^3-3(a+b)(b+c)(c+a)\]</div>
+<div class="bar"><h2>解き方（まず考え方）</h2><p>3つの \(a+b,\ b+c,\ c+a\) が形を変えて何度も出てくる。それぞれ \(p,\ q,\ r\) とおくと \(p^3+q^3+r^3-3pqr\) の形になり、次の公式が使える。</p>
+\[p^3+q^3+r^3-3pqr=(p+q+r)(p^2+q^2+r^2-pq-qr-rp)\]<p class="small"><strong class="ok">コツ</strong>　引っ越しの段ボール箱。中身（式）をまとめて箱 \(p\)・\(q\)・\(r\) に入れてから運ぶと、持ちやすくなる。</p></div>
+<div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> \(p=a+b,\ q=b+c,\ r=c+a\) とおく</div><div class="step-b"><p>\(p+q+r=2(a+b+c)\)。</p></div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> 後ろのかっこを \(a,\ b,\ c\) で表す</div><div class="step-b"><p>\(p^2+q^2+r^2-pq-qr-rp=\dfrac12\{(p-q)^2+(q-r)^2+(r-p)^2\}\)。</p>
+<p>\(p-q=a-c,\ q-r=b-a,\ r-p=c-b\) より</p>
+\[=\frac12\{(a-c)^2+(b-a)^2+(c-b)^2\}=a^2+b^2+c^2-ab-bc-ca\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> 公式の形にもどして展開する</div><div class="step-b">\[2(a+b+c)(a^2+b^2+c^2-ab-bc-ca)=2(a^3+b^3+c^3-3abc)\]</div></div></div>
+<div class="abox "><p class="ah">【答案（テストに書く形）】</p>
+\[2a^3+2b^3+2c^3-6abc\]
+<p class="ans-mark">答</p></div>
+<div class="bar"><h2>練習問題5</h2><ol class="prac big"><li>\((a-b)^3+(b-c)^3+(c-a)^3-3(a-b)(b-c)(c-a)\)</li><li>\((x-y)^3+(y-z)^3+(z-x)^3\) を \((x-y)(y-z)(z-x)\) を使った形で表せ</li><li>\((a+b-c)^3+(b+c-a)^3+(c+a-b)^3-3(a+b-c)(b+c-a)(c+a-b)\)</li></ol></div>
+</section>
+<section id="ex6">
+<h2 class="sh">例題6　対称式（\(x+\frac1x\) の利用）</h2>
+<div class="qbox"><p>次の問いに答えよ。</p>
+\[x+\frac1x=3\ \text{のとき、}\ x^3+\frac1{x^3}\ \text{と}\ x^5+\frac1{x^5}\ \text{の値}\]</div>
+<div class="bar"><h2>解き方（まず考え方）</h2><p>\(x\) の値を求めてはいけない（無理数になって大変）。\(x+\dfrac1x\) を 2 乗・3 乗して、<strong>小さい方から順に</strong>求める。</p>
+\[x^2+\frac1{x^2}=\left(x+\frac1x\right)^2-2\]
+\[x^3+\frac1{x^3}=\left(x+\frac1x\right)^3-3\left(x+\frac1x\right)\]<p class="small"><strong class="ok">コツ</strong>　階段を1段ずつ上る。いきなり5段目に飛ばず、2段目→3段目→5段目と積み上げる。</p></div>
+<div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> \(x^2+\dfrac1{x^2}\) を求める</div><div class="step-b">\[3^2-2=7\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> \(x^3+\dfrac1{x^3}\) を求める</div><div class="step-b">\[3^3-3\cdot3=18\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> \(x^5+\dfrac1{x^5}\) を求める（\(\left(x^2+\frac1{x^2}\right)\left(x^3+\frac1{x^3}\right)\) を展開）</div><div class="step-b">\[\left(x^2+\frac1{x^2}\right)\left(x^3+\frac1{x^3}\right)=x^5+\frac1{x^5}+x+\frac1x\]
+\[x^5+\frac1{x^5}=7\cdot18-3=123\]</div></div></div>
+<div class="abox "><p class="ah">【答案（テストに書く形）】</p>
+\[x^3+\frac1{x^3}=18,\quad x^5+\frac1{x^5}=123\]
+<p class="ans-mark">答</p></div>
+<div class="bar"><h2>練習問題6</h2><ol class="prac big"><li>\(x+\dfrac1x=4\) のとき、\(x^3+\dfrac1{x^3}\) と \(x^5+\dfrac1{x^5}\)</li><li>\(x+\dfrac1x=5\) のとき、\(x^3+\dfrac1{x^3}\) と \(x^4+\dfrac1{x^4}\)</li><li>\(x-\dfrac1x=2\) のとき、\(x^2+\dfrac1{x^2}\) と \(x^3-\dfrac1{x^3}\)</li></ol></div>
+</section>
+<section id="ex7">
+<h2 class="sh">例題7　展開公式と対称式（3文字）</h2>
+<div class="qbox"><p>次の問いに答えよ。</p>
+\[a+b+c=3,\ \ a^2+b^2+c^2=5,\ \ a^3+b^3+c^3=9\ \text{のとき、}\ abc\ \text{の値}\]</div>
+<div class="bar"><h2>解き方（まず考え方）</h2><p>まず \(ab+bc+ca\) を、\((a+b+c)^2\) の展開から求める。次に、次の公式に代入して \(abc\) を出す。</p>
+\[a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ca)\]<p class="small"><strong class="ok">コツ</strong>　「足した値」「2乗の和」「3乗の和」の3つの手がかりから、犯人 \(abc\) を割り出す推理。</p></div>
+<div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> \(ab+bc+ca\) を求める</div><div class="step-b"><p>\((a+b+c)^2=a^2+b^2+c^2+2(ab+bc+ca)\) より</p>
+\[ab+bc+ca=\frac{9-5}{2}=2\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> 公式に代入する</div><div class="step-b">\[9-3abc=3(5-2)=9\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> \(abc\) を求める</div><div class="step-b"><p>\(-3abc=0\) より \(abc=0\)。</p></div></div></div>
+<div class="abox "><p class="ah">【答案（テストに書く形）】</p>
+\[abc=0\]
+<p class="ans-mark">答</p></div>
+<div class="bar"><h2>練習問題7</h2><ol class="prac big"><li>\(a+b+c=2,\ a^2+b^2+c^2=6,\ a^3+b^3+c^3=8\) のとき、\(abc\)</li><li>\(a+b+c=1,\ a^2+b^2+c^2=3,\ a^3+b^3+c^3=1\) のとき、\(abc\)</li><li>\(a+b+c=4,\ a^2+b^2+c^2=10,\ a^3+b^3+c^3=28\) のとき、\(abc\)</li></ol></div>
+</section>
+<section id="ex8">
+<h2 class="sh">例題8　条件式から値を出す（4乗の和）</h2>
+<div class="qbox"><p>次の問いに答えよ。</p>
+\[a+b+c=0,\ \ a^2+b^2+c^2=6\ \text{のとき、}\ a^4+b^4+c^4\ \text{の値}\]</div>
+<div class="bar"><h2>解き方（まず考え方）</h2><p>4乗の和は、2乗の和を2乗して、不要な部分を引く。</p>
+\[a^4+b^4+c^4=(a^2+b^2+c^2)^2-2(a^2b^2+b^2c^2+c^2a^2)\]
+<p>\(a^2b^2+b^2c^2+c^2a^2\) は、\((ab+bc+ca)^2\) の展開から作る。</p><p class="small"><strong class="ok">コツ</strong>　2乗の和を2乗すると「余計なおまけ」の項がついてくる。そのおまけだけを別に数えて引く。</p></div>
+<div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> \(ab+bc+ca\) を求める</div><div class="step-b">\[ab+bc+ca=\frac{0-6}{2}=-3\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> \(a^2b^2+b^2c^2+c^2a^2\) を求める</div><div class="step-b"><p>\((ab+bc+ca)^2=a^2b^2+b^2c^2+c^2a^2+2abc(a+b+c)\)。\(a+b+c=0\) なので</p>
+\[a^2b^2+b^2c^2+c^2a^2=(-3)^2=9\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> \(a^4+b^4+c^4\) を求める</div><div class="step-b">\[6^2-2\cdot9=36-18=18\]</div></div></div>
+<div class="abox "><p class="ah">【答案（テストに書く形）】</p>
+\[a^4+b^4+c^4=18\]
+<p class="ans-mark">答</p></div>
+<div class="bar"><h2>練習問題8</h2><ol class="prac big"><li>\(a+b+c=0,\ a^2+b^2+c^2=4\) のとき、\(a^4+b^4+c^4\)</li><li>\(a+b+c=0,\ a^2+b^2+c^2=10\) のとき、\(a^4+b^4+c^4\)</li><li>\(a+b+c=0,\ a^2+b^2+c^2=8\) のとき、\(a^4+b^4+c^4\)</li></ol></div>
+</section>
+<section id="ex9">
+<h2 class="sh">例題9　次数下げ（無理数の値）</h2>
+<div class="qbox"><p>次の問いに答えよ。</p>
+\[x=\frac{\sqrt{13}-1}{2}\ \text{のとき、}\ x^3+2x^2-2x+5\ \text{の値}\]</div>
+<div class="bar"><h2>解き方（まず考え方）</h2><p>\(x\) を直接代入すると、ルートの計算が大変。<strong>\(x\) がみたす2次式を先に作り、割り算で次数を下げる。</strong></p><p class="small"><strong class="ok">コツ</strong>　割り算の「余り」だけ見る。割り切れる部分は、0 になって消えてしまうので無視してよい。</p></div>
+<div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> \(x\) がみたす2次式を作る</div><div class="step-b"><p>\(2x+1=\sqrt{13}\) の両辺を2乗して \(4x^2+4x+1=13\)。よって \(x^2+x-3=0\)。</p></div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> 与式を \(x^2+x-3\) で割る</div><div class="step-b">\[x^3+2x^2-2x+5=(x^2+x-3)(x+1)+8\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> \(x^2+x-3=0\) を使う</div><div class="step-b"><p>\((x^2+x-3)(x+1)=0\) なので、値は 8。</p></div></div></div>
+<div class="abox "><p class="ah">【答案（テストに書く形）】</p>
+\[x^3+2x^2-2x+5=(x^2+x-3)(x+1)+8=8\]
+<p class="ans-mark">答</p></div>
+<div class="bar"><h2>練習問題9</h2><ol class="prac big"><li>\(x=\dfrac{\sqrt5-1}{2}\) のとき、\(x^3+2x^2-3\)</li><li>\(x=\dfrac{\sqrt{17}-1}{2}\) のとき、\(x^3+x^2-4x+1\)</li><li>\(x=\dfrac{1+\sqrt5}{2}\) のとき、\(x^3-x^2-x+4\)</li></ol></div>
+</section>
+<section id="final">
+<h2 class="sh">章末問題　式の展開</h2>
+<div class="bar"><p>例題1〜9で学んだ手順だけで解ける問題です。まず、どの例題の型かを見分けるところから始めましょう。</p><ol class="prac big"><li>\((x^2+ax+6)(x^2-5x+b)\) を展開した式で、\(x^3\) の係数も \(x\) の係数も 0 のとき、\(a,\ b\) と \(x^2\) の係数を求めよ。</li><li>\((x^2+5x+25)(x^2-5x+25)\) を展開せよ。</li><li>\((x+2)^3(x^2-2x+4)^3\) を展開せよ。</li><li>\((4+1)(4^2+1)(4^4+1)\) の値を求めよ。</li><li>\(x+\dfrac1x=6\) のとき、\(x^4+\dfrac1{x^4}\) の値を求めよ。</li><li>\(a+b+c=6,\ a^2+b^2+c^2=14,\ a^3+b^3+c^3=36\) のとき、\(abc\) の値を求めよ。</li><li>\(a+b+c=0,\ a^2+b^2+c^2=12\) のとき、\(a^4+b^4+c^4\) の値を求めよ。</li><li>\(x=\dfrac{\sqrt{21}-1}{2}\) のとき、\(x^3+2x^2-4x+1\) の値を求めよ。</li><li>\((x-2y)^3+(2y-3z)^3+(3z-x)^3\) を \((x-2y)(2y-3z)(3z-x)\) を使った形で表せ。</li></ol></div>
+</section>
+<!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+<div class="pn"><a href="subject-1.html">← 数学Iの単元一覧</a><a href="tenkai-kaitou.html">別冊（解答）へ →</a></div>
+
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

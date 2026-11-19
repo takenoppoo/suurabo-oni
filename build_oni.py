@@ -92,7 +92,9 @@ def privacy():
 <section class="bar navy"><h2>免責事項</h2><p>内容の正確さに努めていますが、完全性を保証するものではありません。利用により生じた損害について、責任を負いかねます。</p></section>""")
 pages={"index.html":top(),"about.html":about(),"contact.html":contact(),"privacy.html":privacy()}
 for S in SUBJECTS: pages[f"subject-{S['id']}.html"]=subject(S)
+from build_tenkai import make as make_tenkai
+pages.update(make_tenkai(page,AD_TOP,AD_BTM))
 for f,h in pages.items(): open(os.path.join(OUT,f),"w",encoding="utf-8").write(h)
 open(os.path.join(OUT,"robots.txt"),"w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n")
-open(os.path.join(OUT,"sitemap.xml"),"w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"<url><loc>{SITE_URL}/{f}</loc></url>\n" for f in ("index.html","about.html","contact.html","privacy.html"))+"</urlset>\n")
+open(os.path.join(OUT,"sitemap.xml"),"w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"<url><loc>{SITE_URL}/{f}</loc></url>\n" for f in ("index.html","about.html","contact.html","privacy.html","subject-1.html","tenkai.html","tenkai-kaitou.html"))+"</urlset>\n")
 print(len(pages),"pages")
