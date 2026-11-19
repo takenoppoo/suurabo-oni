@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題4 計算のくふう（1をかけて連鎖させる）｜式の展開 | 数ラボ鬼</title>
+<meta name="description" content="式の展開の例題4。計算のくふう（1をかけて連鎖させる）。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="tenkai.html">式の展開</a> ＞ 例題4</p>
+<!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る -->
+<h1 class="lh"><span class="lbadge">例題 4</span><span class="lsub">計算のくふう（1をかけて連鎖させる）</span></h1>
+<div class="qbox"><p>次の値を求めよ。</p>
+\[(2+1)(2^2+1)(2^4+1)(2^8+1)(2^{16}+1)\]</div>
+<div class="bar"><h2>解き方（まず考え方）</h2><p>そのままかけると大変。\(1=2-1\) をかけても値は変わらないことを使う。</p>
+\[(A-1)(A+1)=A^2-1\]
+<p>が次々に使える。</p><p class="small"><strong class="ok">コツ</strong>　ドミノ倒し。最初に「かけても変わらない 1」をおくと、1枚倒れるたびに次が倒れる。</p></div>
+<div class="bar"><h2>解答</h2><div class="step"><div class="step-h"><span class="badge">STEP 1</span> \(1=2-1\) を式の前にかける</div><div class="step-b"><p>値は変わらない。</p>
+\[(2-1)(2+1)(2^2+1)(2^4+1)(2^8+1)(2^{16}+1)\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 2</span> 前から順に \((A-1)(A+1)=A^2-1\) を使う</div><div class="step-b">\[(2^2-1)(2^2+1)=2^4-1\ \to\ (2^4-1)(2^4+1)=2^8-1\ \to\ \cdots\ \to\ 2^{32}-1\]</div></div><div class="step"><div class="step-h"><span class="badge">STEP 3</span> 値を求める</div><div class="step-b"><p>\(2^{32}=4294967296\) より、\(4294967296-1=4294967295\)。</p></div></div></div>
+<div class="abox "><p class="ah">【答案（テストに書く形）】</p>
+\[2^{32}-1=4294967295\]
+<p class="ans-mark">答</p></div>
+<div class="bar"><h2>練習問題4</h2><ol class="prac big"><li>\((2+1)(2^2+1)(2^4+1)(2^8+1)\)</li><li>\((3+1)(3^2+1)(3^4+1)\)</li><li>\((2+1)(2^2+1)(2^4+1)(2^8+1)(2^{16}+1)(2^{32}+1)\)（\(2^{64}-1\) の形でよい）</li></ol><p class="small">解答は<a href="tenkai-kaitou.html#a4">別冊（解答）</a>へ。</p></div>
+<!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+<div class="pn"><a href="tenkai-3.html">← 例題3</a><a href="tenkai.html">例題一覧</a><a href="tenkai-5.html">例題5 →</a></div>
+
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>
