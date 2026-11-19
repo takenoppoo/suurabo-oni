@@ -18,7 +18,7 @@ def page(title,desc,body,extra_head=""):
 <title>{html.escape(title)} | {SITE_NAME}</title>
 <meta name="description" content="{html.escape(desc)}">
 <link rel="stylesheet" href="katex/katex.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20261120">
 <!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
 {extra_head}
 </head>
