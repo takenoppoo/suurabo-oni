@@ -17,7 +17,7 @@
 <nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
 </div></header>
 <main class="wrap">
-<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-3-3.html">2次方程式</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">練習問題 3 の解答　解の条件から定数を決める（実数解の確認つき）</span></h1><div class="item"><p class="pq">(1)　\(x^2-8x+a=0\ \text{の2つの解の差が}\ 2\)</p><div class="sb"><p>\(\alpha+\beta=8,\ \alpha\beta=a\)。\(64-4a=4\) より \(a=15\)。確かめ：\(x^2-8x+15=(x-3)(x-5)\)、差 \(2\)。</p></div><div class="abox"><p class="ah">【答案】</p>\[a=15\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(2)　\(x^2-4x+a=0\ \text{の2つの解の2乗の和が}\ 20\)</p><div class="sb"><p>\(\alpha+\beta=4,\ \alpha\beta=a\)。\(\alpha^2+\beta^2=16-2a=20\) より \(a=-2\)。確かめ：\(x^2-4x-2=0\) の判別式 \(D/4=4+2=6>0\)（実数解あり）。</p></div><div class="abox"><p class="ah">【答案】</p>\[a=-2\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(3)　\(x^2+6x+a=0\ \text{の2つの解の差が}\ 4\)</p><div class="sb"><p>\(\alpha+\beta=-6,\ \alpha\beta=a\)。\((\alpha-\beta)^2=36-4a=16\) より \(a=5\)。確かめ：\(x^2+6x+5=(x+1)(x+5)\)、解 \(-1,-5\)、差 \(4\)。</p></div><div class="abox"><p class="ah">【答案】</p>\[a=5\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="e-1-3-3-3.html">← 例題3にもどる</a><a class="g" href="u-1-3-3.html">単元ページ</a></div></div>
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-3-3.html">2次方程式</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">練習問題 3 の解答　解の条件から定数を決める（実数解の確認つき）</span></h1><div class="item"><p class="pq">(1)　\(x^2-8x+a=0\) の2つの解の差が \(2\)</p><div class="sb"><p>\(\alpha+\beta=8,\ \alpha\beta=a\)。\(64-4a=4\) より \(a=15\)。確かめ：\(x^2-8x+15=(x-3)(x-5)\)、差 \(2\)。</p></div><div class="abox"><p class="ah">【答案】</p>\[a=15\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(2)　\(x^2-4x+a=0\) の2つの解の2乗の和が \(20\)</p><div class="sb"><p>\(\alpha+\beta=4,\ \alpha\beta=a\)。\(\alpha^2+\beta^2=16-2a=20\) より \(a=-2\)。確かめ：\(x^2-4x-2=0\) の判別式 \(D/4=4+2=6>0\)（実数解あり）。</p></div><div class="abox"><p class="ah">【答案】</p>\[a=-2\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(3)　\(x^2+6x+a=0\) の2つの解の差が \(4\)</p><div class="sb"><p>\(\alpha+\beta=-6,\ \alpha\beta=a\)。\((\alpha-\beta)^2=36-4a=16\) より \(a=5\)。確かめ：\(x^2+6x+5=(x+1)(x+5)\)、解 \(-1,-5\)、差 \(4\)。</p></div><div class="abox"><p class="ah">【答案】</p>\[a=5\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="e-1-3-3-3.html">← 例題3にもどる</a><a class="g" href="u-1-3-3.html">単元ページ</a></div></div>
 </main>
 <footer class="site-f"><div class="wrap">
 <p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
@@ -27,6 +27,8 @@
 <script src="katex/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+fitMath();window.addEventListener('resize',fitMath);window.addEventListener('load',fitMath);
 </script>
 <script src="oni-bg.js"></script>
 </body>

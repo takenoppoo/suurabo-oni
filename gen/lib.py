@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """数ラボ鬼：データ(UNITS)からサイトHTMLとPDFを作る共通ライブラリ"""
-import os, html, subprocess, shutil, sys
+import re, os, html, subprocess, shutil, sys
 HERE=os.path.dirname(os.path.abspath(__file__))
 ROOT=os.path.dirname(HERE)
 OUT=os.path.join(ROOT,"docs")
@@ -45,7 +45,7 @@ def numline(ax,lo,hi,ticks,labels=None,segs=(),pts=(),pad=0.8):
 
 # ---------- CSS ----------
 CSS='''
-.lesson{line-height:1.65}
+.lesson{line-height:1.65;overflow-wrap:anywhere}.lesson .katex-display{overflow-x:auto;overflow-y:hidden;max-width:100%}.lesson svg,.lesson img{max-width:100%;height:auto}
 .lesson .lh{display:flex;align-items:center;gap:10px;border-bottom:3px solid #b81f36;padding-bottom:6px;margin:0 0 10px;flex-wrap:wrap}
 .lesson .lb{background:#b81f36;color:#fff;font-weight:700;padding:3px 12px;font-size:1.12em;white-space:nowrap}
 .lesson .ls{font-size:.98em;color:#333}
@@ -88,7 +88,19 @@ open(os.path.join(OUT,"lesson.css"),"w",encoding="utf-8").write(CSS)
 # ---------- 部品 ----------
 def lh(badge,sub): return f'<h1 class="lh"><span class="lb">{badge}</span><span class="ls">{sub}</span></h1>'
 def isM(p): return p.startswith("\\(") or p.startswith("<") or "\\(" in p or ("\\text{" not in p and any(ord(ch)>0x3000 for ch in p))
-def M(p): return p if isM(p) else I(p)
+def _split_text(p):
+    """長い \\text{日本語} を含む式は、日本語を本文・式の部分だけ数式にして、折り返せるようにする"""
+    toks=re.split(r'(\\text\{[^{}]*\})',p)
+    out=""
+    for t in toks:
+        if t.startswith("\\text{"): out+=html.escape(t[6:-1],quote=False)
+        else:
+            m=re.sub(r'^(?:\\ |\s)+|(?:\\ |\s)+$','',t)
+            if m: out+=" "+I(m)+" "
+    return out.strip()
+def M(p):
+    if re.search(r'\\text\{[^{}]{8,}\}',p): return _split_text(p)
+    return p if isM(p) else I(p)
 
 def ex_block(i,e,sub,with_prac=True):
     pr="".join(f"<li>{M(p)}</li>" for p in e['practice'])
