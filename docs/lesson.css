@@ -1,0 +1,36 @@
+
+.lesson{line-height:1.65}
+.lesson .lh{display:flex;align-items:center;gap:10px;border-bottom:3px solid #b81f36;padding-bottom:6px;margin:0 0 10px;flex-wrap:wrap}
+.lesson .lb{background:#b81f36;color:#fff;font-weight:700;padding:3px 12px;font-size:1.12em;white-space:nowrap}
+.lesson .ls{font-size:.98em;color:#333}
+.lesson .qbox{background:#FDF0F2;border:1.5px solid #D6455A;border-radius:10px;padding:4px 14px;margin:8px 0}
+.lesson .qbox p{margin:3px 0}
+.lesson .qbox .katex-display{font-size:1.35em;margin:.35em 0}
+.lesson .bar{background:#F8F4F4;border-left:4px solid #b81f36;padding:5px 12px 7px;margin:9px 0}
+.lesson .bar h2{margin:0 0 3px;font-size:1em;color:#b81f36}
+.lesson .bar p{margin:3px 0}
+.lesson .bar .katex-display{margin:.35em 0;font-size:1.1em}
+.lesson .kotsu{border:1.4px dashed #1f8a5b;border-radius:8px;background:#f1faf5;padding:3px 10px;margin:6px 0;font-size:.95em}
+.lesson .kotsu b{background:#1f8a5b;color:#fff;border-radius:4px;padding:0 6px;margin-right:6px}
+.lesson .step{margin:5px 0}.lesson .sh2{font-weight:700}
+.lesson .badge{background:#b81f36;color:#fff;padding:1px 7px;font-size:.85em;margin-right:4px}
+.lesson .sb{margin-left:3px}.lesson .sb p{margin:2px 0}.lesson .sb .katex-display{margin:.3em 0;font-size:1.05em}
+.lesson .abox{border:2px solid #b81f36;border-radius:10px;padding:4px 14px;margin:9px 0;position:relative;background:#fff}
+.lesson .abox .ah{font-weight:700;margin:0}
+.lesson .abox .katex-display{margin:.3em 0;font-size:1.2em}
+.lesson .mark{position:absolute;right:14px;bottom:6px;color:#c0283c;font-size:1.4em;font-weight:700;margin:0}
+.lesson .prac{padding-left:1.5em;margin:3px 0}.lesson .prac li{margin:5px 0}
+.lesson .tbl{border-collapse:collapse;margin:4px auto}.lesson .tbl th,.lesson .tbl td{border:1px solid #bbb;padding:1px 12px;text-align:center}
+.lesson .cl{padding-left:1.6em}.lesson .cl li{margin:10px 0}
+.lesson .item{margin:8px 0;padding-bottom:4px;border-bottom:1px solid #eee}
+.lesson .item p.pq{margin:2px 0;font-weight:700}
+.lesson .item .abox{margin:5px 0;padding:2px 12px}.lesson .item .abox .katex-display{font-size:1.1em;margin:.2em 0}
+.lesson .item .mark{font-size:1.15em;bottom:3px}
+.lesson .small{font-size:.85em;color:#666}
+.lesson .figbox{text-align:center;margin:4px 0}
+.lesson .fig{display:inline-block;max-width:100%;height:auto}
+.lesson .cap{font-size:.82em;color:#666}
+.lesson .nav2{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:16px 0}
+.lesson .nav2 a{background:#b81f36;color:#fff;padding:6px 14px;border-radius:6px;text-decoration:none;font-size:.9em}
+.lesson .nav2 a.g{background:#fff;color:#b81f36;border:1.5px solid #b81f36}
+.lesson .dl{margin:10px 0;font-size:.95em}

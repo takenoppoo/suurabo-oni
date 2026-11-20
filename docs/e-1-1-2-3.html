@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題3 かたまりで置き換える（4つの積）（因数分解） | 数ラボ鬼</title>
+<meta name="description" content="因数分解の難問 例題3：かたまりで置き換える（4つの積）">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-1-2.html">因数分解</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 3</span><span class="ls">数と式　かたまりで置き換える（4つの積）</span></h1><div class="qbox"><p>次の式を因数分解せよ。\[(x+1)(x+2)(x+3)(x+4)-24\]</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>4つのかっこをそのまま展開すると4次式になって大変。<b>定数項の和が等しくなる2つずつの組</b>（\(1+4=2+3\)）を作ると、同じ形 \(x^2+5x\) が出てくる。これを1つの文字で置き換える。</p><div class="kotsu"><b>コツ</b>同じ形の部品を1つの箱 t に入れて、式を軽くしてから料理する。</div></div><div class="bar"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 和が等しい組を作って展開する</div><div class="sb"><p>\((x+1)(x+4)\) と \((x+2)(x+3)\) の組にする。</p>\[(x+1)(x+4)=x^2+4x+x+4=x^2+5x+4\]\[(x+2)(x+3)=x^2+3x+2x+6=x^2+5x+6\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> \(x^2+5x=t\) とおく</div><div class="sb"><p>与式は</p>\[(t+4)(t+6)-24\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> \(t\) の式として展開・整理する</div><div class="sb">\[(t+4)(t+6)-24=t^2+6t+4t+24-24=t^2+10t\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> \(t\) の式を因数分解する</div><div class="sb">\[t^2+10t=t(t+10)\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 5</span> \(t\) をもとにもどす</div><div class="sb">\[(x^2+5x)(x^2+5x+10)\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 6</span> さらに因数分解できるか調べる</div><div class="sb"><p>\(x^2+5x=x(x+5)\)。\(x^2+5x+10\) は、かけて10・足して5になる整数の組がない（判別式 \(25-40=-15&lt;0\)）ので、これ以上は分解できない。</p>\[x(x+5)(x^2+5x+10)\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[x(x+5)(x^2+5x+10)\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 3</h2><ol class="prac"><li>\((x-1)(x-2)(x-3)(x-4)-24\)</li><li>\((x+2)(x+3)(x+4)(x+5)-120\)</li><li>\((x-2)(x-1)(x+3)(x+4)-24\)</li></ol></div><div class="nav2"><a href="a-1-1-2-3.html">練習問題3の解答を見る</a></div><div class="nav2"><a class="g" href="e-1-1-2-2.html">← 例題2</a><a class="g" href="e-1-1-2-4.html">例題4 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>
