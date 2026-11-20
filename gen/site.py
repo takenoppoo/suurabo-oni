@@ -24,7 +24,8 @@ def page(title,desc,body,extra_head="",lesson=False):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{html.escape(title)} | {SITE_NAME}</title>
+<title>{html.escape(title) if title==SITE_NAME else html.escape(title)+" | "+SITE_NAME}</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
 <meta name="description" content="{html.escape(desc)}">
 <link rel="stylesheet" href="katex/katex.min.css">
 <link rel="stylesheet" href="style.css">
@@ -100,7 +101,7 @@ def top():
 <p class="small">※「準備中」の単元は、できあがり次第公開します。</p>
 {AD_BTM}
 """
-    return page("高校数学の難問集","高校数学（数学I・A・II・B・III・C）の難問を、例題の手順を追って練習できる問題集。",b)
+    return page(SITE_NAME,"高校数学（数学I・A・II・B・III・C）の難問を、例題の手順を追って練習できる問題集。",b)
 def subject(S):
     secs=""; ready=False
     for ci,(ch,units) in enumerate(S["chapters"]):
