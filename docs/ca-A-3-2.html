@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>章末問題の解答（不定方程式・n進法） | 数ラボ鬼</title>
+<meta name="description" content="不定方程式・n進法の章末問題の解答。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-A.html">数学A</a> ＞ <a href="u-A-3-2.html">不定方程式・n進法</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">章末問題の解答</span></h1><div class="item"><p class="pq">1.　\(11x+13y=3\) のすべての整数解を求めよ。</p><div class="sb">\(13=11\cdot1+2,\ 11=2\cdot5+1\) より \(1=11-5\cdot2=11-5(13-11)=6\cdot11-5\cdot13\)。\(11\cdot6+13\cdot(-5)=1\)、3倍して特殊解 \((18,-15)\)。差：\(11(x-18)+13(y+15)=0\)。\(x-18=13k\)、\(y+15=-11k\)。<p class="small">（例題1の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[(x,y)=(18+13k,\ -15-11k)\]<p class="mark">答</p></div></div><div class="item"><p class="pq">2.　\(3x+7y=100\) をみたす正の整数 \((x,y)\) の組はいくつあるか。</p><div class="sb">\(3x=100-7y\)。\(100-7y\) が3の倍数になるのは \(y\equiv1\pmod3\)。\(y=1,4,7,10,13\)（\(7y&lt;100\)）→ \(x=31,24,17,10,3\)。5組。<p class="small">（例題2の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[5\ \text{組}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">3.　5円硬貨と9円硬貨だけで払えない最大の金額を求めよ。</p><div class="sb">9円の倍 \(0,9,18,27,36\) を5で割った余りは \(0,4,3,2,1\)。最小値は余り1：36。払えない最大は \(36-5=31\)。公式 \(5\cdot9-5-9=31\)。<p class="small">（例題3の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[31\ \text{円}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">4.　(1) 10進法の 1234 を8進法で表せ。(2) 2進法の \(10110011_{(2)}\) を8進法で表せ。</p><div class="sb">(1) \(1234=8\cdot154+2,\ 154=8\cdot19+2,\ 19=8\cdot2+3,\ 2=8\cdot0+2\)。下から \(2,3,2,2\)：\(2322_{(8)}\)。(2) 右から3桁ずつ：\(10\,|\,110\,|\,011\) → \(263_{(8)}\)。<p class="small">（例題4の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[(1)\ 2322_{(8)}\quad(2)\ 263_{(8)}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">5.　\(x\) 進法の \(213_{(x)}\) が、7進法の \(112_{(7)}\) に等しいとき、\(x\) の値を求めよ。</p><div class="sb">\(112_{(7)}=49+7+2=58\)。\(2x^2+x+3=58\Rightarrow2x^2+x-55=0\Rightarrow(2x+11)(x-5)=0\)、\(x=5\)（数字 2,1,3 は5未満で適する）。<p class="small">（例題5の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[x=5\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="c-A-3-2.html">← 章末問題</a><a class="g" href="u-A-3-2.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

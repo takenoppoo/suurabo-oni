@@ -131,7 +131,7 @@ def pdf_html(pages):
     body="".join(f'<section class="pg"><div class="lesson">{p}</div></section>' for p in pages)
     return ('<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><link rel="stylesheet" href="katex/katex.min.css"><link rel="stylesheet" href="lesson.css"><style>'+PCSS+'</style></head><body>'+body+
      '<script src="katex/katex.min.js"></script><script src="katex/auto-render.min.js"></script><script>renderMathInElement(document.body,{delimiters:[{left:"\\\\[",right:"\\\\]",display:true},{left:"\\\\(",right:"\\\\)",display:false}],throwOnError:false});'
-     'document.querySelectorAll(".pg").forEach(function(pg){var L=pg.firstChild;var h=L.getBoundingClientRect().height;var z=1;if(h>1015){z=1015/h;if(z<0.72){z=Math.min(0.85,2000/h);}}pg.style.zoom=z;});</script></body></html>')
+     'document.querySelectorAll(".pg").forEach(function(pg){var L=pg.firstChild;var h=L.getBoundingClientRect().height;var z=1;if(h>1015){z=1015/h;if(z<0.72){z=Math.min(0.85,2000/h);}}var sw=L.scrollWidth,cw=L.clientWidth;if(sw>cw+1){z=Math.min(z,cw/sw*0.98);}pg.style.zoom=z;});</script></body></html>')
 def make_pdf(pages,outname):
     tmp=os.path.join(OUT,"_tmp_"+outname+".html")
     open(tmp,"w",encoding="utf-8").write(pdf_html(pages))

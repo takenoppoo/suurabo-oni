@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題4 累乗の余り（周期を見つける）（約数と倍数・互除法） | 数ラボ鬼</title>
+<meta name="description" content="約数と倍数・互除法の難問 例題4：累乗の余り（周期を見つける）">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-A.html">数学A</a> ＞ <a href="u-A-3-1.html">約数と倍数・互除法</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 4</span><span class="ls">数学と人間の活動　累乗の余り（周期を見つける）</span></h1><div class="qbox"><p>\(3^{100}\) を 7 で割った余りを求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>べき乗の余りは、<b>余りを順に書き出すと周期的に繰り返す</b>。\(3^k\) を7で割った余りを \(k=1,2,\dots\) と調べ、周期を見つけて \(100\) を周期で割った余りに直す。合同式 \(a\equiv b\pmod 7\) を使うと、前の余りに3をかけて7で割ればよい。</p><div class="kotsu"><b>コツ</b>毎回『前の余り×3』を7で割るだけ。必ずもとの1に戻って、そこから繰り返す。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 余りを書き出す</div><div class="sb">\[\begin{aligned}3^1&\equiv3,\quad 3^2=9\equiv2,\quad 3^3\equiv2\cdot3=6,\\ 3^4&\equiv6\cdot3=18\equiv4,\quad 3^5\equiv4\cdot3=12\equiv5,\\ 3^6&\equiv5\cdot3=15\equiv1\pmod 7\end{aligned}\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 周期を使う</div><div class="sb">\(3^6\equiv1\) なので、6乗ごとに余りが繰り返す。\(100=6\times16+4\)。 \[3^{100}=(3^6)^{16}\cdot3^4\equiv1^{16}\cdot3^4\equiv4\pmod 7\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[4\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 4</h2><ol class="prac"><li>\(2^{50}\) を 7 で割った余り</li><li>\(5^{77}\) を 9 で割った余り</li><li>\(7^{2026}\) を 5 で割った余り</li></ol></div><div class="nav2"><a href="a-A-3-1-4.html">練習問題4の解答を見る</a></div><div class="nav2"><a class="g" href="e-A-3-1-3.html">← 例題3</a><a class="g" href="e-A-3-1-5.html">例題5 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

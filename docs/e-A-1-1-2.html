@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題2 メネラウスの定理で比と面積比を求める（三角形の性質） | 数ラボ鬼</title>
+<meta name="description" content="三角形の性質の難問 例題2：メネラウスの定理で比と面積比を求める">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-A.html">数学A</a> ＞ <a href="u-A-1-1.html">三角形の性質</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 2</span><span class="ls">図形の性質　メネラウスの定理で比と面積比を求める</span></h1><div class="qbox"><p>△ABC で、辺 AB 上に点 D を \(AD:DB=2:3\)、辺 AC 上に点 E を \(AE:EC=3:1\) となるようにとる。BE と CD の交点を P とするとき、\(BP:PE\) と、\(\triangle PBC:\triangle ABC\) を求めよ。<div class="figbox"><img class="fig" src="fig/a11_e2.svg" style="width:42%" alt="a11_e2"></div></p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>図に<b>1本の直線が三角形の辺（またはその延長）を3か所で切っている</b>形を見つけて、<b>メネラウスの定理</b>を使う。</p>\[\dfrac{(\text{頂点→交点})}{(\text{交点→頂点})}\times\cdots=1\quad(\text{三角形のまわりを1周する形で})\]<p>ここでは △ABE を直線 DPC が切っている。面積比は、底辺または高さの比に直す。</p><div class="kotsu"><b>コツ</b>メネラウスは「三角形を1周しながら、比を順に掛けると1」。1周のコースを決めてから掛ける。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> メネラウスを使う三角形と直線を決める</div><div class="sb">△ABE と直線 D-P-C。直線は AB 上の D、BE 上の P、EA の延長上の C を通る。</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 比を1周掛ける</div><div class="sb">A→D→B→P→E→C→A の順に \[\dfrac{AD}{DB}\cdot\dfrac{BP}{PE}\cdot\dfrac{EC}{CA}=1\] \(AE:EC=3:1\) より \(EC:CA=1:4\)。よって \[\dfrac23\cdot\dfrac{BP}{PE}\cdot\dfrac14=1\ \Rightarrow\ \dfrac{BP}{PE}=1\times\dfrac32\times4=6\] すなわち \(BP:PE=6:1\)。</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 面積比を出す（△EBC）</div><div class="sb">高さが同じ辺の比で面積比が決まる。\(\triangle EBC:\triangle ABC=EC:AC=1:4\) なので \(\triangle EBC=\dfrac14\triangle ABC\)。</div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> 面積比を出す（△PBC）</div><div class="sb">\(\triangle PBC:\triangle EBC=BP:BE=6:7\)。 \[\triangle PBC=\dfrac67\times\dfrac14\triangle ABC=\dfrac{3}{14}\triangle ABC\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[BP:PE=6:1,\quad \triangle PBC:\triangle ABC=3:14\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 2</h2><ol class="prac"><li>\(AD:DB=1:2,\ AE:EC=2:1\) のときの \(BP:PE\) と \(\triangle PBC:\triangle ABC\)</li><li>\(AD:DB=3:1,\ AE:EC=1:1\) のときの \(BP:PE\) と \(\triangle PBC:\triangle ABC\)</li><li>\(AD:DB=1:3,\ AE:EC=3:2\) のときの \(BP:PE\) と \(\triangle PBC:\triangle ABC\)</li></ol></div><div class="nav2"><a href="a-A-1-1-2.html">練習問題2の解答を見る</a></div><div class="nav2"><a class="g" href="e-A-1-1-1.html">← 例題1</a><a class="g" href="e-A-1-1-3.html">例題3 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

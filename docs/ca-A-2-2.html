@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>章末問題の解答（確率） | 数ラボ鬼</title>
+<meta name="description" content="確率の章末問題の解答。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-A.html">数学A</a> ＞ <a href="u-A-2-2.html">確率</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">章末問題の解答</span></h1><div class="item"><p class="pq">1.　1個のさいころを6回投げて、1の目がちょうど3回出る確率と、1の目が少なくとも1回出る確率を求めよ。</p><div class="sb">\(_6C_3\left(\dfrac16\right)^3\left(\dfrac56\right)^3=20\times\dfrac{125}{46656}=\dfrac{2500}{46656}=\dfrac{625}{11664}\)。少なくとも1回：\(1-\left(\dfrac56\right)^6=1-\dfrac{15625}{46656}=\dfrac{31031}{46656}\)。<p class="small">（例題1の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[\dfrac{625}{11664},\ \dfrac{31031}{46656}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">2.　4個のさいころを同時に投げるとき、出る目の積が4の倍数になる確率を求めよ。</p><div class="sb">4の倍数でないのは、(ア)4個とも奇数：\(3^4=81\)。(イ)偶数が1個で 2 か 6：\(4\times2\times3^3=216\)。合計297通り。全体 \(6^4=1296\)。 \[1-\dfrac{297}{1296}=\dfrac{999}{1296}=\dfrac{37}{48}\]<p class="small">（例題2の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[\dfrac{37}{48}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">3.　先に4勝した方が優勝する。各試合でAが勝つ確率は \(\dfrac13\)。A が2勝、B が1勝の時点から A が優勝する確率を求めよ。</p><div class="sb">Aはあと2勝、Bはあと3勝。最大4試合。4試合のうちAが2勝以上：\[_4C_2\left(\dfrac13\right)^2\left(\dfrac23\right)^2+{}_4C_3\left(\dfrac13\right)^3\dfrac23+\left(\dfrac13\right)^4=\dfrac{24+8+1}{81}=\dfrac{33}{81}=\dfrac{11}{27}\]<p class="small">（例題3の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[\dfrac{11}{27}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">4.　赤玉4個、白玉4個、青玉2個の袋から同時に4個取り出すとき、3色すべて出る確率を求めよ。</p><div class="sb">全体 \(_{10}C_4=210\)。赤2個：\(_4C_2\times4\times2=48\)、白2個：\(_4C_2\times4\times2=48\)、青2個：\(_2C_2\times4\times4=16\)。合計112。 \[\dfrac{112}{210}=\dfrac8{15}\]<p class="small">（例題4の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[\dfrac8{15}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">5.　6人でじゃんけんを1回するとき、勝者がちょうど2人になる確率を求めよ。</p><div class="sb">全体 \(3^6=729\)。勝つ2人の選び方 \(_6C_2=15\)、勝つ手 3通り → \(45\)。 \[\dfrac{45}{729}=\dfrac5{81}\]<p class="small">（例題5の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[\dfrac5{81}\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="c-A-2-2.html">← 章末問題</a><a class="g" href="u-A-2-2.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

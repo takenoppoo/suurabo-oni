@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題2 余事象を使って確率を求める（確率） | 数ラボ鬼</title>
+<meta name="description" content="確率の難問 例題2：余事象を使って確率を求める">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-A.html">数学A</a> ＞ <a href="u-A-2-2.html">確率</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 2</span><span class="ls">場合の数と確率　余事象を使って確率を求める</span></h1><div class="qbox"><p>3個のさいころを同時に投げるとき、出る目の積が4の倍数になる確率を求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>『積が4の倍数』を直接数えるのは大変。<b>余事象（4の倍数でない）</b>を数える。積が4の倍数でないのは、<b>2の素因数が 0個または1個</b>のとき。</p><div class="kotsu"><b>コツ</b>積の4の倍数は『2が2個以上』。ならば余事象は『2が0個か1個』だけ。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 余事象を整理する</div><div class="sb">目の積が4の倍数でないのは、次のどちらか。<br>(ア) 3つとも奇数（1, 3, 5）<br>(イ) 偶数がちょうど1つで、その偶数が 2 か 6（因数2が1個）。4 は因数2が2個なので不可。</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> (ア) の場合の数</div><div class="sb">\[3^3=27\ (\text{通り})\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> (イ) の場合の数</div><div class="sb">偶数になるさいころの選び方 3通り、その目が 2 か 6 で2通り、残り2個は奇数で \(3^2=9\) 通り。 \[3\times2\times9=54\ (\text{通り})\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> 確率を求める</div><div class="sb">余事象は \(27+54=81\) 通り。全体は \(6^3=216\) 通り。 \[1-\dfrac{81}{216}=1-\dfrac{3}{8}=\dfrac58\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[\dfrac58\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 2</h2><ol class="prac"><li>2個のさいころを同時に投げるとき、出る目の積が4の倍数になる確率</li><li>4個のさいころを同時に投げるとき、出る目の積が偶数になる確率</li><li>3個のさいころを同時に投げるとき、出る目の積が3の倍数になる確率</li></ol></div><div class="nav2"><a href="a-A-2-2-2.html">練習問題2の解答を見る</a></div><div class="nav2"><a class="g" href="e-A-2-2-1.html">← 例題1</a><a class="g" href="e-A-2-2-3.html">例題3 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題1 反復試行の確率と『少なくとも』（確率） | 数ラボ鬼</title>
+<meta name="description" content="確率の難問 例題1：反復試行の確率と『少なくとも』">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-A.html">数学A</a> ＞ <a href="u-A-2-2.html">確率</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 1</span><span class="ls">場合の数と確率　反復試行の確率と『少なくとも』</span></h1><div class="qbox"><p>1個のさいころを5回投げる。1の目がちょうど2回出る確率と、1の目が少なくとも1回出る確率を求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p><b>反復試行の確率</b>：1回の試行で事象Aが起こる確率を \(p\) とするとき、\(n\) 回の試行でAがちょうど \(r\) 回起こる確率は \[{}_nC_r\,p^r(1-p)^{n-r}\] 『少なくとも1回』は<b>余事象</b>（1回も起こらない）を使って \(1-(\text{1回も起こらない確率})\)。</p><div class="kotsu"><b>コツ</b>『何回目に出るか』の選び方が nCr 通り。出る回の確率と出ない回の確率を、回数分かけ合わせる。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 1回の確率を決める</div><div class="sb">1の目が出る確率 \(p=\dfrac16\)、出ない確率 \(\dfrac56\)。</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> ちょうど2回</div><div class="sb">5回のうち、1の目が出る2回の選び方は \(_5C_2=10\) 通り。 \[10\times\left(\dfrac16\right)^2\left(\dfrac56\right)^3=10\times\dfrac{1}{36}\times\dfrac{125}{216}=\dfrac{1250}{7776}=\dfrac{625}{3888}\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 少なくとも1回（余事象）</div><div class="sb">1回も出ない確率は \(\left(\dfrac56\right)^5=\dfrac{3125}{7776}\)。 \[1-\dfrac{3125}{7776}=\dfrac{4651}{7776}\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[\dfrac{625}{3888},\quad \dfrac{4651}{7776}\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 1</h2><ol class="prac"><li>1個のさいころを4回投げて、1の目がちょうど2回出る確率と、1の目が少なくとも1回出る確率</li><li>1枚の硬貨を6回投げて、表がちょうど3回出る確率と、表が少なくとも1回出る確率</li><li>1個のさいころを5回投げて、3の倍数の目がちょうど3回出る確率と、3の倍数の目が少なくとも1回出る確率</li></ol></div><div class="nav2"><a href="a-A-2-2-1.html">練習問題1の解答を見る</a></div><div class="nav2"><a class="g" href="u-A-2-2.html">← 単元ページ</a><a class="g" href="e-A-2-2-2.html">例題2 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

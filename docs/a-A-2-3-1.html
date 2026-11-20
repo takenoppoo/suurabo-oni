@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>練習問題1の解答（条件付き確率・期待値） | 数ラボ鬼</title>
+<meta name="description" content="条件付き確率・期待値 練習問題1の解答">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-A.html">数学A</a> ＞ <a href="u-A-2-3.html">条件付き確率・期待値</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">練習問題 1 の解答　条件付き確率（さいころ）</span></h1><div class="item"><p class="pq">(1)　3個のさいころを同時に投げる。目の和が10以上であるとき、3つの目がすべて異なる確率</p><div class="sb">和が10以上は、和が11以下と同数。和が10の場合の数は27（組：\(\{1,3,6\}6,\{1,4,5\}6,\{2,2,6\}3,\{2,3,5\}6,\{2,4,4\}3,\{3,3,4\}3\)）。和が11以上が108なので \(n(A)=108+27=135\)。3つとも異なる組は、例題の10組に、和が10の \(\{1,3,6\},\{1,4,5\},\{2,3,5\}\) の3組を加えた13組で \(13\times6=78\)。 \[\dfrac{78}{135}=\dfrac{26}{45}\]</div><div class="abox"><p class="ah">【答案】</p>\[\dfrac{26}{45}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(2)　3個のさいころを同時に投げる。目の和が12以上であるとき、3つの目がすべて異なる確率</p><div class="sb">和が12以上は、和が11以上（108）から和が11の場合（27）を除いて \(n(A)=81\)。和が11で3つとも異なる組は \(\{1,4,6\},\{2,3,6\},\{2,4,5\}\) の3組。例題の10組から除いて7組で \(7\times6=42\)。 \[\dfrac{42}{81}=\dfrac{14}{27}\]</div><div class="abox"><p class="ah">【答案】</p>\[\dfrac{14}{27}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(3)　3個のさいころを同時に投げる。目の和が8以下であるとき、3つの目がすべて異なる確率</p><div class="sb">和が8以下は、和が13以上と同数。和が3, 4, 5, 6, 7, 8 の場合の数は \(1,3,6,10,15,21\) で \(n(A)=56\)。3つとも異なる組は \(\{1,2,3\},\{1,2,4\},\{1,2,5\},\{1,3,4\}\) の4組で \(4\times6=24\)。 \[\dfrac{24}{56}=\dfrac37\]</div><div class="abox"><p class="ah">【答案】</p>\[\dfrac37\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="e-A-2-3-1.html">← 例題1にもどる</a><a class="g" href="u-A-2-3.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

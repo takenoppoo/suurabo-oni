@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>練習問題5の解答（確率） | 数ラボ鬼</title>
+<meta name="description" content="確率 練習問題5の解答">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-A.html">数学A</a> ＞ <a href="u-A-2-2.html">確率</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">練習問題 5 の解答　じゃんけんの確率</span></h1><div class="item"><p class="pq">(1)　3人でじゃんけんを1回するとき、勝者がちょうど1人になる確率、あいこになる確率</p><div class="sb">全体 \(3^3=27\)。勝者1人：\(_3C_1\times3=9\) → \(\dfrac9{27}=\dfrac13\)。勝者2人：\(_3C_2\times3=9\)。あいこ：\(27-9-9=9\) → \(\dfrac9{27}=\dfrac13\)。</div><div class="abox"><p class="ah">【答案】</p>\[\dfrac13,\ \dfrac13\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(2)　5人でじゃんけんを1回するとき、勝者がちょうど2人になる確率、あいこになる確率</p><div class="sb">全体 \(3^5=243\)。勝者2人：\(_5C_2\times3=30\) → \(\dfrac{30}{243}=\dfrac{10}{81}\)。勝者1人 \(15\)、3人 \(30\)、4人 \(15\) で勝負がつくのは合計 \(15+30+30+15=90\)。あいこ \(243-90=153\) → \(\dfrac{153}{243}=\dfrac{17}{27}\)。</div><div class="abox"><p class="ah">【答案】</p>\[\dfrac{10}{81},\ \dfrac{17}{27}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(3)　4人でじゃんけんを1回するとき、勝者がちょうど1人になる確率、勝者がちょうど3人になる確率</p><div class="sb">全体 \(3^4=81\)。勝者1人：\(_4C_1\times3=12\) → \(\dfrac{12}{81}=\dfrac4{27}\)。勝者3人：\(_4C_3\times3=12\) → \(\dfrac4{27}\)。</div><div class="abox"><p class="ah">【答案】</p>\[\dfrac4{27},\ \dfrac4{27}\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="e-A-2-2-5.html">← 例題5にもどる</a><a class="g" href="u-A-2-2.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

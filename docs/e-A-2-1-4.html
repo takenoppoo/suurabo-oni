@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題4 最短経路の数（通らない点がある場合）（場合の数（順列・組合せ）） | 数ラボ鬼</title>
+<meta name="description" content="場合の数（順列・組合せ）の難問 例題4：最短経路の数（通らない点がある場合）">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-A.html">数学A</a> ＞ <a href="u-A-2-1.html">場合の数（順列・組合せ）</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 4</span><span class="ls">場合の数と確率　最短経路の数（通らない点がある場合）</span></h1><div class="qbox"><p>図のように、東西に5本、南北に4本の道が碁盤の目状に走っている。A 地点から B 地点まで、遠まわりせずに行く道順のうち、点 P を通らないものは何通りか。<div class="figbox"><img class="fig" src="fig/a21_e4.svg" style="width:46%" alt="a21_e4"></div></p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>遠まわりしない道順は、『東へ1区画』を \(a\) 回、『北へ1区画』を \(b\) 回の並べ方で、<b>同じものを含む順列</b> \(\dfrac{(a+b)!}{a!\,b!}={}_{a+b}C_a\)。<br>『P を通らない』は、<b>余事象</b>で（全体）－（P を通る）。P を通る道順は、A→P と P→B の積の法則。</p><div class="kotsu"><b>コツ</b>『〜しない』は、全部から『〜する』を引くのが近道。通る道順は『前半×後半』。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 全体の道順</div><div class="sb">A から B まで、東へ5区画、北へ4区画。 \[_{9}C_4=126\ (\text{通り})\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> P を通る道順</div><div class="sb">A→P は東2、北2：\(_4C_2=6\) 通り。P→B は東3、北2：\(_5C_2=10\) 通り。 \[6\times10=60\ (\text{通り})\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> P を通らない道順</div><div class="sb">\[126-60=66\ (\text{通り})\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[66\ \text{通り}\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 4</h2><ol class="prac"><li>東へ6区画、北へ4区画進む A→B で、A から東へ3区画、北へ2区画進んだ点 P を通らない道順の数</li><li>東へ4区画、北へ4区画進む A→B で、A から東へ2区画、北へ2区画進んだ点 P を通らない道順の数</li><li>東へ5区画、北へ3区画進む A→B で、A から東へ3区画、北へ1区画進んだ点 P を通らない道順の数</li></ol></div><div class="nav2"><a href="a-A-2-1-4.html">練習問題4の解答を見る</a></div><div class="nav2"><a class="g" href="e-A-2-1-3.html">← 例題3</a><a class="g" href="e-A-2-1-5.html">例題5 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>
