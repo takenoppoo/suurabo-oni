@@ -1,5 +1,5 @@
 
-.lesson{line-height:1.65}
+.lesson{line-height:1.65;position:relative;z-index:1;background:#fff;padding:14px 22px 18px;margin:6px 0 16px;border-radius:14px;box-shadow:0 0 0 1px #eadadd,0 4px 18px rgba(0,0,0,.06);overflow-wrap:anywhere}
 .lesson .lh{display:flex;align-items:center;gap:10px;border-bottom:3px solid #b81f36;padding-bottom:6px;margin:0 0 10px;flex-wrap:wrap}
 .lesson .lb{background:#b81f36;color:#fff;font-weight:700;padding:3px 12px;font-size:1.12em;white-space:nowrap}
 .lesson .ls{font-size:.98em;color:#333}

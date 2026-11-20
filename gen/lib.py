@@ -45,7 +45,7 @@ def numline(ax,lo,hi,ticks,labels=None,segs=(),pts=(),pad=0.8):
 
 # ---------- CSS ----------
 CSS='''
-.lesson{line-height:1.65}
+.lesson{line-height:1.65;position:relative;z-index:1;background:#fff;padding:14px 22px 18px;margin:6px 0 16px;border-radius:14px;box-shadow:0 0 0 1px #eadadd,0 4px 18px rgba(0,0,0,.06);overflow-wrap:anywhere}
 .lesson .lh{display:flex;align-items:center;gap:10px;border-bottom:3px solid #b81f36;padding-bottom:6px;margin:0 0 10px;flex-wrap:wrap}
 .lesson .lb{background:#b81f36;color:#fff;font-weight:700;padding:3px 12px;font-size:1.12em;white-space:nowrap}
 .lesson .ls{font-size:.98em;color:#333}
@@ -86,7 +86,11 @@ open(os.path.join(OUT,"lesson.css"),"w",encoding="utf-8").write(CSS)
 # ---------- 部品 ----------
 def lh(badge,sub): return f'<h1 class="lh"><span class="lb">{badge}</span><span class="ls">{sub}</span></h1>'
 def isM(p): return p.startswith("\\(") or p.startswith("<")
-def M(p): return p if isM(p) else I(p)
+import re as _re
+def M(p):
+    if isM(p) or "\\(" in p: return p
+    if _re.search(r'[\u3040-\u30ff\u4e00-\u9fff]',p) and "\\" not in p: return p.replace("<","&lt;")  # 日本語の文は数式にせず本文として折り返す
+    return I(p)
 
 def ex_block(i,e,sub,with_prac=True):
     pr="".join(f"<li>{M(p)}</li>" for p in e['practice'])
