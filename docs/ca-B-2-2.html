@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>章末問題の解答（二項分布・正規分布） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="二項分布・正規分布の章末問題の解答。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-B.html">数学B</a> ＞ <a href="u-B-2-2.html">二項分布・正規分布</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">章末問題の解答</span></h1><div class="item"><p class="pq">1.　1回の試行で事象 \(A\) が起こる確率が \(\dfrac{1}{6}\) である。この試行を \(5\) 回くり返すとき、\(A\) が起こる回数 \(X\) について、\(P(X=2)\)、\(E(X)\)、\(V(X)\)、\(\sigma(X)\) を求めよ。</p><div class="sb"><p><b>二項分布の確率</b></p><p>\(X\sim B(5,\ \dfrac{1}{6})\)。\(P(X=k)={}_n\mathrm{C}_kp^kq^{n-k}\ (q=1-p)\)。</p><p><b>\(P(X=2)\)</b></p>\[P(X=2)={}_{5}\mathrm{C}_{2}\left(\dfrac{1}{6}\right)^{2}\left(\dfrac{5}{6}\right)^{3}=10\times\dfrac{125}{7776}=\dfrac{625}{3888}\]<p><b>期待値・分散・標準偏差</b></p><p>\(E(X)=np,\ V(X)=npq,\ \sigma(X)=\sqrt{npq}\)。</p>\[E(X)=5\times\dfrac{1}{6}=\dfrac{5}{6},\quad V(X)=5\times\dfrac{1}{6}\times\dfrac{5}{6}=\dfrac{25}{36},\quad \sigma(X)=\dfrac{5}{6}\]<p class="small">（例題1の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[P=\dfrac{625}{3888},\ E=\dfrac{5}{6},\ V=\dfrac{25}{36},\ \sigma=\dfrac{5}{6}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">2.　1回の試行で事象 \(A\) が起こる確率が \(\dfrac{1}{3}\) である。この試行を \(5\) 回くり返すとき、\(A\) が \(4\) 回以上起こる確率を求めよ。</p><div class="sb"><p><b>直接たす</b></p><p>\(X\geqq4\) は \(X=4,\ 5\) の和。</p><p><b>各確率</b></p>\[P(X=4)=\dfrac{10}{243}\\ P(X=5)=\dfrac{1}{243}\]<p><b>答え</b></p>\[P(X\geqq4)=\dfrac{10}{243}+\dfrac{1}{243}=\dfrac{11}{243}\]<p class="small">（例題2の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[\dfrac{11}{243}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">3.　確率変数 \(X\) が正規分布 \(N(30,\ 4^2)\) に従うとき、\(P(26\leqq X\leqq 38)\) を求めよ。（正規分布表）\(p(u)=P(0\leqq Z\leqq u)\)：\(p(0.5)=0.1915,\ p(1.0)=0.3413,\ p(1.5)=0.4332,\ p(2.0)=0.4772,\ p(2.5)=0.4938,\ p(3.0)=0.4987\)</p><div class="sb"><p><b>標準化する</b></p><p>\(Z=\dfrac{X-m}{\sigma}\) は標準正規分布 \(N(0,1)\) に従う。</p>\[Z=\dfrac{X-30}{4}\]<p><b>\(Z\) の範囲に直す</b></p>\[P(26\leqq X\leqq38)=P(-1\leqq Z\leqq2)\]<p><b>正規分布表を使う</b></p><p>\(p(u)=P(0\leqq Z\leqq u)\)、左右対称で \(P(Z\geqq0)=0.5\)。</p>\[=p(1)+p(2)\]\[=0.8185\]<p class="small">（例題3の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[0.8185\]<p class="mark">答</p></div></div><div class="item"><p class="pq">4.　1回の試行で事象 \(A\) が起こる確率が \(\dfrac{1}{2}\) である。この試行を \(64\) 回くり返すとき、\(A\) が起こる回数を \(X\) とする。正規分布で近似して \(P(28\leqq X\leqq40)\) を求めよ。（正規分布表）\(p(u)=P(0\leqq Z\leqq u)\)：\(p(0.5)=0.1915,\ p(1.0)=0.3413,\ p(1.5)=0.4332,\ p(2.0)=0.4772,\ p(2.5)=0.4938,\ p(3.0)=0.4987\)</p><div class="sb"><p><b>平均と標準偏差</b></p><p>\(X\sim B(64,\ \dfrac{1}{2})\)。\(n\) が大きいので正規分布 \(N(m,\sigma^2)\) で近似できる。</p>\[m=np=32,\quad \sigma=\sqrt{npq}=\sqrt{16}=4\]<p><b>標準化する</b></p>\[Z=\dfrac{X-32}{4}\]\[P(28\leqq X\leqq40)=P(-1\leqq Z\leqq2)\]<p><b>正規分布表で求める</b></p>\[=p(1)+p(2)=0.8185\]<p class="small">（例題4の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[0.8185\]<p class="mark">答</p></div></div><div class="item"><p class="pq">5.　母平均 \(10\)、母標準偏差 \(4\) の母集団から、大きさ \(64\) の標本を無作為に抽出する。標本平均 \(\overline X\) について \(P(\overline X\geqq\dfrac{43}{4})\) を求めよ。（正規分布表）\(p(u)=P(0\leqq Z\leqq u)\)：\(p(0.5)=0.1915,\ p(1.0)=0.3413,\ p(1.5)=0.4332,\ p(2.0)=0.4772,\ p(2.5)=0.4938,\ p(3.0)=0.4987\)</p><div class="sb"><p><b>標本平均の分布</b></p><p>母平均 \(m=10\)、母標準偏差 \(\sigma=4\)、標本の大きさ \(n=64\)。</p>\[E(\overline X)=m=10,\quad \sigma(\overline X)=\dfrac{\sigma}{\sqrt n}=\dfrac{4}{\sqrt{64}}=\dfrac{1}{2}\]<p>\(n\) が大きいので \(\overline X\) は \(N\left(10,\ \dfrac{1}{2}^2\right)\) に従うとみなせる。</p><p><b>標準化する</b></p>\[Z=\dfrac{\overline X-10}{\dfrac{1}{2}}\]\[P(\overline X\geqq\dfrac{43}{4})=P(Z\geqq\dfrac{3}{2})\]<p><b>正規分布表で求める</b></p>\[=0.5-p(\dfrac{3}{2})=0.0668\]<p class="small">（例題5の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[0.0668\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="c-B-2-2.html">← 章末問題</a><a class="g" href="u-B-2-2.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

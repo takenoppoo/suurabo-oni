@@ -41,7 +41,7 @@ def b2(a_,k):
     return prob,steps,r"\text{(1) }%s\quad \text{(2) }%s\quad \text{(3) }%s"%(L(s2),L(s3),L(d2))
 V=[(2,Q(5,2)),(3,Q(10,3)),(2,Q(17,4)),(5,Q(26,5)),(3,Q(82,9))]
 o=[b2(*v) for v in V]
-build(Z,CH,"$a^x+a^{-x}$ の値からの展開",o,
+build(Z,CH,"a^x+a^(-x) の値からの展開",o,
  r"<p>$t=a^x$ とおくと $a^{-x}=\dfrac1t$。対称式の公式を使う：$$t^2+\dfrac1{t^2}=\left(t+\dfrac1t\right)^2-2,\quad t^3+\dfrac1{t^3}=\left(t+\dfrac1t\right)^3-3\left(t+\dfrac1t\right),\quad \left(t-\dfrac1t\right)^2=\left(t+\dfrac1t\right)^2-4$$ 差の符号は $t>1$ か $0<t<1$ かで決める。</p>",
  "$t$ と $\\frac1t$ は和と積（積はいつも1）の関係。和さえ分かれば、2乗・3乗・差が出てくる。",2)
 # ===== 例題3 指数方程式 =====

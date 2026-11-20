@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>章末問題の解答（等差数列・等比数列） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="等差数列・等比数列の章末問題の解答。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-B.html">数学B</a> ＞ <a href="u-B-1-1.html">等差数列・等比数列</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">章末問題の解答</span></h1><div class="item"><p class="pq">1.　等差数列 \(\{a_n\}\) は第 3 項が \(-5\)、第 7 項が \(3\) である。一般項 \(a_n\) と、初項から第 25 項までの和 \(S_{25}\) を求めよ。</p><div class="sb"><p><b>初項 \(a\) と公差 \(d\) の式を作る</b></p><p>\(a_n=a+(n-1)d\) より</p>\[\begin{cases}a+2 d=-5\\ a+6 d=3\end{cases}\]<p><b>連立方程式を解く</b></p><p>辺々ひく：</p>\[4 d=8\ \Rightarrow\ d=2\]\[a=-5-2\times 2=-9\]<p><b>一般項</b></p>\[a_n=-9+(n-1)\times\left(2\right)=2 n - 11\]<p><b>初項から第 25 項までの和</b></p><p>\(S_n=\dfrac{n\{2a+(n-1)d\}}{2}\)。</p>\[S_{25}=\dfrac{25\{2\times-9+24\times\left(2\right)\}}{2}=375\]<p class="small">（例題1の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[a_n=2 n - 11,\ S_{25}=375\]<p class="mark">答</p></div></div><div class="item"><p class="pq">2.　等比数列 \(\{a_n\}\) は第 4 項が \(-16\)、第 7 項が \(128\) である。一般項 \(a_n\) と、初項から第 8 項までの和 \(S_{8}\) を求めよ。</p><div class="sb"><p><b>\(a,\ r\) の式を作る</b></p><p>\(a_n=ar^{n-1}\) より</p>\[ar^{3}=-16,\quad ar^{6}=128\]<p><b>公比を求める</b></p><p>辺々わる：</p>\[r^{3}=\dfrac{128}{-16}=-8\ \Rightarrow\ r=-2\]<p>（\(3\) 乗が \(-8\) になる実数は1つだけ。）</p><p><b>初項と一般項</b></p>\[a=\dfrac{-16}{\left(-2\right)^{3}}=2\]\[a_n=2\cdot \left(-2\right)^{n-1}\]<p><b>初項から第 8 項までの和</b></p><p>\(S_n=\dfrac{a(r^n-1)}{r-1}\ (r\neq1)\)。</p>\[S_{8}=\dfrac{2\left(\left(-2\right)^{8}-1\right)}{\left(-2\right)-1}=-170\]<p class="small">（例題2の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[a_n=2\cdot\left(-2\right)^{n-1},\ S_{8}=-170\]<p class="mark">答</p></div></div><div class="item"><p class="pq">3.　初項 \(62\)、公差 \(-9\) の等差数列の初項から第 \(n\) 項までの和を \(S_n\) とする。\(S_n\) が最大となる \(n\) と、その最大値を求めよ。</p><div class="sb"><p><b>一般項</b></p>\[a_n=62+(n-1)\times(-9)=- 9 n + 71\]<p><b>正の項はどこまでか</b></p><p>公差が負なので減少数列。\(a_n>0\) となる \(n\) を調べる。</p>\[- 9 n + 71>0\ \Rightarrow\ n&lt;\dfrac{71}{9}=7.89\cdots\]<p>よって第 \(7\) 項までが正、第 \(8\) 項からは負。</p><p><b>最大になる \(n\)</b></p><p>正の項をすべて足したとき和が最大。</p>\[n=7\]<p><b>最大値</b></p>\[S_{7}=\dfrac{7\{2\times62+6\times(-9)\}}{2}=245\]<p class="small">（例題3の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[n=7,\ \text{最大値 }245\]<p class="mark">答</p></div></div><div class="item"><p class="pq">4.　等差数列をなす3つの数があり、和が \(9\)、積が \(-21\) である。この3数を求めよ。</p><div class="sb"><p><b>3数を文字でおく</b></p><p>等差数列をなす3数は、公差を \(d\)、中央を \(a\) として</p>\[a-d,\quad a,\quad a+d\]<p><b>和から \(a\)</b></p>\[(a-d)+a+(a+d)=3a=9\ \Rightarrow\ a=3\]<p><b>積から \(d\)</b></p>\[(a-d)\,a\,(a+d)=a(a^2-d^2)=-21\]\[3\left(9-d^2\right)=-21\ \Rightarrow\ d^2=16\ \Rightarrow\ d=\pm4\]<p><b>3数を答える</b></p>\[-1,\ 3,\ 7\]<p>（\(d\) の符号が逆でも同じ3数）</p><p class="small">（例題4の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[-1,\ 3,\ 7\]<p class="mark">答</p></div></div><div class="item"><p class="pq">5.　等比数列をなす3つの数があり、和が \(7\)、積が \(-27\) である。この3数を求めよ。</p><div class="sb"><p><b>3数を文字でおく</b></p><p>等比数列をなす3数を \(a,\ b,\ c\) とすると \(b^2=ac\)。</p>\[a+b+c=7,\quad abc=-27\]<p><b>積から \(b\)</b></p>\[abc=b\cdot b^2=b^3=-27\ \Rightarrow\ b=-3\]<p><b>\(a,\ c\) の和と積</b></p>\[a+c=7-\left(-3\right)=10,\quad ac=b^2=9\]<p><b>2次方程式で \(a,\ c\) を求める</b></p><p>\(a,c\) は次の2次方程式の解。</p>\[t^2-\left(10\right)t+9=0\]\[\left(t - 9\right) \left(t - 1\right)=0\ \Rightarrow\ t=1,\ 9\]<p>3数は 小さい方から順に</p>\[1,\ -3,\ 9\quad(\text{または逆順})\]<p class="small">（例題5の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[1,\ -3,\ 9\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="c-B-1-1.html">← 章末問題</a><a class="g" href="u-B-1-1.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

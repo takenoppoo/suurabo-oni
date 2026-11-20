@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題2 階差型 a(n+1)=a(n)+f(n)（漸化式） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="漸化式の難問 例題2：階差型 a(n+1)=a(n)+f(n)">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-B.html">数学B</a> ＞ <a href="u-B-1-3.html">漸化式</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 2</span><span class="ls">数列　階差型 a(n+1)=a(n)+f(n)</span></h1><div class="qbox"><p>\(a_1=1,\ \ a_{n+1}=a_n+2 n + 1\) で定められる数列の一般項を求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>\(a_{n+1}-a_n=f(n)\) は階差数列が \(f(n)\)。\(n\geqq2\) で \(a_n=a_1+\displaystyle\sum_{k=1}^{n-1}f(k)\) を計算し、\(n=1\) を確かめる。</p><div class="kotsu"><b>コツ</b>1歩ごとの上がり幅が分かっている。足し合わせれば現在地。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 階差が \(n\) の式</div><div class="sb"><p>\(a_{n+1}-a_n=2 n + 1\)。階差数列 \(b_n=2 n + 1\)。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> \(a_n\) を和で表す</div><div class="sb"><p>\(n\geqq2\) のとき</p>\[a_n=a_1+\sum_{k=1}^{n-1}\left(2 k + 1\right)=1+\sum_{k=1}^{n-1}\left(2 k + 1\right)\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> Σを計算する</div><div class="sb">\[a_n=1+\left(2\right)\cdot\dfrac{(n-1)n}{2}+\left(1\right)(n-1)=n^{2}\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> \(n=1\) の確認</div><div class="sb"><p>\(1\)、つまり \(a_1=1\) と一致するので \(n=1\) でも成り立つ。</p></div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[a_n=n^{2}\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 2</h2><ol class="prac"><li>\(a_1=2,\ \ a_{n+1}=a_n+3 n - 1\) で定められる数列の一般項を求めよ。</li><li>\(a_1=5,\ \ a_{n+1}=a_n+4 n\) で定められる数列の一般項を求めよ。</li><li>\(a_1=1,\ \ a_{n+1}=a_n+- 2 n + 5\) で定められる数列の一般項を求めよ。</li></ol></div><div class="nav2"><a href="a-B-1-3-2.html">練習問題2の解答を見る</a></div><div class="nav2"><a class="g" href="e-B-1-3-1.html">← 例題1</a><a class="g" href="e-B-1-3-3.html">例題3 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

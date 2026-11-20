@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題5 3数が等比数列をなす（等差数列・等比数列） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="等差数列・等比数列の難問 例題5：3数が等比数列をなす">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-B.html">数学B</a> ＞ <a href="u-B-1-1.html">等差数列・等比数列</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 5</span><span class="ls">数列　3数が等比数列をなす</span></h1><div class="qbox"><p>等比数列をなす3つの数があり、和が \(14\)、積が \(64\) である。この3数を求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>3数 \(a,b,c\) が等比数列 \(\iff b^2=ac\)。積 \(abc=b^3\) から<b>中央の \(b\)</b>がすぐ決まり、\(a+c\) と \(ac\) から2次方程式で \(a,c\) を求める。</p><div class="kotsu"><b>コツ</b>真ん中を決めれば、両端は「和と積」が分かっている2数探しに変わる。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 3数を文字でおく</div><div class="sb"><p>等比数列をなす3数を \(a,\ b,\ c\) とすると \(b^2=ac\)。</p>\[a+b+c=14,\quad abc=64\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 積から \(b\)</div><div class="sb">\[abc=b\cdot b^2=b^3=64\ \Rightarrow\ b=4\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> \(a,\ c\) の和と積</div><div class="sb">\[a+c=14-\left(4\right)=10,\quad ac=b^2=16\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> 2次方程式で \(a,\ c\) を求める</div><div class="sb"><p>\(a,c\) は次の2次方程式の解。</p>\[t^2-\left(10\right)t+16=0\]\[\left(t - 8\right) \left(t - 2\right)=0\ \Rightarrow\ t=2,\ 8\]<p>3数は 小さい方から順に</p>\[2,\ 4,\ 8\quad(\text{または逆順})\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[2,\ 4,\ 8\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 5</h2><ol class="prac"><li>等比数列をなす3つの数があり、和が \(21\)、積が \(216\) である。この3数を求めよ。</li><li>等比数列をなす3つの数があり、和が \(31\)、積が \(125\) である。この3数を求めよ。</li><li>等比数列をなす3つの数があり、和が \(26\)、積が \(216\) である。この3数を求めよ。</li></ol></div><div class="nav2"><a href="a-B-1-1-5.html">練習問題5の解答を見る</a></div><div class="nav2"><a class="g" href="e-B-1-1-4.html">← 例題4</a><a class="g" href="c-B-1-1.html">章末問題 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>
