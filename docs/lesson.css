@@ -1,5 +1,5 @@
 
-.lesson{line-height:1.65;overflow-wrap:anywhere}.lesson .katex-display{overflow-x:auto;overflow-y:hidden;max-width:100%}.lesson svg,.lesson img{max-width:100%;height:auto}
+.lesson{line-height:1.65;overflow-wrap:anywhere}.lesson .katex-display{overflow-x:auto;overflow-y:hidden;max-width:100%;padding:.5em 0 .45em}.lesson svg,.lesson img{max-width:100%;height:auto}
 .lesson .lh{display:flex;align-items:center;gap:10px;border-bottom:3px solid #b81f36;padding-bottom:6px;margin:0 0 10px;flex-wrap:wrap}
 .lesson .lb{background:#b81f36;color:#fff;font-weight:700;padding:3px 12px;font-size:1.12em;white-space:nowrap}
 .lesson .ls{font-size:.98em;color:#333}
