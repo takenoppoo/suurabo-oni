@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>章末問題の解答（微分法（接線・増減・極値）） | 数ラボ鬼</title>
+<meta name="description" content="微分法（接線・増減・極値）の章末問題の解答。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-2.html">数学II</a> ＞ <a href="u-2-5-1.html">微分法（接線・増減・極値）</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">章末問題の解答</span></h1><div class="item"><p class="pq">1.　曲線 \(y=2 x^{3} - 3 x^{2} + 1\) 上の点 \((2,\ 5)\) における接線の方程式を求めよ。</p><div class="sb"><p><b>導関数を求める</b></p>\[f'(x)=6 x^{2} - 6 x\]<p><b>接線の傾き（\(x=2\) での微分係数）</b></p>\[f'(2)=12\]<p><b>接点の座標</b></p>\[f(2)=5\]<p>接点は \((2,\ 5)\)。</p><p><b>接線の方程式</b></p><p>\(y-f(a)=f'(a)(x-a)\) に代入する。</p>\[y - 5=12\left(x - 2\right)\ \Rightarrow\ y=12 x - 19\]<div class="figbox"><img class="fig" src="fig/i251_a5.svg" style="width:54%" alt="i251_a5"></div><p class="small">（例題1の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[y=12 x - 19\]<p class="mark">答</p></div></div><div class="item"><p class="pq">2.　点 \(P(-2,\ -8)\) から曲線 \(y=x^{3}\) にひいた接線の方程式をすべて求めよ。</p><div class="sb"><p><b>接点を \((t,\ f(t))\) とおく</b></p><p>\(f'(x)=3 x^{2}\) より、接点 \(\left(t,\ f(t)\right)\) での接線は</p>\[y-t^{3}=3 t^{2}\left(x-t\right)\]\[y=- 2 t^{3} + 3 t^{2} x\]<p><b>点 \(P\) を通る条件</b></p><p>\(x=-2,\ y=-8\) を代入する（\(P\) は曲線上の点でもあるが、\(P\) を通る接線は接点が \(P\) とは限らない）。</p>\[-8=- 2 t^{3} - 6 t^{2}\]\[- 2 t^{3} - 6 t^{2} + 8=0\]<p><b>\(t\) を求める</b></p>\[- 2 \left(t - 1\right) \left(t + 2\right)^{2}=0\ \Rightarrow\ t=-2,\ 1\]<p><b>接線の方程式</b></p><p>\(t=-2\) のとき \(y=12 x + 16\)</p><br><p>\(t=1\) のとき \(y=3 x - 2\)</p><div class="figbox"><img class="fig" src="fig/i251_b10.svg" style="width:54%" alt="i251_b10"></div><p class="small">（例題2の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[y=12 x + 16,\ y=3 x - 2\]<p class="mark">答</p></div></div><div class="item"><p class="pq">3.　関数 \(f(x)=x^{3} - 12 x + 3\) の増減を調べ、極値を求めよ。また、グラフの概形をかけ。</p><div class="sb"><p><b>導関数を求める</b></p>\[f'(x)=3 x^{2} - 12=3 \left(x - 2\right) \left(x + 2\right)\]<p><b>\(f'(x)=0\) を解く</b></p>\[f'(x)=0\ \Rightarrow\ x=-2,\ 2\]<p><b>増減表をかく</b></p><p>\(f'(x)\) の符号は、各区間の値を代入して調べる。</p><table class="tbl"><tr><th>\(x\)</th><td></td><td>\(-2\)</td><td></td><td>\(2\)</td><td></td></tr><tr><th>\(f'(x)\)</th><td>\(+\)</td><td>\(0\)</td><td>\(-\)</td><td>\(0\)</td><td>\(+\)</td></tr><tr><th>\(f(x)\)</th><td>\(\nearrow\)</td><td>\(19\)<br><small>極大</small></td><td>\(\searrow\)</td><td>\(-13\)<br><small>極小</small></td><td>\(\nearrow\)</td></tr></table><p><b>極値を答える</b></p><p>極大値 \(19\)（\(x=-2\)）、極小値 \(-13\)（\(x=2\)）。グラフは次のようになる。</p><div class="figbox"><img class="fig" src="fig/i251_c15.svg" style="width:54%" alt="i251_c15"></div><p class="small">（例題3の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[\text{極大値 }19\ (x=-2),\quad \text{極小値 }-13\ (x=2)\]<p class="mark">答</p></div></div><div class="item"><p class="pq">4.　3次関数 \(f(x)=x^3+ax^2+bx+c\) が \(x=-1\) で極大値 \(12\)、\(x=5\) で極小値をとる。定数 \(a,\ b,\ c\) の値と、極小値を求めよ。</p><div class="sb"><p><b>極値の条件を式にする</b></p><p>\(f'(x)=3x^2+2ax+b\)。\(x=-1\)、\(x=5\) で極値をとるから \(f'(-1)=0\)、\(f'(5)=0\)。</p>\[\begin{cases}- 2 a + b + 3=0\\ 10 a + b + 75=0\end{cases}\]<p><b>\(a,\ b\) を求める</b></p>\[a=-6,\quad b=-15\]<p><b>\(c\) を求める</b></p><p>\(x=-1\) で極大値 \(12\) だから \(f(-1)=12\)。</p>\[c + 8=12\ \Rightarrow\ c=4\]<p><b>逆に確かめる（増減表）</b></p><p>\(f(x)=x^{3} - 6 x^{2} - 15 x + 4\)、\(f'(x)=3 \left(x - 5\right) \left(x + 1\right)\)。</p><table class="tbl"><tr><th>\(x\)</th><td></td><td>\(-1\)</td><td></td><td>\(5\)</td><td></td></tr><tr><th>\(f'(x)\)</th><td>\(+\)</td><td>\(0\)</td><td>\(-\)</td><td>\(0\)</td><td>\(+\)</td></tr><tr><th>\(f(x)\)</th><td>\(\nearrow\)</td><td>\(12\)<br><small>極大</small></td><td>\(\searrow\)</td><td>\(-96\)<br><small>極小</small></td><td>\(\nearrow\)</td></tr></table><p>\(x=-1\) で極大、\(x=5\) で極小になり、条件に合う。極小値は \(-96\)。</p><p class="small">（例題4の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[a=-6,\ b=-15,\ c=4,\ \text{極小値 }-96\]<p class="mark">答</p></div></div><div class="item"><p class="pq">5.　関数 \(f(x)=x^{3} - 12 x + 3\ (-3\leqq x\leqq 3)\) の最大値と最小値、およびそのときの \(x\) の値を求めよ。</p><div class="sb"><p><b>導関数と極値の候補</b></p>\[f'(x)=3 x^{2} - 12=3 \left(x - 2\right) \left(x + 2\right)\]<p>\(f'(x)=0\ \Rightarrow\ x=-2,\ 2\)。このうち \(-3\leqq x\leqq 3\) に入るのは \(x=-2,\ 2\)。</p><p><b>増減表をかく（両端も入れる）</b></p><table class="tbl"><tr><th>\(x\)</th><td>\(-3\)</td><td></td><td>\(-2\)</td><td></td><td>\(2\)</td><td></td><td>\(3\)</td></tr><tr><th>\(f'(x)\)</th><td></td><td>\(+\)</td><td>\(0\)</td><td>\(-\)</td><td>\(0\)</td><td>\(+\)</td><td></td></tr><tr><th>\(f(x)\)</th><td>\(12\)</td><td>\(\nearrow\)</td><td>\(19\)<br><small>極大</small></td><td>\(\searrow\)</td><td>\(-13\)<br><small>極小</small></td><td>\(\nearrow\)</td><td>\(-6\)</td></tr></table><p><b>最大値・最小値</b></p><p>極値の候補と<b>両端の値</b>を比べる。</p>\[f(-3)=12,\ f(-2)=19,\ f(2)=-13,\ f(3)=-6\]<p>最大値 \(19\)（\(x=-2\)）、最小値 \(-13\)（\(x=2\)）。</p><div class="figbox"><img class="fig" src="fig/i251_e20.svg" style="width:54%" alt="i251_e20"></div><p class="small">（例題5の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[\text{最大値 }19\ (x=-2),\quad \text{最小値 }-13\ (x=2)\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="c-2-5-1.html">← 章末問題</a><a class="g" href="u-2-5-1.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

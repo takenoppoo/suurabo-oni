@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>練習問題3の解答（剰余定理・因数定理・高次方程式） | 数ラボ鬼</title>
+<meta name="description" content="剰余定理・因数定理・高次方程式 練習問題3の解答">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-2.html">数学II</a> ＞ <a href="u-2-1-5.html">剰余定理・因数定理・高次方程式</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">練習問題 3 の解答　3次方程式（因数定理＋組立除法）</span></h1><div class="item"><p class="pq">(1)　3次方程式 \(x^{3} - x - 6=0\) を解け。（複素数の範囲で）</p><div class="sb"><p><b>解の候補をしぼる</b></p><p>整数の解があれば、定数項 \(-6\) の約数のどれか。候補：\(-6,\ -3,\ -2,\ -1,\ 1,\ 2,\ 3,\ 6\)。順に代入して \(P(x)=0\) になるものを探す。</p>\[P(2)=(1)\cdot(2)^{3}+(0)\cdot(2)^{2}+(-1)\cdot(2)^{1}+(-6)=0\]<p>\(P(2)=0\) なので \(x-2\) は因数。</p><p><b>組立除法で割る</b></p><p>係数 \(1,\ 0,\ -1,\ -6\) を \(x=2\) で組立除法する。</p>\[\begin{array}{r|rrrr}2 & 1 & 0 & -1 & -6\\ &  & 2 & 4 & 6\\ \hline & 1 & 2 & 3 & 0\end{array}\]<p>商は \(x^{2} + 2 x + 3\)、余り 0。</p>\[x^{3} - x - 6=(x-2)(x^{2} + 2 x + 3)\]<p><b>2次方程式を解く</b></p><p>\(x^{2} + 2 x + 3=0\) を解の公式で解く。判別式 \(D=(2)^2-4\cdot(3)=-8\)。</p>\[x=\dfrac{-2\pm\sqrt{-8}}{2}=-1- \sqrt{2}i,\ -1+\sqrt{2}i\]<p><b>答え</b></p><p>解は \(x=2,\ -1- \sqrt{2}i,\ -1+\sqrt{2}i\)。</p></div><div class="abox"><p class="ah">【答案】</p>\[x=2,\ -1- \sqrt{2}i,\ -1+\sqrt{2}i\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(2)　3次方程式 \(x^{3} - 3 x^{2} + x + 5=0\) を解け。（複素数の範囲で）</p><div class="sb"><p><b>解の候補をしぼる</b></p><p>整数の解があれば、定数項 \(5\) の約数のどれか。候補：\(-5,\ -1,\ 1,\ 5\)。順に代入して \(P(x)=0\) になるものを探す。</p>\[P(-1)=(1)\cdot(-1)^{3}+(-3)\cdot(-1)^{2}+(1)\cdot(-1)^{1}+(5)=0\]<p>\(P(-1)=0\) なので \(x+1\) は因数。</p><p><b>組立除法で割る</b></p><p>係数 \(1,\ -3,\ 1,\ 5\) を \(x=-1\) で組立除法する。</p>\[\begin{array}{r|rrrr}-1 & 1 & -3 & 1 & 5\\ &  & -1 & 4 & -5\\ \hline & 1 & -4 & 5 & 0\end{array}\]<p>商は \(x^{2} - 4 x + 5\)、余り 0。</p>\[x^{3} - 3 x^{2} + x + 5=(x+1)(x^{2} - 4 x + 5)\]<p><b>2次方程式を解く</b></p><p>\(x^{2} - 4 x + 5=0\) を解の公式で解く。判別式 \(D=(-4)^2-4\cdot(5)=-4\)。</p>\[x=\dfrac{4\pm\sqrt{-4}}{2}=2-i,\ 2+i\]<p><b>答え</b></p><p>解は \(x=-1,\ 2-i,\ 2+i\)。</p></div><div class="abox"><p class="ah">【答案】</p>\[x=-1,\ 2-i,\ 2+i\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(3)　3次方程式 \(x^{3} - 3 x^{2} + 4 x - 12=0\) を解け。（複素数の範囲で）</p><div class="sb"><p><b>解の候補をしぼる</b></p><p>整数の解があれば、定数項 \(-12\) の約数のどれか。候補：\(-12,\ -6,\ -4,\ -3,\ -2,\ -1,\ 1,\ 2,\ 3,\ 4,\ 6,\ 12\)。順に代入して \(P(x)=0\) になるものを探す。</p>\[P(3)=(1)\cdot(3)^{3}+(-3)\cdot(3)^{2}+(4)\cdot(3)^{1}+(-12)=0\]<p>\(P(3)=0\) なので \(x-3\) は因数。</p><p><b>組立除法で割る</b></p><p>係数 \(1,\ -3,\ 4,\ -12\) を \(x=3\) で組立除法する。</p>\[\begin{array}{r|rrrr}3 & 1 & -3 & 4 & -12\\ &  & 3 & 0 & 12\\ \hline & 1 & 0 & 4 & 0\end{array}\]<p>商は \(x^{2} + 4\)、余り 0。</p>\[x^{3} - 3 x^{2} + 4 x - 12=(x-3)(x^{2} + 4)\]<p><b>2次方程式を解く</b></p><p>\(x^{2} + 4=0\) を解の公式で解く。判別式 \(D=(0)^2-4\cdot(4)=-16\)。</p>\[x=\dfrac{0\pm\sqrt{-16}}{2}=-2i,\ 2i\]<p><b>答え</b></p><p>解は \(x=3,\ -2i,\ 2i\)。</p></div><div class="abox"><p class="ah">【答案】</p>\[x=3,\ -2i,\ 2i\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="e-2-1-5-3.html">← 例題3にもどる</a><a class="g" href="u-2-1-5.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

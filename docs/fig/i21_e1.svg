@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="264.343826pt" height="186.264pt" viewBox="0 0 264.343826 186.264" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="275.863826pt" height="197.784pt" viewBox="0 0 275.863826 197.784" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-20T12:51:22.479833</dc:date>
+    <dc:date>2026-11-20T13:44:34.618537</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -21,52 +21,52 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 186.264 
-L 264.343826 186.264 
-L 264.343826 0 
+   <path d="M 0 197.784 
+L 275.863826 197.784 
+L 275.863826 0 
 L 0 0 
 z
 " style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 10.936174 175.327826 
-L 242.578957 175.327826 
-L 242.578957 18.408522 
-L 10.936174 18.408522 
-L 10.936174 175.327826 
+    <path d="M 16.696174 181.087826 
+L 248.338957 181.087826 
+L 248.338957 24.168522 
+L 16.696174 24.168522 
+L 16.696174 181.087826 
 z
-" clip-path="url(#p489a846f49)" style="fill: none; stroke: #555555; stroke-width: 1.4; stroke-linejoin: miter"/>
+" clip-path="url(#p797c6275a4)" style="fill: none; stroke: #555555; stroke-width: 1.4; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 96.868174 147.306522 
-C 110.24458 147.306522 123.074924 141.992019 132.533472 132.533472 
-C 141.992019 123.074924 147.306522 110.24458 147.306522 96.868174 
-C 147.306522 83.491768 141.992019 70.661424 132.533472 61.202876 
-C 123.074924 51.744329 110.24458 46.429826 96.868174 46.429826 
-C 83.491768 46.429826 70.661424 51.744329 61.202876 61.202876 
-C 51.744329 70.661424 46.429826 83.491768 46.429826 96.868174 
-C 46.429826 110.24458 51.744329 123.074924 61.202876 132.533472 
-C 70.661424 141.992019 83.491768 147.306522 96.868174 147.306522 
+    <path d="M 102.628174 153.066522 
+C 116.00458 153.066522 128.834924 147.752019 138.293472 138.293472 
+C 147.752019 128.834924 153.066522 116.00458 153.066522 102.628174 
+C 153.066522 89.251768 147.752019 76.421424 138.293472 66.962876 
+C 128.834924 57.504329 116.00458 52.189826 102.628174 52.189826 
+C 89.251768 52.189826 76.421424 57.504329 66.962876 66.962876 
+C 57.504329 76.421424 52.189826 89.251768 52.189826 102.628174 
+C 52.189826 116.00458 57.504329 128.834924 66.962876 138.293472 
+C 76.421424 147.752019 89.251768 153.066522 102.628174 153.066522 
 z
-" clip-path="url(#p489a846f49)" style="fill: #b81f36; opacity: 0.14; stroke: #b81f36; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#p797c6275a4)" style="fill: #b81f36; opacity: 0.14; stroke: #b81f36; stroke-width: 2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
-    <path d="M 156.646957 147.306522 
-C 170.023363 147.306522 182.853707 141.992019 192.312254 132.533472 
-C 201.770802 123.074924 207.085304 110.24458 207.085304 96.868174 
-C 207.085304 83.491768 201.770802 70.661424 192.312254 61.202876 
-C 182.853707 51.744329 170.023363 46.429826 156.646957 46.429826 
-C 143.27055 46.429826 130.440206 51.744329 120.981659 61.202876 
-C 111.523111 70.661424 106.208609 83.491768 106.208609 96.868174 
-C 106.208609 110.24458 111.523111 123.074924 120.981659 132.533472 
-C 130.440206 141.992019 143.27055 147.306522 156.646957 147.306522 
+    <path d="M 162.406957 153.066522 
+C 175.783363 153.066522 188.613707 147.752019 198.072254 138.293472 
+C 207.530802 128.834924 212.845304 116.00458 212.845304 102.628174 
+C 212.845304 89.251768 207.530802 76.421424 198.072254 66.962876 
+C 188.613707 57.504329 175.783363 52.189826 162.406957 52.189826 
+C 149.03055 52.189826 136.200206 57.504329 126.741659 66.962876 
+C 117.283111 76.421424 111.968609 89.251768 111.968609 102.628174 
+C 111.968609 116.00458 117.283111 128.834924 126.741659 138.293472 
+C 136.200206 147.752019 149.03055 153.066522 162.406957 153.066522 
 z
-" clip-path="url(#p489a846f49)" style="fill: #3a6ea5; opacity: 0.14; stroke: #3a6ea5; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#p797c6275a4)" style="fill: #3a6ea5; opacity: 0.14; stroke: #3a6ea5; stroke-width: 2; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- 2の倍数 -->
-    <g style="fill: #b81f36" transform="translate(45.920543 38.957478) scale(0.15 -0.15)">
+    <g style="fill: #b81f36" transform="translate(51.680543 44.717478) scale(0.15 -0.15)">
      <defs>
       <path id="NotoSansCJKjp-Regular-13" d="M 282 0 
 L 3232 0 
@@ -248,7 +248,7 @@ z
    </g>
    <g id="text_2">
     <!-- 3の倍数 -->
-    <g style="fill: #3a6ea5" transform="translate(154.269587 38.957478) scale(0.15 -0.15)">
+    <g style="fill: #3a6ea5" transform="translate(160.029587 44.717478) scale(0.15 -0.15)">
      <defs>
       <path id="NotoSansCJKjp-Regular-14" d="M 1683 -83 
 C 2522 -83 3194 416 3194 1254 
@@ -278,7 +278,7 @@ z
    </g>
    <g id="text_3">
     <!-- 100−33=67 -->
-    <g transform="translate(33.88187 102.188174) scale(0.14 -0.14)">
+    <g transform="translate(39.64187 107.948174) scale(0.14 -0.14)">
      <defs>
       <path id="NotoSansCJKjp-Regular-12" d="M 563 0 
 L 3136 0 
@@ -369,14 +369,14 @@ z
    </g>
    <g id="text_4">
     <!-- 33 -->
-    <g transform="translate(118.987565 102.188174) scale(0.14 -0.14)">
+    <g transform="translate(124.747565 107.948174) scale(0.14 -0.14)">
      <use xlink:href="#NotoSansCJKjp-Regular-14"/>
      <use xlink:href="#NotoSansCJKjp-Regular-14" transform="translate(55.5 0)"/>
     </g>
    </g>
    <g id="text_5">
     <!-- 66−33=33 -->
-    <g transform="translate(153.588261 102.188174) scale(0.14 -0.14)">
+    <g transform="translate(159.348261 107.948174) scale(0.14 -0.14)">
      <use xlink:href="#NotoSansCJKjp-Regular-17"/>
      <use xlink:href="#NotoSansCJKjp-Regular-17" transform="translate(55.5 0)"/>
      <use xlink:href="#NotoSansCJKjp-Regular-33f" transform="translate(111 0)"/>
@@ -389,7 +389,7 @@ z
    </g>
    <g id="text_6">
     <!-- 200−133=67 -->
-    <g transform="translate(179.443826 163.835043) scale(0.14 -0.14)">
+    <g transform="translate(185.203826 169.595043) scale(0.14 -0.14)">
      <use xlink:href="#NotoSansCJKjp-Regular-13"/>
      <use xlink:href="#NotoSansCJKjp-Regular-11" transform="translate(55.5 0)"/>
      <use xlink:href="#NotoSansCJKjp-Regular-11" transform="translate(111 0)"/>
@@ -405,8 +405,8 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p489a846f49">
-   <rect x="7.2" y="7.2" width="239.11513" height="171.864"/>
+  <clipPath id="p797c6275a4">
+   <rect x="12.96" y="12.96" width="239.11513" height="171.864"/>
   </clipPath>
  </defs>
 </svg>

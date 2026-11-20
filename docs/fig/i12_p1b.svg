@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="350.792pt" height="153pt" viewBox="0 0 350.792 153" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="362.312pt" height="164.52pt" viewBox="0 0 362.312 164.52" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-20T12:51:21.148576</dc:date>
+    <dc:date>2026-11-20T13:44:33.295394</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -21,32 +21,32 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 153 
-L 350.792 153 
-L 350.792 0 
+   <path d="M 0 164.52 
+L 362.312 164.52 
+L 362.312 0 
 L 0 0 
 z
 " style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
    <g id="line2d_1">
-    <path d="M 73.9368 45.203226 
-L 134.8704 103.325806 
-" clip-path="url(#p9f09c7ec6f)" style="fill: none; stroke: #b81f36; stroke-width: 1.8; stroke-linecap: square"/>
+    <path d="M 79.6968 50.963226 
+L 140.6304 109.085806 
+" clip-path="url(#p304c220cb8)" style="fill: none; stroke: #b81f36; stroke-width: 1.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
-    <path d="M 73.9368 103.325806 
-L 134.8704 45.203226 
-" clip-path="url(#p9f09c7ec6f)" style="fill: none; stroke: #b81f36; stroke-width: 1.8; stroke-linecap: square"/>
+    <path d="M 79.6968 109.085806 
+L 140.6304 50.963226 
+" clip-path="url(#p304c220cb8)" style="fill: none; stroke: #b81f36; stroke-width: 1.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_3">
-    <path d="M 207.4104 74.264516 
-L 294.4584 74.264516 
-" clip-path="url(#p9f09c7ec6f)" style="fill: none; stroke: #555555; stroke-linecap: square"/>
+    <path d="M 213.1704 80.024516 
+L 300.2184 80.024516 
+" clip-path="url(#p304c220cb8)" style="fill: none; stroke: #555555; stroke-linecap: square"/>
    </g>
    <g id="text_1">
     <!-- $2$ -->
-    <g transform="translate(49.3756 44.956774) scale(0.17 -0.17)">
+    <g transform="translate(55.1356 50.716774) scale(0.17 -0.17)">
      <defs>
       <path id="Cmr10-31" d="M 319 0 
 L 319 172 
@@ -95,7 +95,7 @@ z
    </g>
    <g id="text_2">
     <!-- $1$ -->
-    <g transform="translate(49.3756 116.492258) scale(0.17 -0.17)">
+    <g transform="translate(55.1356 122.252258) scale(0.17 -0.17)">
      <defs>
       <path id="Cmr10-64" d="M 594 0 
 L 594 225 
@@ -119,7 +119,7 @@ z
    </g>
    <g id="text_3">
     <!-- $-y+3$ -->
-    <g transform="translate(133.0082 44.191774) scale(0.17 -0.17)">
+    <g transform="translate(138.7682 49.951774) scale(0.17 -0.17)">
      <defs>
       <path id="Cmsy10-11" d="M 653 1472 
 Q 600 1472 565 1512 
@@ -283,7 +283,7 @@ z
    </g>
    <g id="text_4">
     <!-- $3y-2$ -->
-    <g transform="translate(135.3882 115.727258) scale(0.17 -0.17)">
+    <g transform="translate(141.1482 121.487258) scale(0.17 -0.17)">
      <use xlink:href="#Cmr10-6e" transform="translate(0 0.390625)"/>
      <use xlink:href="#Cmmi10-72" transform="translate(50 0.390625)"/>
      <use xlink:href="#Cmsy10-11" transform="translate(119.023495 0.390625)"/>
@@ -292,7 +292,7 @@ z
    </g>
    <g id="text_5">
     <!-- $1\times(-y+3)=-y+3$ -->
-    <g style="fill: #333333" transform="translate(210.312 42.906774) scale(0.14 -0.14)">
+    <g style="fill: #333333" transform="translate(216.072 48.666774) scale(0.14 -0.14)">
      <defs>
       <path id="Cmsy10-d" d="M 941 184 
 Q 941 234 972 275 
@@ -411,7 +411,7 @@ z
    </g>
    <g id="text_6">
     <!-- $2\times(3y-2)=6y-4$ -->
-    <g style="fill: #333333" transform="translate(210.312 114.442258) scale(0.14 -0.14)">
+    <g style="fill: #333333" transform="translate(216.072 120.202258) scale(0.14 -0.14)">
      <defs>
       <path id="Cmr10-45" d="M 1600 -141 
 Q 1203 -141 937 70 
@@ -513,7 +513,7 @@ z
    </g>
    <g id="text_7">
     <!-- 合計 $5y-1$ -->
-    <g style="fill: #b81f36" transform="translate(210.312 90.131935) scale(0.14 -0.14)">
+    <g style="fill: #b81f36" transform="translate(216.072 95.891935) scale(0.14 -0.14)">
      <defs>
       <path id="NotoSansCJKjp-Regular-2eac" d="M 1587 3283 
 L 1587 2854 
@@ -667,8 +667,8 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p9f09c7ec6f">
-   <rect x="7.2" y="7.2" width="290.16" height="138.6"/>
+  <clipPath id="p304c220cb8">
+   <rect x="12.96" y="12.96" width="290.16" height="138.6"/>
   </clipPath>
  </defs>
 </svg>

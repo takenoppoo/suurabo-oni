@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>練習問題1の解答（常用対数） | 数ラボ鬼</title>
+<meta name="description" content="常用対数 練習問題1の解答">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-2.html">数学II</a> ＞ <a href="u-2-4-3.html">常用対数</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">練習問題 1 の解答　常用対数の値の計算</span></h1><div class="item"><p class="pq">(1)　\(\log_{10}2=0.3010,\ \log_{10}3=0.4771\) として、\(\log_{10}\dfrac{45}{2}\) の値を求めよ。</p><div class="sb"><p><b>素因数分解の形に直す</b></p><p>\(\dfrac{45}{2}=2^{-1}\times 3^{2}\times 5\)。</p><p><b>\(\log_{10}\) を分ける</b></p><p>\(\log_{10}MN=\log_{10}M+\log_{10}N,\quad \log_{10}M^k=k\log_{10}M\)。</p>\[\log_{10}\dfrac{45}{2}=-\log_{10}2+2\log_{10}3+\log_{10}5\]<p><b>\(\log_{10}5\) は \(1-\log_{10}2\) で表す</b></p><p>\(\log_{10}5=\log_{10}\dfrac{10}{2}=1-\log_{10}2\)。</p>\[\log_{10}\dfrac{45}{2}=-0.3010+2\times 0.4771+(1-0.3010)\]<p><b>計算する</b></p>\[\log_{10}\dfrac{45}{2}=1.3522\]</div><div class="abox"><p class="ah">【答案】</p>\[1.3522\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(2)　\(\log_{10}2=0.3010,\ \log_{10}3=0.4771\) として、\(\log_{10}\dfrac{48}{5}\) の値を求めよ。</p><div class="sb"><p><b>素因数分解の形に直す</b></p><p>\(\dfrac{48}{5}=2^{4}\times 3\times 5^{-1}\)。</p><p><b>\(\log_{10}\) を分ける</b></p><p>\(\log_{10}MN=\log_{10}M+\log_{10}N,\quad \log_{10}M^k=k\log_{10}M\)。</p>\[\log_{10}\dfrac{48}{5}=4\log_{10}2+\log_{10}3-\log_{10}5\]<p><b>\(\log_{10}5\) は \(1-\log_{10}2\) で表す</b></p><p>\(\log_{10}5=\log_{10}\dfrac{10}{2}=1-\log_{10}2\)。</p>\[\log_{10}\dfrac{48}{5}=4\times 0.3010+0.4771-(1-0.3010)\]<p><b>計算する</b></p>\[\log_{10}\dfrac{48}{5}=0.9821\]</div><div class="abox"><p class="ah">【答案】</p>\[0.9821\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(3)　\(\log_{10}2=0.3010,\ \log_{10}3=0.4771\) として、\(\log_{10}\dfrac{100}{9}\) の値を求めよ。</p><div class="sb"><p><b>素因数分解の形に直す</b></p><p>\(\dfrac{100}{9}=2^{2}\times 3^{-2}\times 5^{2}\)。</p><p><b>\(\log_{10}\) を分ける</b></p><p>\(\log_{10}MN=\log_{10}M+\log_{10}N,\quad \log_{10}M^k=k\log_{10}M\)。</p>\[\log_{10}\dfrac{100}{9}=2\log_{10}2-2\log_{10}3+2\log_{10}5\]<p><b>\(\log_{10}5\) は \(1-\log_{10}2\) で表す</b></p><p>\(\log_{10}5=\log_{10}\dfrac{10}{2}=1-\log_{10}2\)。</p>\[\log_{10}\dfrac{100}{9}=2\times 0.3010-2\times 0.4771+2\times (1-0.3010)\]<p><b>計算する</b></p>\[\log_{10}\dfrac{100}{9}=1.0458\]</div><div class="abox"><p class="ah">【答案】</p>\[1.0458\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="e-2-4-3-1.html">← 例題1にもどる</a><a class="g" href="u-2-4-3.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

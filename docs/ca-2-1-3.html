@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>章末問題の解答（恒等式・等式の証明・不等式の証明） | 数ラボ鬼</title>
+<meta name="description" content="恒等式・等式の証明・不等式の証明の章末問題の解答。">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-2.html">数学II</a> ＞ <a href="u-2-1-3.html">恒等式・等式の証明・不等式の証明</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">章末問題の解答</span></h1><div class="item"><p class="pq">1.　等式 \(4 x^{3} - 5 x^{2} + x + 2=a(x--2)^3+b(x--2)^2+c(x--2)+d\) が \(x\) についての恒等式となるように、定数 \(a,b,c,d\) の値を定めよ。</p><div class="sb"><p><b>右辺を展開して \(x\) について整理する</b></p>\[\begin{aligned}\text{右辺}&=a(x--2)^3+b(x--2)^2+c(x--2)+d\\ &=a x^{3} + 8 a + 4 b + 2 c + d + x^{2} \left(6 a + b\right) + x \left(12 a + 4 b + c\right)\end{aligned}\]<p><b>両辺の係数を比べる</b></p><p>恒等式なので、両辺の各次数の係数が等しい。</p>\[\begin{cases}x^3:\ a=4\\ x^2:\ 6 a + b=-5\\ x^1:\ 12 a + 4 b + c=1\\ x^0:\ 8 a + 4 b + 2 c + d=2\end{cases}\]<p><b>上から順に解く</b></p>\[a=4,\quad b=-29,\quad c=69,\quad d=-52\]<p>確かめ：右辺に代入して展開すると左辺と一致する。</p><p class="small">（例題1の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[a=4,\ b=-29,\ c=69,\ d=-52\]<p class="mark">答</p></div></div><div class="item"><p class="pq">2.　等式 \(\dfrac{4 x - 9}{(x - 3)(x + 1)}=\dfrac{a}{x - 3}+\dfrac{b}{x + 1}\) が \(x\) についての恒等式となるように、定数 \(a,b\) の値を定めよ。</p><div class="sb"><p><b>分母を払う</b></p>\[4 x - 9=a\left(x + 1\right)+b\left(x - 3\right)\]<p><b>右辺を展開して \(x\) で整理する</b></p>\[4 x - 9=a - 3 b + x \left(a + b\right)\]<p><b>係数を比べて連立方程式を解く</b></p>\[\begin{cases}x:\ a+b=4\\ \text{定数項}:\ a - 3 b=-9\end{cases}\]<p>解くと</p>\[a=\dfrac{3}{4},\quad b=\dfrac{13}{4}\]<p><b>別解（数値代入法）</b></p><p>\(x=3\) を代入：「\(3=a(4)\)」より \(a=\dfrac{3}{4}\)。\(x=-1\) を代入：「\(-13=b(-4)\)」より \(b=\dfrac{13}{4}\)。</p><p class="small">（例題2の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[a=\dfrac{3}{4},\ b=\dfrac{13}{4}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">3.　\(a+b+c=0\) のとき、等式 \(a^{2} + a b + b^{2}=b^{2} + b c + c^{2}\) が成り立つことを証明せよ。</p><div class="sb"><p><b>条件を使って文字を1つ減らす</b></p><p>\(a+b+c=0\) より \(c=-a-b\)。これを両辺に代入する。</p><p><b>左辺を展開する</b></p>\[\text{左辺}=a^{2} + a b + b^{2}=a^{2} + a b + b^{2}\]<p><b>右辺を展開する</b></p>\[\text{右辺}=b^{2} + b \left(- a - b\right) + \left(- a - b\right)^{2}=a^{2} + a b + b^{2}\]<p><b>結論</b></p><p>左辺 \(=\) 右辺。（証明終）</p><p class="small">（例題3の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[\text{（左辺）}=\text{（右辺）}\quad\text{（証明終）}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">4.　\(a^{2} + 2 b^{2} + c^{2}\geqq 2 a b + 2 b c\) を証明せよ。ただし文字はすべて実数とし、等号が成り立つときの条件も答えよ。</p><div class="sb"><p><b>左辺 \(-\) 右辺 を計算する</b></p>\[\text{左辺}-\text{右辺}=a^{2} - 2 a b + 2 b^{2} - 2 b c + c^{2}\]<p><b>平方の和（または平方）に変形する</b></p>\[a^{2} - 2 a b + 2 b^{2} - 2 b c + c^{2}=(a-b)^2+(b-c)^2\]<p><b>0以上であることを示す</b></p><p>実数の平方は 0 以上なので、上の式は 0 以上。よって 左辺 \(\geqq\) 右辺。</p><p><b>等号が成り立つ条件</b></p><p>\(a=b=c\) のとき。</p><p class="small">（例題4の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[\text{（証明終）}\ \ \text{等号成立：}$a=b=c$ のとき。\]<p class="mark">答</p></div></div><div class="item"><p class="pq">5.　\(x>3\) のとき、\(5 x + \dfrac{20}{x - 3}\) の最小値と、そのときの \(x\) の値を求めよ。</p><div class="sb"><p><b>積が定数になるように変形する</b></p><p>\(x>3\) より \(x-3>0\)。\(u=x-3\) とおくと \(u>0\)。</p>\[5 x + \dfrac{20}{x - 3}=5u+\dfrac{20}{u}+15\]<p><b>相加・相乗平均の不等式を使う</b></p><p>\(u>0,\ \frac{q}{u}>0\) だから、\(A+B\geqq2\sqrt{AB}\) より</p>\[5u+\dfrac{20}{u}\geqq 2\sqrt{5 u\cdot\dfrac{20}{u}}=2\sqrt{100}=20\]<p><b>最小値</b></p>\[5 x + \dfrac{20}{x - 3}\geqq 20+15=35\]<p><b>等号が成り立つ条件</b></p><p>\(5u=\dfrac{20}{u}\) すなわち \(u^2=4\)、\(u=2\)（\(u>0\) を満たす）。よって \(x=5\) のとき最小。</p><p class="small">（例題5の型）</p></div><div class="abox"><p class="ah">【答案】</p>\[x=5\ \text{のとき最小値 }35\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="c-2-1-3.html">← 章末問題</a><a class="g" href="u-2-1-3.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

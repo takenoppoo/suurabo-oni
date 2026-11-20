@@ -25,7 +25,7 @@ def make_fig(name, fn, size=(5,3)):
     matplotlib.rcParams["axes.unicode_minus"]=False
     fig,ax=plt.subplots(figsize=size)
     fn(ax)
-    fig.savefig(os.path.join(FIG,name+".svg"),bbox_inches="tight",transparent=False,facecolor="white")
+    fig.savefig(os.path.join(FIG,name+".svg"),bbox_inches="tight",pad_inches=0.18,transparent=False,facecolor="white")
     plt.close(fig)
 
 RED="#b81f36"
@@ -60,7 +60,7 @@ CSS='''
 .lesson .bar .katex-display{margin:.35em 0;font-size:1.1em}
 .lesson .kotsu{border:1.4px dashed #1f8a5b;border-radius:8px;background:#f1faf5;padding:3px 10px;margin:6px 0;font-size:.95em}
 .lesson .kotsu b{background:#1f8a5b;color:#fff;border-radius:4px;padding:0 6px;margin-right:6px}
-.lesson .step{margin:5px 0}.lesson .sh2{font-weight:700}
+.lesson .katex-display{overflow-x:auto;overflow-y:hidden;padding:.3em 0}.lesson .step{margin:5px 0}.lesson .sh2{font-weight:700}
 .lesson .badge{background:#b81f36;color:#fff;padding:1px 7px;font-size:.85em;margin-right:4px}
 .lesson .sb{margin-left:3px}.lesson .sb p{margin:2px 0}.lesson .sb .katex-display{margin:.3em 0;font-size:1.05em}
 .lesson .abox{border:2px solid #b81f36;border-radius:10px;padding:4px 14px;margin:9px 0;position:relative;background:#fff}
@@ -126,7 +126,7 @@ window.addEventListener("load",function(){});
 function fit(){document.querySelectorAll(".pg").forEach(function(pg){var z=1;pg.style.zoom=1;
  while(pg.scrollHeight>1030&&z>0.55){z-=0.02;pg.style.zoom=z;}});}
 </script>'''
-PCSS='@page{size:A4;margin:11mm}body{margin:0;color:#222;font-family:"Noto Sans CJK JP",sans-serif}.lesson{font-size:12pt}.pg{page-break-after:always;width:188mm}.pg:last-child{page-break-after:auto}.step,.abox,.item,.qbox,.gbox{break-inside:avoid}'
+PCSS='@page{size:A4;margin:11mm}body{margin:0;color:#222;font-family:"Noto Sans CJK JP",sans-serif}.lesson{font-size:12pt}.pg{page-break-after:always;width:188mm}.pg:last-child{page-break-after:auto}.step,.abox,.item,.qbox,.gbox,.lesson p,.lesson li,.katex-display,.katex,.figbox,.tbl,.kotsu{break-inside:avoid;page-break-inside:avoid}.lesson .katex{line-height:1.5}.lesson .sb p,.lesson .bar p,.lesson li{padding-top:1px}'
 def pdf_html(pages):
     body="".join(f'<section class="pg"><div class="lesson">{p}</div></section>' for p in pages)
     return ('<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><link rel="stylesheet" href="katex/katex.min.css"><link rel="stylesheet" href="lesson.css"><style>'+PCSS+'</style></head><body>'+body+

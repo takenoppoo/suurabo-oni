@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題5 相加・相乗平均で最小値を求める（恒等式・等式の証明・不等式の証明） | 数ラボ鬼</title>
+<meta name="description" content="恒等式・等式の証明・不等式の証明の難問 例題5：相加・相乗平均で最小値を求める">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-2.html">数学II</a> ＞ <a href="u-2-1-3.html">恒等式・等式の証明・不等式の証明</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 5</span><span class="ls">いろいろな式　相加・相乗平均で最小値を求める</span></h1><div class="qbox"><p>\(x>1\) のとき、\(x + \dfrac{4}{x - 1}\) の最小値と、そのときの \(x\) の値を求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>\(A>0,\ B>0\) のとき \[\dfrac{A+B}{2}\geqq\sqrt{AB}\quad(\text{等号は }A=B)\] 積 \(AB\) が<b>定数</b>になるように式を変形して使う。等号が成り立つ \(x\) が範囲に入っているかを必ず確認する。</p><div class="kotsu"><b>コツ</b>和が最小になるのは2つがつり合うとき。シーソーが水平になる点が最小。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 積が定数になるように変形する</div><div class="sb"><p>\(x>1\) より \(x-1>0\)。\(u=x-1\) とおくと \(u>0\)。</p>\[x + \dfrac{4}{x - 1}=1u+\dfrac{4}{u}+1\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 相加・相乗平均の不等式を使う</div><div class="sb"><p>\(u>0,\ \frac{q}{u}>0\) だから、\(A+B\geqq2\sqrt{AB}\) より</p>\[1u+\dfrac{4}{u}\geqq 2\sqrt{1 u\cdot\dfrac{4}{u}}=2\sqrt{4}=4\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 最小値</div><div class="sb">\[x + \dfrac{4}{x - 1}\geqq 4+1=5\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> 等号が成り立つ条件</div><div class="sb"><p>\(1u=\dfrac{4}{u}\) すなわち \(u^2=4\)、\(u=2\)（\(u>0\) を満たす）。よって \(x=3\) のとき最小。</p></div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[x=3\ \text{のとき最小値 }5\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 5</h2><ol class="prac"><li>\(x>0\) のとき、\(2 x + \dfrac{18}{x}\) の最小値と、そのときの \(x\) の値を求めよ。</li><li>\(x>2\) のとき、\(3 x + \dfrac{12}{x - 2}\) の最小値と、そのときの \(x\) の値を求めよ。</li><li>\(x>-1\) のとき、\(4 x + \dfrac{9}{x + 1}\) の最小値と、そのときの \(x\) の値を求めよ。</li></ol></div><div class="nav2"><a href="a-2-1-3-5.html">練習問題5の解答を見る</a></div><div class="nav2"><a class="g" href="e-2-1-3-4.html">← 例題4</a><a class="g" href="c-2-1-3.html">章末問題 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

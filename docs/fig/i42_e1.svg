@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="215.28pt" height="135.952898pt" viewBox="0 0 215.28 135.952898" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="226.8pt" height="147.472898pt" viewBox="0 0 226.8 147.472898" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-20T12:51:37.837424</dc:date>
+    <dc:date>2026-11-20T13:44:49.935591</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -21,32 +21,32 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 135.952898 
-L 215.28 135.952898 
-L 215.28 -0 
-L 0 -0 
+   <path d="M 0 147.472898 
+L 226.8 147.472898 
+L 226.8 0 
+L 0 0 
 z
 " style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
    <g id="line2d_1">
-    <path d="M 25.648163 112.354531 
-L 189.631837 112.354531 
-" clip-path="url(#p974a6b604c)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: square"/>
+    <path d="M 31.408163 118.114531 
+L 195.391837 118.114531 
+" clip-path="url(#pbae7843359)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
-    <path d="M 189.631837 112.354531 
-L 76.893061 23.598367 
-" clip-path="url(#p974a6b604c)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: square"/>
+    <path d="M 195.391837 118.114531 
+L 82.653061 29.358367 
+" clip-path="url(#pbae7843359)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_3">
-    <path d="M 76.893061 23.598367 
-L 25.648163 112.354531 
-" clip-path="url(#p974a6b604c)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: square"/>
+    <path d="M 82.653061 29.358367 
+L 31.408163 118.114531 
+" clip-path="url(#pbae7843359)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: square"/>
    </g>
    <g id="text_1">
     <!-- A -->
-    <g transform="translate(15.328414 120.175195) scale(0.14 -0.14)">
+    <g transform="translate(21.088414 125.935195) scale(0.14 -0.14)">
      <defs>
       <path id="NotoSansCJKjp-Regular-22" d="M 26 0 
 L 621 0 
@@ -73,7 +73,7 @@ z
    </g>
    <g id="text_2">
     <!-- B -->
-    <g transform="translate(191.278554 119.677857) scale(0.14 -0.14)">
+    <g transform="translate(197.038554 125.437857) scale(0.14 -0.14)">
      <defs>
       <path id="NotoSansCJKjp-Regular-23" d="M 646 0 
 L 2138 0 
@@ -106,7 +106,7 @@ z
    </g>
    <g id="text_3">
     <!-- C -->
-    <g transform="translate(70.280173 22.720387) scale(0.14 -0.14)">
+    <g transform="translate(76.040173 28.480387) scale(0.14 -0.14)">
      <defs>
       <path id="NotoSansCJKjp-Regular-24" d="M 2413 -83 
 C 3021 -83 3482 160 3853 589 
@@ -127,7 +127,7 @@ z
    </g>
    <g id="text_4">
     <!-- c=8 -->
-    <g style="fill: #b81f36" transform="translate(99.932912 122.725138) scale(0.12 -0.12)">
+    <g style="fill: #b81f36" transform="translate(105.692912 128.485138) scale(0.12 -0.12)">
      <defs>
       <path id="NotoSansCJKjp-Regular-44" d="M 1958 -83 
 C 2374 -83 2771 83 3085 352 
@@ -188,7 +188,7 @@ z
    </g>
    <g id="text_5">
     <!-- a -->
-    <g style="fill: #b81f36" transform="translate(135.569606 70.192076) scale(0.12 -0.12)">
+    <g style="fill: #b81f36" transform="translate(141.329606 75.952076) scale(0.12 -0.12)">
      <defs>
       <path id="NotoSansCJKjp-Regular-42" d="M 1389 -83 
 C 1818 -83 2208 141 2541 416 
@@ -217,7 +217,7 @@ z
    </g>
    <g id="text_6">
     <!-- b=5 -->
-    <g style="fill: #b81f36" transform="translate(35.047235 70.658331) scale(0.12 -0.12)">
+    <g style="fill: #b81f36" transform="translate(40.807235 76.418331) scale(0.12 -0.12)">
      <defs>
       <path id="NotoSansCJKjp-Regular-43" d="M 2118 -83 
 C 2912 -83 3629 602 3629 1792 
@@ -266,7 +266,7 @@ z
    </g>
    <g id="text_7">
     <!-- 60° -->
-    <g style="fill: #3a6ea5" transform="translate(27.930608 112.236513) scale(0.11 -0.11)">
+    <g style="fill: #3a6ea5" transform="translate(33.690608 117.996513) scale(0.11 -0.11)">
      <defs>
       <path id="NotoSansCJKjp-Regular-17" d="M 1926 -83 
 C 2656 -83 3277 531 3277 1440 
@@ -321,8 +321,8 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p974a6b604c">
-   <rect x="7.2" y="7.2" width="200.88" height="121.552898"/>
+  <clipPath id="pbae7843359">
+   <rect x="12.96" y="12.96" width="200.88" height="121.552898"/>
   </clipPath>
  </defs>
 </svg>
