@@ -45,7 +45,7 @@ def numline(ax,lo,hi,ticks,labels=None,segs=(),pts=(),pad=0.8):
 
 # ---------- CSS ----------
 CSS='''
-.lesson{line-height:1.65;position:relative;z-index:1;background:#fff;padding:14px 22px 18px;margin:6px 0 16px;border-radius:14px;box-shadow:0 0 0 1px #eadadd,0 4px 18px rgba(0,0,0,.06);overflow-wrap:anywhere}
+.lesson{line-height:1.65}
 .lesson .lh{display:flex;align-items:center;gap:10px;border-bottom:3px solid #b81f36;padding-bottom:6px;margin:0 0 10px;flex-wrap:wrap}
 .lesson .lb{background:#b81f36;color:#fff;font-weight:700;padding:3px 12px;font-size:1.12em;white-space:nowrap}
 .lesson .ls{font-size:.98em;color:#333}
@@ -53,6 +53,8 @@ CSS='''
 .lesson .qbox p{margin:3px 0}
 .lesson .qbox .katex-display{font-size:1.35em;margin:.35em 0}
 .lesson .bar{background:#F8F4F4;border-left:4px solid #b81f36;padding:5px 12px 7px;margin:9px 0}
+.lesson .bar.sol{background:#fff;border:1.5px solid #e2c3c9;border-left:5px solid #b81f36;border-radius:8px;padding:8px 16px 10px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.lesson .item .sb{background:#fff;border:1.5px solid #e2c3c9;border-radius:8px;padding:6px 14px;margin:6px 0}
 .lesson .bar h2{margin:0 0 3px;font-size:1em;color:#b81f36}
 .lesson .bar p{margin:3px 0}
 .lesson .bar .katex-display{margin:.35em 0;font-size:1.1em}
@@ -85,19 +87,15 @@ open(os.path.join(OUT,"lesson.css"),"w",encoding="utf-8").write(CSS)
 
 # ---------- 部品 ----------
 def lh(badge,sub): return f'<h1 class="lh"><span class="lb">{badge}</span><span class="ls">{sub}</span></h1>'
-def isM(p): return p.startswith("\\(") or p.startswith("<")
-import re as _re
-def M(p):
-    if isM(p) or "\\(" in p: return p
-    if _re.search(r'[\u3040-\u30ff\u4e00-\u9fff]',p) and "\\" not in p: return p.replace("<","&lt;")  # 日本語の文は数式にせず本文として折り返す
-    return I(p)
+def isM(p): return p.startswith("\\(") or p.startswith("<") or "\\(" in p or ("\\text{" not in p and any(ord(ch)>0x3000 for ch in p))
+def M(p): return p if isM(p) else I(p)
 
 def ex_block(i,e,sub,with_prac=True):
     pr="".join(f"<li>{M(p)}</li>" for p in e['practice'])
     return (lh(f"例題 {i}",f"{sub}　"+e['title'])+
      f'<div class="qbox"><p>{e["problem"]}</p></div>'
      f'<div class="bar"><h2>解き方（まず考え方）</h2>{e["approach"]}<div class="kotsu"><b>コツ</b>{e["kotsu"]}</div></div>'
-     f'<div class="bar"><h2>解答</h2>{"".join(e["steps"])}</div>'
+     f'<div class="bar sol"><h2>解答</h2>{"".join(e["steps"])}</div>'
      f'<div class="abox"><p class="ah">【答案（テストに書く形）】</p>{D(e["answer"])}<p class="mark">答</p></div>'
      +(f'<div class="bar"><h2>練習問題 {i}</h2><ol class="prac">{pr}</ol></div>' if with_prac else ""))
 def ans_item(label,prob,steps,ans):
@@ -116,12 +114,12 @@ window.addEventListener("load",function(){});
 function fit(){document.querySelectorAll(".pg").forEach(function(pg){var z=1;pg.style.zoom=1;
  while(pg.scrollHeight>1030&&z>0.55){z-=0.02;pg.style.zoom=z;}});}
 </script>'''
-PCSS='@page{size:A4;margin:11mm}body{margin:0;color:#222;font-family:"Noto Sans CJK JP",sans-serif}.lesson{font-size:12pt}.pg{page-break-after:always;width:188mm}.pg:last-child{page-break-after:auto}'
+PCSS='@page{size:A4;margin:11mm}body{margin:0;color:#222;font-family:"Noto Sans CJK JP",sans-serif}.lesson{font-size:12pt}.pg{page-break-after:always;width:188mm}.pg:last-child{page-break-after:auto}.step,.abox,.item,.qbox,.gbox{break-inside:avoid}'
 def pdf_html(pages):
     body="".join(f'<section class="pg"><div class="lesson">{p}</div></section>' for p in pages)
     return ('<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><link rel="stylesheet" href="katex/katex.min.css"><link rel="stylesheet" href="lesson.css"><style>'+PCSS+'</style></head><body>'+body+
      '<script src="katex/katex.min.js"></script><script src="katex/auto-render.min.js"></script><script>renderMathInElement(document.body,{delimiters:[{left:"\\\\[",right:"\\\\]",display:true},{left:"\\\\(",right:"\\\\)",display:false}],throwOnError:false});'
-     'document.querySelectorAll(".pg").forEach(function(pg){var L=pg.firstChild,z=1;pg.style.zoom=1;while(L.getBoundingClientRect().height>1015&&z>0.35){z-=0.02;pg.style.zoom=z;}});</script></body></html>')
+     'document.querySelectorAll(".pg").forEach(function(pg){var L=pg.firstChild;var h=L.getBoundingClientRect().height;var z=1;if(h>1015){z=1015/h;if(z<0.72){z=Math.min(0.85,2000/h);}}pg.style.zoom=z;});</script></body></html>')
 def make_pdf(pages,outname):
     tmp=os.path.join(OUT,"_tmp_"+outname+".html")
     open(tmp,"w",encoding="utf-8").write(pdf_html(pages))

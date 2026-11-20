@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題2 2グループの平均から全体の平均を使って求める（代表値・四分位数・箱ひげ図） | 数ラボ鬼</title>
+<meta name="description" content="代表値・四分位数・箱ひげ図の難問 例題2：2グループの平均から全体の平均を使って求める">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css?v=e2705b01">
+<link rel="stylesheet" href="lesson.css?v=e2705b01">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-5-1.html">代表値・四分位数・箱ひげ図</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 2</span><span class="ls">データの分析　2グループの平均から全体の平均を使って求める</span></h1><div class="qbox"><p>男子20人、女子30人のクラスがある。全体の平均点は68点で、女子の平均点は男子の平均点より10点高い。男子と女子の平均点をそれぞれ求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>グループの平均点を使うときは、<b>「平均点 × 人数 ＝ 合計点」</b>に直して合計を比べる。男子の平均を \(x\) 点とおくと、女子は \(x+10\) 点。<b>男子の合計＋女子の合計＝全体の合計</b>で方程式を立てる。</p><div class="kotsu"><b>コツ</b>平均は「割り算した後」の数。足し合わせるときは、人数をかけて「合計」に戻してから足す。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 文字を決める</div><div class="sb"><p>男子の平均点を \(x\) 点とおくと、女子の平均点は \(x+10\) 点。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 合計点で式を立てる</div><div class="sb"><p>男子の合計 \(20x\)、女子の合計 \(30(x+10)\)、全体の合計 \(68\times50=3400\)。</p>\[20x+30(x+10)=3400\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 解く</div><div class="sb">\[20x+30x+300=3400\ \Rightarrow\ 50x=3100\ \Rightarrow\ x=62\]<p>女子は \(62+10=72\)。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> 確かめる</div><div class="sb"><p>\((62\times20+72\times30)\div50=(1240+2160)\div50=3400\div50=68\)。</p></div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[\text{男子}\ 62\text{点},\quad \text{女子}\ 72\text{点}\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 2</h2><ol class="prac"><li>男子15人、女子25人のクラスで、全体の平均点が65点、女子の平均点は男子の平均点より8点高い。男子と女子の平均点を求めよ。</li><li>男子8人、女子12人のクラスで、全体の平均点が55点、女子の平均点は男子の平均点より5点高い。男子と女子の平均点を求めよ。</li><li>男子10人、女子40人のクラスで、全体の平均点が78点、女子の平均点は男子の平均点より5点高い。男子と女子の平均点を求めよ。</li></ol></div><div class="nav2"><a href="a-1-5-1-2.html">練習問題2の解答を見る</a></div><div class="nav2"><a class="g" href="e-1-5-1-1.html">← 例題1</a><a class="g" href="e-1-5-1-3.html">例題3 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

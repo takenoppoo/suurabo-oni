@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題2 変量の変換（平均・分散・標準偏差）と偏差値（分散・標準偏差・相関） | 数ラボ鬼</title>
+<meta name="description" content="分散・標準偏差・相関の難問 例題2：変量の変換（平均・分散・標準偏差）と偏差値">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css?v=e2705b01">
+<link rel="stylesheet" href="lesson.css?v=e2705b01">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-5-2.html">分散・標準偏差・相関</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 2</span><span class="ls">データの分析　変量の変換（平均・分散・標準偏差）と偏差値</span></h1><div class="qbox"><p>あるテストの得点 \(x\) の平均が50点、標準偏差が4点である。(1) \(y=3x-20\) の平均、分散、標準偏差を求めよ。(2) 得点 \(x\) が58点の人の偏差値を求めよ。ただし偏差値は \(50+10\times\dfrac{x-\bar x}{s}\) で定める。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>\(y=ax+b\) と変換すると：</p>\[\bar y=a\bar x+b,\qquad s_y^2=a^2s_x^2,\qquad s_y=|a|s_x\]<p><b>足す数 \(b\) は平均だけを動かし、散らばりは変えない。</b>かける数 \(a\) は、散らばりを \(|a|\) 倍にする（分散は \(a^2\) 倍）。</p><div class="kotsu"><b>コツ</b>全員に同じ点を足しても、順位や散らばりは変わらない。全員を3倍にすれば、ズレも3倍になる。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> (1) 平均</div><div class="sb">\[\bar y=3\times50-20=130\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> (1) 分散</div><div class="sb"><p>\(s_x^2=4^2=16\)。</p>\[s_y^2=3^2\times16=144\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> (1) 標準偏差</div><div class="sb">\[s_y=3\times4=12\quad(=\sqrt{144})\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> (2) 偏差値</div><div class="sb">\[50+10\times\dfrac{58-50}4=50+10\times2=70\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[(1)\ \bar y=130,\ s_y^2=144,\ s_y=12\qquad(2)\ 70\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 2</h2><ol class="prac"><li>得点 \(x\) の平均が60点、標準偏差が5点。\(y=2x+10\) の平均・分散・標準偏差と、\(x=70\) の人の偏差値</li><li>得点 \(x\) の平均が40点、標準偏差が6点。\(y=4x-30\) の平均・分散・標準偏差と、\(x=46\) の人の偏差値</li><li>得点 \(x\) の平均が72点、標準偏差が8点。\(y=\dfrac12x+5\) の平均・分散・標準偏差と、\(x=60\) の人の偏差値</li></ol></div><div class="nav2"><a href="a-1-5-2-2.html">練習問題2の解答を見る</a></div><div class="nav2"><a class="g" href="e-1-5-2-1.html">← 例題1</a><a class="g" href="e-1-5-2-3.html">例題3 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

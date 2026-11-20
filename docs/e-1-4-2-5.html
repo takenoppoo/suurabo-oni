@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題5 3辺から面積・内接円・外接円の半径（正弦定理・余弦定理） | 数ラボ鬼</title>
+<meta name="description" content="正弦定理・余弦定理の難問 例題5：3辺から面積・内接円・外接円の半径">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css?v=e2705b01">
+<link rel="stylesheet" href="lesson.css?v=e2705b01">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-4-2.html">正弦定理・余弦定理</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 5</span><span class="ls">図形と計量　3辺から面積・内接円・外接円の半径</span></h1><div class="qbox"><p>△ABC の3辺が \(a=14,\ b=15,\ c=13\) であるとき、面積 \(S\)、内接円の半径 \(r\)、外接円の半径 \(R\) を求めよ。<div class="figbox"><img class="fig" src="fig/i42_e5.svg" style="width:40%" alt="i42_e5"></div></p></div><div class="bar"><h2>解き方（まず考え方）</h2><p><b>ヘロンの公式</b>：<b>\(s=\dfrac{a+b+c}2\)</b> として \(S=\sqrt{s(s-a)(s-b)(s-c)}\)。または余弦定理で \(\cos\)、\(\sin\) を求めて \(S=\dfrac12bc\sin A\)。</p>\[S=\dfrac12r(a+b+c)\quad(\text{内接円})\qquad R=\dfrac{abc}{4S}\quad(\text{外接円})\]<p>面積から内接円と外接円の半径が出る。</p><div class="kotsu"><b>コツ</b>面積さえ出せば、内接円（S＝½×r×周）も外接円（R＝abc／4S）も一直線。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> ヘロンの公式で面積を求める</div><div class="sb"><p>\(s=\dfrac{14+15+13}2=21\)。</p>\[S=\sqrt{21\cdot(21-14)(21-15)(21-13)}=\sqrt{21\cdot7\cdot6\cdot8}\]\[=\sqrt{7056}=84\quad(84^2=7056)\]<p>（\(21\cdot7\cdot6\cdot8=3\cdot7\cdot7\cdot6\cdot8=7^2\cdot144=(7\cdot12)^2\) と因数分解すると計算しやすい。）</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 内接円の半径</div><div class="sb">\[S=\dfrac12r(a+b+c)\ \Rightarrow\ 84=\dfrac12\cdot r\cdot42=21r\ \Rightarrow\ r=4\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 外接円の半径</div><div class="sb">\[R=\dfrac{abc}{4S}=\dfrac{14\cdot15\cdot13}{4\cdot84}=\dfrac{2730}{336}=\dfrac{65}8\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[S=84,\quad r=4,\quad R=\dfrac{65}8\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 5</h2><ol class="prac"><li>\(a=5,\ b=6,\ c=7\ \text{のとき},\ S,\ r,\ R\)</li><li>\(a=7,\ b=8,\ c=9\ \text{のとき},\ S,\ r,\ R\)</li><li>\(a=4,\ b=5,\ c=7\ \text{のとき},\ S,\ r,\ R\)</li></ol></div><div class="nav2"><a href="a-1-4-2-5.html">練習問題5の解答を見る</a></div><div class="nav2"><a class="g" href="e-1-4-2-4.html">← 例題4</a><a class="g" href="c-1-4-2.html">章末問題 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

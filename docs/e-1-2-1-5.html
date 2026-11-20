@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題5 「割り切れるが他では割り切れない」数の個数（集合） | 数ラボ鬼</title>
+<meta name="description" content="集合の難問 例題5：「割り切れるが他では割り切れない」数の個数">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css?v=e2705b01">
+<link rel="stylesheet" href="lesson.css?v=e2705b01">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-2-1.html">集合</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 5</span><span class="ls">集合と命題　「割り切れるが他では割り切れない」数の個数</span></h1><div class="qbox"><p>1から100までの整数のうち、3で割り切れるが、4でも5でも割り切れない数は何個あるか。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>3の倍数の集合 \(A\) から、4の倍数 \(B\)・5の倍数 \(C\) に入るものを取り除く。取り除くものは \(A\cap B\) と \(A\cap C\) だが、両方に入る \(A\cap B\cap C\) は<b>2回引いてしまう</b>ので1回戻す。</p>\[n(A\cap\overline B\cap\overline C)=n(A)-n(A\cap B)-n(A\cap C)+n(A\cap B\cap C)\]<div class="kotsu"><b>コツ</b>3の倍数の中から、4の倍数と5の倍数を追い出す。両方に当たる人を2回追い出してしまったら、1人だけ呼び戻す。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 3の倍数の個数</div><div class="sb"><p>\(n(A)=\lfloor100\div3\rfloor=33\)。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 3と4の共通、3と5の共通</div><div class="sb"><p>\(A\cap B\)：12の倍数 \(\lfloor100\div12\rfloor=8\)。\(A\cap C\)：15の倍数 \(\lfloor100\div15\rfloor=6\)。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 3つ全部の共通</div><div class="sb"><p>\(A\cap B\cap C\)：60の倍数 \(\lfloor100\div60\rfloor=1\)（60だけ）。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> 計算する</div><div class="sb">\[33-8-6+1=20\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[20\ \text{個}\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 5</h2><ol class="prac"><li>1から120までの整数のうち、2で割り切れるが、3でも5でも割り切れない数は何個あるか。</li><li>1から200までの整数のうち、3で割り切れるが、2でも7でも割り切れない数は何個あるか。</li><li>1から100までの整数のうち、5で割り切れるが、2でも3でも割り切れない数は何個あるか。</li></ol></div><div class="nav2"><a href="a-1-2-1-5.html">練習問題5の解答を見る</a></div><div class="nav2"><a class="g" href="e-1-2-1-4.html">← 例題4</a><a class="g" href="c-1-2-1.html">章末問題 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

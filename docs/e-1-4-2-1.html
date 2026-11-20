@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題1 余弦定理・外接円の半径・面積（正弦定理・余弦定理） | 数ラボ鬼</title>
+<meta name="description" content="正弦定理・余弦定理の難問 例題1：余弦定理・外接円の半径・面積">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css?v=e2705b01">
+<link rel="stylesheet" href="lesson.css?v=e2705b01">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-4-2.html">正弦定理・余弦定理</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 1</span><span class="ls">図形と計量　余弦定理・外接円の半径・面積</span></h1><div class="qbox"><p>△ABC で \(b=5,\ c=8,\ A=60^\circ\) のとき、辺 \(a\)、外接円の半径 \(R\)、面積 \(S\) を求めよ。<div class="figbox"><img class="fig" src="fig/i42_e1.svg" style="width:40%" alt="i42_e1"></div></p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>2辺とその<b>間の角</b>がわかっているので、<b>余弦定理</b>で残りの辺 \(a\) を求める。</p>\[a^2=b^2+c^2-2bc\cos A\]<p>外接円の半径は<b>正弦定理</b> \(\dfrac a{\sin A}=2R\)、面積は \(S=\dfrac12bc\sin A\)。</p><div class="kotsu"><b>コツ</b>「2辺とはさむ角」なら余弦定理で第3の辺。辺と対角のペアが1組そろったら、正弦定理で外接円の半径。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 余弦定理で \(a\) を求める</div><div class="sb">\[a^2=5^2+8^2-2\cdot5\cdot8\cos60^\circ=25+64-80\cdot\dfrac12=89-40=49\]<p>\(a>0\) より \(a=7\)。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 正弦定理で \(R\) を求める</div><div class="sb">\[\dfrac{a}{\sin A}=2R\ \Rightarrow\ 2R=\dfrac7{\sin60^\circ}=\dfrac7{\frac{\sqrt3}2}=\dfrac{14}{\sqrt3}\]\[R=\dfrac7{\sqrt3}=\dfrac{7\sqrt3}3\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 面積を求める</div><div class="sb">\[S=\dfrac12bc\sin A=\dfrac12\cdot5\cdot8\cdot\dfrac{\sqrt3}2=10\sqrt3\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[a=7,\quad R=\dfrac{7\sqrt3}3,\quad S=10\sqrt3\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 1</h2><ol class="prac"><li>\(b=3,\ c=5,\ A=120^\circ\ \text{のとき},\ a,\ R,\ S\)</li><li>\(b=4,\ c=5,\ A=60^\circ\ \text{のとき},\ a,\ R,\ S\)</li><li>\(b=2,\ c=3\sqrt2,\ A=45^\circ\ \text{のとき},\ a,\ R,\ S\)</li></ol></div><div class="nav2"><a href="a-1-4-2-1.html">練習問題1の解答を見る</a></div><div class="nav2"><a class="g" href="u-1-4-2.html">← 単元ページ</a><a class="g" href="e-1-4-2-2.html">例題2 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

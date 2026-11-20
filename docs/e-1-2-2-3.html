@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題3 背理法で無理数を示す（命題と条件・必要十分条件） | 数ラボ鬼</title>
+<meta name="description" content="命題と条件・必要十分条件の難問 例題3：背理法で無理数を示す">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css?v=e2705b01">
+<link rel="stylesheet" href="lesson.css?v=e2705b01">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-2-2.html">命題と条件・必要十分条件</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 3</span><span class="ls">集合と命題　背理法で無理数を示す</span></h1><div class="qbox"><p>\(\sqrt3\) が無理数であることを証明せよ。ただし、「整数 \(n\) について、\(n^2\) が3の倍数ならば \(n\) は3の倍数」は使ってよい。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p><b>背理法</b>：結論を否定して仮定し、矛盾を導く。「\(\sqrt3\) は無理数でない（有理数）」と仮定すると、\(\sqrt3=\dfrac ab\)（\(a,b\) は<b>互いに素</b>な自然数＝既約分数）と書ける。ここから「\(a,b\) がともに3の倍数」となり、互いに素に矛盾する。</p><div class="kotsu"><b>コツ</b>「ありえない」と仮定して話を進め、どこかで必ず行き止まり（矛盾）にぶつかることを見せる。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 仮定をおく</div><div class="sb"><p>\(\sqrt3\) が有理数と仮定すると、互いに素な自然数 \(a,\ b\) を用いて \(\sqrt3=\dfrac ab\) と表せる。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 両辺を2乗して整理する</div><div class="sb">\[3=\dfrac{a^2}{b^2}\ \Rightarrow\ a^2=3b^2\quad\cdots①\]<p>右辺は3の倍数なので \(a^2\) は3の倍数。使ってよい性質より \(a\) は3の倍数。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> \(a=3k\) とおく</div><div class="sb"><p>\(a=3k\)（\(k\) は自然数）を①に代入する。</p>\[(3k)^2=3b^2\ \Rightarrow\ 9k^2=3b^2\ \Rightarrow\ b^2=3k^2\]<p>\(b^2\) は3の倍数なので \(b\) も3の倍数。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> 矛盾を示す</div><div class="sb"><p>\(a,b\) がともに3の倍数となり、「互いに素」に矛盾する。よって仮定が誤りで、\(\sqrt3\) は無理数である。（証明終）</p></div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[\text{（証明終）}\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 3</h2><ol class="prac"><li>\(\sqrt2\) が無理数であることを証明せよ。ただし、「整数 \(n\) について、\(n^2\) が偶数ならば \(n\) は偶数」は使ってよい。</li><li>\(\sqrt5\) が無理数であることを証明せよ。ただし、「整数 \(n\) について、\(n^2\) が5の倍数ならば \(n\) は5の倍数」は使ってよい。</li><li>\(\sqrt2\) が無理数であることを使ってよいとき、\(1+\sqrt2\) が無理数であることを証明せよ。</li></ol></div><div class="nav2"><a href="a-1-2-2-3.html">練習問題3の解答を見る</a></div><div class="nav2"><a class="g" href="e-1-2-2-2.html">← 例題2</a><a class="g" href="e-1-2-2-4.html">例題4 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題1 分散と標準偏差を求める（分散・標準偏差・相関） | 数ラボ鬼</title>
+<meta name="description" content="分散・標準偏差・相関の難問 例題1：分散と標準偏差を求める">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css?v=e2705b01">
+<link rel="stylesheet" href="lesson.css?v=e2705b01">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-5-2.html">分散・標準偏差・相関</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 1</span><span class="ls">データの分析　分散と標準偏差を求める</span></h1><div class="qbox"><p>データ \(3,\ 5,\ 6,\ 8,\ 13\) の平均値、分散、標準偏差を求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>分散は<b>（偏差の2乗の平均）</b>。偏差 ＝ データ − 平均値。計算が楽な形もある：</p>\[\text{分散}=(\text{2乗の平均})-(\text{平均})^2\]<p>標準偏差は分散の正の平方根。</p><div class="kotsu"><b>コツ</b>偏差は平均からのズレ。ズレを2乗して平均したものが分散。2乗するので単位が変わり、ルートでもどしたのが標準偏差。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 平均値</div><div class="sb">\[\bar x=\dfrac{3+5+6+8+13}5=\dfrac{35}5=7\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 偏差の2乗を並べる</div><div class="sb">\[(3-7)^2=16,\ (5-7)^2=4,\ (6-7)^2=1,\ (8-7)^2=1,\ (13-7)^2=36\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 分散</div><div class="sb">\[s^2=\dfrac{16+4+1+1+36}5=\dfrac{58}5\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> 標準偏差</div><div class="sb">\[s=\sqrt{\dfrac{58}5}=\dfrac{\sqrt{290}}5\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 5</span> 別の方法で確かめる</div><div class="sb"><p>2乗の平均 \(\dfrac{9+25+36+64+169}5=\dfrac{303}5\)。</p>\[\dfrac{303}5-7^2=\dfrac{303-245}5=\dfrac{58}5\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[\bar x=7,\quad s^2=\dfrac{58}5,\quad s=\dfrac{\sqrt{290}}5\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 1</h2><ol class="prac"><li>\(2,\ 4,\ 6,\ 8,\ 10,\ 12\)</li><li>\(1,\ 4,\ 4,\ 5,\ 6\)</li><li>\(10,\ 12,\ 15,\ 18,\ 20\)</li></ol></div><div class="nav2"><a href="a-1-5-2-1.html">練習問題1の解答を見る</a></div><div class="nav2"><a class="g" href="u-1-5-2.html">← 単元ページ</a><a class="g" href="e-1-5-2-2.html">例題2 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

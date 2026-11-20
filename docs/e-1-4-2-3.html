@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題3 角の二等分線の長さ（面積で立式）（正弦定理・余弦定理） | 数ラボ鬼</title>
+<meta name="description" content="正弦定理・余弦定理の難問 例題3：角の二等分線の長さ（面積で立式）">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css?v=e2705b01">
+<link rel="stylesheet" href="lesson.css?v=e2705b01">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-4-2.html">正弦定理・余弦定理</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 3</span><span class="ls">図形と計量　角の二等分線の長さ（面積で立式）</span></h1><div class="qbox"><p>△ABC で \(AB=4,\ AC=6,\ A=120^\circ\) である。\(A\) の二等分線が辺 BC と交わる点を D とするとき、線分 AD の長さを求めよ。<div class="figbox"><img class="fig" src="fig/i42_e3.svg" style="width:42%" alt="i42_e3"></div></p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>三角形の面積を<b>2通りに表して等式を作る</b>。△ABC の面積は、△ABD と △ACD の面積の和。</p>\[\triangle ABC=\triangle ABD+\triangle ACD\]<p>\(\angle BAD=\angle CAD=60^\circ\) を使って、各面積を \(\dfrac12\cdot\text{辺}\cdot\text{辺}\cdot\sin\) で表す。</p><div class="kotsu"><b>コツ</b>大きな三角形の面積 ＝ 二等分線で切った2つの小さな三角形の面積の和。未知の AD が両方に登場して、方程式になる。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> △ABC の面積</div><div class="sb">\[\triangle ABC=\dfrac12\cdot4\cdot6\cdot\sin120^\circ=12\cdot\dfrac{\sqrt3}2=6\sqrt3\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> △ABD と △ACD の面積</div><div class="sb"><p>\(AD=x\) とおく。\(\angle BAD=\angle CAD=60^\circ\)。</p>\[\triangle ABD=\dfrac12\cdot4\cdot x\cdot\sin60^\circ=\dfrac12\cdot4x\cdot\dfrac{\sqrt3}2=\sqrt3\,x\]\[\triangle ACD=\dfrac12\cdot6\cdot x\cdot\sin60^\circ=\dfrac12\cdot6x\cdot\dfrac{\sqrt3}2=\dfrac{3\sqrt3}2\,x\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 面積の和で式を立てる</div><div class="sb">\[6\sqrt3=\sqrt3x+\dfrac{3\sqrt3}2x=\dfrac{5\sqrt3}2x\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> \(x\) を求める</div><div class="sb"><p>両辺を \(\sqrt3\) で割って</p>\[6=\dfrac52x\ \Rightarrow\ x=\dfrac{12}5\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[AD=\dfrac{12}5\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 3</h2><ol class="prac"><li>\(AB=3,\ AC=6,\ A=120^\circ\ \text{のとき},\ \text{二等分線}\ AD\)</li><li>\(AB=5,\ AC=3,\ A=60^\circ\ \text{のとき},\ \text{二等分線}\ AD\)</li><li>\(AB=2,\ AC=4,\ A=120^\circ\ \text{のとき},\ \text{二等分線}\ AD\)</li></ol></div><div class="nav2"><a href="a-1-4-2-3.html">練習問題3の解答を見る</a></div><div class="nav2"><a class="g" href="e-1-4-2-2.html">← 例題2</a><a class="g" href="e-1-4-2-4.html">例題4 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

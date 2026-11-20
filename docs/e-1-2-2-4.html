@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題4 必要条件・十分条件となる文字の範囲（命題と条件・必要十分条件） | 数ラボ鬼</title>
+<meta name="description" content="命題と条件・必要十分条件の難問 例題4：必要条件・十分条件となる文字の範囲">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css?v=e2705b01">
+<link rel="stylesheet" href="lesson.css?v=e2705b01">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-2-2.html">命題と条件・必要十分条件</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 4</span><span class="ls">集合と命題　必要条件・十分条件となる文字の範囲</span></h1><div class="qbox"><p>条件 \(p:\ x^2-2x-3\leqq0\)、\(q:\ x&lt;a\) について、\(p\) が \(q\) であるための十分条件となるような定数 \(a\) の値の範囲を求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>条件を集合で考える：\(P=\{x\mid p\}\)、\(Q=\{x\mid q\}\)。<b>\(p\) が \(q\) の十分条件 ⇔ \(p\Rightarrow q\) が真 ⇔ \(P\subset Q\)</b>。数直線で端点が含まれるかに注意して、\(P\subset Q\) となる \(a\) の範囲を求める。</p><div class="kotsu"><b>コツ</b>p は q の中にすっぽり入ればよい。「十分」は小さい方（p）が大きい方（q）に含まれる向き。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> \(p\) の範囲を求める</div><div class="sb"><p>\(x^2-2x-3=(x+1)(x-3)\leqq0\) より \(-1\leqq x\leqq3\)。つまり \(P=\{x\mid-1\leqq x\leqq3\}\)。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> \(P\subset Q\) となる条件</div><div class="sb"><p>\(Q=\{x\mid x&lt;a\}\)。\(P\) の一番右の点 \(x=3\) は \(P\) に含まれるので、\(3\) が \(Q\) に入っている必要がある（図）。</p><div class="figbox"><img class="fig" src="fig/i22_e4.svg" style="width:74%" alt="i22_e4"></div></div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> \(x=3\) が \(Q\) に入る条件</div><div class="sb"><p>\(3&lt;a\)（\(Q\) は \(a\) を含まないので等号は不可）。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> 端点を確かめる</div><div class="sb"><p>\(a=3\) のとき \(Q=\{x&lt;3\}\)。\(x=3\) は \(P\) に入るが \(Q\) に入らないので \(P\subset Q\) でない。よって \(a=3\) は不適。</p></div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[a>3\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 4</h2><ol class="prac"><li>\(p:\ x^2-x-2&lt;0,\quad q:\ x\leqq a\ \text{について},\ p\ \text{が}\ q\ \text{の十分条件となる}\ a\ \text{の範囲}\)</li><li>\(p:\ |x-1|\leqq2,\quad q:\ x>a\ \text{について},\ p\ \text{が}\ q\ \text{の十分条件となる}\ a\ \text{の範囲}\)</li><li>\(p:\ x\geqq a,\quad q:\ x^2-5x+4\leqq0\ \text{について},\ p\ \text{が}\ q\ \text{の必要条件となる}\ a\ \text{の範囲}\)</li></ol></div><div class="nav2"><a href="a-1-2-2-4.html">練習問題4の解答を見る</a></div><div class="nav2"><a class="g" href="e-1-2-2-3.html">← 例題3</a><a class="g" href="e-1-2-2-5.html">例題5 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

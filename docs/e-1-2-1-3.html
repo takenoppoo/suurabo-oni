@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題3 共通部分の個数の最大・最小（集合） | 数ラボ鬼</title>
+<meta name="description" content="集合の難問 例題3：共通部分の個数の最大・最小">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css?v=e2705b01">
+<link rel="stylesheet" href="lesson.css?v=e2705b01">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-2-1.html">集合</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 3</span><span class="ls">集合と命題　共通部分の個数の最大・最小</span></h1><div class="qbox"><p>40人のクラスで、犬を飼っている人が25人、猫を飼っている人が18人いる。犬と猫の両方を飼っている人の人数の最大値と最小値を求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>両方を飼っている人数を \(x\) 人とおく。図の各部分の人数はすべて<b>0以上</b>でなければならない。この条件から \(x\) の範囲が決まる。</p><div class="kotsu"><b>コツ</b>人数にマイナスは存在しない。4つの部屋の人数がどれも0以上になるように、x を押さえ込む。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 各部分の人数を \(x\) で表す</div><div class="sb"><p>犬だけ：\(25-x\)、猫だけ：\(18-x\)、どちらも飼っていない：</p>\[40-\{(25-x)+x+(18-x)\}=40-(43-x)=x-3\]<div class="figbox"><img class="fig" src="fig/i21_e3.svg" style="width:52%" alt="i21_e3"></div></div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 0以上の条件を式にする</div><div class="sb"><p>\(x\geqq0\)、\(25-x\geqq0\)、\(18-x\geqq0\)、\(x-3\geqq0\)。</p>\[x\leqq25,\quad x\leqq18,\quad x\geqq3\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 範囲を求める</div><div class="sb"><p>\(3\leqq x\leqq18\)。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> 確かめる</div><div class="sb"><p>\(x=18\)：猫を飼う人全員が犬も飼っている（犬だけ7人、どちらも飼わない15人）。\(x=3\)：犬か猫を飼う人が \(25+18-3=40\) 人で全員。</p></div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[\text{最大値 }18\text{人},\quad\text{最小値 }3\text{人}\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 3</h2><ol class="prac"><li>50人のクラスで、Aを持っている人が30人、Bを持っている人が28人いる。両方を持っている人の人数の最大値と最小値を求めよ。</li><li>60人のクラスで、Aを持っている人が35人、Bを持っている人が40人いる。両方を持っている人の人数の最大値と最小値を求めよ。</li><li>45人のクラスで、Aを持っている人が27人、Bを持っている人が30人いる。両方を持っている人の人数の最大値と最小値を求めよ。</li></ol></div><div class="nav2"><a href="a-1-2-1-3.html">練習問題3の解答を見る</a></div><div class="nav2"><a class="g" href="e-1-2-1-2.html">← 例題2</a><a class="g" href="e-1-2-1-4.html">例題4 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

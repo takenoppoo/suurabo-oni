@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題3 四分位数・箱ひげ図・外れ値（代表値・四分位数・箱ひげ図） | 数ラボ鬼</title>
+<meta name="description" content="代表値・四分位数・箱ひげ図の難問 例題3：四分位数・箱ひげ図・外れ値">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css?v=e2705b01">
+<link rel="stylesheet" href="lesson.css?v=e2705b01">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-5-1.html">代表値・四分位数・箱ひげ図</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 3</span><span class="ls">データの分析　四分位数・箱ひげ図・外れ値</span></h1><div class="qbox"><p>次の10個のデータについて、四分位数 \(Q_1,\ Q_2,\ Q_3\)、四分位範囲、外れ値の有無を答えよ。ただし外れ値は「\(Q_1-1.5\times(\text{四分位範囲})\) 未満」または「\(Q_3+1.5\times(\text{四分位範囲})\) より大きい」値とする。\[2,\ 4,\ 5,\ 7,\ 8,\ 9,\ 11,\ 12,\ 14,\ 30\]</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>データを小さい順に並べ、<b>中央値 \(Q_2\)</b> を出す。データを<b>下位半分と上位半分</b>に分け（個数が奇数のときは中央値を除く）、それぞれの中央値が \(Q_1,\ Q_3\)。四分位範囲 ＝ \(Q_3-Q_1\)。</p><div class="kotsu"><b>コツ</b>3回の「真ん中を取る」。全体のまんなか、下半分のまんなか、上半分のまんなか。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 中央値 \(Q_2\)（10個＝偶数）</div><div class="sb"><p>5番目 \(8\) と6番目 \(9\) の平均。</p>\[Q_2=\dfrac{8+9}2=8.5\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 下位半分の中央値 \(Q_1\)</div><div class="sb"><p>下位5個 \(2,4,5,7,8\) の真ん中（3番目）。</p>\[Q_1=5\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 上位半分の中央値 \(Q_3\)</div><div class="sb"><p>上位5個 \(9,11,12,14,30\) の真ん中（3番目）。</p>\[Q_3=12\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> 四分位範囲と外れ値の基準</div><div class="sb"><p>四分位範囲 \(=12-5=7\)。\(1.5\times7=10.5\)。</p>\[Q_1-10.5=-5.5,\qquad Q_3+10.5=22.5\]<p>\(-5.5\) 未満の値はなく、\(22.5\) より大きい値は \(30\)。</p><div class="figbox"><img class="fig" src="fig/i51_e3.svg" style="width:66%" alt="i51_e3"></div></div></div><div class="step"><div class="sh2"><span class="badge">STEP 5</span> 結論</div><div class="sb"><p>外れ値は \(30\) の1つ。</p></div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[Q_1=5,\ Q_2=8.5,\ Q_3=12,\ \text{四分位範囲}\ 7,\ \text{外れ値は}\ 30\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 3</h2><ol class="prac"><li>\(1,\ 3,\ 4,\ 6,\ 7,\ 9,\ 10,\ 12,\ 13,\ 25\ (10\text{個})\)</li><li>\(5,\ 6,\ 8,\ 9,\ 11,\ 12,\ 14,\ 15,\ 17,\ 18,\ 40\ (11\text{個})\)</li><li>\(2,\ 3,\ 5,\ 7,\ 8,\ 10,\ 12,\ 21\ (8\text{個})\)</li></ol></div><div class="nav2"><a href="a-1-5-1-3.html">練習問題3の解答を見る</a></div><div class="nav2"><a class="g" href="e-1-5-1-2.html">← 例題2</a><a class="g" href="e-1-5-1-4.html">例題4 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

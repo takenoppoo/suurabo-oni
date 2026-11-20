@@ -63,11 +63,11 @@ def L(b): return f'<div class="lesson">{b}</div>'
 for key,U in UNITS.items():
     uid=U['uid']; S=sname(U['subject']); ex=U['examples']; n=len(ex)
     crumb=f'<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-{U["subject"]}.html">{S}</a> ＞ <a href="u-{uid}.html">{html.escape(U["name"])}</a></p>'
-    lis="".join(f'<a class="ecard" href="e-{uid}-{i}.html"><span class="ebadge">例題 {i}</span><span class="et">{html.escape(e["title"])}</span></a>' for i,e in enumerate(ex,1))
-    lis+=f'<a class="ecard" href="c-{uid}.html"><span class="ebadge">章末</span><span class="et">章末問題</span></a>'
+    lis="".join(f'<a class="card" href="e-{uid}-{i}.html"><span class="lbadge">例題 {i}</span><strong>{html.escape(e["title"])}</strong></a>' for i,e in enumerate(ex,1))
+    lis+=f'<a class="card" href="c-{uid}.html"><span class="lbadge">章末</span><strong>章末問題</strong></a>'
     pdfs=f'<p class="dl">PDF：<a href="pdf/{uid}-mondai.pdf">問題編</a>｜<a href="pdf/{uid}-bessatsu.pdf">別冊（練習問題・章末問題の解答）</a></p>'
     W(f"u-{uid}.html",page(f"{U['name']}（{S}・{U['chapter']}）",f"{U['name']}の難問。例題{n}問と章末問題。",
-      f'{crumb}{AD_TOP}<h1 class="lh"><span class="lbadge">{S}</span><span class="lsub">{U["chapter"]}　{html.escape(U["name"])}</span></h1><p>{U.get("intro","")}</p><div class="ecards">{lis}</div>{pdfs}{AD_BTM}'))
+      f'{crumb}{AD_TOP}<h1 class="lh"><span class="lbadge">{S}</span><span class="lsub">{U["chapter"]}　{html.escape(U["name"])}</span></h1><p>{U.get("intro","")}</p><div class="cards">{lis}</div>{pdfs}{AD_BTM}'))
     for i,e in enumerate(ex,1):
         prev=f'<a class="g" href="e-{uid}-{i-1}.html">← 例題{i-1}</a>' if i>1 else f'<a class="g" href="u-{uid}.html">← 単元ページ</a>'
         nxt=f'<a class="g" href="e-{uid}-{i+1}.html">例題{i+1} →</a>' if i<n else f'<a class="g" href="c-{uid}.html">章末問題 →</a>'

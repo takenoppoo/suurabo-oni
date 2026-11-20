@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題1 連立2次不等式（2次不等式） | 数ラボ鬼</title>
+<meta name="description" content="2次不等式の難問 例題1：連立2次不等式">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css?v=e2705b01">
+<link rel="stylesheet" href="lesson.css?v=e2705b01">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-3-4.html">2次不等式</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 1</span><span class="ls">2次関数　連立2次不等式</span></h1><div class="qbox"><p>連立不等式\[\begin{cases}x^2-3x-10&lt;0\\ x^2-x-2\geqq0\end{cases}\]を解け。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>それぞれの不等式を<b>別々に解いて数直線に描き</b>、<b>共通部分</b>を求める。2次不等式は、<b>因数分解して「グラフが \(x\) 軸の下か上か」</b>で解く。</p>\[(x-\alpha)(x-\beta)&lt;0\ (\alpha&lt;\beta)\Rightarrow\alpha&lt;x&lt;\beta\]\[(x-\alpha)(x-\beta)>0\ (\alpha&lt;\beta)\Rightarrow x&lt;\alpha,\ \beta&lt;x\]<div class="kotsu"><b>コツ</b>2つの門を両方通れる場所だけが答え。数直線に2本の道を描いて、重なる所を探す。端の○と●に注意。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> ①を解く</div><div class="sb">\[x^2-3x-10=(x-5)(x+2)&lt;0\ \Rightarrow\ -2&lt;x&lt;5\]<div class="figbox"><img class="fig" src="fig/i34_e1a.svg" style="width:66%" alt="i34_e1a"></div></div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> ②を解く</div><div class="sb">\[x^2-x-2=(x-2)(x+1)\geqq0\ \Rightarrow\ x\leqq-1,\ \ 2\leqq x\]<div class="figbox"><img class="fig" src="fig/i34_e1b.svg" style="width:66%" alt="i34_e1b"></div></div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 共通部分を求める</div><div class="sb"><p>①と②の重なりは下図の太線。</p><div class="figbox"><img class="fig" src="fig/i34_e1c.svg" style="width:66%" alt="i34_e1c"></div><p>\(-2&lt;x\leqq-1\) と \(2\leqq x&lt;5\)。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 4</span> 端点を確かめる</div><div class="sb"><p>\(x=-1\)：①\(1+3-10=-6&lt;0\)、②\(1+1-2=0\geqq0\) で両方成立。\(x=2\)：①\(4-6-10=-12&lt;0\)、②\(4-2-2=0\geqq0\) で両方成立。</p></div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[-2&lt;x\leqq-1,\quad 2\leqq x&lt;5\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 1</h2><ol class="prac"><li>\(\begin{cases}x^2-x-6&lt;0\\ x^2-4x+3\geqq0\end{cases}\)</li><li>\(\begin{cases}x^2-2x-8\leqq0\\ x^2-x-2>0\end{cases}\)</li><li>\(\begin{cases}x^2-4&lt;0\\ x^2-x-2\geqq0\end{cases}\)</li></ol></div><div class="nav2"><a href="a-1-3-4-1.html">練習問題1の解答を見る</a></div><div class="nav2"><a class="g" href="u-1-3-4.html">← 単元ページ</a><a class="g" href="e-1-3-4-2.html">例題2 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>
