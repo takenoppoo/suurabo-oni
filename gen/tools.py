@@ -84,14 +84,14 @@ def venn2(name,a_only,both,b_only,outside,A="A",B="B",w=52,U=None):
     make_fig(name,fn,size=(4.4,3.1))
     return img(name,w)
 
-def graph(name,curves,xr,yr,pts=(),xticks=(),yticks=(),vlines=(),texts=(),w=56,size=(4.2,3.4),grid=False):
+def graph(name,curves,xr,yr,pts=(),xticks=(),yticks=(),vlines=(),texts=(),w=56,size=(4.2,3.4),grid=False,xl="x",yl="y",hl=()):
     """curves=[(func,color,ls,label?)]  pts=[(x,y,label,dx,dy)]"""
     import numpy as np
     def fn(ax):
         ax.set_xlim(*xr); ax.set_ylim(*yr); ax.set_aspect("auto"); ax.axis("off")
         ax.annotate("",xy=(xr[1],0),xytext=(xr[0],0),arrowprops=dict(arrowstyle="->",lw=1.2,color="#333"))
         ax.annotate("",xy=(0,yr[1]),xytext=(0,yr[0]),arrowprops=dict(arrowstyle="->",lw=1.2,color="#333"))
-        ax.text(xr[1],-0.04*(yr[1]-yr[0]),"x",fontsize=12,ha="right",va="top"); ax.text(0.03*(xr[1]-xr[0]),yr[1],"y",fontsize=12,va="top")
+        ax.text(xr[1],-0.04*(yr[1]-yr[0]),xl,fontsize=12,ha="right",va="top"); ax.text(0.03*(xr[1]-xr[0]),yr[1],yl,fontsize=12,va="top")
         ax.text(-0.03*(xr[1]-xr[0]),-0.04*(yr[1]-yr[0]),"O",fontsize=11,ha="right",va="top")
         for t,l in xticks:
             ax.plot([t,t],[-.015*(yr[1]-yr[0]),.015*(yr[1]-yr[0])],color="#333",lw=1); ax.text(t,-0.05*(yr[1]-yr[0]),l,ha="center",va="top",fontsize=11)
@@ -103,6 +103,7 @@ def graph(name,curves,xr,yr,pts=(),xticks=(),yticks=(),vlines=(),texts=(),w=56,s
             xs=np.linspace(xr[0],xr[1],400); ys=np.array([f(v) for v in xs],dtype=float)
             m=(ys>=yr[0])&(ys<=yr[1]); ys=np.where(m,ys,np.nan)
             ax.plot(xs,ys,color=col,lw=2,ls=ls)
+        for h1,h2,hc in hl: ax.plot([h1,h2],[0,0],color=hc,lw=5,solid_capstyle="butt",zorder=4)
         for p in pts:
             x0,y0,lab=p[0],p[1],p[2]; dx=p[3] if len(p)>3 else 0.1*(xr[1]-xr[0]); dy=p[4] if len(p)>4 else 0
             ax.plot([x0],[y0],"o",ms=5,color=RED); ax.text(x0+dx,y0+dy,lab,fontsize=11,color=RED,ha="left",va="center")
@@ -177,3 +178,7 @@ def scatter(name,xs,ys,w=40,size=(3.4,3.0)):
         ax.annotate("",xy=(x0,max(ys)+1),xytext=(x0,y0),arrowprops=dict(arrowstyle="->",lw=1.1,color="#333"))
         ax.plot(xs,ys,"o",color=RED,ms=7); ax.text(max(xs)+1,y0-0.1,"x",fontsize=11,va="top",ha="right"); ax.text(x0+0.1,max(ys)+1,"y",fontsize=11,va="top")
     make_fig(name,fn,size=size); return img(name,w)
+
+def addfig(e,j,fig):
+    s=e['steps'][j]; e['steps'][j]=s[:-6]+fig+"</div>"
+def row(figs): return '<div style="display:flex;gap:6px;margin:4px 0">'+"".join('<div style="flex:1">'+f+'</div>' for f in figs)+'</div>'

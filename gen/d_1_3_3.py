@@ -152,6 +152,19 @@ assert sorted(sp.solve(x**2-4*x+1,x))==[2-sp.sqrt(3),2+sp.sqrt(3)]
 for av in np.arange(-8,8.01,0.25): assert ok_pos(av,lambda t:[1,-2*t,2*t+3])==(av>3)
 assert common(lambda A:x**2+A*x+6,lambda A:x**2+6*x+A)==[-7,6]
 
+
+# ===== 追加の図 =====
+
+import math as _m
+_f=graph("i33_g2",[(lambda v:v*v-5*v+3,RED,"-")],(-1,6),(-4,9),pts=[((5-_m.sqrt(13))/2,0,"α",-0.5,0.6),((5+_m.sqrt(13))/2,0,"β",0.2,0.6)],vlines=[(2.5,"#aaa")],texts=[(2.6,8,"軸 x=5/2","#555")],w=50,size=(4.2,3.1))
+addfig(EXS[1],0,_f)
+_f=graph("i33_g3",[(lambda v:v*v-6*v+5,RED,"-")],(-1,7.5),(-5,9),pts=[(1,0,"1",-0.1,0.7),(5,0,"5",0.1,0.7),(3,-4,"頂点(3,-4)",0.3,-0.4)],vlines=[(3,"#aaa")],hl=[(1,5,"#3a6fb5")],texts=[(2.2,1.8,"差=4","#3a6fb5")],w=52,size=(4.2,3.1))
+addfig(EXS[2],3,_f)
+_f=graph("i33_g4",[(lambda v:v*v-5*v+4.5,RED,"-")],(-1,5.5),(-2.5,8),pts=[(0,4.5,"f(0)>0",0.2,0.3)],vlines=[(2.5,"#aaa")],hl=[((5-_m.sqrt(7))/2,(5+_m.sqrt(7))/2,"#3a6fb5")],texts=[(2.6,7,"軸 x=a>0","#555"),(1.0,-1.8,"x軸と異なる2点（D>0）、どちらも正","#3a6fb5")],w=54,size=(4.4,3.2))
+addfig(EXS[3],3,_f)
+_f=graph("i33_g5",[(lambda v:v*v-3*v+2,RED,"-"),(lambda v:v*v+2*v-3,"#3a6fb5","-")],(-4.5,4),(-4.5,8),pts=[(1,0,"共通解 x=1",0.2,-0.9),(2,0,"2",0.1,0.7),(-3,0,"-3",-0.5,0.7)],texts=[(2.2,5.5,"赤：x²-3x+2","#b81f36"),(-4.3,6.5,"青：x²+2x-3","#3a6fb5")],w=58,size=(4.6,3.2))
+addfig(EXS[4],3,_f)
+
 UNIT=dict(subject="1",ci=2,ui=2,chapter="2次関数",name="2次方程式",
   intro="重解・解と係数の関係・解の条件・解の符号・共通解など、2次方程式の難問に挑みます。",
   examples=EXS,chapter_end=CHE)

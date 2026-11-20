@@ -8,7 +8,7 @@
 .lesson .qbox .katex-display{font-size:1.35em;margin:.35em 0}
 .lesson .bar{background:#F8F4F4;border-left:4px solid #b81f36;padding:5px 12px 7px;margin:9px 0}
 .lesson .bar.sol{background:#fff;border:1.5px solid #e2c3c9;border-left:5px solid #b81f36;border-radius:8px;padding:8px 16px 10px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
-.lesson .item .sb{background:#fff;border:1.5px solid #e2c3c9;border-radius:8px;padding:6px 14px;margin:6px 0}
+.lesson ol.cl{background:#fff;border:1.5px solid #e2c3c9;border-left:5px solid #b81f36;border-radius:8px;padding:8px 16px 8px 2.4em;box-shadow:0 1px 4px rgba(0,0,0,.08)}
 .lesson .bar h2{margin:0 0 3px;font-size:1em;color:#b81f36}
 .lesson .bar p{margin:3px 0}
 .lesson .bar .katex-display{margin:.35em 0;font-size:1.1em}
@@ -24,7 +24,7 @@
 .lesson .prac{padding-left:1.5em;margin:3px 0}.lesson .prac li{margin:5px 0}
 .lesson .tbl{border-collapse:collapse;margin:4px auto}.lesson .tbl th,.lesson .tbl td{border:1px solid #bbb;padding:1px 12px;text-align:center}
 .lesson .cl{padding-left:1.6em}.lesson .cl li{margin:10px 0}
-.lesson .item{margin:8px 0;padding-bottom:4px;border-bottom:1px solid #eee}
+.lesson .item{margin:10px 0;padding:6px 16px 6px;background:#fff;border:1.5px solid #e2c3c9;border-left:5px solid #b81f36;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
 .lesson .item p.pq{margin:2px 0;font-weight:700}
 .lesson .item .abox{margin:5px 0;padding:2px 12px}.lesson .item .abox .katex-display{font-size:1.1em;margin:.2em 0}
 .lesson .item .mark{font-size:1.15em;bottom:3px}

@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-20T12:02:51.716245</dc:date>
+    <dc:date>2026-11-20T12:25:11.054607</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -32,22 +32,22 @@ z
    <g id="line2d_1">
     <path d="M 121.400388 62.0352 
 L 121.400388 55.1808 
-" clip-path="url(#p3232e9bb66)" style="fill: none; stroke: #333333; stroke-width: 1.2; stroke-linecap: square"/>
+" clip-path="url(#p4e9a52d519)" style="fill: none; stroke: #333333; stroke-width: 1.2; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 222.165437 62.0352 
 L 222.165437 55.1808 
-" clip-path="url(#p3232e9bb66)" style="fill: none; stroke: #333333; stroke-width: 1.2; stroke-linecap: square"/>
+" clip-path="url(#p4e9a52d519)" style="fill: none; stroke: #333333; stroke-width: 1.2; stroke-linecap: square"/>
    </g>
    <g id="line2d_3">
     <path d="M 121.400388 82.17 
 L 121.400388 20.052 
-" clip-path="url(#p3232e9bb66)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #888888"/>
+" clip-path="url(#p4e9a52d519)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #888888"/>
    </g>
    <g id="line2d_4">
     <path d="M 222.165437 82.17 
 L 222.165437 20.052 
-" clip-path="url(#p3232e9bb66)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #888888"/>
+" clip-path="url(#p4e9a52d519)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #888888"/>
    </g>
    <g id="patch_2">
     <path d="M 9.198075 58.608 
@@ -361,7 +361,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p3232e9bb66">
+  <clipPath id="p4e9a52d519">
    <rect x="7.2" y="7.2" width="345.96" height="94.248"/>
   </clipPath>
  </defs>

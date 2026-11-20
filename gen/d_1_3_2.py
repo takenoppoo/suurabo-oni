@@ -150,6 +150,18 @@ for av in (-1,0,.5,1,2,3): assert abs(mina(lambda v,a:v*v-4*a*v,Fr(0),Fr(2),Fr(a
 for av in (-1,0,.5,1,2,3): assert abs(maxa(lambda v,a:v*v-2*a*v+2,Fr(0),Fr(2),Fr(av))-(6-4*av if av<1 else 2))<1e-5
 assert abs(num(lambda v:(v*v-4*v)**2+2*(v*v-4*v))[0]+1)<1e-6
 
+
+# ===== 追加の図 =====
+
+def _g3(name,a,t):
+    return graph(name,[(lambda v:((v-a)**2+0.3) if 0<=v<=2 else float("nan"),RED,"-")],(-0.8,2.8),(-0.3,4.8),pts=[(0,(a)**2+0.3,"",0,0),(2,(2-a)**2+0.3,"",0,0)],xticks=[(0,"0"),(2,"2"),(1,"1")],vlines=[(a,"#c88"),(1,"#aaa")],texts=[(0.3,3.6,t,"#444")],w=100,size=(2.8,2.6))
+addfig(EXS[2],0,row([_g3("i32_g3a",0.4,"a<1：x=2で最大"),_g3("i32_g3b",1.6,"a≧1：x=0で最大")]))
+_f=graph("i32_g4",[(lambda v:v*v+4*v+3,"#aaa","--"),(lambda v:(v*v+4*v+3) if v>=-1 else float("nan"),RED,"-")],(-4.5,3.5),(-2,14),pts=[(-1,0,"(-1, 0)",0.25,-0.9),(-2,-1,"頂点(-2,-1)",-1.9,-1.1)],xticks=[(-1,"-1")],vlines=[(-1,"#c88")],xl="t",yl="y",texts=[(0.4,9,"赤：t≧-1の部分","#b81f36")],w=54,size=(4.4,3.2))
+addfig(EXS[3],2,_f)
+_a=graph("i32_g5a",[(lambda v:(v-1)**2+5 if 0<=v<=3 else float("nan"),RED,"-")],(-0.8,3.8),(-1,10.5),pts=[(0,6,"(0, 6)",0.2,0.3),(1,5,"(1, 5)",0.15,-0.9),(3,9,"(3, 9)",-1.1,0.2)],xticks=[(1,"1"),(3,"3")],w=100,size=(3.0,2.8))
+_b=graph("i32_g5b",[(lambda v:6-2*v if 0<=v<=3 else float("nan"),"#3a6fb5","-")],(-0.8,4),(-1,7.5),pts=[(0,6,"(0, 6)",0.2,0.3),(3,0,"(3, 0)",0.1,0.7)],xticks=[(3,"3")],yticks=[(6,"6")],w=100,size=(3.0,2.8),texts=[(1.5,5.2,"2x+y=6","#3a6fb5")])
+addfig(EXS[4],3,row([_a,_b]))
+
 UNIT=dict(subject="1",ci=2,ui=1,chapter="2次関数",name="2次関数の最大・最小",
   intro="定義域つきの最大最小、軸が動く場合分け、置き換え、条件式つきの最大最小など、2次関数の最大・最小の難問に挑みます。",
   examples=EXS,chapter_end=CHE)

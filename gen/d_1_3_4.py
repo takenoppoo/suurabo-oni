@@ -157,6 +157,23 @@ for av in np.arange(-6,6.01,0.25):
     assert allpos(lambda t,a_:a_*t*t-2*a_*t+2,av)==(0<=av<2) or abs(av-2)<1e-9
     assert (min(t*t+2*av*t+2*av+3 for t in np.linspace(-40,40,80001))>1e-9)==(-1<av<3) or av in (-1,3)
 
+
+# ===== 追加の図 =====
+
+_f=graph("i34_g1",[(lambda v:v*v-3*v-10,RED,"-"),(lambda v:v*v-v-2,"#3a6fb5","-")],(-3.5,6.5),(-12,14),pts=[(-2,0,"-2",-0.5,0.9),(5,0,"5",0.1,0.9),(-1,0,"-1",0.05,-1.2),(2,0,"2",-0.3,-1.2)],texts=[(3.6,11,"赤：①","#b81f36"),(-3.4,11,"青：②","#3a6fb5")],hl=[(-2,-1,"#2a9d6a"),(2,5,"#2a9d6a")],w=60,size=(4.8,3.4))
+addfig(EXS[0],2,_f)
+_f=graph("i34_g3",[(lambda v:v*v-3*v-10,RED,"-")],(-3.5,6.5),(-14,8),pts=[(-2,0,"-2",-0.5,0.9),(5,0,"5",0.1,0.9)],hl=[(-2,5,"#2a9d6a")],texts=[(-3.3,5.5,"y<0 となる範囲が解","#2a9d6a")],w=52,size=(4.4,3.2))
+addfig(EXS[2],0,_f)
+def _g4(name,a,t,lo,hi):
+    return graph(name,[(lambda v:(v-2)*(v-a),RED,"-")],(min(a,2)-2.5,max(a,2)+2.5),(-6,6),pts=[(2,0,"2",0.05,0.8),(a,0,"a",0.05,0.8)],hl=[(min(a,2),max(a,2),"#2a9d6a")],texts=[(min(a,2)-2.3,4.8,t,"#444")],xticks=[(k,str(k)) for k in range(lo,hi+1)],w=100,size=(3.4,2.8))
+_w=lambda f:'<div style="width:58%;margin:2px auto">'+f+'</div>'
+_rw=lambda figs:'<div style="display:flex;gap:6px;margin:4px 0">'+"".join('<div style="flex:1">'+f+'</div>' for f in figs)+'</div>'
+addfig(EXS[3],1,_w(_g4("i34_g4a",5.5,"a>2（例：a=5.5）整数 3,4,5",3,5)))
+addfig(EXS[3],2,_w(_g4("i34_g4b",-1.5,"a<2（例：a=-1.5）整数 -1,0,1",-1,1)))
+def _g5(name,a,t):
+    return graph(name,[(lambda v:a*v*v-2*a*v+3,RED,"-")],(-1.5,3.5),(-3,8),vlines=[(1,"#aaa")],texts=[(-1.4,6.6,t,"#444")],w=100,size=(2.4,2.4))
+addfig(EXS[4],1,_rw([_g5("i34_g5a",-1,"a<0：下に凸でない"),_g5("i34_g5b",1.5,"0<a<3：x軸の上"),_g5("i34_g5c",4,"a≧3：x軸と交わる")]))
+
 UNIT=dict(subject="1",ci=2,ui=3,chapter="2次関数",name="2次不等式",
   intro="連立2次不等式・常に成り立つ条件・解から係数を決める・整数解の個数・係数が文字の場合など、2次不等式の難問に挑みます。",
   examples=EXS,chapter_end=CHE)
