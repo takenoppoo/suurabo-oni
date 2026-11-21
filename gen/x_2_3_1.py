@@ -45,13 +45,31 @@ def b8(A,b,c):
 o=[b8(*v) for v in [(3,2,pi/3),(2,3,pi/2),(4,2,pi/4),(1,4,pi/2),(5,1,pi/6)]]
 build(Z,CH,"グラフから y=a sin(bθ−c) の係数を読み取る",o,"<p>最大値＝振幅 $a$、周期＝$\\dfrac{2\\pi}{b}$、グラフが $0$ から増加し始める点 $\\theta_0=\\dfrac cb$。この3つを順に読む。</p>","波の高さ・波長・出発点の3つが分かれば式が決まる。",8)
 # 9 公式で簡単に
+
+def rotfig(name,k):
+    """θ を k×90° 回転した点 Q の座標を、単位円の上で見せる"""
+    import matplotlib.patches as pa
+    lab={0:(r"\cos\theta",r"\sin\theta"),1:(r"-\sin\theta",r"\cos\theta"),2:(r"-\cos\theta",r"-\sin\theta"),3:(r"\sin\theta",r"-\cos\theta")}[k]
+    def fn(ax):
+        ax.set_aspect("equal"); ax.set_xlim(-2.3,2.3); ax.set_ylim(-1.5,1.5); ax.axis("off")
+        t=np.linspace(0,2*np.pi,300); ax.plot(np.cos(t),np.sin(t),color="#555",lw=1.3)
+        ax.annotate("",xy=(1.5,0),xytext=(-1.5,0),arrowprops=dict(arrowstyle="->",lw=1,color="#333"))
+        ax.annotate("",xy=(0,1.42),xytext=(0,-1.42),arrowprops=dict(arrowstyle="->",lw=1,color="#333"))
+        a=np.radians(35); b=a+k*np.pi/2
+        for ang,col,nm,(cx_,sy_) in [(a,"#b81f36","P",(r"\cos\theta",r"\sin\theta")),(b,"#1f6fb8","Q",lab)]:
+            px,py=np.cos(ang),np.sin(ang); ax.plot([0,px],[0,py],color=col,lw=2); ax.plot([px],[py],"o",color=col,zorder=5)
+            ax.text(px+(.1 if px>=0 else -.1),py+(.12 if py>=0 else -.18),nm+"$\\left("+cx_+",\\ "+sy_+"\\right)$",color=col,fontsize=10,ha=("left" if px>=0 else "right"))
+        if k: ax.add_patch(pa.Arc((0,0),.7,.7,theta1=35,theta2=35+k*90,color="#1f8a5b",lw=1.6)); ax.text(.52*np.cos(a+k*np.pi/4),.52*np.sin(a+k*np.pi/4),"$%d\\times 90^\\circ$"%k,fontsize=9,color="#1f8a5b",ha="center",bbox=dict(fc="white",ec="none",pad=1))
+    make_fig(name,fn,size=(4.2,3.1))
+    return img(name,50,"θ を %d×90° 回した点 Q の座標を読む"%k)
 def b9(n):
     # sin(π/2+θ)... compute  value of sin(θ+nπ/2)
     ex={0:"\\sin\\theta",1:"\\cos\\theta",2:"-\\sin\\theta",3:"-\\cos\\theta"}
     th_=sp.Rational(7,5)
     e1=sp.sin(th+n*pi/2); v=sp.simplify(sp.expand_trig(e1))
     assert abs(float(e1.subs(th,th_))-float(v.subs(th,th_)))<1e-9
-    st=[("%d を使って"%n,"<p>"+I(r"\sin\left(\theta+%s\right)"%L(n*pi/2))+" の周期・対称性を使う。2π ごとに戻るので "+I(r"\dfrac{%d\pi}{2}"%n)+" を "+I(r"\dfrac{%d\pi}{2}"%(n%4))+" としてよい。</p>"),
+    k=n%4; fg=rotfig("x231_9_%d"%k,k)
+    st=[("%d を使って"%n,"<p>単位円の点 "+I(r"P(\cos\theta,\ \sin\theta)")+" を、原点のまわりに "+I(r"%d\times90^\circ"%k)+" 回した点を "+I("Q")+" とする。"+I("Q")+" の "+I("y")+" 座標が "+I(r"\sin\left(\theta+%s\right)"%L(k*pi/2))+" である。</p>"+fg+"<p>"+I(r"\sin\left(\theta+%s\right)"%L(n*pi/2))+" の周期・対称性を使う。2π ごとに戻るので "+I(r"\dfrac{%d\pi}{2}"%n)+" を "+I(r"\dfrac{%d\pi}{2}"%(n%4))+" としてよい。</p>"),
         ("公式を適用","<p>"+D(r"\sin\left(\theta+%s\right)=%s"%(L((n%4)*pi/2),L(v))))]
     return r"$\sin\left(\theta+\dfrac{%d\pi}{2}\right)$ を、$\sin\theta$ または $\cos\theta$ を使って表せ。"%n,st,L(v)
 o=[b9(n) for n in [5,7,6,9,11]]

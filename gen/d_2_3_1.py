@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # 一般角と三角関数のグラフ（数学II 三角関数）
 from bh import *
+import math
 Z=U_(); CH=[]
 pi=sp.pi
 # ===== 例題1 弧度法・扇形 =====
@@ -34,6 +35,11 @@ def val1(fn_name,a_,b_):
     if th!=t0: s+=I(r"%s=%s%+d\cdot2\pi"%(PI(th),PI(t0),int(sp.floor(th/2)))) +"（周期 "+I(r"2\pi")+" で "+I(r"0\leqq\theta<2\pi")+" に直す）。"
     s+="角 "+I(PI(t0))+" は第%d象限、基準角 "%qd+I(PI(ref))+"。第%d象限で "%qd+I(r"\%s"%fn_name)+" は"+sgtxt+"。</p>"
     s+=D(r"\%s %s=%s\%s %s=%s"%(fn_name,PI(th),"" if sg>0 else "-",fn_name,PI(ref),L(v)))
+    nm="u231_%s_%s%d_%d"%(fn_name,"m" if a_<0 else "p",abs(a_),b_)
+    cxl=sp.latex(sp.nsimplify(sp.cos(t0*pi))); syl=sp.latex(sp.nsimplify(sp.sin(t0*pi)))
+    s+="<p>単位円で確かめる。角 "+I(PI(t0))+" の動径と単位円の交点 "+I("P")+" の座標が "+I(r"(\cos\theta,\ \sin\theta)")+" になる。</p>"
+    s+=ucfig(nm,float(t0)*math.pi,cxl,syl,PI(t0),(PI(ref) if ref!=t0 else ""),w=46)
+    s+="<p>"+I("P")+" の座標から "+I(r"\cos\theta=%s,\ \sin\theta=%s"%(cxl,syl))+("、"+I(r"\tan\theta=\dfrac{\sin\theta}{\cos\theta}=%s"%L(sp.simplify(sp.sin(t0*pi)/sp.cos(t0*pi)))) if fn_name=="tan" else "")+"。</p>"
     return s,v
 def b2(trip):
     parts=[];vals=[]
@@ -54,7 +60,7 @@ def fq(ax):
     ax.plot([0,np.cos(th)],[0,np.sin(th)],color="#b81f36",lw=2); ax.plot([np.cos(th)],[np.sin(th)],"o",color="#b81f36")
     t2=np.linspace(0,th,100); ax.plot(.35*np.cos(t2),.35*np.sin(t2),color="#1f6fb8",lw=1.4)
     ax.text(np.cos(th)-.25,np.sin(th)-.12,r"$P$",fontsize=11); ax.text(.45,.38,r"$\frac{7}{6}\pi$",fontsize=10,color="#1f6fb8"); ax.text(1.05,-.18,"1",fontsize=9); ax.text(-1.2,-.18,"-1",fontsize=9)
-make_fig("i231_e2",fq,size=(3.2,3.0)); addfig(Z.E[1],0,img("i231_e2",40))
+make_fig("i231_e2",fq,size=(3.2,3.0))
 # ===== 例題3 相互関係 =====
 def b3(kind,v,q_):
     # kind 'sin','cos','tan'  q_ 象限
@@ -74,6 +80,9 @@ def b3(kind,v,q_):
         steps=[("$\\sin\\theta$ を求める","<p>"+I(r"\sin^2\theta=1-\cos^2\theta")+" より</p>"+D(r"\sin^2\theta=1-\left(%s\right)^2=%s"%(L(cv),L(sv2)))+"<p>"+I(r"\theta")+" は"+qn+"なので "+I(r"\sin\theta")+("は正" if sv>0 else "は負")+"。</p>"+D(r"\sin\theta=%s"%L(sv))),
                ("$\\tan\\theta$ を求める",D(r"\tan\theta=\dfrac{\sin\theta}{\cos\theta}=\left(%s\right)\div\left(%s\right)=%s"%(L(sv),L(cv),L(tv))))]
         prob=r"$\theta$ は%s の角で $\cos\theta=%s$ である。$\sin\theta$、$\tan\theta$ の値を求めよ。"%(qn,L(cv)); ans=r"\sin\theta=%s,\quad \tan\theta=%s"%(L(sv),L(tv))
+    thp=float(sp.atan2(sv,cv)); thp=thp+2*math.pi if thp<0 else thp
+    fg=ucfig("u231_x3_%s_%s_%d"%(kind,str(v).replace("/","_").replace("-","m"),q_),thp,L(cv),L(sv),r"\theta","",w=44)
+    steps[0]=(steps[0][0],"<p>"+qn+"の角 "+I(r"\theta")+" の動径と単位円の交点を "+I("P")+" とすると、"+I("P")+" の座標は "+I(r"(\cos\theta,\ \sin\theta)")+"。象限で符号が決まる。</p>"+fg+steps[0][1])
     return prob,steps,ans
 V=[('sin',sp.Rational(3,5),2),('cos',sp.Rational(-5,13),3),('sin',sp.Rational(-8,17),4),('cos',sp.Rational(7,25),1),('sin',sp.Rational(-12,13),3)]
 o=[b3(*v) for v in V]

@@ -90,6 +90,56 @@ CSS='''
 '''
 open(os.path.join(OUT,"lesson.css"),"w",encoding="utf-8").write(CSS)
 
+
+def ucfig(name,th,cx,sy,thtxt=r"\theta",reftxt="",w=42,label=True):
+    """単位円の図。th=角（ラジアンの実数）、cx,sy=P の座標（数式文字列）、thtxt=角のラベル、reftxt=基準角のラベル（空なら描かない）。imgタグを返す"""
+    import numpy as np
+    from matplotlib.patches import Arc
+    def fn(ax):
+        ax.set_aspect("equal"); ax.set_xlim(-2.1,2.1); ax.set_ylim(-1.5,1.5); ax.axis("off")
+        t=np.linspace(0,2*np.pi,300); ax.plot(np.cos(t),np.sin(t),color="#555",lw=1.3)
+        ax.annotate("",xy=(1.5,0),xytext=(-1.5,0),arrowprops=dict(arrowstyle="->",lw=1,color="#333"))
+        ax.annotate("",xy=(0,1.42),xytext=(0,-1.42),arrowprops=dict(arrowstyle="->",lw=1,color="#333"))
+        ax.text(1.5,-.2,"x",fontsize=10); ax.text(.07,1.38,"y",fontsize=10)
+        px,py=np.cos(th),np.sin(th)
+        ax.plot([0,px],[0,py],color=RED,lw=2); ax.plot([px],[py],"o",color=RED,ms=6,zorder=5)
+        ax.plot([px,px],[0,py],color="#999",lw=1,ls="--"); ax.plot([0,px],[py,py],color="#999",lw=1,ls="--")
+        a1,a2=(0,np.degrees(th)) if th>=0 else (np.degrees(th),0)
+        ax.add_patch(Arc((0,0),.5,.5,theta1=a1,theta2=a2,color="#1f6fb8",lw=1.6))
+        m=th/2; ax.text(.3*np.cos(m),.3*np.sin(m),"$"+thtxt+"$",fontsize=11,color="#1f6fb8",ha="center",va="center")
+        if reftxt:
+            k=round(th/np.pi); base=k*np.pi if abs(th-k*np.pi)<np.pi/2+1e-9 else k*np.pi
+            ax.add_patch(Arc((0,0),1.1,1.1,theta1=min(np.degrees(th),np.degrees(base)),theta2=max(np.degrees(th),np.degrees(base)),color="#1f8a5b",lw=1.8))
+            mm=(th+base)/2; ax.text(.78*np.cos(mm),.78*np.sin(mm),"$"+reftxt+"$",fontsize=10,color="#1f8a5b",ha="center",va="center",bbox=dict(fc="white",ec="none",pad=1.2))
+        if label:
+            dx=.1 if px>=0 else -.1; dy=.12 if py>=0 else -.2
+            ax.text(px+dx,py+dy,"P$\\left("+cx+",\\ "+sy+"\\right)$",fontsize=10,ha=("left" if px>=0 else "right"),va="center")
+    make_fig(name,fn,size=(3.6,3.4))
+    return img(name,w)
+
+def uceq(name,fn,v,pts=(),arcs=(),w=46):
+    """単位円で方程式・不等式を解く図。fn='sin'|'cos'|'tan'、v=値（実数）、pts=[(角,ラベル)]、arcs=[(始角,終角)]（答えの範囲を太線にする）"""
+    import numpy as np
+    from matplotlib.patches import Wedge
+    def fn_(ax):
+        ax.set_aspect("equal"); ax.set_xlim(-2.0,2.0); ax.set_ylim(-1.55,1.55); ax.axis("off")
+        t=np.linspace(0,2*np.pi,400); ax.plot(np.cos(t),np.sin(t),color="#555",lw=1.3)
+        ax.annotate("",xy=(1.55,0),xytext=(-1.55,0),arrowprops=dict(arrowstyle="->",lw=1,color="#333"))
+        ax.annotate("",xy=(0,1.45),xytext=(0,-1.45),arrowprops=dict(arrowstyle="->",lw=1,color="#333"))
+        for a,b in arcs:
+            ax.add_patch(Wedge((0,0),1,np.degrees(a),np.degrees(b),fc="#cfe2f5",ec="none",alpha=.8,zorder=0))
+            tt=np.linspace(a,b,100); ax.plot(np.cos(tt),np.sin(tt),color="#1f6fb8",lw=4,solid_capstyle="butt")
+        if fn=="sin": ax.plot([-1.3,1.3],[v,v],color=RED,ls="--",lw=1.4); ax.text(1.35,v,"$y=%s$"%("%.3g"%v),fontsize=9,color=RED,va="center")
+        elif fn=="cos": ax.plot([v,v],[-1.3,1.3],color=RED,ls="--",lw=1.4); ax.text(v,1.36,"$x=%s$"%("%.3g"%v),fontsize=9,color=RED,ha="center")
+        else:
+            ax.plot([1,1],[-1.45,1.45],color="#999",lw=1,ls="-"); ax.text(1.05,-1.4,"$x=1$",fontsize=8,color="#666")
+            ax.plot([-1.5,1.5],[-1.5*v,1.5*v],color=RED,ls="--",lw=1.2)
+            ax.plot([1],[v],"s",color=RED,ms=5)
+        for ang,lab in pts:
+            px,py=np.cos(ang),np.sin(ang); ax.plot([px],[py],"o",color=RED,ms=6,zorder=5)
+            ax.text(px*1.22+(.04 if px>=0 else -.04),py*1.22+(.16 if py>=0 else -.16),"$"+lab+"$",fontsize=10,ha=("left" if px>=0 else "right"),va="center",color="#222")
+    make_fig(name,fn_,size=(4.0,3.3))
+    return img(name,w)
 # ---------- 部品 ----------
 def lh(badge,sub): return f'<h1 class="lh"><span class="lb">{badge}</span><span class="ls">{sub}</span></h1>'
 def isM(p): return p.startswith("\\(") or p.startswith("<") or "\\(" in p or ("\\text{" not in p and any(ord(ch)>0x3000 for ch in p))
@@ -131,7 +181,7 @@ window.addEventListener("load",function(){});
 function fit(){document.querySelectorAll(".pg").forEach(function(pg){var z=1;pg.style.zoom=1;
  while(pg.scrollHeight>1030&&z>0.55){z-=0.02;pg.style.zoom=z;}});}
 </script>'''
-PCSS='@page{size:A4;margin:11mm}body{margin:0;color:#222;font-family:"Noto Sans CJK JP",sans-serif}.lesson{font-size:12pt}.pg{page-break-after:always;width:188mm}.pg:last-child{page-break-after:auto}.step,.abox,.item,.qbox,.gbox,.lesson p,.lesson li,.katex-display,.katex,.figbox,.tbl,.kotsu{break-inside:avoid;page-break-inside:avoid}.lesson .katex{line-height:1.5}.lesson .sb p,.lesson .bar p,.lesson li{padding-top:1px}'
+PCSS='@page{size:A4;margin:11mm}.figbox img.fig{max-height:44mm;width:auto!important;max-width:100%}body{margin:0;color:#222;font-family:"Noto Sans CJK JP",sans-serif}.lesson{font-size:12pt}.pg{page-break-after:always;width:188mm}.pg:last-child{page-break-after:auto}.step,.abox,.item,.qbox,.gbox,.lesson p,.lesson li,.katex-display,.katex,.figbox,.tbl,.kotsu{break-inside:avoid;page-break-inside:avoid}.lesson .katex{line-height:1.5}.lesson .sb p,.lesson .bar p,.lesson li{padding-top:1px}'
 def pdf_html(pages):
     body="".join(f'<section class="pg"><div class="lesson">{p}</div></section>' for p in pages)
     return ('<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><link rel="stylesheet" href="katex/katex.min.css"><link rel="stylesheet" href="lesson.css"><style>'+PCSS+'</style></head><body>'+body+

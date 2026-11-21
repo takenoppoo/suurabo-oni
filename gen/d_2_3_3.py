@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # 三角関数の方程式・不等式・最大最小（数学II 三角関数）
 from bh import *
+import math
 Z=U_(); CH=[]
 pi=sp.pi; s2=sp.sqrt(2); s3=sp.sqrt(3)
 def Q(a_,b_=1): return sp.Rational(a_,b_)
@@ -17,6 +18,7 @@ def base_sols(fn,v):
     t0=sp.nsimplify(sp.atan(v)/pi); return [(t0,1)]
 # ===== 例題1 基本の方程式 =====
 def b1(fn,b,c,v):
+    b1.n+=1
     lo=c; hi=2*b+c; sols=[]
     for t0,per in base_sols(fn,v):
         k=-30
@@ -29,10 +31,13 @@ def b1(fn,b,c,v):
     for t in ths: assert 0<=t<2 and abs(float(FN[fn](float((b*t+c))*np.pi))-float(v))<1e-9
     assert len(ths)>=2
     steps=[("$t=%s$ とおいて範囲を調べる"%inner(b,c).replace(r"\theta","\\theta"),"<p>"+I(r"0\leqq\theta<2\pi")+" より</p>"+D(r"%s\leqq t<%s"%(PI(lo),PI(hi)))),
-           ("$\\%s\\,t=%s$ を解く"%(fn,L(v)),"<p>単位円（"+("$y$ 座標" if fn=='sin' else "$x$ 座標" if fn=='cos' else "傾き")+"）で考えて、範囲内の "+I("t")+" を求める。</p>"+D(r"t=%s"%r",\ ".join(PI(t) for t in sols))),
+           ("$\\%s\\,t=%s$ を解く"%(fn,L(v)),"<p>単位円で考える。"+("単位円上の点の "+I("y")+" 座標が "+I(L(v))+" になる点（直線 "+I("y=%s"%L(v))+" と円の交点）" if fn=='sin' else "単位円上の点の "+I("x")+" 座標が "+I(L(v))+" になる点（直線 "+I("x=%s"%L(v))+" と円の交点）" if fn=='cos' else "原点と点 "+I("(1,\\ %s)"%L(v))+" を通る直線と円の交点")+" を探す。</p>"+
+              uceq("u233_e1_%d"%b1.n,fn,float(v),pts=[(float(tm)*math.pi,PI(tm)) for tm in sorted(set([(sp.nsimplify(t0)%2) for t0,per in base_sols(fn,v)]+([(1+sp.nsimplify(base_sols(fn,v)[0][0]))%2] if fn=='tan' else [])))])+
+              "<p>図から、"+I(r"0\leqq t<2\pi")+" の1周ぶんの解は、この点の角。範囲 "+I(r"%s\leqq t<%s"%(PI(lo),PI(hi)))+" が1周より広いときは、同じ点を何周めかで数える。</p>"+D(r"t=%s"%r",\ ".join(PI(t) for t in sols))),
            ("$\\theta$ に直す","<p>"+I(r"t=%s"%inner(b,c,r"\theta"))+" より "+I(r"\theta=\dfrac{t%s}{%d}"%(("" if c==0 else ("-"+PI(c) if c>0 else "+"+PI(-c))),b))+"。</p>"+D(r"\theta=%s"%r",\ ".join(PI(t) for t in ths)))]
     prob=r"$0\leqq\theta<2\pi$ のとき、方程式 $\%s\left(%s\right)=%s$ を解け。"%(fn,inner(b,c),L(v))
     return prob,steps,r"\theta=%s"%r",\ ".join(PI(t) for t in ths)
+b1.n=0
 V=[('sin',2,Q(-1,3),Q(1,2)),('cos',2,Q(1,6),-s3/2),('sin',1,Q(-1,4),s2/2),('tan',2,Q(-1,6),1),('cos',3,Q(-1,3),Q(1,2))]
 o=[b1(*v) for v in V]
 build(Z,CH,"sin(bθ+c)=v の解き方",o,
@@ -107,7 +112,9 @@ def b3(fn,b,c,op,v):
     lo=c; hi=2*b+c
     base=base_sols(fn,v)
     steps=[("$t=%s$ とおいて範囲を調べる"%inner(b,c),D(r"%s\leqq t<%s"%(PI(lo),PI(hi)))),
-           ("グラフで $y=\\%s\\,t$ と $y=%s$ の上下を見る"%(fn,L(v)),"<p>"+I(r"\%s\,t%s%s"%(fn,sym,L(v)))+" を満たす部分を、グラフ（または単位円）から読む。境界は "+I(r"\%s\,t=%s"%(fn,L(v)))+" の解。</p>"),
+           ("グラフで $y=\\%s\\,t$ と $y=%s$ の上下を見る"%(fn,L(v)),"<p>"+I(r"\%s\,t%s%s"%(fn,sym,L(v)))+" を満たす部分を、単位円から読む。まず境界（"+I(r"\%s\,t=%s"%(fn,L(v)))+" の解）を円上にとり、条件を満たす側の弧を太線にする。</p>"+
+              uceq("u233_e3_%d"%CNT3,fn,float(v),pts=[(float(tm)*math.pi,PI(tm)) for tm in sorted(set([a_ for a_,b_ in intervals(fn,1,0,op,v)]+[b_%2 for a_,b_ in intervals(fn,1,0,op,v)]))],arcs=[(float(a_)*math.pi,float(b_)*math.pi) for a_,b_ in intervals(fn,1,0,op,v)])+
+              "<p>太線の弧が答えの範囲（"+I("t")+" の1周ぶん）。範囲が1周より広い／ずれているときは、この弧を周期でくり返して "+I("t")+" の範囲に合わせる。</p>"),
            ("$\\theta$ の範囲に直す","<p>$\\theta$ のグラフにして図に示す（青い太線が答えの範囲、赤い破線が $y=%s$）。</p>"%L(v)+fig),
            ("答え",D(r"\ \text{または}\ ".join(("%s%s\\theta%s%s"%(PI(a_),"<" if op in ('>','<') and a_!=0 else r"\leqq" if True else "",("<" if (op in ('>','<') and b_!=2) else r"\leqq" if b_!=2 else "<"),PI(b_))) for a_,b_ in ivs)))]
     prob=r"$0\leqq\theta<2\pi$ のとき、不等式 $\%s\left(%s\right)%s%s$ を解け。"%(fn,inner(b,c),sym,L(v))
