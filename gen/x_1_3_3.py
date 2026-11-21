@@ -66,7 +66,7 @@ def b10(N):
         r_=sp.solve(x**2+kk*x+N,x); assert all(r.is_integer for r in r_)
     st=[("解を整数 $\\alpha,\\beta$ とおく","<p>"+I(r"\alpha\beta=%d,\ \ \alpha+\beta=-k"%N)+"。</p>"),
         ("積が %d となる整数の組"%N,"<p>"+I(r"(\alpha,\beta)=%s"%(r",\ ".join("(%d,%d)"%(d,N//d) for d in sp.divisors(N) if d<=N//d)+","+r",\ ".join("(%d,%d)"%(-d,-N//d) for d in sp.divisors(N) if d<=N//d)))+"。</p>"),
-        ("$k=-(\\alpha+\\beta)$","<p>"+I(r"k=%s"%(r",\ ".join(str(kk) for kk in ks)))+"。</p>")]
+        ("$k=-(\\alpha+\\beta)$","<p>各組の和から "+I(r"k=-(\alpha+\beta)")+" を計算する。</p>"+wtable([r"\alpha",r"\beta",r"\alpha+\beta",r"k=-(\alpha+\beta)"],[[str(s*d),str(s*(N//d)),str(s*(d+N//d)),str(-s*(d+N//d))] for s in (1,-1) for d in sp.divisors(N) if d<=N//d])+"<p>よって "+I(r"k=%s"%(r",\ ".join(str(kk) for kk in ks)))+"。</p>")]
     return r"2次方程式 $x^2+kx+%d=0$ が整数の解をもつような整数 $k$ をすべて求めよ。"%N,st,r"k=%s"%(r",\ ".join(str(kk) for kk in ks))
 o=[b10(N) for N in [12,18,20,24,30]]
 build(Z,CH,"整数解をもつ条件",o,r"<p>解を整数 $\alpha,\beta$ とおくと $\alpha\beta=$ 定数、$\alpha+\beta=-k$。<b>積が定数になる整数の組</b>（正・負の両方）をすべて挙げ、和から $k$ を出す。</p>","積が決まっているなら、かけ算の組を全部書き出す。",10)

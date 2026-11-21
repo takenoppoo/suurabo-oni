@@ -27,7 +27,8 @@ def b7(n,a,b):
     assert sum(t[2] for t in terms)==c
     st=[("3つの項の展開","<p>"+I("(1+%sx+%sx^2)^{%d}"%(L(a),L(b),n))+" の一般項は "+I(r"\dfrac{%d!}{p!\,q!\,s!}(%sx)^p(%sx^2)^q\cdot1^s"%(n,L(a),L(b)))+"。</p>"),
         ("$x^3$ になる組","<p>"+I("p+2q=3")+"："+"、".join(I("(p,q)=(%d,%d)"%(t[0],t[1])) for t in terms)+"。</p>"),
-        ("係数",D("+".join(L(t[2]) for t in terms)+"=%s"%L(c)))]
+        ("各組の係数を計算する","".join("<p>"+I("(p,q)=(%d,%d)"%(t[0],t[1]))+"（"+I("s=%d"%(n-t[0]-t[1]))+"）</p>"+D(r"\dfrac{%d!}{%d!\,%d!\,%d!}\cdot(%s)^{%d}\cdot(%s)^{%d}=%d\cdot%s\cdot%s=%s"%(n,t[0],t[1],n-t[0]-t[1],L(a),t[0],L(b),t[1],sp.factorial(n)//(sp.factorial(t[0])*sp.factorial(t[1])*sp.factorial(n-t[0]-t[1])),L(a**t[0]),L(b**t[1]),L(t[2]))) for t in terms)),
+        ("足し合わせる",D("+".join(L(t[2]) for t in terms)+"=%s"%L(c)))]
     return r"$(1+%sx+%sx^2)^{%d}$ の展開式における $x^3$ の係数を求めよ。"%(L(a),L(b),n),st,L(c)
 o=[b7(*v) for v in [(5,2,1),(6,1,3),(4,3,2),(7,1,1),(5,-1,2)]]
 build(Z,CH,"3項の累乗の x^3 の係数",o,"<p>一般項は $\\dfrac{n!}{p!\\,q!\\,s!}$ 型。指数の和が $3$ になる $(p,q)$ をすべて拾って足す。</p>","組合せごとに「何個ずつ選ぶか」を書き出す。",7)

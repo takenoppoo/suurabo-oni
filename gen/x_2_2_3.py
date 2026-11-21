@@ -49,7 +49,7 @@ def b8(m1,m2,c):
         for p,t,d in zip(P,"OAB",[(-.3,-.4),(.2,-.5),(0,.5)]): mark(ax,p[0],p[1],t,*d)
     xm=float(P[1][0])+1; ym=float(P[2][1])+1.5
     fg=gplane("x223_8_%d_%d_%d"%(m1,m2,c),(-1,xm),(-1,ym),dr,size=(4.2,3),w=50)
-    st=[("境界線と頂点","<p>"+I("y=%dx"%m1)+" と "+I("y=-%dx+%d"%(m2,c) if m2!=1 else "y=-x+%d"%c)+" の交点 "+I("B(%s,\\ %s)"%(L(P[2][0]),L(P[2][1])))+"、第2の直線と "+I("x")+" 軸の交点 "+I("A(%s,\\ 0)"%L(P[1][0]))+"。"+fg),
+    st=[("境界線と頂点","<p>"+I("y=%dx"%m1)+" と "+I("y=-%dx+%d"%(m2,c) if m2!=1 else "y=-x+%d"%c)+" の交点 "+I("B(%s,\\ %s)"%(L(P[2][0]),L(P[2][1])))+"、第2の直線と "+I("x")+" 軸の交点 "+I("A(%s,\\ 0)"%L(P[1][0]))+"。"+D(r"%sx=-%sx+%d\ \Rightarrow\ %sx=%d\ \Rightarrow\ x=%s,\ \ y=%s"%("" if m1==1 else m1,"" if m2==1 else m2,c,m1+m2,c,L(P[2][0]),L(P[2][1])))+"<p>第2の直線で "+I("y=0")+"：</p>"+D(r"0=-%sx+%d\ \Rightarrow\ x=%s"%("" if m2==1 else m2,c,L(P[1][0])))+"<p>原点 "+I("O(0,\\ 0)")+"（"+I("y=%dx"%m1)+" と "+I("y=0")+" の交点）。三角形 "+I("OAB")+" の領域。</p>"+fg),
         ("底辺と高さ","<p>底辺 "+I("OA=%s"%L(P[1][0]))+"、高さ "+I("%s"%L(P[2][1]))+"。</p>"),
         ("面積",D(r"\dfrac12\cdot%s\cdot%s=%s"%(L(P[1][0]),L(P[2][1]),L(ar))))]
     return r"連立不等式 $y\geqq0,\ y\leqq %dx,\ y\leqq -%dx+%d$ の表す領域の面積を求めよ。"%(m1,m2,c) if m2!=1 else r"連立不等式 $y\geqq0,\ y\leqq %dx,\ y\leqq -x+%d$ の表す領域の面積を求めよ。"%(m1,c),st,L(ar)

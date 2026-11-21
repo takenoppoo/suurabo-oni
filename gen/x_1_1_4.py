@@ -7,7 +7,7 @@ def b6(p,q,r_,s_):
     # a x + p > q?  : ax > b and x < c  no solution ... use  p x - q < ... Let x > A (from p x > q) and x <= a + c
     # 連立: x < a, 3x + p > ... → simple: 2x-1>5 (x>3) and x<=a+ ... : 解をもたない a の範囲
     A=R(q+p,r_)  # r_ x - p > q
-    st=[("それぞれ解く","<p>"+I(r"%dx-%d>%d"%(r_,p,q))+" より "+I("x>%s"%L(A))+"。"+I(r"x\leqq a")+" はそのまま。</p>"),
+    st=[("それぞれ解く","<p>"+I(r"%dx-%d>%d"%(r_,p,q))+"：</p>"+D(r"%dx>%d+%d=%d\ \Longrightarrow\ x>%s"%(r_,q,p,q+p,L(A)))+"<p>"+I(r"x\leqq a")+" はそのまま。</p>"),
         ("解がない条件","<p>"+I("x>%s"%L(A))+" と "+I(r"x\leqq a")+" の共通部分が空になる。</p>"+D(r"a\leqq %s"%L(A))+"<p>端点 "+I("a=%s"%L(A))+" のとき "+I("x>%s,\ x\\leqq %s"%(L(A),L(A)))+" で共通部分なし（等号が入ることに注意）。</p>"),
         ("答え","<p>"+I(r"a\leqq %s"%L(A))+"。</p>")]
     return r"連立不等式 $%dx-%d>%d,\ \ x\leqq a$ が解をもたないような定数 $a$ の範囲を求めよ。"%(r_,p,q),st,r"a\leqq %s"%L(A)

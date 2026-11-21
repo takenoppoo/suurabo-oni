@@ -2,7 +2,7 @@
 from bh import *
 from d_2_5_1 import gplane,curve,mark
 import numpy as np, math
-Z=U_(); CH=[]; R=sp.Rational; th=sp.symbols("th"); pi=sp.pi
+Z=U_(); CH=[]; R=sp.Rational; th=sp.symbols(r"\theta"); pi=sp.pi
 def deg(v): return "%d^\\circ"%v
 # 6 cos2θ を含む方程式
 def b6(a,b):

@@ -24,7 +24,7 @@ def b7(k,ln):
     xs=sp.solve(f,x); assert abs(xs[0]-xs[1])==ln
     st=[("平方完成","<p>"+I(r"y=x^2-%sx+c=(x-%s)^2-%s^2+c"%(L(2*k),L(k),L(k)))+"。軸は "+I("x=%s"%L(k))+"。</p>"),
         ("交点の位置","<p>軸について対称なので、2交点は "+I("x=%s\\pm\\dfrac{%d}{2}"%(L(k),ln))+"。</p>"),
-        ("$c$ を決める","<p>"+I("x=%s+\\dfrac{%d}{2}=%s"%(L(k),ln,L(k+R(ln,2))))+" で "+I("y=0")+"。</p>"+D(r"\left(\dfrac{%d}{2}\right)^2-%s^2+c=0\ \Rightarrow\ c=%s"%(ln,L(k),L(c))))]
+        ("$c$ を決める","<p>"+I("x=%s+\\dfrac{%d}{2}=%s"%(L(k),ln,L(k+R(ln,2))))+" で "+I("y=0")+"。</p>"+D(r"\left(\dfrac{%d}{2}\right)^2-%s^2+c=0"%(ln,L(k)))+D(r"%s-%s+c=0"%(L(R(ln,2)**2),L(k*k)))+D(r"c=%s-%s=%s"%(L(k*k),L(R(ln,2)**2),L(c))))]
     fg=quadfig("x131_7_%d_%d"%(k,ln),[(f,"#b81f36")],[(k-R(ln,2),0,"(%s, 0)"%L(k-R(ln,2))),(k+R(ln,2),0,"(%s, 0)"%L(k+R(ln,2))),(k,c-k*k,"")],axis=k)
     st[0]=(st[0][0],st[0][1]+fg)
     return r"放物線 $y=x^2-%sx+c$ が $x$ 軸から切り取る線分の長さが $%d$ になるように、定数 $c$ の値を定めよ。"%(L(2*k),ln),st,r"c=%s"%L(c)

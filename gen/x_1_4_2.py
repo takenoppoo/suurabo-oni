@@ -54,7 +54,8 @@ def b9(p,q,th):
     assert abs(area-float(S))<1e-6
     st=[("四角形を4つの三角形に","<p>対角線の交点を "+I("O")+" とし、4つの三角形の面積を足す。"+I(r"AO=a_1,\ CO=a_2,\ BO=b_1,\ DO=b_2")+"（"+I("a_1+a_2=%d,\\ b_1+b_2=%d"%(p,q))+"）。</p>"),
         ("1つの三角形の面積","<p>"+I(r"\triangle AOB=\dfrac12a_1b_1\sin%d^\circ"%th)+"。他も同じ角（または補角）なので "+I(r"\sin")+" は同じ値。</p>"),
-        ("まとめる",D(r"S=\dfrac12(a_1+a_2)(b_1+b_2)\sin%d^\circ=\dfrac12\cdot%d\cdot%d\cdot%s=%s"%(th,p,q,L(sp.sin(th*sp.pi/180)),L(S))))]
+        ("まとめる","<p>4つの三角形の面積を足す。</p>"+D(r"S=\dfrac12a_1b_1\sin%d^\circ+\dfrac12b_1a_2\sin%d^\circ+\dfrac12a_2b_2\sin%d^\circ+\dfrac12b_2a_1\sin%d^\circ"%(th,th,th,th))+"<p>共通の "+I(r"\dfrac12\sin%d^\circ"%th)+" でくくる。</p>"+D(r"S=\dfrac12(a_1b_1+a_2b_1+a_2b_2+a_1b_2)\sin%d^\circ=\dfrac12(a_1+a_2)(b_1+b_2)\sin%d^\circ"%(th,th))+D(r"S=\dfrac12\cdot%d\cdot%d\cdot%s=%s"%(p,q,L(sp.sin(th*sp.pi/180)),L(S))))]
+#\dfrac12\cdot%d\cdot%d\cdot%s=%s"%(th,p,q,L(sp.sin(th*sp.pi/180)),L(S))))]
     return r"四角形 $ABCD$ の対角線 $AC=%d,\ BD=%d$ が $%d^\circ$ の角で交わっている。この四角形の面積を求めよ。"%(p,q,th),st,L(S)
 o=[b9(*v) for v in [(8,6,30),(10,7,45),(12,5,60),(9,8,30),(14,6,45)]]
 build(Z,CH,"四角形の面積（対角線と交角）",o,r"<p>対角線 $p,q$ が角 $\theta$ で交わるとき $S=\dfrac12pq\sin\theta$。4つの三角形に分け、$\sin\theta=\sin(180^\circ-\theta)$ を使えば導ける。</p>","対角線2本さえ分かれば、四角形の面積が決まる。",9)

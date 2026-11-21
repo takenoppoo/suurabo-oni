@@ -16,7 +16,7 @@ build(Z,CH,"媒介変数表示の曲線の接線",o,"<p>$\\dfrac{dy}{dx}=\\dfrac
 def b7(a2,b2,p):
     y=sp.symbols("y"); F=x**2/a2+y**2/b2-1
     # point on ellipse
-    yv=sp.sqrt(b2*(1-p**2/a2)); 
+    yv=sp.sqrt(sp.Rational(b2)*(1-sp.Rational(p)**2/a2)); 
     d=sp.simplify(-sp.diff(F,x)/sp.diff(F,y)); m=sp.simplify(d.subs({x:p,y:yv}))
     tl=sp.simplify(m*(x-p)+yv)
     st=[("両辺を $x$ で微分","<p>"+D(r"\dfrac{2x}{%d}+\dfrac{2y}{%d}\cdot\dfrac{dy}{dx}=0"%(a2,b2))),

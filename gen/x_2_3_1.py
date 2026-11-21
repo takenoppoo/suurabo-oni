@@ -2,7 +2,7 @@
 from bh import *
 from d_2_5_1 import gplane,curve,mark
 import numpy as np, math
-Z=U_(); CH=[]; R=sp.Rational; x,th=sp.symbols("x th"); pi=sp.pi
+Z=U_(); CH=[]; R=sp.Rational; x=sp.symbols("x"); th=sp.symbols(r"\theta"); pi=sp.pi
 def PI(v): return L(v*pi) if v!=0 else "0"
 # 6 弓形の面積
 def b6(r,a):
@@ -87,7 +87,7 @@ def b10(p,q):
     ts=np.linspace(0,10,50)
     assert all(abs(f(t)-f(t+float(lcm)*math.pi))<1e-9 for t in ts)
     st=[("それぞれの周期","<p>"+I(r"\sin %d\theta"%p)+" の周期 "+I(r"\dfrac{2\pi}{%d}=%s"%(p,L(R(2,p)*pi)))+"、"+I(r"\cos %d\theta"%q)+" の周期 "+I(r"%s"%L(R(2,q)*pi))+"。</p>"),
-        ("最小公倍数","<p>2つの周期の<b>最小公倍数</b>が全体の周期。</p>"+D(r"\text{周期}=%s"%L(lcm*pi)))]
+        ("最小公倍数","<p>2つの周期の<b>最小公倍数</b>が全体の周期。それぞれを整数倍して等しくなる最小のところを探す。</p>"+D(r"%s\times%s=%s,\quad %s\times%s=%s"%(L(R(2,p)*pi),L(R(lcm*p,2)),L(lcm*pi),L(R(2,q)*pi),L(R(lcm*q,2)),L(lcm*pi)))+"<p>よって</p>"+D(r"\text{周期}=%s"%L(lcm*pi)))]
     return r"関数 $y=\sin %d\theta+\cos %d\theta$ の周期を求めよ。"%(p,q),st,L(lcm*pi)
 o=[b10(*v) for v in [(2,3),(3,4),(2,5),(4,6),(3,6)]]
 build(Z,CH,"和の関数の周期（周期の最小公倍数）",o,"<p>$\\sin p\\theta$ の周期 $\\dfrac{2\\pi}{p}$、$\\cos q\\theta$ の周期 $\\dfrac{2\\pi}{q}$。和の周期は<b>2つの周期の最小公倍数</b>。</p>","2つの波が同時に元の形に戻る最短の時間。",10)

@@ -43,9 +43,9 @@ build(Z,CH,"二項定理で余りを求める",o,r"<p>わる数に近い数 $(10
 def b9(n):
     f=sp.expand((x**2-x+1)**n); tot=f.subs(x,1); alt=f.subs(x,-1); ev=(tot+alt)//2; od=(tot-alt)//2
     assert sum(f.coeff(x,i) for i in range(0,2*n+1,2))==ev and sum(f.coeff(x,i) for i in range(1,2*n+1,2))==od
-    st=[("全係数の和","<p>"+I("x=1")+" を代入。</p>"+D(r"a_0+a_1+\cdots+a_{%d}=(1-1+1)^{%d}=%d"%(2*n,n,tot))),
-        ("符号を交互にした和","<p>"+I("x=-1")+" を代入。</p>"+D(r"a_0-a_1+a_2-\cdots+a_{%d}=(1+1+1)^{%d}=%d"%(2*n,n,alt))),
-        ("偶数次の和","<p>2式を足して2でわる。</p>"+D(r"a_0+a_2+\cdots+a_{%d}=\dfrac{%d+%d}{2}=%d"%(2*n,tot,alt,ev)))]
+    st=[("全係数の和","<p>"+I("x=1")+" を代入。</p>"+D(r"a_0+a_1+\cdots+a_{%d}=(1-1+1)^{%d}=1^{%d}=%d"%(2*n,n,n,tot))),
+        ("符号を交互にした和","<p>"+I("x=-1")+" を代入。</p>"+D(r"a_0-a_1+a_2-\cdots+a_{%d}=(1+1+1)^{%d}=3^{%d}=%d"%(2*n,n,n,alt))),
+        ("偶数次の和","<p>2式を足して2でわる。</p>"+D(r"a_0+a_2+\cdots+a_{%d}=\dfrac{%d+%d}{2}=\dfrac{%d}{2}=%d"%(2*n,tot,alt,tot+alt,ev)))]
     return r"$(x^2-x+1)^{%d}=a_0+a_1x+a_2x^2+\cdots+a_{%d}x^{%d}$ のとき、$a_0+a_2+a_4+\cdots+a_{%d}$ の値を求めよ。"%(n,2*n,2*n,2*n),st,str(ev)
 o=[b9(n) for n in [4,5,6,7,8]]
 build(Z,CH,"係数の和（x=1, x=-1 の代入）",o,r"<p>$x=1$ で<b>全係数の和</b>、$x=-1$ で<b>偶数次の和−奇数次の和</b>が得られる。2式の和・差から、偶数次・奇数次の和を分ける。</p>","代入は「係数を全部足す」スイッチ。$-1$ なら奇数次だけ符号が反転する。",9)

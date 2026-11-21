@@ -14,8 +14,10 @@ build(Z,CH,"4次式を2次式で割る筆算",o,"<p>降べきの順に並べ、�
 # 7 繁分数式
 def b7(a,b):
     e=1/(x-a)-1/(x+b); res=sp.factor(sp.simplify((1/(x-a)-1/(x+b))/(1/(x-a)+1/(x+b))))
-    st=[("分子・分母をそれぞれ通分","<p>分子 "+I(r"\dfrac1{x-%d}-\dfrac1{x+%d}=%s"%(a,b,L(sp.factor(sp.together(e)))))+"、分母 "+I(r"\dfrac1{x-%d}+\dfrac1{x+%d}=%s"%(a,b,L(sp.factor(sp.together(1/(x-a)+1/(x+b))))))+"。</p>"),
-        ("割り算にして約分","<p>分子 "+I(r"\div")+" 分母（逆数をかける）。</p>"+D(L(res)))]
+    nu=sp.factor(sp.together(e)); de=sp.factor(sp.together(1/(x-a)+1/(x+b))); cm=sp.expand((x-a)*(x+b)); cmf=r"(x-%d)(x+%d)"%(a,b)
+    st=[("分子を通分する","<p>分子 "+I(r"\dfrac1{x-%d}-\dfrac1{x+%d}"%(a,b))+" の分母をそろえる。</p>"+D(r"\dfrac{x+%d}{%s}-\dfrac{x-%d}{%s}=\dfrac{(x+%d)-(x-%d)}{%s}=\dfrac{%s}{%s}"%(b,cmf,a,cmf,b,a,cmf,L(sp.expand((x+b)-(x-a))),cmf))),
+        ("分母を通分する","<p>分母 "+I(r"\dfrac1{x-%d}+\dfrac1{x+%d}"%(a,b))+" も同じ分母にそろえる。</p>"+D(r"\dfrac{x+%d}{%s}+\dfrac{x-%d}{%s}=\dfrac{(x+%d)+(x-%d)}{%s}=\dfrac{%s}{%s}"%(b,cmf,a,cmf,b,a,cmf,L(sp.expand((x+b)+(x-a))),cmf))),
+        ("割り算にして約分","<p>分子 "+I(r"\div")+" 分母 は、分母の逆数をかける。</p>"+D(r"\dfrac{%s}{%s}\div\dfrac{%s}{%s}=\dfrac{%s}{%s}\times\dfrac{%s}{%s}"%(L(sp.expand((x+b)-(x-a))),cmf,L(sp.expand((x+b)+(x-a))),cmf,L(sp.expand((x+b)-(x-a))),cmf,cmf,L(sp.expand((x+b)+(x-a)))))+"<p>"+I(cmf)+" が約分できる。</p>"+D(r"=%s"%L(res)))]
     return r"次の式を簡単にせよ。$\dfrac{\dfrac{1}{x-%d}-\dfrac{1}{x+%d}}{\dfrac{1}{x-%d}+\dfrac{1}{x+%d}}$"%(a,b,a,b),st,L(res)
 o=[b7(*v) for v in [(1,2),(2,3),(1,1),(3,1),(2,5)]]
 build(Z,CH,"繁分数式の簡単化",o,"<p>分子・分母をそれぞれ<b>通分して1つの分数式</b>にしてから、$\\dfrac{A}{B}=A\\times\\dfrac1B$ と約分。</p>","上と下を別々に片づけてから割る。",7)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from bh import *
 import numpy as np, math
-Z=U_(); CH=[]; R=sp.Rational; th=sp.symbols("th"); pi=sp.pi
+Z=U_(); CH=[]; R=sp.Rational; th=sp.symbols(r"\theta"); pi=sp.pi
 # 6 sinα=a から sin3α
 def b6(a):
     a=R(a); s3=3*a-4*a**3
@@ -14,10 +14,10 @@ o=[b6(a) for a in [R(1,2),R(3,5),R(1,3),R(4,5),R(2,3)]]
 build(Z,CH,"sin3α の値（3倍角の公式）",o,"<p>3倍角：$\\sin3\\alpha=3\\sin\\alpha-4\\sin^3\\alpha$。$\\sin\\alpha$ が分かれば $\\cos\\alpha$ を求めずに計算できる。</p>","角が3倍になっても、sin だけで書ける公式がある。",6)
 # 7 2直線のなす角
 def b7(m1,m2):
-    t=sp.simplify((m1-m2)/(1+m1*m2)); 
+    m1=sp.Rational(m1); m2=sp.Rational(m2); t=sp.simplify((m1-m2)/(1+m1*m2)); 
     ang=math.degrees(math.atan(float(t))) ; 
     st=[("傾きと角","<p>直線 "+I("y=%s\\,x"%L(m1))+" の傾きは "+I(r"\tan\alpha=%s"%L(m1))+"、"+I("y=%s\\,x"%L(m2))+" は "+I(r"\tan\beta=%s"%L(m2))+"。</p>"),
-        ("加法定理","<p>"+D(r"\tan(\alpha-\beta)=\dfrac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}=\dfrac{%s-%s}{1+%s\cdot%s}=%s"%(L(m1),L(m2),L(m1),L(m2),L(t)))),
+        ("加法定理","<p>"+D(r"\tan(\alpha-\beta)=\dfrac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}=\dfrac{%s-%s}{1+%s\cdot%s}=\dfrac{%s}{%s}=%s"%(L(m1),L(m2),L(m1),L(m2),L(m1-m2),L(1+m1*m2),L(t)))),
         ("なす角","<p>"+I(r"\tan\theta=%s"%L(abs(t)))+(" より "+I(r"\theta=%s"%("45^\\circ" if abs(t)==1 else ("30^\\circ" if abs(t)==sp.sqrt(3)/3 else ("60^\\circ" if abs(t)==sp.sqrt(3) else "\\theta"))))+"。" if abs(t) in (1,sp.sqrt(3)/3,sp.sqrt(3)) else "。")+"</p>")]
     return r"2直線 $y=%s\,x$ と $y=%s\,x$ のなす鋭角を $\theta$ とするとき、$\tan\theta$ の値を求めよ。"%(L(m1),L(m2)),st,r"\tan\theta=%s"%L(abs(t))
 o=[b7(*v) for v in [(3,2),(2,R(1,3)),(R(1,2),R(1,3)),(5,2),(4,R(1,4))]]

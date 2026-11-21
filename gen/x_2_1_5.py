@@ -15,8 +15,8 @@ def b7(n):
     w=sp.Rational(-1,2)+sp.sqrt(3)*i_/2
     v=sp.simplify(sp.expand(w**n+w**(2*n)))
     st=[("基本性質","<p>"+I(r"\omega^3=1,\quad \omega^2+\omega+1=0")+"（"+I(r"x^3=1")+" の虚数解）。</p>"),
-        ("指数を3で割る","<p>"+I(r"\omega^{%d}=\omega^{%d}"%(n,n%3))+"、"+I(r"\omega^{%d}=\omega^{%d}"%(2*n,(2*n)%3))+"。</p>"),
-        ("値","<p>"+D(r"\omega^{%d}+\omega^{%d}=%s"%(n,2*n,L(v))))]
+        ("指数を3で割る","<p>"+I(r"%d=3\cdot%d+%d"%(n,n//3,n%3))+"、"+I(r"%d=3\cdot%d+%d"%(2*n,(2*n)//3,(2*n)%3))+"。</p>"+D(r"\omega^{%d}=(\omega^3)^{%d}\cdot\omega^{%d}=1\cdot\omega^{%d}=%s"%(n,n//3,n%3,n%3,["1","\\omega","\\omega^2"][n%3]))+D(r"\omega^{%d}=(\omega^3)^{%d}\cdot\omega^{%d}=1\cdot\omega^{%d}=%s"%(2*n,(2*n)//3,(2*n)%3,(2*n)%3,["1","\\omega","\\omega^2"][(2*n)%3]))),
+        ("値","<p>"+D(r"\omega^{%d}+\omega^{%d}=%s+%s"%(n,2*n,["1","\\omega","\\omega^2"][n%3],["1","\\omega","\\omega^2"][(2*n)%3]))+(D(r"=-1\quad(\omega^2+\omega+1=0\ \text{より}\ \omega+\omega^2=-1)") if {n%3,(2*n)%3}=={1,2} else D(r"=1+1=2")))]
     return r"$x^3=1$ の虚数解の1つを $\omega$ とする。$\omega^{%d}+\omega^{%d}$ の値を求めよ。"%(n,2*n),st,L(v)
 o=[b7(n) for n in [7,10,12,20,25]]
 build(Z,CH,"1の3乗根 ω の累乗",o,"<p>$\\omega^3=1$ なので指数を $3$ で割った余りにできる。$\\omega^2+\\omega+1=0$ で $\\omega^2$ を消す。</p>","ωは3回で元に戻る。指数は3で割った余りだけ見る。",7)

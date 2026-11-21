@@ -25,7 +25,7 @@ build(Z,CH,"逆・裏・対偶と真偽",o,r"<p>$p\Rightarrow q$ に対して �
 def b8(p,q):
     pq=p*q; assert int(pq**.5)**2!=pq
     st=[("有理数と仮定","<p>"+I(r"\sqrt{%d}+\sqrt{%d}=r"%(p,q))+"（"+I("r")+" は有理数）とする。</p>"),
-        ("両辺を2乗",D(r"%d+%d+2\sqrt{%d}=r^2\ \Rightarrow\ \sqrt{%d}=\dfrac{r^2-%d}{2}"%(p,q,pq,pq,p+q))),
+        ("両辺を2乗","<p>左辺を展開する。</p>"+D(r"(\sqrt{%d}+\sqrt{%d})^2=%d+2\sqrt{%d}\sqrt{%d}+%d=%d+2\sqrt{%d}"%(p,q,p,p,q,q,p+q,pq))+"<p>これが "+I("r^2")+" に等しい。</p>"+D(r"%d+2\sqrt{%d}=r^2"%(p+q,pq))+D(r"2\sqrt{%d}=r^2-%d"%(pq,p+q))+D(r"\sqrt{%d}=\dfrac{r^2-%d}{2}"%(pq,p+q))),
         ("矛盾","<p>右辺は有理数。ところが "+I(r"\sqrt{%d}"%pq)+" は無理数（"+I("%d"%pq)+" は平方数でない）。矛盾。</p>"),
         ("結論","<p>よって "+I(r"\sqrt{%d}+\sqrt{%d}"%(p,q))+" は無理数。</p>")]
     return r"$\sqrt{%d}+\sqrt{%d}$ が無理数であることを、背理法で証明せよ。ただし $\sqrt{%d}$ が無理数であることは使ってよい。"%(p,q,pq),st,r"\text{無理数である}"
@@ -44,7 +44,7 @@ build(Z,CH,"対偶を使った整数の証明（p の倍数）",o,r"<p>直接示
 def b10(a,b,c):
     # p: |x|<a, q: x<b (b>=a?), r: x^2<c^2 ...
     st=[("集合で表す","<p>"+I(r"p:-%d<x<%d"%(a,a))+"、"+I(r"q:x<%d"%b)+"、"+I(r"r:-%d<x<%d"%(c,c))+"。</p>"),
-        ("包含関係","<p>"+I(r"p\Rightarrow q")+" は "+I(r"P\subset Q")+"。"+I(r"(-%d,%d)\subset(-\infty,%d)"%(a,a,b))+" となるのは "+I("a\\leqq b")+"。</p>"),
+        ("包含関係","<p>"+I(r"p\Rightarrow q")+" は "+I(r"P\subset Q")+"。"+I(r"(-%d,%d)\subset(-\infty,%d)"%(a,a,b))+"。右端どうしを比べると "+I(r"%d\leqq %d"%(a,b))+(" なので成り立つ。" if a<=b else " ではないので成り立たない。")+"</p><p>同じように "+I(r"r\Rightarrow p")+" は "+I(r"(-%d,%d)\subset(-%d,%d)"%(c,c,a,a))+"、右端 "+I(r"%d\leqq %d"%(c,a))+(" で成り立つ。" if c<=a else " ではなく成り立たない。")+"</p>"),
         ("判定","<p>"+I("p\\Rightarrow q")+(" は真。" if a<=b else " は偽。")+I(r"r\Rightarrow p")+(" は真" if c<=a else " は偽")+"、"+I(r"p\Rightarrow r")+(" は真。" if a<=c else " は偽。")+"</p>")]
     ans=("rはpの十分条件" if c<=a else "")+("、" if c<=a and a<=b else "")+("pはqの十分条件" if a<=b else "")
     return r"実数 $x$ についての条件 $p:|x|<%d$、$q:x<%d$、$r:|x|<%d$ について、$p$ は $q$ の何条件か、$r$ は $p$ の何条件かを答えよ。"%(a,b,c),st,("pはqの十分条件" if a<=b else "pはqの十分条件でない")+"、"+("rはpの十分条件（pはrの必要条件）" if c<a else "rはpの必要条件（十分でない）")
