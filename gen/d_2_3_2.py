@@ -19,6 +19,8 @@ def b1(d1,d2,sign):
            ("$\\sin$ の加法定理",D(r"\sin%d^\circ=\sin%d^\circ\cos%d^\circ%s\cos%d^\circ\sin%d^\circ=%s\cdot%s%s%s\cdot%s=%s"%(d1+sign*d2,d1,d2,ss,d1,d2,V_(sA),V_(cB),ss,V_(cA),V_(sB),V_(sv)))),
            ("$\\cos$ の加法定理",D(r"\cos%d^\circ=\cos%d^\circ\cos%d^\circ%s\sin%d^\circ\sin%d^\circ=%s\cdot%s%s%s\cdot%s=%s"%(d1+sign*d2,d1,d2,sg2,d1,d2,V_(cA),V_(cB),sg2,V_(sA),V_(sB),V_(cv)))),
            ("$\\tan$ の加法定理",D(r"\tan%d^\circ=\dfrac{\tan%d^\circ%s\tan%d^\circ}{1%s\tan%d^\circ\tan%d^\circ}=\dfrac{%s%s%s}{1%s%s\cdot%s}=%s"%(d1+sign*d2,d1,ss,d2,sg2,d1,d2,V_(tA),ss,V_(tB),sg2,V_(tA),V_(tB),V_(tv))))]
+    fgs=ucsum("u232_1_%d_%d_%s"%(d1,d2,"p" if sign>0 else "m"),d1,d2,sign,sp.latex(sp.radsimp(sp.simplify(sp.cos(T)))),sp.latex(sp.radsimp(sp.simplify(sp.sin(T)))))
+    steps[0]=(steps[0][0],steps[0][1]+"<p>単位円で見ると、"+I(r"%d^\circ"%tot)+" の動径は、"+I(r"%d^\circ"%d1)+" の動径を "+I(r"%d^\circ"%d2)+(" 分だけ進めた" if sign>0 else " 分だけ戻した")+"もの。点 "+I("P")+" の座標が "+I(r"(\cos%d^\circ,\ \sin%d^\circ)"%(tot,tot))+"。</p>"+fgs)
     prob=r"加法定理を用いて、$\sin%d^\circ,\ \cos%d^\circ,\ \tan%d^\circ$ の値を求めよ。"%(tot,tot,tot)
     return prob,steps,r"\sin%d^\circ=%s,\ \cos%d^\circ=%s,\ \tan%d^\circ=%s"%(tot,V_(sv),tot,V_(cv),tot,V_(tv))
 V=[(45,60,-1),(45,30,1),(60,45,1),(135,30,1),(210,45,1)]

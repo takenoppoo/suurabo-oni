@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from bh import *
+from gq import *
 Z=U_(); CH=[]
 R=sp.Rational
 # 6 範囲つきの不等式 (定数分離)
@@ -50,6 +51,9 @@ def b8(al,be,a):
     st=[("$b,\\ c$ を $a$ で表す","<p>解が "+I(r"%s<x<%s"%(L(al),L(be)) if al<be else r"%s<x<%s"%(L(be),L(al)))+" なので "+I("a<0")+"、2解は "+I(r"%s,\ %s"%(L(al),L(be)))+"。</p>"+D(r"b=-a(%s+%s)=%s\,a,\qquad c=a\cdot%s\cdot%s=%s\,a"%(L(al),P(be),L(-(al+be)),L(al),P(be),L(al*be)))),
         ("新しい不等式に代入","<p>"+I(r"cx^2+bx+a<0")+" を "+I("a")+" でわる。"+I("a<0")+" なので<b>不等号の向きが逆</b>になる。</p>"+D(r"%sx^2%sx+1>0"%(L(al*be),("+"+L(-(al+be)) if -(al+be)>0 else L(-(al+be)))))),
         ("因数分解して解く","<p>"+I(r"%s=(%sx-1)(%sx-1)"%(L(q),L(al),L(be)))+"。2解は "+I(r"x=%s,\ %s"%(L(R(1,al)),L(R(1,be))))+"。"+I("x^2")+" の係数 "+I(L(al*be))+" が"+("正" if al*be>0 else "負")+"なので</p>"+D(ans))]
+    f0=a*x**2+bb*x+cc; lo_,hi_=sorted([al,be]); xv=R(-bb,2*a)
+    fg=quadfig("x134_8_%d_%d_%d"%(al+9,be+9,a+9),[(f0,"#b81f36")],[(lo_,0,"(%d, 0)"%lo_),(hi_,0,"(%d, 0)"%hi_)],axis=xv,hl=[(lo_,hi_)],xr=(min(lo_,hi_)-3,max(lo_,hi_)+3))
+    st[0]=(st[0][0],st[0][1]+"<p>"+I(r"ax^2+bx+c>0")+" の解（放物線が "+I("x")+" 軸より上の部分）が太線。上に凸なので "+I("a<0")+"。</p>"+fg)
     return r"$ax^2+bx+c>0$ の解が $%s<x<%s$ であるとき、$cx^2+bx+a<0$ の解を求めよ。"%((L(al),L(be)) if al<be else (L(be),L(al))),st,ans
 o=[b8(*v) for v in [(1,3,-1),(2,5,-1),(-3,-1,-2),(-1,2,-1),(-2,3,-2)]]
 build(Z,CH,"解から別の2次不等式の解を求める",o,r"<p>解の形から $a<0$、$b,c$ を $a$ で表す。新しい不等式に代入し<b>$a$ でわる（$a<0$ で向きが逆）</b>。因数分解して解く。</p>","負の数でわるときは不等号が逆向きになる。",8)
@@ -64,6 +68,10 @@ def b9(p,q):
     st=[("次数で場合分け","<p>"+I("a=0")+" のとき "+I(r"%dx%+d\leqq0"%(2*p,q))+" は "+I("x")+" が大きいと成り立たない。よって "+I(r"a\neq0")+"。</p>"),
         ("2次不等式の条件","<p>すべての "+I("x")+" で "+I(r"\leqq0")+" となるには、上に凸 "+I("a<0")+" かつ 判別式 "+I(r"D\leqq0")+"。</p>"+D(r"\dfrac D4=%d-%sa\leqq0"%(p*p,L(q)) if q!=-1 else r"\dfrac D4=%d+a\leqq0"%(p*p))),
         ("解く","<p>"+I(r"a\leqq %s"%L(amax))+"（"+I("%s<0"%L(amax))+" より "+I("a<0")+" も満たす）。</p>"+D(r"a\leqq %s"%L(amax)))]
+    a_ex=R(sp.floor(amax)-1)
+    f_ex=a_ex*x**2+2*p*x+q; xv=R(-p,1)/a_ex
+    fg=quadfig("x134_9_%d_%d"%(p+9,-q),[(f_ex,"#b81f36")],[(xv,f_ex.subs(x,xv),"頂点")],axis=xv)
+    st[0]=(st[0][0],st[0][1]+"<p>例として "+I("a=%s"%L(a_ex))+" のグラフ。上に凸で頂点が "+I("x")+" 軸より下にあれば、すべての "+I("x")+" で "+I(r"\leqq0")+"。</p>"+fg)
     return r"すべての実数 $x$ について $ax^2+%dx%+d\leqq0$ が成り立つような定数 $a$ の範囲を求めよ。"%(2*p,q),st,r"a\leqq %s"%L(amax)
 o=[b9(*v) for v in [(2,-1),(3,-2),(1,-3),(2,-5),(4,-4)]]
 build(Z,CH,"すべての実数で不等式が成り立つ条件（a の場合分け）",o,r"<p>$x^2$ の係数が文字のときは<b>まず $a=0$ の場合</b>を調べる。$a\neq0$ なら、$\leqq0$ がつねに成り立つ条件は「上に凸 かつ $D\leqq0$」。</p>","最高次の係数が0になる場合を、かならず別に確認する。",9)

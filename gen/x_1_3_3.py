@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from bh import *
+from gq import *
 Z=U_(); CH=[]
 R=sp.Rational
 # 6 解の比
@@ -9,6 +10,8 @@ def b6(s,m):
     st=[("解を文字でおく","<p>解の比が "+I("%d:1"%m)+" なので、解を "+I(r"\alpha=%d\beta"%m)+"、"+I(r"\beta")+" とおく。</p>"),
         ("解と係数の関係","<p>"+I(r"\alpha+\beta=%d"%s)+"、"+I(r"\alpha\beta=k")+"。</p>"+D(r"%d\beta+\beta=%d\ \Rightarrow\ \beta=%s"%(m,s,L(beta)))),
         ("$k$ を求める",D(r"\alpha=%s,\ \ k=\alpha\beta=%s\cdot%s=%s"%(L(alpha),L(alpha),L(beta),L(k)))+"<p>確認：解は "+I("%s,\\ %s"%(L(alpha),L(beta)))+"（実数）。</p>")]
+    fg=quadfig("x133_6_%d_%d"%(s,m),[(x**2-s*x+k,"#b81f36")],[(beta,0,"(%s, 0)"%L(beta)),(alpha,0,"(%s, 0)"%L(alpha)),(R(s,2),k-R(s*s,4)*(-1)*0-R(s*s,4)+k-k+0,"")],axis=R(s,2))
+    st[0]=(st[0][0],st[0][1]+"<p>2つの解は "+I("x")+" 軸との交点。比が "+I("%d:1"%m)+" になる位置を図で確かめる。</p>"+fg)
     return r"2次方程式 $x^2-%dx+k=0$ の2つの解の比が $%d:1$ であるとき、定数 $k$ の値を求めよ。"%(s,m),st,r"k=%s"%L(k)
 o=[b6(*v) for v in [(6,2),(8,3),(10,4),(9,2),(12,3)]]
 build(Z,CH,"2つの解の比が与えられたとき",o,r"<p>解を $\alpha=m\beta,\ \beta$ とおいて、<b>解と係数の関係</b>（和）から $\beta$ を求め、積から定数を決める。最後に実数解かを確認。</p>","比は文字ひとつで表す。和から決めて、積に代入。",6)
@@ -19,6 +22,9 @@ def b7(p,d):
     st=[("差の2乗を作る","<p>"+I(r"(\alpha-\beta)^2=(\alpha+\beta)^2-4\alpha\beta")+"。</p>"+D(r"%d^2=%d^2-4k"%(d,p))),
         ("$k$ を求める",D(r"4k=%d-%d=%d\ \Rightarrow\ k=%s"%(p*p,d*d,p*p-d*d,L(k)))),
         ("実数解の確認","<p>"+I(r"D=%d^2-4\cdot%s=%d>0"%(p,L(k),d*d))+"。</p>")]
+    r1_,r2_=sorted(r_)
+    fg=quadfig("x133_7_%d_%d"%(p,d),[(x**2-p*x+k,"#b81f36")],[(r1_,0,"α"),(r2_,0,"β")],axis=R(p,2))
+    st[0]=(st[0][0],st[0][1]+"<p>2つの解の間の長さ "+I(r"|\alpha-\beta|=%d"%d)+" が、"+I("x")+" 軸から切り取る線分の長さ。</p>"+fg)
     return r"2次方程式 $x^2-%dx+k=0$ の2つの解 $\alpha,\ \beta$ について $|\alpha-\beta|=%d$ となるように、定数 $k$ の値を定めよ。"%(p,d),st,r"k=%s"%L(k)
 o=[b7(*v) for v in [(5,3),(7,1),(6,2),(9,5),(8,4)]]
 build(Z,CH,"解の差が与えられたとき",o,r"<p>$(\alpha-\beta)^2=(\alpha+\beta)^2-4\alpha\beta$ を使う。$|\alpha-\beta|=d$ の両辺を2乗すれば絶対値が消える。</p>","差は2乗すると、和と積だけで書ける。",7)
@@ -41,6 +47,10 @@ def b9(kk):
     st=[("$f(x)$ とおく","<p>"+I(r"f(x)=x^2-2ax+3a-2")+"。"+I("x^2")+" の係数が正（下に凸）なので、2つの解の間に "+I("x=%d"%kk)+" があるための条件は "+I(r"f(%d)<0"%kk)+"。</p>"),
         ("不等式にする",D(r"f(%d)=%d-%da+3a-2=%s<0"%(kk,kk*kk,2*kk,L(lin)))),
         ("解く",D(r"%s"%sp.latex(sol).replace("\\frac","\\dfrac")))]
+    a0=[v_ for v_ in range(-10,11) if (ineq.subs(a,v_)<0)][0]
+    f0=x**2-2*a0*x+3*a0-2; r0=sorted(sp.solve(f0,x))
+    fg=quadfig("x133_9_%d"%(kk+9),[(f0,"#b81f36")],[(kk,f0.subs(x,kk),"x=%d"%kk),(r0[0],0,""),(r0[1],0,"")],axis=kk)
+    st[0]=(st[0][0],st[0][1]+"<p>例として "+I("a=%d"%a0)+" のグラフ。点線の位置 "+I("x=%d"%kk)+" で "+I("f(x)<0")+" になり、解（"+I("x")+" 軸との交点）が両側に1つずつある。</p>"+fg)
     return r"2次方程式 $x^2-2ax+3a-2=0$ が、$%d$ より大きい解と $%d$ より小さい解を1つずつもつような定数 $a$ の範囲を求めよ。"%(kk,kk),st,r"%s"%sp.latex(sol).replace("\\frac","\\dfrac")
 o=[b9(v) for v in [1,2,0,3,-1]]
 build(Z,CH,"2つの解の間に数がある条件",o,r"<p>下に凸の $f(x)$ で、解の間に $k$ があるのは<b>$f(k)<0$</b>。$D>0$ は自動的に成り立つので、確認は不要。</p>","谷底より上でなく、谷底の下にくる点が2解の間。",9)

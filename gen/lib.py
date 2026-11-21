@@ -140,6 +140,25 @@ def uceq(name,fn,v,pts=(),arcs=(),w=46):
             ax.text(px*1.22+(.04 if px>=0 else -.04),py*1.22+(.16 if py>=0 else -.16),"$"+lab+"$",fontsize=10,ha=("left" if px>=0 else "right"),va="center",color="#222")
     make_fig(name,fn_,size=(4.0,3.3))
     return img(name,w)
+
+def ucsum(name,a,b,sign,cx,sy,w=46):
+    """加法定理用の単位円。角α、β（度）と α±β の動径を描き、α±β の点の座標を書く。imgタグを返す"""
+    import numpy as np
+    from matplotlib.patches import Arc
+    T=a+sign*b
+    def fn(ax):
+        ax.set_aspect("equal"); ax.set_xlim(-2.1,2.1); ax.set_ylim(-1.9,1.5); ax.axis("off")
+        t=np.linspace(0,2*np.pi,300); ax.plot(np.cos(t),np.sin(t),color="#555",lw=1.3)
+        ax.annotate("",xy=(1.5,0),xytext=(-1.5,0),arrowprops=dict(arrowstyle="->",lw=1,color="#333"))
+        ax.annotate("",xy=(0,1.42),xytext=(0,-1.42),arrowprops=dict(arrowstyle="->",lw=1,color="#333"))
+        for ang,col,lab,rr in [(a,"#1f6fb8",r"\alpha=%d^\circ"%a,1.0),(b,"#1f8a5b",r"\beta=%d^\circ"%b,1.0),(T,RED,r"\alpha%s\beta=%d^\circ"%("+" if sign>0 else "-",T),1.0)]:
+            r_=np.radians(ang); ax.plot([0,np.cos(r_)],[0,np.sin(r_)],color=col,lw=2 if col==RED else 1.4,ls="-" if col==RED else "--")
+            ax.plot([np.cos(r_)],[np.sin(r_)],"o",color=col,ms=5)
+            ax.text(1.15*np.cos(r_)+(.04 if np.cos(r_)>=0 else -.04),1.15*np.sin(r_)+(.12 if np.sin(r_)>=0 else -.12),"$"+lab+"$",fontsize=9,color=col,ha=("left" if np.cos(r_)>=0 else "right"))
+        ax.text(0,-1.42,"P$\\left("+cx+",\\ "+sy+"\\right)$（赤い点の座標）",fontsize=10,color="#222",ha="center",va="top")
+        lo,hi=sorted([0,T]); ax.add_patch(Arc((0,0),.5,.5,theta1=lo,theta2=hi,color=RED,lw=1.6))
+    make_fig(name,fn,size=(4.2,3.3))
+    return img(name,w)
 # ---------- 部品 ----------
 def lh(badge,sub): return f'<h1 class="lh"><span class="lb">{badge}</span><span class="ls">{sub}</span></h1>'
 def isM(p): return p.startswith("\\(") or p.startswith("<") or "\\(" in p or ("\\text{" not in p and any(ord(ch)>0x3000 for ch in p))
