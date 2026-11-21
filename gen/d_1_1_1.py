@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # 式の展開（数学I 数と式）
 from math import factorial as F
-from lib import I,D,step
+from lib import I,D,step,img,make_fig
 CH="式の展開"
 
 # ---- 例題 ----
@@ -208,6 +208,44 @@ CH_FROM={1:1,2:2,3:3,4:4,5:5,6:6,7:8,8:9,9:10,10:11,11:7}
 _old={1:1,2:2,3:3,4:4,5:5,6:6,7:8,8:9,9:10,10:11,11:7}
 EX=EX[2:]; CH_END=CH_END[2:]
 CH_FROM={n:_old[n+2]-2 for n in range(1,10)}
+
+# ---- 図（面積図・ドミノ・階段）----
+def _grid(ax):
+    import matplotlib.patches as mp
+    cols=["x²","ax","3"]; rows=["x²","−2x","b"]
+    prods=[["x⁴","ax³","3x²"],["−2x³","−2ax²","−6x"],["bx²","abx","3b"]]
+    hl={(0,1):"#f4b6bf",(1,0):"#f4b6bf",(0,2):"#cfe3f6",(1,1):"#cfe3f6",(2,0):"#cfe3f6",(1,2):"#d6ecd2",(2,1):"#d6ecd2"}
+    for i in range(3):
+        for j in range(3):
+            ax.add_patch(mp.Rectangle((j,2-i),1,1,fc=hl.get((i,j),"white"),ec="#555",lw=1))
+            ax.text(j+.5,2-i+.5,prods[i][j],ha="center",va="center",fontsize=13)
+    for j,c in enumerate(cols): ax.text(j+.5,3.25,c,ha="center",fontsize=13,color="#b81f36")
+    for i,r in enumerate(rows): ax.text(-.2,2-i+.5,r,ha="right",va="center",fontsize=13,color="#b81f36")
+    ax.text(5.1,2.5,"赤: x³　青: x²　緑: x",fontsize=11,va="center"); ax.set_xlim(-1.2,8); ax.set_ylim(-.2,3.7); ax.set_aspect("equal"); ax.axis("off")
+make_fig("i111_grid",_grid,size=(6,3))
+def _domino(ax):
+    import matplotlib.patches as mp
+    labs=["(2−1)(2+1)","(2²−1)(2²+1)","(2⁴−1)(2⁴+1)","(2⁸−1)(2⁸+1)","(2¹⁶−1)(2¹⁶+1)"]
+    res=["2²−1","2⁴−1","2⁸−1","2¹⁶−1","2³²−1"]
+    for i,(a,b) in enumerate(zip(labs,res)):
+        ax.add_patch(mp.FancyBboxPatch((i*2.3,0),2.0,.9,boxstyle="round,pad=.03",fc="#fbe3e7",ec="#b81f36"))
+        ax.text(i*2.3+1,.45,a,ha="center",va="center",fontsize=8.5)
+        ax.annotate("",xy=(i*2.3+1,-.9),xytext=(i*2.3+1,-.05),arrowprops=dict(arrowstyle="->",color="#b81f36",lw=1.4))
+        ax.text(i*2.3+1,-1.25,b,ha="center",va="center",fontsize=10)
+    ax.set_xlim(-.3,11.6); ax.set_ylim(-1.7,1.2); ax.axis("off")
+make_fig("i111_domino",_domino,size=(7,1.9))
+def _stairs(ax):
+    import matplotlib.patches as mp
+    vals=[("1段目","x+1/x = 3"),("2段目","x²+1/x² = 7"),("3段目","x³+1/x³ = 18"),("5段目","x⁵+1/x⁵ = 123")]
+    for i,(a,b) in enumerate(vals):
+        ax.add_patch(mp.Rectangle((i*2.6,0),2.6,i+1,fc="#fbe3e7" if i<3 else "#f4b6bf",ec="#b81f36"))
+        ax.text(i*2.6+1.3,i+.5,a,ha="center",va="center",fontsize=11,color="#b81f36")
+        ax.text(i*2.6+1.3,i+1.3,b,ha="center",va="bottom",fontsize=9)
+    ax.set_xlim(-.2,10.8); ax.set_ylim(-.1,5.4); ax.axis("off")
+make_fig("i111_stairs",_stairs,size=(6.4,3))
+_fg={0:("i111_grid",70,"各マスが2つの式の積。同じ次数のマス（同じ色）を足す。"),3:("i111_domino",85,"前の結果が次のペアの入口になる。"),5:("i111_stairs",70,"小さい段から順に積み上げる。")}
+for k,(nm,w,cp) in _fg.items():
+    EX[k]['approach']+=img(nm,w,cp)
 
 UNIT=dict(subject="1",ci=0,ui=0,chapter="数と式",name="式の展開",
   intro="展開の工夫・対称式・次数下げなど、入試や共通テストで差がつく「式の展開」の難問に挑みます。",
