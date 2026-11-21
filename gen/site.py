@@ -21,6 +21,8 @@ for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)
     U['uid']=f"{U['subject']}-{U['ci']+1}-{U['ui']+1}"; UNITS[(U['subject'],U['ci'],U['ui'])]=U
 def sname(sid): return [S['name'] for S in SUBJECTS if S['id']==sid][0]
 
+import hashlib as _hl
+CSSV=_hl.md5(CSS.encode()).hexdigest()[:8]
 def page(title,desc,body,extra_head="",lesson=False):
     return f"""<!DOCTYPE html>
 <html lang="ja">
@@ -32,7 +34,7 @@ def page(title,desc,body,extra_head="",lesson=False):
 <meta name="description" content="{html.escape(desc)}">
 <link rel="stylesheet" href="katex/katex.min.css">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="lesson.css">
+<link rel="stylesheet" href="lesson.css?v={CSSV}">
 <!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
 {extra_head}
 </head>

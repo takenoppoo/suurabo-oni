@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-21T15:48:35.497784</dc:date>
+    <dc:date>2026-11-21T16:05:13.504475</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -34,26 +34,26 @@ z
 L 211.580019 182.652695 
 L 172.540347 31.452695 
 L 29.394883 182.652695 
-" clip-path="url(#pa64b700f32)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: square"/>
+" clip-path="url(#p176991aaa8)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 172.540347 31.452695 
 L 133.500675 182.652695 
-" clip-path="url(#pa64b700f32)" style="fill: none; stroke: #b81f36; stroke-width: 1.6; stroke-linecap: square"/>
+" clip-path="url(#p176991aaa8)" style="fill: none; stroke: #b81f36; stroke-width: 1.6; stroke-linecap: square"/>
    </g>
    <g id="line2d_3">
     <path d="M 29.394883 182.652695 
 L 146.513899 132.252695 
-" clip-path="url(#pa64b700f32)" style="fill: none; stroke-dasharray: 5.92,2.56; stroke-dashoffset: 0; stroke: #2a7fd0; stroke-width: 1.6"/>
+" clip-path="url(#p176991aaa8)" style="fill: none; stroke-dasharray: 5.92,2.56; stroke-dashoffset: 0; stroke: #2a7fd0; stroke-width: 1.6"/>
    </g>
    <g id="line2d_4">
     <path d="M 211.580019 182.652695 
 L 146.513899 132.252695 
-" clip-path="url(#pa64b700f32)" style="fill: none; stroke-dasharray: 5.92,2.56; stroke-dashoffset: 0; stroke: #2a7fd0; stroke-width: 1.6"/>
+" clip-path="url(#p176991aaa8)" style="fill: none; stroke-dasharray: 5.92,2.56; stroke-dashoffset: 0; stroke: #2a7fd0; stroke-width: 1.6"/>
    </g>
    <g id="line2d_5">
     <defs>
-     <path id="m76b900ac84" d="M 0 1.75 
+     <path id="ma1a5ddea89" d="M 0 1.75 
 C 0.464105 1.75 0.909265 1.565609 1.237437 1.237437 
 C 1.565609 0.909265 1.75 0.464105 1.75 0 
 C 1.75 -0.464105 1.565609 -0.909265 1.237437 -1.237437 
@@ -65,28 +65,28 @@ C -0.909265 1.565609 -0.464105 1.75 0 1.75
 z
 " style="stroke: #333333"/>
     </defs>
-    <g clip-path="url(#pa64b700f32)">
-     <use xlink:href="#m76b900ac84" x="172.540347" y="31.452695" style="fill: #333333; stroke: #333333"/>
+    <g clip-path="url(#p176991aaa8)">
+     <use xlink:href="#ma1a5ddea89" x="172.540347" y="31.452695" style="fill: #333333; stroke: #333333"/>
     </g>
    </g>
    <g id="line2d_6">
-    <g clip-path="url(#pa64b700f32)">
-     <use xlink:href="#m76b900ac84" x="29.394883" y="182.652695" style="fill: #333333; stroke: #333333"/>
+    <g clip-path="url(#p176991aaa8)">
+     <use xlink:href="#ma1a5ddea89" x="29.394883" y="182.652695" style="fill: #333333; stroke: #333333"/>
     </g>
    </g>
    <g id="line2d_7">
-    <g clip-path="url(#pa64b700f32)">
-     <use xlink:href="#m76b900ac84" x="211.580019" y="182.652695" style="fill: #333333; stroke: #333333"/>
+    <g clip-path="url(#p176991aaa8)">
+     <use xlink:href="#ma1a5ddea89" x="211.580019" y="182.652695" style="fill: #333333; stroke: #333333"/>
     </g>
    </g>
    <g id="line2d_8">
-    <g clip-path="url(#pa64b700f32)">
-     <use xlink:href="#m76b900ac84" x="133.500675" y="182.652695" style="fill: #333333; stroke: #333333"/>
+    <g clip-path="url(#p176991aaa8)">
+     <use xlink:href="#ma1a5ddea89" x="133.500675" y="182.652695" style="fill: #333333; stroke: #333333"/>
     </g>
    </g>
    <g id="line2d_9">
-    <g clip-path="url(#pa64b700f32)">
-     <use xlink:href="#m76b900ac84" x="146.513899" y="132.252695" style="fill: #333333; stroke: #333333"/>
+    <g clip-path="url(#p176991aaa8)">
+     <use xlink:href="#ma1a5ddea89" x="146.513899" y="132.252695" style="fill: #333333; stroke: #333333"/>
     </g>
    </g>
    <g id="text_1">
@@ -211,7 +211,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pa64b700f32">
+  <clipPath id="p176991aaa8">
    <rect x="20.285626" y="23.892695" width="200.40365" height="166.32"/>
   </clipPath>
  </defs>
