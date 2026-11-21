@@ -43,10 +43,11 @@ def b3(m,s,lo,hi):
     if lo is None: prob=R(1,2)+pf(zh); form=r"P(X\leqq%d)=P(Z\leqq%s)"%(hi,L(zh)); setup=r"P(Z\leqq %s)=0.5%s"%(L(zh),("+" if zh>=0 else "-")+"p(%s)"%L(abs(zh)))
     elif hi is None: prob=R(1,2)-pf(zl); form=r"P(X\geqq%d)=P(Z\geqq%s)"%(lo,L(zl)); setup=r"P(Z\geqq %s)=0.5%s"%(L(zl),("-" if zl>=0 else "+")+"p(%s)"%L(abs(zl)))
     else: prob=pf(zh)-pf(zl); form=r"P(%d\leqq X\leqq%d)=P(%s\leqq Z\leqq%s)"%(lo,hi,L(zl),L(zh)); setup=r"=p(%s)+p(%s)"%(L(abs(zl)),L(abs(zh))) if zl<0<zh else r"=p(%s)-p(%s)"%(L(abs(zh)),L(abs(zl)))
+    vl=("0.5+%s"%dec(pu(zh)) if zh is not None and lo is None and zh>=0 else "0.5-%s"%dec(pu(zh)) if lo is None else "0.5-%s"%dec(pu(zl)) if hi is None and zl>=0 else "0.5+%s"%dec(pu(zl)) if hi is None else "%s+%s"%(dec(pu(zl)),dec(pu(zh))) if zl<0<zh else "%s-%s"%(dec(pu(zh)),dec(pu(zl))))
     rng=("X\\leqq %d"%hi if lo is None else "X\\geqq %d"%lo if hi is None else "%d\\leqq X\\leqq %d"%(lo,hi))
     st=[("標準化する","<p>"+I(r"Z=\dfrac{X-m}{\sigma}")+" は標準正規分布 "+I("N(0,1)")+" に従う。</p>"+D(r"Z=\dfrac{X-%d}{%d}"%(m,s))),
         ("$Z$ の範囲に直す",D(form)),
-        ("正規分布表を使う","<p>"+I(r"p(u)=P(0\leqq Z\leqq u)")+"、左右対称で "+I("P(Z\\geqq0)=0.5")+"。</p>"+D(setup)+D(r"=%s"%dec(prob)))]
+        ("正規分布表を使う","<p>"+I(r"p(u)=P(0\leqq Z\leqq u)")+"、左右対称で "+I("P(Z\\geqq0)=0.5")+"。</p>"+"<p>標準正規分布の曲線で、求める面積（青い部分）を図にする。</p>"+normfig("nb3_%s_%s"%(("m" if zl is None else "%g"%float(zl)),("m" if zh is None else "%g"%float(zh))),zl,zh)+D(setup)+D(r"=%s=%s"%(vl,dec(prob))))]
     return r"確率変数 $X$ が正規分布 $N(%d,\ %d^2)$ に従うとき、$P(%s)$ を求めよ。%s"%(m,s,rng,TBL),st,dec(prob)
 V_=[(50,10,40,65),(60,20,100,None),(170,6,158,176),(100,16,None,76),(30,4,26,38)]
 o=[b3(*v) for v in V_]
@@ -61,7 +62,7 @@ def b4(n,p,lo,hi):
     elif lo is None: prob=R(1,2)+pf(zh); rng=r"X\leqq%d"%hi; zz=r"Z\leqq%s"%L(zh); fm=r"0.5%sp(%s)"%("+" if zh>=0 else "-",L(abs(zh)))
     else: prob=pf(zh)-pf(zl); rng=r"%d\leqq X\leqq%d"%(lo,hi); zz=r"%s\leqq Z\leqq%s"%(L(zl),L(zh)); fm=r"p(%s)+p(%s)"%(L(abs(zl)),L(abs(zh))) if zl<0<zh else r"p(%s)-p(%s)"%(L(abs(zh)),L(abs(zl)))
     st+= [("標準化する",D(r"Z=\dfrac{X-%s}{%s}"%(L(m),L(s)))+D(r"P(%s)=P(%s)"%(rng,zz))),
-          ("正規分布表で求める",D(r"=%s=%s"%(fm,dec(prob))))]
+          ("正規分布表で求める","<p>求める面積（青い部分）を図にする。</p>"+normfig("nb45_%s_%s"%(("m" if zl is None else "%g"%float(zl)),("m" if zh is None else "%g"%float(zh))),zl,zh)+D(r"=%s=%s"%(fm,dec(prob))))]
     return r"1回の試行で事象 $A$ が起こる確率が $%s$ である。この試行を $%d$ 回くり返すとき、$A$ が起こる回数を $X$ とする。正規分布で近似して $P(%s)$ を求めよ。%s"%(L(p),n,rng,TBL),st,dec(prob)
 V_=[(100,R(1,2),60,None),(400,R(1,2),180,215),(100,R(1,5),26,None),(900,R(1,10),None,72),(64,R(1,2),28,40)]
 o=[b4(*v) for v in V_]
@@ -76,7 +77,7 @@ def b5(m,s,n,lo,hi):
     else: prob=pf(zh)-pf(zl); rng=r"%s\leqq\overline X\leqq%s"%(L(lo),L(hi)); zz=r"%s\leqq Z\leqq%s"%(L(zl),L(zh)); fm=r"p(%s)+p(%s)"%(L(abs(zl)),L(abs(zh))) if zl<0<zh else r"p(%s)-p(%s)"%(L(abs(zh)),L(abs(zl)))
     st=[("標本平均の分布","<p>母平均 "+I("m=%d"%m)+"、母標準偏差 "+I(r"\sigma=%d"%s)+"、標本の大きさ "+I("n=%d"%n)+"。</p>"+D(r"E(\overline X)=m=%d,\quad \sigma(\overline X)=\dfrac{\sigma}{\sqrt n}=\dfrac{%d}{\sqrt{%d}}=%s"%(m,s,n,L(sb)))+"<p>$n$ が大きいので $\\overline X$ は "+I(r"N\left(%d,\ %s^2\right)"%(m,L(sb)))+" に従うとみなせる。</p>"),
         ("標準化する",D(r"Z=\dfrac{\overline X-%d}{%s}"%(m,L(sb)))+D(r"P(%s)=P(%s)"%(rng,zz))),
-        ("正規分布表で求める",D(r"=%s=%s"%(fm,dec(prob))))]
+        ("正規分布表で求める","<p>求める面積（青い部分）を図にする。</p>"+normfig("nb45_%s_%s"%(("m" if zl is None else "%g"%float(zl)),("m" if zh is None else "%g"%float(zh))),zl,zh)+D(r"=%s=%s"%(fm,dec(prob))))]
     return r"母平均 $%d$、母標準偏差 $%d$ の母集団から、大きさ $%d$ の標本を無作為に抽出する。標本平均 $\overline X$ について $P(%s)$ を求めよ。%s"%(m,s,n,rng,TBL),st,dec(prob)
 V_=[(50,20,100,54,None),(200,30,36,190,R(415,2)),(60,12,16,None,54),(80,15,25,77,86),(10,4,64,R(43,4),None)]
 o=[b5(*v) for v in V_]

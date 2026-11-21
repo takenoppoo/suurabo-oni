@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-22T00:29:45.572521</dc:date>
+    <dc:date>2026-11-22T00:46:28.327207</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -32,37 +32,37 @@ z
    <g id="line2d_1">
     <path d="M 16.146689 82.26 
 L 317.466689 82.26 
-" clip-path="url(#p980b60539a)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #b81f36"/>
+" clip-path="url(#pb1c59a7b1f)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #b81f36"/>
    </g>
    <g id="line2d_2">
     <path d="M 95.730707 89.19 
 L 95.730707 75.33 
-" clip-path="url(#p980b60539a)" style="fill: none; stroke: #333333; stroke-width: 0.9; stroke-linecap: square"/>
+" clip-path="url(#pb1c59a7b1f)" style="fill: none; stroke: #333333; stroke-width: 0.9; stroke-linecap: square"/>
    </g>
    <g id="line2d_3">
     <path d="M 162.552671 89.19 
 L 162.552671 75.33 
-" clip-path="url(#p980b60539a)" style="fill: none; stroke: #333333; stroke-width: 0.9; stroke-linecap: square"/>
+" clip-path="url(#pb1c59a7b1f)" style="fill: none; stroke: #333333; stroke-width: 0.9; stroke-linecap: square"/>
    </g>
    <g id="line2d_4">
     <path d="M 229.374634 89.19 
 L 229.374634 75.33 
-" clip-path="url(#p980b60539a)" style="fill: none; stroke: #333333; stroke-width: 0.9; stroke-linecap: square"/>
+" clip-path="url(#pb1c59a7b1f)" style="fill: none; stroke: #333333; stroke-width: 0.9; stroke-linecap: square"/>
    </g>
    <g id="line2d_5">
     <path d="M 296.196597 89.19 
 L 296.196597 75.33 
-" clip-path="url(#p980b60539a)" style="fill: none; stroke: #333333; stroke-width: 0.9; stroke-linecap: square"/>
+" clip-path="url(#pb1c59a7b1f)" style="fill: none; stroke: #333333; stroke-width: 0.9; stroke-linecap: square"/>
    </g>
    <g id="line2d_6">
     <path d="M 25.292904 36.06 
 L 32.524584 36.06 
-" clip-path="url(#p980b60539a)" style="fill: none; stroke: #333333; stroke-width: 0.9; stroke-linecap: square"/>
+" clip-path="url(#pb1c59a7b1f)" style="fill: none; stroke: #333333; stroke-width: 0.9; stroke-linecap: square"/>
    </g>
    <g id="line2d_7">
     <path d="M 25.292904 128.46 
 L 32.524584 128.46 
-" clip-path="url(#p980b60539a)" style="fill: none; stroke: #333333; stroke-width: 0.9; stroke-linecap: square"/>
+" clip-path="url(#pb1c59a7b1f)" style="fill: none; stroke: #333333; stroke-width: 0.9; stroke-linecap: square"/>
    </g>
    <g id="line2d_8">
     <path d="M 16.189229 85.694166 
@@ -192,7 +192,7 @@ L 314.408029 36.900139
 L 315.916089 36.392783 
 L 317.424149 36.1159 
 L 317.424149 36.1159 
-" clip-path="url(#p980b60539a)" style="fill: none; stroke: #b81f36; stroke-width: 2; stroke-linecap: square"/>
+" clip-path="url(#pb1c59a7b1f)" style="fill: none; stroke: #b81f36; stroke-width: 2; stroke-linecap: square"/>
    </g>
    <g id="patch_2">
     <path d="M 18.146722 82.26 
@@ -486,22 +486,22 @@ z
    <g id="line2d_9">
     <path d="M 28.908744 82.26 
 L 84.593713 82.26 
-" clip-path="url(#p980b60539a)" style="fill: none; stroke: #1f6fb8; stroke-width: 5"/>
+" clip-path="url(#pb1c59a7b1f)" style="fill: none; stroke: #1f6fb8; stroke-width: 5"/>
    </g>
    <g id="line2d_10">
     <path d="M 151.415677 82.26 
 L 218.23764 82.26 
-" clip-path="url(#p980b60539a)" style="fill: none; stroke: #1f6fb8; stroke-width: 5"/>
+" clip-path="url(#pb1c59a7b1f)" style="fill: none; stroke: #1f6fb8; stroke-width: 5"/>
    </g>
    <g id="line2d_11">
     <path d="M 285.059603 82.26 
 L 296.196597 82.26 
-" clip-path="url(#p980b60539a)" style="fill: none; stroke: #1f6fb8; stroke-width: 5"/>
+" clip-path="url(#pb1c59a7b1f)" style="fill: none; stroke: #1f6fb8; stroke-width: 5"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="p980b60539a">
+  <clipPath id="pb1c59a7b1f">
    <rect x="16.146689" y="12.96" width="301.32" height="138.6"/>
   </clipPath>
  </defs>

@@ -6,9 +6,14 @@ Z=U_(); CH=[]; R=sp.Rational
 def b6(a,b,c):
     g=math.gcd(a,b); assert c%g==0
     a1,b1,c1=a//g,b//g,c//g
-    x0=next(x for x in range(-200,200) if (c1-a1*x)%b1==0); y0=(c1-a1*x0)//b1
+    _order=[0]+[s*k for k in range(1,400) for s in (1,-1)]
+    _tried=[]
+    for x0 in _order:
+        _tried.append(x0)
+        if (c1-a1*x0)%b1==0: break
+    y0=(c1-a1*x0)//b1
     assert a*x0+b*y0==c
-    st=[("特殊解を1つ見つける","<p>"+I("%dx+%dy=%d"%(a,b,c))+(" は両辺を "+I(str(g))+" で割って "+I("%dx+%dy=%d"%(a1,b1,c1)) if g>1 else "")+"。</p>"+D(r"x=%d,\ y=%d"%(x0,y0))),
+    st=[("特殊解を1つ見つける","<p>"+I("%dx+%dy=%d"%(a,b,c))+(" は両辺を "+I(str(g))+" で割って "+I("%dx+%dy=%d"%(a1,b1,c1)) if g>1 else "")+"。</p>"+"<p>"+I("x")+" に 0, 1, -1, 2, … を順に入れて、"+I("y=\\dfrac{%d-%dx}{%d}"%(c1,a1,b1))+" が整数になるものを探す。</p>"+wtable([I("x")]+[I(str(t)) for t in _tried],[[I(r"%d-%dx"%(c1,a1))]+[I(str(c1-a1*t)) for t in _tried],["%dの倍数か"%b1]+["○" if (c1-a1*t)%b1==0 else "×" for t in _tried]])+D(r"x=%d,\ y=\dfrac{%d-%d\cdot(%d)}{%d}=%d"%(x0,c1,a1,x0,b1,y0))+D(r"%d\cdot(%d)+%d\cdot%d=%d"%(a1,x0,b1,y0,c1))),
         ("差をとる","<p>"+I("%d(x-%d)+%d(y-%d)=0"%(a1,x0,b1,y0))+" より "+I("%d(x-%d)=%d(%d-y)"%(a1,x0,b1,y0))+"。"+I(str(a1))+" と "+I(str(b1))+" は互いに素。</p>"),
         ("一般解","<p>"+I("x-%d=%dk"%(x0,b1))+"（"+I("k")+" は整数）。</p>"+D(r"x=%dk%+d,\quad y=%dk%+d"%(b1,x0,-a1,y0)))]
     return r"不定方程式 $%dx+%dy=%d$ のすべての整数解を求めよ。"%(a,b,c),st,r"x=%dk%+d,\ y=%dk%+d\ (k\text{は整数})"%(b1,x0,-a1,y0)
@@ -18,7 +23,7 @@ build(Z,CH,"1次不定方程式の整数解",o,r"<p>特殊解 $(x_0,y_0)$ を1�
 def b7(a,b,c):
     sol=[(x,y) for x in range(1,c) for y in range(1,c) if a*x+b*y==c]
     st=[("$y$ の範囲","<p>"+I("%dx+%dy=%d"%(a,b,c))+"、"+I("x,y\\geqq1")+"。</p>"+D(r"y=\dfrac{%d-%dx}{%d}"%(c,a,b))),
-        ("条件をみたす $x$","<p>"+I(str(b))+" で割り切れる "+I("x")+" を探す。</p>"+D(r"(x,y)=%s"%(r",\ ".join("(%d,%d)"%s for s in sol) if sol else r"\text{なし}"))),
+        ("条件をみたす $x$","<p>"+I(str(b))+" で割り切れる "+I("x")+" を探す。</p>"+"<p>"+I(r"y\geqq1")+" より "+I(r"%d-%dx\geqq%d"%(c,a,b))+"、すなわち "+I(r"x\leqq%s"%L(R((c-b),a)))+"。"+I("x=1,2,\\dots,%d"%((c-b)//a))+" を順に代入する。</p>"+wtable([I("x")]+[I(str(t)) for t in range(1,(c-b)//a+1)],[[I(r"%d-%dx"%(c,a))]+[I(str(c-a*t)) for t in range(1,(c-b)//a+1)],[I(r"y")]+[I(r"\dfrac{%d}{%d}"%(c-a*t,b)) if (c-a*t)%b else I(str((c-a*t)//b)) for t in range(1,(c-b)//a+1)],["整数か"]+["○" if (c-a*t)%b==0 else "×" for t in range(1,(c-b)//a+1)]])+D(r"(x,y)=%s"%(r",\ ".join("(%d,%d)"%s for s in sol) if sol else r"\text{なし}"))),
         ("個数",D(r"%d\text{ 個}"%len(sol)))]
     return r"$%dx+%dy=%d$ をみたす正の整数の組 $(x,y)$ をすべて求めよ。"%(a,b,c),st,r"%s\ （%d個）"%(r",\ ".join("(%d,%d)"%s for s in sol),len(sol))
 o=[b7(*v) for v in [(3,5,41),(4,7,60),(5,6,70),(7,4,57),(6,11,100)]]

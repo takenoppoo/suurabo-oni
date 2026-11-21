@@ -141,6 +141,21 @@ def uceq(name,fn,v,pts=(),arcs=(),w=46):
     make_fig(name,fn_,size=(4.0,3.3))
     return img(name,w)
 
+def normfig(name,a,b,w=50):
+    """標準正規分布の曲線で P(a<=Z<=b) の面積を塗る。a,b は数値かNone(無限)"""
+    import numpy as np
+    lo=-4.0 if a is None else float(a); hi=4.0 if b is None else float(b)
+    def fn_(ax):
+        xs=np.linspace(-3.8,3.8,400); ys=np.exp(-xs**2/2)/np.sqrt(2*np.pi)
+        ax.plot(xs,ys,color="#b81f36",lw=2)
+        m=(xs>=lo)&(xs<=hi); ax.fill_between(xs[m],0,ys[m],color="#cfe2f5",alpha=.9)
+        ax.axhline(0,color="#333",lw=1); ax.axvline(0,color="#999",lw=.8,ls="--")
+        for v in (a,b):
+            if v is not None: ax.plot([float(v)]*2,[0,np.exp(-float(v)**2/2)/np.sqrt(2*np.pi)],color="#1f6fb8",lw=1.5); ax.text(float(v),-0.035,"%g"%float(v),ha="center",va="top",fontsize=9)
+        ax.text(0,-0.035,"0",ha="center",va="top",fontsize=9); ax.set_xlim(-3.9,3.9); ax.set_ylim(-0.08,0.45); ax.axis("off")
+    make_fig(name,fn_,size=(4.2,2.4))
+    return img(name,w)
+
 def ucsum(name,a,b,sign,cx,sy,w=46):
     """加法定理用の単位円。角α、β（度）と α±β の動径を描き、α±β の点の座標を書く。imgタグを返す"""
     import numpy as np

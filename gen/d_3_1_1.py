@@ -41,7 +41,7 @@ def b4(p,q,a1):
     for _ in range(10): s.append(p*s[-1]+q)
     assert all(sp.simplify(an.subs(n,i+1)-s[i])==0 for i in range(11))
     st=[("特性方程式で $\\alpha$","<p>"+I(r"\alpha=%s\alpha+%s"%(L(p),L(q)))+"。</p>"+D(r"\alpha=%s"%L(al))),
-        ("一般項","<p>"+I(r"a_{n+1}-\alpha=%s(a_n-\alpha)"%L(p))+"。</p>"+D(r"a_n=%s+%s\left(%s\right)^{n-1}"%(L(al),L(a1-al),L(p)))),
+        ("一般項","<p>"+I(r"a_{n+1}-\alpha=%s(a_n-\alpha)"%L(p))+"。</p>"+D(r"a_n=%s%s\left(%s\right)^{n-1}"%(L(al),("+" if a1-al>=0 else "")+L(a1-al),L(p)))),
         ("極限","<p>"+I(r"|%s|<1"%L(p))+" なので "+I(r"\left(%s\right)^{n-1}\to0"%L(p))+"。</p>"+D(r"\lim_{n\to\infty}a_n=%s"%L(al)))]
     return r"$a_1=%d,\ \ a_{n+1}=%s a_n+%s$ で定められる数列 $\{a_n\}$ の一般項と、極限値 $\displaystyle\lim_{n\to\infty}a_n$ を求めよ。"%(a1,L(p),L(q)),st,r"a_n=%s+%s\left(%s\right)^{n-1},\ \ \lim a_n=%s"%(L(al),L(a1-al),L(p),L(al))
 V=[(R(1,2),3,2),(R(1,3),4,1),(R(-1,2),3,0),(R(2,3),2,1),(R(3,4),1,2)]

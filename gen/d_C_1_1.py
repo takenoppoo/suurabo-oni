@@ -28,7 +28,7 @@ build(Z,CH,"内積となす角",o,r"<p>$\vec a\cdot\vec b=a_1b_1+a_2b_2=|\vec a|
 def b2(A,B,m,k,l):
     n2=k**2*A**2+2*k*l*m+l**2*B**2; t=sp.Symbol('t'); eq=sp.expand((sp.Integer(1)*A**2+t*m)-(m+t*B**2)*0+ (A**2 - m + t*m - t*B**2)); sol=sp.solve(A**2-m+t*(m-B**2),t)
     sol=sol[0]; assert sp.simplify((A**2-m+sol*(m-B**2)))==0
-    st=[("$|k\\vec a+l\\vec b|^2$ を展開","<p>"+I(r"|k\vec a+l\vec b|^2=k^2|\vec a|^2+2kl\,\vec a\cdot\vec b+l^2|\vec b|^2")+"。</p>"+D(r"|%s\vec a%s\vec b|^2=%d\cdot%d+%d\cdot%d+%d\cdot%d=%d"%(cf(k),("+" if l>0 else "")+cf(l),k**2,A**2,2*k*l,m,l**2,B**2,n2))),
+    st=[("$|k\\vec a+l\\vec b|^2$ を展開","<p>"+I(r"|k\vec a+l\vec b|^2=k^2|\vec a|^2+2kl\,\vec a\cdot\vec b+l^2|\vec b|^2")+"。</p>"+D(r"|%s\vec a%s\vec b|^2=%d\cdot%d%+d\cdot%d+%d\cdot%d=%d"%(cf(k),("+" if l>0 else "")+cf(l),k**2,A**2,2*k*l,m,l**2,B**2,n2))),
         ("大きさを求める",D(r"|%s\vec a%s\vec b|=\sqrt{%d}=%s"%(cf(k),("+" if l>0 else "")+cf(l),n2,L(sp.sqrt(n2))))),
         ("垂直条件","<p>"+I(r"(\vec a+t\vec b)\cdot(\vec a-\vec b)=0")+" を展開する。</p>"+D(r"|\vec a|^2-\vec a\cdot\vec b+t\,\vec a\cdot\vec b-t|\vec b|^2=0")+D(r"%d-%d+%d\,t-%d\,t=0\ \Rightarrow\ %s\,t=%s"%(A**2,m,m,B**2,L(m-B**2),L(m-A**2)))+D(r"t=%s"%L(sol)))]
     return r"$|\vec a|=%d,\ |\vec b|=%d,\ \vec a\cdot\vec b=%d$ のとき、(1) $|%s\vec a%s\vec b|$ (2) $\vec a+t\vec b$ と $\vec a-\vec b$ が垂直になる $t$ の値を求めよ。"%(A,B,m,cf(k),("+" if l>0 else "")+cf(l)),st,r"\text{(1) }%s\quad\text{(2) }t=%s"%(L(sp.sqrt(n2)),L(sol))

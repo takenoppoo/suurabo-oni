@@ -50,10 +50,10 @@ o=[b9(*v) for v in [(3,2),(2,3),(3,1),(1,4),(5,2)]]
 build(Z,CH,"sin と cos の累乗の積の積分",o,"<p>奇数乗の方を1つ分離して $\\sin x\\,dx=-d(\\cos x)$ などと置換し、残りを $\\sin^2+\\cos^2=1$ で一方に統一。</p>","奇数乗は、1つだけ取り出すと置換の手がかりになる。",9)
 # 10 ∫tan x 型
 def b10(a):
-    f=sp.tan(a*x); F=sp.integrate(f,x)
-    st=[("分子を導関数に","<p>"+D(r"\tan%dx=\dfrac{\sin%dx}{\cos%dx}=-\dfrac1{%d}\cdot\dfrac{(\cos%dx)'}{\cos%dx}"%(a,a,a,a,a,a))),
-        ("積分","<p>"+D(r"\int\tan%dx\,dx=-\dfrac1{%d}\log|\cos%dx|+C"%(a,a,a)))]
-    return r"不定積分 $\displaystyle\int\tan%dx\,dx$ を求めよ。"%a,st,r"-\dfrac1{%d}\log|\cos%dx|+C"%(a,a)
+    A='' if a==1 else str(a); f=sp.tan(a*x); F=sp.integrate(f,x)
+    st=[("分子を導関数に","<p>"+D(r"\tan %sx=\dfrac{\sin %sx}{\cos %sx}=-\dfrac1{%d}\cdot\dfrac{(\cos %sx)'}{\cos %sx}"%(A,A,A,a,A,A))),
+        ("積分","<p>"+D(r"\int\tan %sx\,dx=-\dfrac1{%d}\log|\cos %sx|+C"%(A,a,A)))]
+    return r"不定積分 $\displaystyle\int\tan %sx\,dx$ を求めよ。"%A,st,r"-\dfrac1{%d}\log|\cos %sx|+C"%(a,A)
 o=[b10(a) for a in [1,2,3,4,5]]
 build(Z,CH,"tan ax の積分",o,"<p>$\\tan ax=\\dfrac{\\sin ax}{\\cos ax}$ と書き、分母の導関数が $-a\\sin ax$ であることから $\\int\\dfrac{f'}{f}=\\log|f|$ を使う。</p>","分子が分母の微分の形なら、対数になる。",10)
 XU=finishx(Z,CH)
