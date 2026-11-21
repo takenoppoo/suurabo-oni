@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題6 接線の長さと接点を結ぶ弦（円の性質） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="円の性質の難問 例題6：接線の長さと接点を結ぶ弦">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-A.html">数学A</a> ＞ <a href="u-A-1-2.html">円の性質</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 6</span><span class="ls">図形の性質　接線の長さと接点を結ぶ弦</span></h1><div class="qbox"><p>半径 \(3\) の円の中心 \(O\) から距離 \(5\) の点 \(P\) から円に2本の接線を引き、接点を \(A,\ B\) とする。接線の長さ \(PA\) と、弦 \(AB\) の長さを求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>接線は半径に垂直。\(PA=\sqrt{OP^2-r^2}\)。弦 \(AB\) は \(OP\) に垂直で \(OP\) に2等分される。\(\triangle OAP\) の<b>面積を2通りに</b>表すと \(AM\) が出る。</p><div class="kotsu"><b>コツ</b>直角三角形の面積は、底辺×高さと斜辺×垂線の2通りで書ける。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 接線長（三平方の定理）</div><div class="sb"><p>\(OA\perp PA\)。</p>\[PA=\sqrt{OP^2-OA^2}=\sqrt{5^2-3^2}=4\]<div class="figbox"><img class="fig" src="fig/ax12t1.svg" style="width:44%" alt="ax12t1"></div></div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 弦 \(AB\) と \(OP\) の交点 \(M\)</div><div class="sb"><p>\(OP\) は \(AB\) を垂直に2等分。\(\triangle OAP\) の面積を2通りに表す。</p>\[\dfrac12\cdot OP\cdot AM=\dfrac12\cdot OA\cdot PA\ \Rightarrow\ AM=\dfrac{3\cdot4}{5}\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> \(AB=2AM\)</div><div class="sb">\[AB=\dfrac{24}{5}\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[PA=4,\ AB=\dfrac{24}{5}\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 6</h2><ol class="prac"><li>半径 \(5\) の円の中心 \(O\) から距離 \(13\) の点 \(P\) から円に2本の接線を引き、接点を \(A,\ B\) とする。接線の長さ \(PA\) と、弦 \(AB\) の長さを求めよ。</li><li>半径 \(4\) の円の中心 \(O\) から距離 \(8\) の点 \(P\) から円に2本の接線を引き、接点を \(A,\ B\) とする。接線の長さ \(PA\) と、弦 \(AB\) の長さを求めよ。</li><li>半径 \(6\) の円の中心 \(O\) から距離 \(10\) の点 \(P\) から円に2本の接線を引き、接点を \(A,\ B\) とする。接線の長さ \(PA\) と、弦 \(AB\) の長さを求めよ。</li></ol></div><div class="nav2"><a href="a-A-1-2-6.html">練習問題6の解答を見る</a></div><div class="nav2"><a class="g" href="e-A-1-2-5.html">← 例題5</a><a class="g" href="e-A-1-2-7.html">例題7 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

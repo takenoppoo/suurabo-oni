@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>練習問題8の解答（約数と倍数・互除法） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="約数と倍数・互除法 練習問題8の解答">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-A.html">数学A</a> ＞ <a href="u-A-3-1.html">約数と倍数・互除法</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">練習問題 8 の解答　2つの余りの条件をみたす最小の数</span></h1><div class="item"><p class="pq">(1)　\(8\) で割ると \(5\) 余り、\(3\) で割ると \(1\) 余る自然数 \(n\) のうち、最小のものを求めよ。</p><div class="sb"><p><b>条件を式にする</b></p><p>\(n=8k+5\)（\(k\) は0以上の整数）。</p><p><b>もう一つの条件に代入</b></p><p>\(8k+5\equiv1\pmod{3}\)。</p>\[8k\equiv2\pmod{3}\]<p><b>\(k\) を求める</b></p><p>\(k\) を順に調べて、最小の \(k=1\)。</p>\[n=8\cdot1+5=13\]<p><b>周期</b></p><p>\(8\) と \(3\) は互いに素なので、条件をみたす数は \(24\) ごとにくり返す。</p>\[n=13,\ 37,\ \cdots\]</div><div class="abox"><p class="ah">【答案】</p>\[13\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(2)　\(9\) で割ると \(4\) 余り、\(5\) で割ると \(3\) 余る自然数 \(n\) のうち、最小のものを求めよ。</p><div class="sb"><p><b>条件を式にする</b></p><p>\(n=9k+4\)（\(k\) は0以上の整数）。</p><p><b>もう一つの条件に代入</b></p><p>\(9k+4\equiv3\pmod{5}\)。</p>\[9k\equiv4\pmod{5}\]<p><b>\(k\) を求める</b></p><p>\(k\) を順に調べて、最小の \(k=1\)。</p>\[n=9\cdot1+4=13\]<p><b>周期</b></p><p>\(9\) と \(5\) は互いに素なので、条件をみたす数は \(45\) ごとにくり返す。</p>\[n=13,\ 58,\ \cdots\]</div><div class="abox"><p class="ah">【答案】</p>\[13\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(3)　\(11\) で割ると \(6\) 余り、\(4\) で割ると \(3\) 余る自然数 \(n\) のうち、最小のものを求めよ。</p><div class="sb"><p><b>条件を式にする</b></p><p>\(n=11k+6\)（\(k\) は0以上の整数）。</p><p><b>もう一つの条件に代入</b></p><p>\(11k+6\equiv3\pmod{4}\)。</p>\[11k\equiv1\pmod{4}\]<p><b>\(k\) を求める</b></p><p>\(k\) を順に調べて、最小の \(k=3\)。</p>\[n=11\cdot3+6=39\]<p><b>周期</b></p><p>\(11\) と \(4\) は互いに素なので、条件をみたす数は \(44\) ごとにくり返す。</p>\[n=39,\ 83,\ \cdots\]</div><div class="abox"><p class="ah">【答案】</p>\[39\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="e-A-3-1-8.html">← 例題8にもどる</a><a class="g" href="u-A-3-1.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>
