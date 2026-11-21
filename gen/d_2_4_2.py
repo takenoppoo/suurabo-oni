@@ -2,6 +2,8 @@
 # 対数関数（数学II 指数関数・対数関数）
 from bh import *
 import math
+from gq import *
+def _ap(st,i,h): st[i]=(st[i][0],st[i][1]+h)
 Z=U_(); CH=[]
 def Q(a_,b_=1): return sp.Rational(a_,b_)
 def lg(b_): return r"\log_{%s}"%(b_ if not isinstance(b_,sp.Rational) or b_.q==1 else L(b_))
@@ -77,6 +79,7 @@ def b4(b_,n_,al,be):
            ("$t$ の範囲",D(r"%s\leqq x\leqq %s\ \Rightarrow\ %d\leqq t\leqq %d"%(L(xv(lo)),L(xv(hi)),al,be))+"<p>（底 "+I(str(b_))+" は 1 より大きいので増加関数。）</p>"),
            ("平方完成して最大・最小",D(r"y=-t^2+%dt=-\left(t-%s\right)^2+%s"%(n_,L(vx),L(vx**2)))+"<p>頂点 "+I(r"t=%s"%L(vx))+(" は範囲内。" if lo<=vx<=hi else " は範囲外。")+"</p>"+D(r",\quad ".join(r"t=%s:\ y=%s"%(L(tt),L(vv)) for vv,tt in cand))),
            ("答え（$x$ に戻す）","<p>最大値 "+I(L(mx[0]))+"（"+I(r"x=%s"%L(xv(mx[1])))+"）、最小値 "+I(L(mn[0]))+"（"+I(r"x=%s"%L(xv(mn[1])))+"）。</p>")]
+    _ap(steps,2,"<p>"+I("y=-t^2+%dt"%n_)+" のグラフ（太線が "+I(r"%d\leqq t\leqq %d"%(al,be))+" の範囲）。</p>"+quadfig("x242_4_%d_%d_%d_%d"%(b_,n_,al,be),[(y.subs(t,x),"#b81f36")],pts=[(lo,y.subs(t,lo),""),(hi,y.subs(t,hi),"")]+([(vx,y.subs(t,vx),"")] if lo<=vx<=hi else []),axis=vx,xr=(min(float(lo),0)-1,max(float(hi),n_)+1),hl=[(lo,hi)]))
     prob=r"$%s\leqq x\leqq %s$ のとき、関数 $y=\log_{%d}x\cdot\log_{%d}\dfrac{%d}{x}$ の最大値・最小値と、そのときの $x$ の値を求めよ。"%(L(xv(lo)),L(xv(hi)),b_,b_,b_**n_)
     return prob,steps,r"\text{最大値 }%s\ (x=%s),\quad \text{最小値 }%s\ (x=%s)"%(L(mx[0]),L(xv(mx[1])),L(mn[0]),L(xv(mn[1])))
 V=[(2,4,-1,4),(3,2,-2,1),(2,6,0,5),(2,2,-3,2),(3,4,-1,3)]

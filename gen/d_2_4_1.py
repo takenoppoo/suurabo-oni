@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # 指数関数（数学II 指数関数・対数関数）
 from bh import *
+from gq import *
+def _ap(st,i,h): st[i]=(st[i][0],st[i][1]+h)
 Z=U_(); CH=[]
 def Q(a_,b_=1): return sp.Rational(a_,b_)
 def pw(b_,e_): return r"%s^{%s}"%(("%d"%b_ if sp.Rational(b_).q==1 else L(sp.Rational(b_))),L(sp.Rational(e_)))
@@ -55,6 +57,8 @@ def b3(b_,r1,r2):
            ("$t$ の2次方程式を解く",D(fac(r1)+fac(r2)+r"=0\ \Rightarrow\ t=%s,\ %s"%(L(r1),L(r2)))),
            ("$t>0$ に合うものを選ぶ","<p>"+(("<b>"+", ".join(I("t=%s"%L(r)) for r in ng)+"</b> は "+I("t>0")+" に合わない。<br>") if ng else "")+"採用するのは "+I("t=%s"%r",\ ".join(L(r) for r in ok))+"。</p>"),
            ("$x$ を求める","<p>"+"<br>".join(I(r"%d^x=%s\ \Rightarrow\ x=%s"%(b_,L(r),L(xx))) for r,xx in zip(ok,xs))+"</p>")]
+    _f=sp.Integer(b_)**x
+    _ap(steps,2,"<p>"+I("t=%d^x"%b_)+" のグラフ。<b>"+I("t>0")+"</b> の側にしか値がない（"+I("t\\leqq0")+" には届かない）。</p>"+graph("x241_3_%d_%d_%d"%(b_,r1,r2),[(lambda v,b=b_:float(b)**v,"#b81f36","-")],(-3,3.2),(-1.5,float(b_)**3 if b_<4 else 30),pts=[(float(xx),float(r),"t=%s"%r,0.12,0.0) for r,xx in zip(ok,xs)],yticks=[(float(r),"%s"%r) for r in ok],w=46,size=(4.0,2.8)))
     prob=r"方程式 $%s$ を解け。"%eq
     return prob,steps,r"x=%s"%r",\ ".join(L(xx) for xx in xs)
 V=[(2,2,4),(3,3,9),(2,4,-1),(3,1,27),(2,8,-2)]
@@ -108,6 +112,8 @@ def b5(b_,p_,q_,al,be):
            ("$y$ を $t$ の式にする",D(r"y=%d^{2x}-%d\cdot%d^x+%d=t^2-%dt+%d"%(b_,p_,b_,q_,p_,q_))+D(r"y=\left(t-%s\right)^2%s"%(L(vx),("+"+L(comp) if comp>0 else L(comp)) if comp!=0 else ""))),
            ("範囲内での最大・最小","<p>頂点 "+I(r"t=%s"%L(vx))+(" は範囲内。" if lo<=vx<=hi else " は範囲外。")+"頂点と両端の値を比べる。</p>"+D(r",\quad ".join(r"t=%s:\ y=%s"%(L(tt),L(vv)) for vv,tt in cand))),
            ("答え（$x$ の値に戻す）","<p>最大値 "+I(L(mx[0]))+"（"+I(r"x=%s"%L(xv(mx[1])))+"）、最小値 "+I(L(mn[0]))+"（"+I(r"x=%s"%L(xv(mn[1])))+"）。</p>")]
+    _a=[(float(lo),float(y.subs(t,lo)),"")]
+    _ap(steps,2,"<p>"+I("y=t^2-%dt+%d"%(p_,q_))+" のグラフ（太線が "+I(r"%s\leqq t\leqq %s"%(L(lo),L(hi)))+" の範囲）。</p>"+quadfig("x241_5_%d_%d_%d_%d_%d"%(b_,p_,q_,al,be),[(y.subs(t,x),"#b81f36")],pts=[(lo,y.subs(t,lo),"") ,(hi,y.subs(t,hi),"")]+([(vx,y.subs(t,vx),"")] if lo<=vx<=hi else []),axis=vx,xr=(min(0,float(lo)-1),float(hi)+1),hl=[(lo,hi)]))
     prob=r"$%d\leqq x\leqq %d$ のとき、関数 $y=%d^{2x}-%d\cdot%d^x+%d$ の最大値・最小値と、そのときの $x$ の値を求めよ。"%(al,be,b_,p_,b_,q_)
     return prob,steps,r"\text{最大値 }%s\ (x=%s),\quad \text{最小値 }%s\ (x=%s)"%(L(mx[0]),L(xv(mx[1])),L(mn[0]),L(xv(mn[1])))
 V=[(2,4,1,-1,3),(3,6,2,-1,2),(2,8,10,0,3),(2,2,5,-2,2),(2,16,50,1,5)]

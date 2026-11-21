@@ -39,6 +39,9 @@ def b2(sa,qa,cb,qb):
            ("$\\sin\\beta$ を求める","<p>"+I(r"\beta")+" は"+qn[qb]+"象限の角。</p>"+D(r"\sin\beta=%s\sqrt{1-\left(%s\right)^2}=%s"%("" if qb in (1,2) else "-",L(cb),L(sb)))),
            ("$\\sin(\\alpha+\\beta)$",D(r"\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta=\left(%s\right)\left(%s\right)+\left(%s\right)\left(%s\right)=%s"%(L(sa),L(cb),L(ca),L(sb),L(sp_)))),
            ("$\\cos(\\alpha-\\beta)$",D(r"\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta=\left(%s\right)\left(%s\right)+\left(%s\right)\left(%s\right)=%s"%(L(ca),L(cb),L(sa),L(sb),L(cm))))]
+    _n=__import__("hashlib").md5(repr((str(sa),qa,str(cb),qb)).encode()).hexdigest()[:6]
+    steps[0]=(steps[0][0],steps[0][1]+"<p>単位円で見ると、"+I(r"\alpha")+" は第%d象限で、点 "%qa+I("P")+" の "+I("y")+" 座標が "+I(r"\sin\alpha=%s"%L(sa))+"。</p>"+ucfig("u232_2a_"+_n,float(sp.atan2(sa,ca)),L(ca),L(sa),r"\alpha","",w=42))
+    steps[1]=(steps[1][0],steps[1][1]+"<p>単位円で見ると、"+I(r"\beta")+" は第%d象限で、点 "%qb+I("Q")+" の "+I("x")+" 座標が "+I(r"\cos\beta=%s"%L(cb))+"。</p>"+ucfig("u232_2b_"+_n,float(sp.atan2(sb,cb)),L(cb),L(sb),r"\beta","",w=42))
     prob=r"$\alpha$ は%s象限、$\beta$ は%s象限の角で、$\sin\alpha=%s$、$\cos\beta=%s$ である。$\sin(\alpha+\beta)$ と $\cos(\alpha-\beta)$ の値を求めよ。"%(qn[qa],qn[qb],L(sa),L(cb))
     return prob,steps,r"\sin(\alpha+\beta)=%s,\quad \cos(\alpha-\beta)=%s"%(L(sp_),L(cm))
 V=[(sp.Rational(3,5),2,sp.Rational(5,13),1),(sp.Rational(4,5),1,sp.Rational(-12,13),2),(sp.Rational(-5,13),3,sp.Rational(3,5),4),(sp.Rational(-3,5),4,sp.Rational(-8,17),3),(sp.Rational(8,17),2,sp.Rational(-4,5),3)]
@@ -59,6 +62,8 @@ def b3(cv,q_):
            ("2倍角の公式",D(r"\sin2\theta=2\sin\theta\cos\theta=2\left(%s\right)\left(%s\right)=%s"%(L(sv),L(cv),L(s2t)))+D(r"\cos2\theta=2\cos^2\theta-1=2\left(%s\right)^2-1=%s"%(L(cv),L(c2t)))),
            ("半角の公式で $\\sin\\dfrac\\theta2$","<p>"+I(r"\sin^2\dfrac\theta2=\dfrac{1-\cos\theta}{2}")+"。"+I(r"\dfrac\theta2")+" の範囲は "+I(r"0<\dfrac\theta2<\pi")+" なので "+I(r"\sin\dfrac\theta2>0")+"。</p>"+D(r"\sin^2\dfrac\theta2=\dfrac{1-\left(%s\right)}2=%s\ \Rightarrow\ \sin\dfrac\theta2=%s"%(L(cv),L((1-cv)/2),L(hs)))),
            ("$\\cos\\dfrac\\theta2$","<p>"+I(r"\cos^2\dfrac\theta2=\dfrac{1+\cos\theta}{2}")+"。"+I(r"\dfrac\theta2")+" は"+("第1象限（"+I(r"0<\dfrac\theta2<\dfrac\pi2")+"）なので正" if q_ in (1,2) else "第2象限（"+I(r"\dfrac\pi2<\dfrac\theta2<\pi")+"）なので負")+"。</p>"+D(r"\cos\dfrac\theta2=%s"%L(hc)))]
+    _n=__import__("hashlib").md5(repr((str(cv),q_)).encode()).hexdigest()[:6]
+    steps[0]=(steps[0][0],steps[0][1]+ucfig("u232_3_"+_n,float(sp.atan2(sv,cv)),L(cv),L(sv),r"\theta","",w=42))
     prob=r"$0<\theta<2\pi$ で $\cos\theta=%s$、$\theta$ は第%d象限の角である。$\sin2\theta$、$\cos2\theta$、$\sin\dfrac\theta2$、$\cos\dfrac\theta2$ の値を求めよ。"%(L(cv),q_)
     return prob,steps,r"\sin2\theta=%s,\ \cos2\theta=%s,\ \sin\dfrac\theta2=%s,\ \cos\dfrac\theta2=%s"%(L(s2t),L(c2t),L(hs),L(hc))
 V=[(sp.Rational(3,5),1),(sp.Rational(-3,5),2),(sp.Rational(7,25),4),(sp.Rational(-5,13),3),(sp.Rational(-4,5),2)]
@@ -76,6 +81,8 @@ def b4(a_,b_):
     # 最大最小の θ
     tmax=[t_ for t_ in [sp.Rational(1,2)-alp+2*k for k in (-1,0,1)] if 0<=t_<2]; tmin=[t_ for t_ in [-sp.Rational(1,2)-alp+2*k for k in (-1,0,1,2)] if 0<=t_<2]
     steps[3]=("最大値・最小値と $\\theta$","<p>"+I(r"-1\leqq\sin(\theta+\alpha)\leqq1")+"、"+I(r"\theta+\alpha")+" は "+I(r"\pi")+" の周期を含む範囲を動くので、最大・最小をとる。</p>"+D(r"\text{最大値 }%s\ \ (\theta=%s),\qquad \text{最小値 }-%s\ \ (\theta=%s)"%(L(r_),PI(tmax[0]),L(r_),PI(tmin[0]))))
+    _n=__import__("hashlib").md5(repr((str(a_),str(b_))).encode()).hexdigest()[:6]
+    steps[1]=(steps[1][0],steps[1][1]+"<p>点 "+I("(a,\\ b)=(%s,\\ %s)"%(L(a_),L(b_)))+" の向き（原点からの角）が "+I(r"\alpha")+"。単位円上では次の点になる。</p>"+ucfig("u232_4_"+_n,float(sp.atan2(sa,ca)),L(ca),L(sa),r"\alpha","",w=42))
     prob=r"$0\leqq\theta<2\pi$ のとき、$y=%s\sin\theta%s\cos\theta$ の最大値・最小値と、そのときの $\theta$ の値を求めよ。"%(L(a_),("+"+L(b_) if b_>0 else L(b_)))
     return prob,steps,r"\text{最大値 }%s\ (\theta=%s),\quad \text{最小値 }-%s\ (\theta=%s)"%(L(r_),PI(tmax[0]),L(r_),PI(tmin[0]))
 V=[(s3,1),(1,s3),(1,-1),(-1,s3),(s3,-3)]
