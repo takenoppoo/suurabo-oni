@@ -4,12 +4,37 @@ Z=U_(); CH=[]
 R=sp.Rational
 def F(e): return sp.factor(e)
 # 6 因数定理
+
+
+def subs_txt(cs,r):
+    """多項式の係数 cs（高次→低次）に x=r を代入した式を、項ごとに書き出す"""
+    n=len(cs)-1; rr=str(r) if r>=0 else "(%d)"%r; parts=[]
+    for i,c in enumerate(cs):
+        k=n-i
+        if k==0: t="%d"%c
+        else:
+            base=rr if k==1 else "%s^{%d}"%(rr,k)
+            t=base if c==1 else ("-"+base if c==-1 else "%d\\cdot %s"%(c,base))
+        parts.append(t)
+    return "+".join(parts).replace("+-","-")
+def synth(cs,r,e,dv):
+    """組立除法の表を、1列ずつ書き出す"""
+    row2=[]; row3=[cs[0]]
+    for c_ in cs[1:]:
+        row2.append(row3[-1]*r); row3.append(c_+row2[-1])
+    q=row3[:-1]; rem=row3[-1]; assert rem==0
+    head=["係数"]+["\\(%d\\)"%c_ for c_ in cs]
+    t=wtable([""]+["\\(%d\\)"%c_ for c_ in cs],[["\\(%d\\) を下ろしてかける"%r,""]+["\\(%d\\)"%v for v in row2],["たして下へ"]+["\\(%d\\)"%v for v in row3]])
+    qe=sp.expand(sp.quo(e,dv,x))
+    return ("<p>"+I(L(e))+" を "+I(L(dv))+" でわる。係数を並べ、左に "+I("%d"%r)+" をおく。</p>"+t+
+      "<p>左から順に「<b>たす → "+I("%d"%r)+" をかける → 次の列へ</b>」をくり返す。いちばん右（余り）が "+I("0")+"、残りが商の係数。</p>"+
+      D(r"%s=(%s)(%s)"%(L(e),L(dv),L(qe))))
 def b6(r1,r2,r3,a):
     e=sp.expand(a*(x-r1)*(x-r2)*(x-r3)); 
     cs=[e.coeff(x,i) for i in (3,2,1,0)]
     assert F(e)==sp.factor(a*(x-r1)*(x-r2)*(x-r3))
-    st=[("因数定理で1つ見つける","<p>定数項の約数から候補を探す。"+I("x=%d"%r1)+" を代入すると</p>"+D(r"%s=%d"%(L(e).replace("x","(%d)"%r1) if False else "P(%d)"%r1,e.subs(x,r1)))+"<p>0 なので "+I("x-%s"%L(r1) if r1>=0 else "x+%s"%L(-r1))+" を因数にもつ。</p>"),
-        ("組立除法（または筆算）で割る","<p>"+I(L(e))+" を "+I(L(x-r1))+" でわる。</p>"+D(r"%s=(%s)(%s)"%(L(e),L(x-r1),L(sp.expand(sp.quo(e,x-r1,x)))))),
+    st=[("因数定理で1つ見つける","<p>定数項の約数から候補を探す。"+I("x=%d"%r1)+" を代入すると</p>"+D(r"P(%d)=%s=%d"%(r1,subs_txt(cs,r1),e.subs(x,r1)))+"<p>0 なので "+I("x-%s"%L(r1) if r1>=0 else "x+%s"%L(-r1))+" を因数にもつ。</p>"),
+        ("組立除法で割る",synth(cs,r1,e,x-r1)),
         ("商をさらに因数分解",D(r"%s=%s"%(L(sp.expand(sp.quo(e,x-r1,x))),L(F(sp.quo(e,x-r1,x)))))+D(r"%s=%s"%(L(e),L(F(e)))))]
     return r"$%s$ を因数分解せよ。"%L(e),st,L(F(e))
 o=[b6(*v) for v in [(1,2,3,1),(-1,2,-3,1),(2,-3,4,1),(1,-2,-5,2),(3,-1,-4,1)]]

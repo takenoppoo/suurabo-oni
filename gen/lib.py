@@ -11,6 +11,11 @@ SITE_NAME="数ラボ鬼"
 def I(s): return "\\("+s.replace("<","&lt;")+"\\)"
 def D(s): return "\\["+s.replace("<","&lt;")+"\\]"
 def step(n,t,b): return f'<div class="step"><div class="sh2"><span class="badge">STEP {n}</span> {t}</div><div class="sb">{b}</div></div>'
+def wtable(head,rows):
+    """表。head=見出しのリスト、rows=行のリスト（各セルはHTML／数式は \\( \\) で書く）"""
+    h="".join(f"<th>{c}</th>" for c in head)
+    r="".join("<tr>"+"".join(f"<td>{c}</td>" for c in row)+"</tr>" for row in rows)
+    return f'<table class="tbl"><tr>{h}</tr>{r}</table>'
 def img(name,w=60,cap=""):
     c=f'<div class="cap">{cap}</div>' if cap else ""
     return f'<div class="figbox"><img class="fig" src="fig/{name}.svg" style="width:{w}%" alt="{html.escape(cap or name)}">{c}</div>'
