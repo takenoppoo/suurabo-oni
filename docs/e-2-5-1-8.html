@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題8 2つの放物線の共通接線（微分法（接線・増減・極値）） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="微分法（接線・増減・極値）の難問 例題8：2つの放物線の共通接線">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-2.html">数学II</a> ＞ <a href="u-2-5-1.html">微分法（接線・増減・極値）</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 8</span><span class="ls">微分・積分　2つの放物線の共通接線</span></h1><div class="qbox"><p>2つの放物線 \(y=x^2\) と \(y=-x^2+4x-2\) の共通接線の方程式をすべて求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>それぞれの曲線上の接点を文字でおき、<b>接線の傾きと切片が一致</b>する条件を連立。または接線を求めて、もう一方と<b>重解（\(D=0\)）</b>。</p><div class="kotsu"><b>コツ</b>同じ直線が、2つの曲線に同時に触れる。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 接線を一般に</div><div class="sb"><p>\(y=x^2\) の点 \((t,t^2)\) での接線 \(y=2tx-t^2\)。</p><div class="figbox"><img class="fig" src="fig/x251_8_18.svg" style="width:54%" alt="x251_8_18"></div></div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> もう一方にも接する</div><div class="sb"><p>\(y=-x^2+4x-2\) の点 \(u\) での接線 \(y=(-2u+4)x+u^2-2\)。係数を比べて</p>\[2t=-2u+4,\qquad -t^2=u^2-2\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 解く</div><div class="sb"><p>\[\text{接線：}\quad y=2 x - 1\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[y=2 x - 1\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 8</h2><ol class="prac"><li>2つの放物線 \(y=x^2\) と \(y=-x^2+4x-6\) の共通接線の方程式をすべて求めよ。</li><li>2つの放物線 \(y=x^2\) と \(y=-x^2+4x-4\) の共通接線の方程式をすべて求めよ。</li><li>2つの放物線 \(y=x^2\) と \(y=-x^2+4x-8\) の共通接線の方程式をすべて求めよ。</li></ol></div><div class="nav2"><a href="a-2-5-1-8.html">練習問題8の解答を見る</a></div><div class="nav2"><a class="g" href="e-2-5-1-7.html">← 例題7</a><a class="g" href="e-2-5-1-9.html">例題9 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

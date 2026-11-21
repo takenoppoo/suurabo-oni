@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題10 場合分けの関数が連続となる定数（関数の極限・連続） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="関数の極限・連続の難問 例題10：場合分けの関数が連続となる定数">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-3.html">数学III</a> ＞ <a href="u-3-1-3.html">関数の極限・連続</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 10</span><span class="ls">極限　場合分けの関数が連続となる定数</span></h1><div class="qbox"><p>関数 \(f(x)=\begin{cases}\dfrac{\sqrt{x+1}-2}{x-3}&(x\neq3)\\ k&(x=3)\end{cases}\) が \(x=3\) で連続となるような定数 \(k\) の値を求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>\(x=a\) で連続 \(\iff \lim_{x\to a}f(x)=f(a)\)。\(x\ne a\) の式の極限（有理化など）を求め、\(f(a)=k\) と等しくおく。</p><div class="kotsu"><b>コツ</b>穴のあいた所を、極限の値でうめれば連続になる。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 連続の条件</div><div class="sb"><p>\(x=3\) で連続 \(\iff \lim_{x\to3}f(x)=f(3)\)。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 極限を求める</div><div class="sb"><p>有理化：</p>\[\dfrac{\sqrt{x+1}-2}{x-3}=\dfrac{(x+1)-4}{(x-3)(\sqrt{x+1}+2)}=\dfrac{1}{\sqrt{x+1}+2}\to\dfrac1{4}\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 定数</div><div class="sb"><p>\[k=\dfrac{1}{4}\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[k=\dfrac{1}{4}\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 10</h2><ol class="prac"><li>関数 \(f(x)=\begin{cases}\dfrac{\sqrt{x+4}-3}{x-5}&(x\neq5)\\ k&(x=5)\end{cases}\) が \(x=5\) で連続となるような定数 \(k\) の値を求めよ。</li><li>関数 \(f(x)=\begin{cases}\dfrac{\sqrt{x+2}-2}{x-2}&(x\neq2)\\ k&(x=2)\end{cases}\) が \(x=2\) で連続となるような定数 \(k\) の値を求めよ。</li><li>関数 \(f(x)=\begin{cases}\dfrac{\sqrt{x+3}-3}{x-6}&(x\neq6)\\ k&(x=6)\end{cases}\) が \(x=6\) で連続となるような定数 \(k\) の値を求めよ。</li></ol></div><div class="nav2"><a href="a-3-1-3-10.html">練習問題10の解答を見る</a></div><div class="nav2"><a class="g" href="e-3-1-3-9.html">← 例題9</a><a class="g" href="c-3-1-3.html">章末問題 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

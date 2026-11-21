@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>練習問題8の解答（定積分と面積・体積） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="定積分と面積・体積 練習問題8の解答">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-3.html">数学III</a> ＞ <a href="u-3-3-2.html">定積分と面積・体積</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">練習問題 8 の解答　y 軸まわりの回転体（放物線）</span></h1><div class="item"><p class="pq">(1)　曲線 \(y=x^2\ (0\leqq x\leqq3)\) と直線 \(y=9\)、\(y\) 軸で囲まれた図形を \(y\) 軸のまわりに1回転してできる立体の体積を求めよ。</p><div class="sb"><p><b>y 軸のまわり</b></p><p>\(y\) を決めたときの断面は円（半径 \(x=\sqrt y\)）。</p>\[V=\pi\int_0^{9}x^2\,dy=\pi\int_0^{9}y\,dy\]<div class="figbox"><img class="fig" src="fig/x332_8_3.svg" style="width:50%" alt="x332_8_3"></div><p><b>計算</b></p><p>\[\pi\left[\dfrac{y^2}{2}\right]_0^{9}=\dfrac{81 \pi}{2}\]<p>（放物線の内側・直線 \(y=9\) の下側を切り取る）。</p></div><div class="abox"><p class="ah">【答案】</p>\[\dfrac{81 \pi}{2}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(2)　曲線 \(y=x^2\ (0\leqq x\leqq4)\) と直線 \(y=16\)、\(y\) 軸で囲まれた図形を \(y\) 軸のまわりに1回転してできる立体の体積を求めよ。</p><div class="sb"><p><b>y 軸のまわり</b></p><p>\(y\) を決めたときの断面は円（半径 \(x=\sqrt y\)）。</p>\[V=\pi\int_0^{16}x^2\,dy=\pi\int_0^{16}y\,dy\]<div class="figbox"><img class="fig" src="fig/x332_8_4.svg" style="width:50%" alt="x332_8_4"></div><p><b>計算</b></p><p>\[\pi\left[\dfrac{y^2}{2}\right]_0^{16}=128 \pi\]<p>（放物線の内側・直線 \(y=16\) の下側を切り取る）。</p></div><div class="abox"><p class="ah">【答案】</p>\[128 \pi\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(3)　曲線 \(y=x^2\ (0\leqq x\leqq1)\) と直線 \(y=1\)、\(y\) 軸で囲まれた図形を \(y\) 軸のまわりに1回転してできる立体の体積を求めよ。</p><div class="sb"><p><b>y 軸のまわり</b></p><p>\(y\) を決めたときの断面は円（半径 \(x=\sqrt y\)）。</p>\[V=\pi\int_0^{1}x^2\,dy=\pi\int_0^{1}y\,dy\]<div class="figbox"><img class="fig" src="fig/x332_8_1.svg" style="width:50%" alt="x332_8_1"></div><p><b>計算</b></p><p>\[\pi\left[\dfrac{y^2}{2}\right]_0^{1}=\dfrac{\pi}{2}\]<p>（放物線の内側・直線 \(y=1\) の下側を切り取る）。</p></div><div class="abox"><p class="ah">【答案】</p>\[\dfrac{\pi}{2}\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="e-3-3-2-8.html">← 例題8にもどる</a><a class="g" href="u-3-3-2.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

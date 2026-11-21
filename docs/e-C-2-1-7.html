@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題7 楕円の2焦点からの距離の和と積（2次曲線） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="2次曲線の難問 例題7：楕円の2焦点からの距離の和と積">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-C.html">数学C</a> ＞ <a href="u-C-2-1.html">2次曲線</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 7</span><span class="ls">平面上の曲線と複素数平面　楕円の2焦点からの距離の和と積</span></h1><div class="qbox"><p>楕円 \(\dfrac{x^2}{25}+\dfrac{y^2}{9}=1\) の2つの焦点を \(F,F'\) とする。楕円上の点 \(P\) について、\(PF+PF'\) の値と、\(PF\cdot PF'\) の最大値を求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>楕円の定義 \(PF+PF'=2a\)（定数）。積の最大は<b>相加・相乗平均</b>で \(a^2\)、\(PF=PF'\) となる短軸の端点で達成。</p><div class="kotsu"><b>コツ</b>2本の糸の長さの合計が、ずっと同じ。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 焦点</div><div class="sb"><p>\(c=\sqrt{a^2-b^2}=4\)。焦点 \(F(4,0),\ F'(-4,0)\)。</p><div class="figbox"><img class="fig" src="fig/xc21_7_5_3.svg" style="width:54%" alt="xc21_7_5_3"></div></div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 距離の和</div><div class="sb"><p>楕円の定義：</p>\[PF+PF'=2a=10\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 積の最大</div><div class="sb"><p>相加・相乗平均：</p>\[PF\cdot PF'\leqq\left(\dfrac{PF+PF'}{2}\right)^2=25\]<p>等号は \(PF=PF'\) のとき（\(P=(0,\pm3)\)）。最大値 \(25\)。</p></div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[PF+PF'=10,\ \ PF\cdot PF'\text{の最大値 }25\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 7</h2><ol class="prac"><li>楕円 \(\dfrac{x^2}{169}+\dfrac{y^2}{25}=1\) の2つの焦点を \(F,F'\) とする。楕円上の点 \(P\) について、\(PF+PF'\) の値と、\(PF\cdot PF'\) の最大値を求めよ。</li><li>楕円 \(\dfrac{x^2}{25}+\dfrac{y^2}{16}=1\) の2つの焦点を \(F,F'\) とする。楕円上の点 \(P\) について、\(PF+PF'\) の値と、\(PF\cdot PF'\) の最大値を求めよ。</li><li>楕円 \(\dfrac{x^2}{100}+\dfrac{y^2}{36}=1\) の2つの焦点を \(F,F'\) とする。楕円上の点 \(P\) について、\(PF+PF'\) の値と、\(PF\cdot PF'\) の最大値を求めよ。</li></ol></div><div class="nav2"><a href="a-C-2-1-7.html">練習問題7の解答を見る</a></div><div class="nav2"><a class="g" href="e-C-2-1-6.html">← 例題6</a><a class="g" href="e-C-2-1-8.html">例題8 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

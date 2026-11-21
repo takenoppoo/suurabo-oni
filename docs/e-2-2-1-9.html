@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題9 2直線のなす角の二等分線（点と直線） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="点と直線の難問 例題9：2直線のなす角の二等分線">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-2.html">数学II</a> ＞ <a href="u-2-2-1.html">点と直線</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 9</span><span class="ls">図形と方程式　2直線のなす角の二等分線</span></h1><div class="qbox"><p>2直線 \(3 x + 4 y - 5=0,\ 5 x - 12 y=0\) のなす角の二等分線の方程式を求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>二等分線上の点は2直線までの<b>距離が等しい</b>。点と直線の距離の式を等しくおき、絶対値を \(\pm\) ではずすと<b>2本</b>得られる。</p><div class="kotsu"><b>コツ</b>両側から同じ距離にある点の集まり。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 距離が等しい点</div><div class="sb"><p>角の二等分線上の点 \((x,y)\) は2直線からの距離が等しい。</p>\[\dfrac{|3 x + 4 y - 5|}{5}=\dfrac{|5 x - 12 y|}{13}\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 絶対値をはずす</div><div class="sb"><p>\[13(3 x + 4 y - 5)=\pm5(5 x - 12 y)\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 2本の二等分線</div><div class="sb">\[14 x + 112 y - 65=0,\qquad 64 x - 8 y - 65=0\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[14 x + 112 y - 65=0,\ \ 64 x - 8 y - 65=0\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 9</h2><ol class="prac"><li>2直線 \(4 x + 3 y=0,\ 12 x - 5 y + 13=0\) のなす角の二等分線の方程式を求めよ。</li><li>2直線 \(3 x + 4 y + 10=0,\ 8 x + 6 y=0\) のなす角の二等分線の方程式を求めよ。</li><li>2直線 \(5 x + 12 y - 13=0,\ 3 x - 4 y=0\) のなす角の二等分線の方程式を求めよ。</li></ol></div><div class="nav2"><a href="a-2-2-1-9.html">練習問題9の解答を見る</a></div><div class="nav2"><a class="g" href="e-2-2-1-8.html">← 例題8</a><a class="g" href="e-2-2-1-10.html">例題10 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

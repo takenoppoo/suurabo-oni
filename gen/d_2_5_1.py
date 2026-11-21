@@ -4,6 +4,7 @@ from bh import *
 Z=U_(); CH=[]
 _cnt=[0]
 def gplane(name,xr,yr,draw,size=(4.2,3.0),w=54,xs=1,ys=1):
+    xr=tuple(float(v) for v in xr); yr=tuple(float(v) for v in yr); xs=float(xs); ys=float(ys)
     def fn(ax):
         sx_=xr[1]-xr[0]; sy_=yr[1]-yr[0]
         ax.set_xlim(*xr); ax.set_ylim(*yr); ax.axis("off")

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題9 懸垂線の長さ（定積分と面積・体積） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="定積分と面積・体積の難問 例題9：懸垂線の長さ">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-3.html">数学III</a> ＞ <a href="u-3-3-2.html">定積分と面積・体積</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 9</span><span class="ls">積分法　懸垂線の長さ</span></h1><div class="qbox"><p>曲線 \(y=\dfrac{e^{1x}+e^{-x}}{2}\ (0\leqq x\leqq1)\) の長さを求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>曲線の長さ \(=\int\sqrt{1+(y')^2}\,dx\)。\(1+y'^2\) が完全平方になる曲線（懸垂線）では根号がはずれる。</p><div class="kotsu"><b>コツ</b>ひもが垂れ下がった形。長さは積分で正確に出せる。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 導関数</div><div class="sb"><p>\[y'=\dfrac{e^{1x}-e^{-x}}{2}\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 被積分関数</div><div class="sb"><p>\[1+y'^2=\left(\dfrac{e^{1x}+e^{-x}}{2}\right)^2\]<p>\(\sqrt{1+y'^2}=\dfrac{e^{1x}+e^{-x}}{2}\)。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 曲線の長さ</div><div class="sb"><p>\[\int_0^{1}\dfrac{e^{1x}+e^{-x}}{2}dx=\dfrac{e^{1}-e^{-1}}{21}=\sinh{\left(1 \right)}\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[\sinh{\left(1 \right)}\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 9</h2><ol class="prac"><li>曲線 \(y=\dfrac{e^{2x}+e^{-2x}}{4}\ (0\leqq x\leqq1)\) の長さを求めよ。</li><li>曲線 \(y=\dfrac{e^{3x}+e^{-3x}}{6}\ (0\leqq x\leqq1)\) の長さを求めよ。</li><li>曲線 \(y=\dfrac{e^{4x}+e^{-4x}}{8}\ (0\leqq x\leqq1)\) の長さを求めよ。</li></ol></div><div class="nav2"><a href="a-3-3-2-9.html">練習問題9の解答を見る</a></div><div class="nav2"><a class="g" href="e-3-3-2-8.html">← 例題8</a><a class="g" href="e-3-3-2-10.html">例題10 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

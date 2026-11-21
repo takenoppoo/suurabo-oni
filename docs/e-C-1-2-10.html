@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題10 球面と直線の交点・弦の長さ（空間ベクトル） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="空間ベクトルの難問 例題10：球面と直線の交点・弦の長さ">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-C.html">数学C</a> ＞ <a href="u-C-1-2.html">空間ベクトル</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 10</span><span class="ls">ベクトル　球面と直線の交点・弦の長さ</span></h1><div class="qbox"><p>球面 \((x-0)^2+(y-0)^2+(z-0)^2=9\) と、点 \((0,\ 0,\ -3)\) を通り方向ベクトル \((1,\ 2,\ 2)\) の直線との交点を求め、この直線が球面から切り取る弦の長さを求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>直線のパラメータ表示を球面の式に代入し、\(t\) の2次方程式を解く。2解の差と方向ベクトルの長さの積が弦の長さ。</p><div class="kotsu"><b>コツ</b>直線を歩いて、球の表面をまたぐ2か所を探す。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 直線上の点</div><div class="sb"><p>\[(x,y,z)=(t,\ 2 t,\ 2 t - 3)\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 球面の式に代入</div><div class="sb"><p>\[9 t^{2} - 12 t=0\ \Rightarrow\ t=0,\ \dfrac{4}{3}\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 交点と弦の長さ</div><div class="sb"><p>\[(0,\ 0,\ -3),\quad (\dfrac{4}{3},\ \dfrac{8}{3},\ - \dfrac{1}{3})\]\[\text{弦の長さ }4\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[(0,\ 0,\ -3),\ (\dfrac{4}{3},\ \dfrac{8}{3},\ - \dfrac{1}{3}),\ \text{弦 }4\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 10</h2><ol class="prac"><li>球面 \((x-1)^2+(y-0)^2+(z-0)^2=25\) と、点 \((1,\ 0,\ 0)\) を通り方向ベクトル \((2,\ 3,\ 6)\) の直線との交点を求め、この直線が球面から切り取る弦の長さを求めよ。</li><li>球面 \((x-0)^2+(y-0)^2+(z-0)^2=9\) と、点 \((0,\ 0,\ 0)\) を通り方向ベクトル \((2,\ 1,\ 2)\) の直線との交点を求め、この直線が球面から切り取る弦の長さを求めよ。</li><li>球面 \((x-1)^2+(y-1)^2+(z-1)^2=9\) と、点 \((1,\ 1,\ 1)\) を通り方向ベクトル \((1,\ 2,\ 2)\) の直線との交点を求め、この直線が球面から切り取る弦の長さを求めよ。</li></ol></div><div class="nav2"><a href="a-C-1-2-10.html">練習問題10の解答を見る</a></div><div class="nav2"><a class="g" href="e-C-1-2-9.html">← 例題9</a><a class="g" href="c-C-1-2.html">章末問題 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

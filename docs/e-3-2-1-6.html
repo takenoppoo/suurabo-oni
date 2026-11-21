@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題6 媒介変数表示の曲線の接線（導関数の計算） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="導関数の計算の難問 例題6：媒介変数表示の曲線の接線">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-3.html">数学III</a> ＞ <a href="u-3-2-1.html">導関数の計算</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 6</span><span class="ls">微分法　媒介変数表示の曲線の接線</span></h1><div class="qbox"><p>曲線 \(x=t^{2} + 1,\ y=t^{3}\) の \(t=1\) に対応する点における接線の傾きと接線の方程式を求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>\(\dfrac{dy}{dx}=\dfrac{dy/dt}{dx/dt}\)。\(t\) の値から点と傾きを求め、接線の式を作る。</p><div class="kotsu"><b>コツ</b>時間で割った速度の比が、傾きになる。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> \(t\) で微分</div><div class="sb"><p>\[\dfrac{dx}{dt}=2 t,\qquad \dfrac{dy}{dt}=3 t^{2}\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> \(\dfrac{dy}{dx}\)</div><div class="sb"><p>\[\dfrac{dy}{dx}=\dfrac{dy/dt}{dx/dt}=\dfrac{3 t}{2}\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 接線</div><div class="sb"><p>\(t=1\) のとき 点 \((2,\ 1)\)、傾き \(\dfrac{3}{2}\)。</p>\[y-1=\dfrac{3}{2}(x-2)\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[\text{傾き }\dfrac{3}{2},\ \ y-1=\dfrac{3}{2}(x-2)\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 6</h2><ol class="prac"><li>曲線 \(x=2 \cos{\left(t \right)},\ y=3 \sin{\left(t \right)}\) の \(t=\dfrac{\pi}{3}\) に対応する点における接線の傾きと接線の方程式を求めよ。</li><li>曲線 \(x=e^{t},\ y=e^{- t}\) の \(t=0\) に対応する点における接線の傾きと接線の方程式を求めよ。</li><li>曲線 \(x=t - \sin{\left(t \right)},\ y=- \cos{\left(t \right)} + 1\) の \(t=\dfrac{\pi}{2}\) に対応する点における接線の傾きと接線の方程式を求めよ。</li></ol></div><div class="nav2"><a href="a-3-2-1-6.html">練習問題6の解答を見る</a></div><div class="nav2"><a class="g" href="e-3-2-1-5.html">← 例題5</a><a class="g" href="e-3-2-1-7.html">例題7 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>練習問題6の解答（二項分布・正規分布） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="二項分布・正規分布 練習問題6の解答">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-B.html">数学B</a> ＞ <a href="u-B-2-2.html">二項分布・正規分布</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">練習問題 6 の解答　二項分布で確率が最大になる k</span></h1><div class="item"><p class="pq">(1)　二項分布 \(B\left(20,\ \dfrac{1}{4}\right)\) に従う確率変数 \(X\) について、\(P(X=k)\) が最大になる \(k\) を求めよ。</p><div class="sb"><p><b>比をとる</b></p><p>\[\dfrac{P(X=k+1)}{P(X=k)}=\dfrac{(20-k)\cdot\dfrac{1}{4}}{(k+1)\cdot\dfrac{3}{4}}\]<p><b>1より大きい条件</b></p><p>\[\dfrac{20-k}{k+1}\cdot\dfrac{\dfrac{1}{4}}{\dfrac{3}{4}}>1\iff k&lt;\dfrac{17}{4}\]</p><p><b>最大の \(k\)</b></p><p>\((n+1)p=\dfrac{21}{4}\) の整数部分 \(k=5\) のとき確率が最大。</p></div><div class="abox"><p class="ah">【答案】</p>\[k=5\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(2)　二項分布 \(B\left(15,\ \dfrac{2}{5}\right)\) に従う確率変数 \(X\) について、\(P(X=k)\) が最大になる \(k\) を求めよ。</p><div class="sb"><p><b>比をとる</b></p><p>\[\dfrac{P(X=k+1)}{P(X=k)}=\dfrac{(15-k)\cdot\dfrac{2}{5}}{(k+1)\cdot\dfrac{3}{5}}\]<p><b>1より大きい条件</b></p><p>\[\dfrac{15-k}{k+1}\cdot\dfrac{\dfrac{2}{5}}{\dfrac{3}{5}}>1\iff k&lt;\dfrac{27}{5}\]</p><p><b>最大の \(k\)</b></p><p>\((n+1)p=\dfrac{32}{5}\) の整数部分 \(k=6\) のとき確率が最大。</p></div><div class="abox"><p class="ah">【答案】</p>\[k=6\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(3)　二項分布 \(B\left(12,\ \dfrac{1}{2}\right)\) に従う確率変数 \(X\) について、\(P(X=k)\) が最大になる \(k\) を求めよ。</p><div class="sb"><p><b>比をとる</b></p><p>\[\dfrac{P(X=k+1)}{P(X=k)}=\dfrac{(12-k)\cdot\dfrac{1}{2}}{(k+1)\cdot\dfrac{1}{2}}\]<p><b>1より大きい条件</b></p><p>\[\dfrac{12-k}{k+1}\cdot\dfrac{\dfrac{1}{2}}{\dfrac{1}{2}}>1\iff k&lt;\dfrac{11}{2}\]</p><p><b>最大の \(k\)</b></p><p>\((n+1)p=\dfrac{13}{2}\) の整数部分 \(k=6\) のとき確率が最大。</p></div><div class="abox"><p class="ah">【答案】</p>\[k=6\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="e-B-2-2-6.html">← 例題6にもどる</a><a class="g" href="u-B-2-2.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

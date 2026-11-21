@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>練習問題10の解答（常用対数） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="常用対数 練習問題10の解答">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-2.html">数学II</a> ＞ <a href="u-2-4-3.html">常用対数</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">練習問題 10 の解答　2^n の桁数から 5^n の桁数</span></h1><div class="item"><p class="pq">(1)　\(2^{30}\) は \(10\) 桁の数である。\(5^{30}\) は何桁の数か。</p><div class="sb"><p><b>積は 10^n</b></p><p>\[2^n\times5^n=10^n\]</p><p><b>桁数の関係</b></p><p>\(10^{9}\leqq2^{30}&lt;10^{10}\)。\(5^{30}=\dfrac{10^{30}}{2^{30}}\) より \(10^{20}&lt;5^{30}\leqq10^{21}\)。</p><p><b>答え</b></p><p>\(5^{30}\) は \(21\) 桁。</p></div><div class="abox"><p class="ah">【答案】</p>\[21\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(2)　\(2^{40}\) は \(13\) 桁の数である。\(5^{40}\) は何桁の数か。</p><div class="sb"><p><b>積は 10^n</b></p><p>\[2^n\times5^n=10^n\]</p><p><b>桁数の関係</b></p><p>\(10^{12}\leqq2^{40}&lt;10^{13}\)。\(5^{40}=\dfrac{10^{40}}{2^{40}}\) より \(10^{27}&lt;5^{40}\leqq10^{28}\)。</p><p><b>答え</b></p><p>\(5^{40}\) は \(28\) 桁。</p></div><div class="abox"><p class="ah">【答案】</p>\[28\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(3)　\(2^{50}\) は \(16\) 桁の数である。\(5^{50}\) は何桁の数か。</p><div class="sb"><p><b>積は 10^n</b></p><p>\[2^n\times5^n=10^n\]</p><p><b>桁数の関係</b></p><p>\(10^{15}\leqq2^{50}&lt;10^{16}\)。\(5^{50}=\dfrac{10^{50}}{2^{50}}\) より \(10^{34}&lt;5^{50}\leqq10^{35}\)。</p><p><b>答え</b></p><p>\(5^{50}\) は \(35\) 桁。</p></div><div class="abox"><p class="ah">【答案】</p>\[35\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="e-2-4-3-10.html">← 例題10にもどる</a><a class="g" href="u-2-4-3.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>
