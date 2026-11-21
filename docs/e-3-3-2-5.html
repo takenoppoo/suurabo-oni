@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題5 回転体の体積（定積分と面積・体積） | 数ラボ鬼</title>
+<meta name="description" content="定積分と面積・体積の難問 例題5：回転体の体積">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-3.html">数学III</a> ＞ <a href="u-3-3-2.html">定積分と面積・体積</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 5</span><span class="ls">積分法　回転体の体積</span></h1><div class="qbox"><p>曲線 \(y=e^{\dfrac{5}{2}x}\ (0\leqq x\leqq1)\) と \(x\) 軸、\(y\) 軸、直線 \(x=1\) で囲まれた部分を \(x\) 軸のまわりに回転してできる立体の体積を求めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>\(x\) 軸のまわりの回転体の体積は \(V=\pi\displaystyle\int_a^b y^2dx\)。\(y^2\) を先に計算してから積分。</p><div class="kotsu"><b>コツ</b>輪切りにした円板（面積 \(\pi y^2\)）を積み重ねる。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 体積の公式</div><div class="sb"><p>\(x\) 軸のまわりの回転体：</p>\[V=\pi\int_a^b\{f(x)\}^2dx\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 積分の式</div><div class="sb">\[V=\pi\int_0^1\left(e^{\dfrac{5}{2}x}\right)^2dx=\pi\int_0^1e^{5x}dx\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> 計算</div><div class="sb">\[V=\pi\left[\dfrac{e^{5x}}{5}\right]_0^1=\dfrac{\pi\left(e^{5}-1\right)}{5}\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[\dfrac{\pi\left(e^{5}-1\right)}{5}\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 5</h2><ol class="prac"><li>曲線 \(y=e^{2x}\ (0\leqq x\leqq1)\) と \(x\) 軸、\(y\) 軸、直線 \(x=1\) で囲まれた部分を \(x\) 軸のまわりに回転してできる立体の体積を求めよ。</li><li>曲線 \(y=e^{3x}\ (0\leqq x\leqq1)\) と \(x\) 軸、\(y\) 軸、直線 \(x=1\) で囲まれた部分を \(x\) 軸のまわりに回転してできる立体の体積を求めよ。</li><li>曲線 \(y=e^{\dfrac{3}{2}x}\ (0\leqq x\leqq1)\) と \(x\) 軸、\(y\) 軸、直線 \(x=1\) で囲まれた部分を \(x\) 軸のまわりに回転してできる立体の体積を求めよ。</li></ol></div><div class="nav2"><a href="a-3-3-2-5.html">練習問題5の解答を見る</a></div><div class="nav2"><a class="g" href="e-3-3-2-4.html">← 例題4</a><a class="g" href="c-3-3-2.html">章末問題 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>
