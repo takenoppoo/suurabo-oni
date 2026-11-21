@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>練習問題8の解答（分散・標準偏差・相関） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="分散・標準偏差・相関 練習問題8の解答">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-5-2.html">分散・標準偏差・相関</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">練習問題 8 の解答　変量の1次変換と相関係数（r=±1）</span></h1><div class="item"><p class="pq">(1)　データ \(x:\ 2,\ 4,\ 5,\ 7,\ 2\) と、\(y=-3x+10\) で定まるデータ \(y\) について、\(y\) の平均・分散と、\(x,\ y\) の相関係数を求めよ。</p><div class="sb"><p><b>\(y\) の平均・分散</b></p><p>\(y=-3x+10\)。</p>\[\bar y=-3\bar x+10=-2,\qquad s_y^2=-3^2s_x^2=\dfrac{162}{5}\]<p><b>共分散</b></p><p>\(s_{xy}=\dfrac1n\sum(x-\bar x)(y-\bar y)=-3\cdot s_x^2\)。</p>\[s_{xy}=-3\cdot\dfrac{18}{5}=- \dfrac{54}{5}\]<p><b>相関係数</b></p>\[r=\dfrac{s_{xy}}{s_xs_y}=\dfrac{- \dfrac{54}{5}}{\sqrt{\dfrac{18}{5}}\sqrt{\dfrac{162}{5}}}=-1\]</div><div class="abox"><p class="ah">【答案】</p>\[\bar y=-2,\ s_y^2=\dfrac{162}{5},\ r=-1\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(2)　データ \(x:\ 1,\ 2,\ 3,\ 6\) と、\(y=4x-1\) で定まるデータ \(y\) について、\(y\) の平均・分散と、\(x,\ y\) の相関係数を求めよ。</p><div class="sb"><p><b>\(y\) の平均・分散</b></p><p>\(y=4x-1\)。</p>\[\bar y=4\bar x-1=11,\qquad s_y^2=4^2s_x^2=56\]<p><b>共分散</b></p><p>\(s_{xy}=\dfrac1n\sum(x-\bar x)(y-\bar y)=4\cdot s_x^2\)。</p>\[s_{xy}=4\cdot\dfrac{7}{2}=14\]<p><b>相関係数</b></p>\[r=\dfrac{s_{xy}}{s_xs_y}=\dfrac{14}{\sqrt{\dfrac{7}{2}}\sqrt{56}}=1\]</div><div class="abox"><p class="ah">【答案】</p>\[\bar y=11,\ s_y^2=56,\ r=1\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(3)　データ \(x:\ 3,\ 5,\ 4,\ 2,\ 6\) と、\(y=-2x+8\) で定まるデータ \(y\) について、\(y\) の平均・分散と、\(x,\ y\) の相関係数を求めよ。</p><div class="sb"><p><b>\(y\) の平均・分散</b></p><p>\(y=-2x+8\)。</p>\[\bar y=-2\bar x+8=0,\qquad s_y^2=-2^2s_x^2=8\]<p><b>共分散</b></p><p>\(s_{xy}=\dfrac1n\sum(x-\bar x)(y-\bar y)=-2\cdot s_x^2\)。</p>\[s_{xy}=-2\cdot2=-4\]<p><b>相関係数</b></p>\[r=\dfrac{s_{xy}}{s_xs_y}=\dfrac{-4}{\sqrt{2}\sqrt{8}}=-1\]</div><div class="abox"><p class="ah">【答案】</p>\[\bar y=0,\ s_y^2=8,\ r=-1\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="e-1-5-2-8.html">← 例題8にもどる</a><a class="g" href="u-1-5-2.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

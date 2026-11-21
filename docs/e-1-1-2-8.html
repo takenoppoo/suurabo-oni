@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題8 6次式（平方の差と3乗の公式）（因数分解） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="因数分解の難問 例題8：6次式（平方の差と3乗の公式）">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-1-2.html">因数分解</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 8</span><span class="ls">数と式　6次式（平方の差と3乗の公式）</span></h1><div class="qbox"><p>\(x^6-64\) を因数分解せよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>\(x^6-a^6\) は<b>まず \(A^2-B^2\)</b>（\(A=x^3\)）で2つに分け、次に \(A^3\pm B^3\) の公式でさらに分ける。\(2\)次式 \(x^2\pm ax+a^2\) はこれ以上分けられない。</p><div class="kotsu"><b>コツ</b>先に大きく2つに割り、次に細かく割る。順番を逆にすると見つけにくい。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> \(A^2-B^2\) を使う</div><div class="sb"><p>\(x^6=(x^3)^2\)、\(2^6=(2^3)^2\)。</p>\[x^6-64=(x^3-8)(x^3+8)\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 3乗の公式</div><div class="sb">\[x^3-8=(x-2)(x^2+2x+4),\qquad x^3+8=(x+2)(x^2-2x+4)\]</div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> まとめる</div><div class="sb">\[x^6-64=(x-2)(x+2)(x^2+2x+4)(x^2-2x+4)\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[(x-2)(x+2)(x^2+2x+4)(x^2-2x+4)\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 8</h2><ol class="prac"><li>\(x^6-729\) を因数分解せよ。</li><li>\(x^6-4096\) を因数分解せよ。</li><li>\(x^6-15625\) を因数分解せよ。</li></ol></div><div class="nav2"><a href="a-1-1-2-8.html">練習問題8の解答を見る</a></div><div class="nav2"><a class="g" href="e-1-1-2-7.html">← 例題7</a><a class="g" href="e-1-1-2-9.html">例題9 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

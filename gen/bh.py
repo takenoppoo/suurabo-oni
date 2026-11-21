@@ -161,3 +161,20 @@ def fac(r_,v="t"):
     r_=sp.nsimplify(r_)
     if r_==0: return v
     return "(%s-%s)"%(v,L(r_)) if r_>0 else "(%s+%s)"%(v,L(-r_))
+
+import re as _re
+def clean(s):
+    if isinstance(s,str):
+        s=s.replace("--","+")
+        s=_re.sub(r"\+\s*-","-",s)
+        s=_re.sub(r"(?<![0-9A-Za-z\\.{^_])1(?=[xyab]\b|[xyab]\^|[xyab][xyab\\(])","",s)
+        s=_re.sub(r"\+0(?![0-9.])","",s)
+        return s
+    if isinstance(s,list): return [clean(t) for t in s]
+    if isinstance(s,tuple): return tuple(clean(t) for t in s)
+    if isinstance(s,dict): return {k:clean(v) for k,v in s.items()}
+    return s
+def finishx(Z,CH):
+    """追加分（例題6〜10・章末6〜10）"""
+    assert len(Z.E)==5 and len(CH)==5
+    return clean(dict(examples=Z.E,chapter_end=[(T(p_),T(b_),a_,k_) for p_,b_,a_,k_ in CH]))

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>例題7 x軸から切り取る線分の長さ（2次関数のグラフ） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="2次関数のグラフの難問 例題7：x軸から切り取る線分の長さ">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-3-1.html">2次関数のグラフ</a></p><!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る --><div class="lesson"><h1 class="lh"><span class="lb">例題 7</span><span class="ls">2次関数　x軸から切り取る線分の長さ</span></h1><div class="qbox"><p>放物線 \(y=x^2-4x+c\) が \(x\) 軸から切り取る線分の長さが \(6\) になるように、定数 \(c\) の値を定めよ。</p></div><div class="bar"><h2>解き方（まず考え方）</h2><p>放物線は軸について対称。2交点は<b>軸から等距離（左右に長さの半分ずつ）</b>。交点の1つの座標を \(y=0\) に代入して定数を決める。</p><div class="kotsu"><b>コツ</b>軸を中心にした左右対称。半分ずつ考える。</div></div><div class="bar sol"><h2>解答</h2><div class="step"><div class="sh2"><span class="badge">STEP 1</span> 平方完成</div><div class="sb"><p>\(y=x^2-4x+c=(x-2)^2-2^2+c\)。軸は \(x=2\)。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 2</span> 交点の位置</div><div class="sb"><p>軸について対称なので、2交点は \(x=2\pm\dfrac{6}{2}\)。</p></div></div><div class="step"><div class="sh2"><span class="badge">STEP 3</span> \(c\) を決める</div><div class="sb"><p>\(x=2+\dfrac{6}{2}=5\) で \(y=0\)。</p>\[\left(\dfrac{6}{2}\right)^2-2^2+c=0\ \Rightarrow\ c=-5\]</div></div></div><div class="abox"><p class="ah">【答案（テストに書く形）】</p>\[c=-5\]<p class="mark">答</p></div><div class="bar"><h2>練習問題 7</h2><ol class="prac"><li>放物線 \(y=x^2-6x+c\) が \(x\) 軸から切り取る線分の長さが \(4\) になるように、定数 \(c\) の値を定めよ。</li><li>放物線 \(y=x^2-2x+c\) が \(x\) 軸から切り取る線分の長さが \(2\) になるように、定数 \(c\) の値を定めよ。</li><li>放物線 \(y=x^2-4x+c\) が \(x\) 軸から切り取る線分の長さが \(3\) になるように、定数 \(c\) の値を定めよ。</li></ol></div><div class="nav2"><a href="a-1-3-1-7.html">練習問題7の解答を見る</a></div><div class="nav2"><a class="g" href="e-1-3-1-6.html">← 例題6</a><a class="g" href="e-1-3-1-8.html">例題8 →</a></div></div><!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>

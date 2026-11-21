@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>練習問題7の解答（代表値・四分位数・箱ひげ図） | 数ラボ鬼</title>
+<link rel="icon" href="favicon.ico?v=1" sizes="any">
+<meta name="description" content="代表値・四分位数・箱ひげ図 練習問題7の解答">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lesson.css">
+<!-- AdSense承認後：ここに <script async src="https://pagead2.googlesyndication.com/..."></script> を貼る -->
+
+</head>
+<body>
+<header class="site-h"><div class="wrap">
+<a class="logo" href="index.html"><img src="logo.png" alt="数ラボ鬼 SUU LAB ONI"></a>
+<nav><a href="index.html">ホーム</a><a href="about.html">このサイトについて</a><a href="contact.html">お問い合わせ</a></nav>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="index.html">ホーム</a> ＞ <a href="subject-1.html">数学I</a> ＞ <a href="u-1-5-1.html">代表値・四分位数・箱ひげ図</a></p><div class="lesson"><h1 class="lh"><span class="lb">別冊</span><span class="ls">練習問題 7 の解答　仮平均を使った平均の計算</span></h1><div class="item"><p class="pq">(1)　次の 7 個のデータの平均値を、仮平均を使って求めよ。 \[2012,\ 1992,\ 2005,\ 1997,\ 2009,\ 1995,\ 2002\]</p><div class="sb"><p><b>仮平均を決める</b></p><p>データが \(2000\) に近いので、仮平均を \(2000\) とし、<b>差</b> \(d=x-2000\) を求める。</p>\[d:\ 12,\ -8,\ 5,\ -3,\ 9,\ -5,\ 2\]<p><b>差の平均</b></p>\[\dfrac{12+(-8)+5+(-3)+9+(-5)+2}{7}=\dfrac{12}{7}\]<p><b>もとの平均</b></p><p>平均 \(=2000+\dfrac{12}{7}\)。</p>\[\bar x=\dfrac{14012}{7}\]</div><div class="abox"><p class="ah">【答案】</p>\[\dfrac{14012}{7}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(2)　次の 5 個のデータの平均値を、仮平均を使って求めよ。 \[494,\ 504,\ 509,\ 498,\ 507\]</p><div class="sb"><p><b>仮平均を決める</b></p><p>データが \(500\) に近いので、仮平均を \(500\) とし、<b>差</b> \(d=x-500\) を求める。</p>\[d:\ -6,\ 4,\ 9,\ -2,\ 7\]<p><b>差の平均</b></p>\[\dfrac{(-6)+4+9+(-2)+7}{5}=\dfrac{12}{5}\]<p><b>もとの平均</b></p><p>平均 \(=500+\dfrac{12}{5}\)。</p>\[\bar x=\dfrac{2512}{5}\]</div><div class="abox"><p class="ah">【答案】</p>\[\dfrac{2512}{5}\]<p class="mark">答</p></div></div><div class="item"><p class="pq">(3)　次の 6 個のデータの平均値を、仮平均を使って求めよ。 \[3015,\ 2990,\ 3005,\ 3000,\ 2995,\ 3020\]</p><div class="sb"><p><b>仮平均を決める</b></p><p>データが \(3000\) に近いので、仮平均を \(3000\) とし、<b>差</b> \(d=x-3000\) を求める。</p>\[d:\ 15,\ -10,\ 5,\ 0,\ -5,\ 20\]<p><b>差の平均</b></p>\[\dfrac{15+(-10)+5+(-5)+20}{6}=\dfrac{25}{6}\]<p><b>もとの平均</b></p><p>平均 \(=3000+\dfrac{25}{6}\)。</p>\[\bar x=\dfrac{18025}{6}\]</div><div class="abox"><p class="ah">【答案】</p>\[\dfrac{18025}{6}\]<p class="mark">答</p></div></div><div class="nav2"><a class="g" href="e-1-5-1-7.html">← 例題7にもどる</a><a class="g" href="u-1-5-1.html">単元ページ</a></div></div>
+</main>
+<footer class="site-f"><div class="wrap">
+<p><a href="about.html">このサイトについて</a>｜<a href="contact.html">お問い合わせ</a>｜<a href="privacy.html">プライバシーポリシー</a></p>
+<p>© 数ラボ鬼　掲載の問題・解説はすべてオリジナルです。</p>
+</div></footer>
+<script src="katex/katex.min.js"></script>
+<script src="katex/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false}],throwOnError:false});
+function fitMath(){document.querySelectorAll('.katex-display').forEach(function(d){var k=d.querySelector('.katex');if(!k)return;k.style.fontSize='';var w=d.clientWidth;var h=k.querySelector('.katex-html'),kw=h?h.scrollWidth:0;if(kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,13)+'px';}});}
+function fitInline(){document.querySelectorAll('.katex').forEach(function(k){if(k.closest('.katex-display'))return;k.style.fontSize='';var c=k.closest('p,li,div');var w=c?c.clientWidth:0;var kw=k.getBoundingClientRect().width;if(w>0&&kw>w){var f=parseFloat(getComputedStyle(k).fontSize);k.style.fontSize=Math.max(f*w/kw*0.97,11)+'px';}});}
+function fitAll(){fitMath();fitInline();}
+fitAll();window.addEventListener('resize',fitAll);window.addEventListener('load',fitAll);
+</script>
+<script src="oni-bg.js"></script>
+</body>
+</html>
