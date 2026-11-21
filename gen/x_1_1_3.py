@@ -44,7 +44,7 @@ def b9(N):
     # n such that sqrt(N n) integer → minimal n0 ; "√(N/n) 整数となる自然数n": n divides N and N/n square
     ns=[d for d in sp.divisors(N) if sp.sqrt(sp.Integer(N)//d).is_integer]
     st=[("素因数分解する","<p>"+I("%d=%s"%(N,r"\times".join(str(p_)+("^{%d}"%e if e>1 else "") for p_,e in sorted(fs.items()))))+"。</p>"),
-        ("$\\dfrac{%d}{n}$ が平方数になる条件","<p>各素因数の指数がすべて<b>偶数</b>になるように "+I("n")+" で割る。</p>"+D(r"n=%s"%(r",\ ".join(str(d) for d in ns)))),
+        ("$\\dfrac{%d}{n}$ が平方数になる条件"%N,"<p>各素因数の指数がすべて<b>偶数</b>になるように "+I("n")+" で割る。指数が奇数の素因数をすべて集めたものを "+I("n_0=%d"%n0)+" とする。"+I("n")+" は "+I("n_0")+" に平方数をかけた形になる。</p>"+D(r"\dfrac{%d}{%d}=%d=%d^2"%(N,n0,N//n0,int(round((N//n0)**.5))))+"<p>"+I("%d"%(N//n0))+" の約数のうち平方数は "+I(r",\ ".join("%d"%d_ for d_ in sp.divisors(N//n0) if int(round(d_**.5))**2==d_))+"。これらを "+I("n_0")+" にかけて</p>"+D(r"n=%s"%(r",\ ".join(str(d) for d in ns)))),
         ("個数・最大","<p>条件をみたす "+I("n")+" は "+I(str(len(ns)))+" 個。最大は "+I(str(max(ns)))+"。</p>")]
     return r"自然数 $n$ で、$\sqrt{\dfrac{%d}{n}}$ が自然数となるものをすべて求めよ。"%N,st,r"n=%s"%(r",\ ".join(str(d) for d in ns))
 o=[b9(N) for N in [180,360,600,720,1000]]

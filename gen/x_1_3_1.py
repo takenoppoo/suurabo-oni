@@ -10,7 +10,7 @@ def b6(p,q,a):
     f=a*(x-p)*(x-q); e=sp.expand(f); ln=abs(p-q)
     st=[("$x$ 軸との交点を文字で","<p>2点 "+I("(%d,0),(%d,0)"%(p,q))+" を通るので "+I(r"y=a(x-%s)(x-%s)"%(L(p),L(q)))+" とおける。</p>"),
         ("もう1点を代入","<p>"+I("(0,%s)"%L(f.subs(x,0)))+" を通るので</p>"+D(r"%s=a(%s)(%s)\ \Rightarrow\ a=%s"%(L(f.subs(x,0)),L(-p),L(-q),L(a)))),
-        ("展開",D(r"y=%s(x-%s)(x-%s)=%s"%(L(a),L(p),L(q),L(e))))]
+        ("展開","<p>かっこの中を先に展開してから、全体にかける。</p>"+D(r"(x-%s)(x-%s)=x^2-%sx+%s"%(L(p),L(q),L(p+q),L(p*q)))+D(r"y=%s(x^2-%sx+%s)=%s"%(L(a),L(p+q),L(p*q),L(e))))]
     vx,vy=vtx(a,*[e.coeff(x,1),e.coeff(x,0)]) if False else (sp.Rational(p+q,2),f.subs(x,sp.Rational(p+q,2)))
     fg=quadfig("x131_6_%d_%d_%d"%(p,q,a),[(f,"#b81f36")],[(p,0,"(%d, 0)"%p),(q,0,"(%d, 0)"%q),(0,f.subs(x,0),"(0, %s)"%f.subs(x,0)),(vx,vy,"")],axis=vx)
     st[0]=(st[0][0],st[0][1]+fg)
@@ -35,7 +35,7 @@ def b8(a,b,c,p,q):
     f=Q(a,b,c); g=sp.expand(f.subs(x,x-p)+q)  # 平行移動 (p,q)
     # y軸対称:
     h=sp.expand(g.subs(x,-x))
-    st=[("平行移動","<p>"+I("x")+" 方向に "+I(str(p))+"、"+I("y")+" 方向に "+I(str(q))+" 移動：</p>"+D(r"y-%s=%s"%(L(q),L(f.subs(x,x-p))) if False else r"y=%s"%L(g))),
+    st=[("平行移動","<p>"+I("x")+" 方向に "+I(str(p))+"、"+I("y")+" 方向に "+I(str(q))+" 移動：</p>"+"<p>"+I(r"x\to x-%s,\ y\to y-%s"%(L(p),L(q)))+" と置きかえる。</p>"+D(r"y-%s=%s"%(L(q),L(sp.expand(f.subs(x,x-p)))))+D(r"y=%s"%L(g))),
         ("$y$ 軸に関して対称移動","<p>"+I("x")+" を "+I("-x")+" におきかえる。</p>"+D(r"y=%s"%L(h))),
         ("頂点の移り変わり","<p>頂点 "+I(L(sp.Point(*[R(-b,2*a),f.subs(x,R(-b,2*a))]).args[0]) if False else "(%s,\\ %s)"%(L(R(-b,2*a)),L(f.subs(x,R(-b,2*a)))))+" は平行移動で "+I("(%s,\\ %s)"%(L(R(-b,2*a)+p),L(f.subs(x,R(-b,2*a))+q)))+"、対称移動で "+I("(%s,\\ %s)"%(L(-(R(-b,2*a)+p)),L(f.subs(x,R(-b,2*a))+q)))+"。</p>")]
     v0=(R(-b,2*a),f.subs(x,R(-b,2*a))); v1=(v0[0]+p,v0[1]+q); v2=(-v1[0],v1[1])

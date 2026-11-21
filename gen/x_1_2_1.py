@@ -36,7 +36,7 @@ def b8(U,A,B,AB):
     nAorB=A+B-AB; neither=U-nAorB; onlyA=A-AB; onlyB=B-AB; assert neither>=0
     st=[("ド・モルガンの法則","<p>"+I(r"\overline A\cap\overline B=\overline{A\cup B}")+"。</p>"),
         ("和集合の個数",D(r"n(A\cup B)=n(A)+n(B)-n(A\cap B)=%d+%d-%d=%d"%(A,B,AB,nAorB))),
-        ("補集合・差集合",D(r"n(\overline A\cap\overline B)=%d-%d=%d"%(U,nAorB,neither))+D(r"n(A\cap\overline B)=%d-%d=%d"%(A,AB,onlyA)))]
+        ("補集合・差集合",D(r"n(\overline A\cap\overline B)=%d-%d=%d"%(U,nAorB,neither))+"<p>"+I(r"A")+" は「"+I(r"B")+" に入る部分」と「入らない部分」に分かれるので "+I(r"n(A)=n(A\cap B)+n(A\cap\overline B)")+"。</p>"+D(r"n(A\cap\overline B)=n(A)-n(A\cap B)=%d-%d=%d"%(A,AB,onlyA)))]
     return r"全体集合 $U$ の要素の個数が $%d$、$n(A)=%d,\ n(B)=%d,\ n(A\cap B)=%d$ のとき、$n(\overline A\cap\overline B)$ と $n(A\cap\overline B)$ を求めよ。"%(U,A,B,AB),st,r"n(\overline A\cap\overline B)=%d,\ \ n(A\cap\overline B)=%d"%(neither,onlyA)
 o=[b8(*v) for v in [(100,60,45,30),(80,50,40,25),(120,70,65,40),(90,55,35,20),(150,90,80,55)]]
 build(Z,CH,"ド・モルガンの法則と個数",o,r"<p>$\overline A\cap\overline B=\overline{A\cup B}$。まず $n(A\cup B)$ を出して全体から引く。「$A$ だけ」は $n(A)-n(A\cap B)$。</p>","「どちらでもない」は「どちらか」の反対。","8" if False else 8)

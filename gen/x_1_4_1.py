@@ -11,7 +11,7 @@ def b6(sn,cs,den):
     v=sn_**3+cs_**3; w=sp.simplify(sn_*cs_); s_=sn_+cs_
     assert sp.simplify(s_**3-3*sn_*cs_*s_-v)==0
     st=[("$\\sin\\theta+\\cos\\theta$ と $\\sin\\theta\\cos\\theta$","<p>"+I(r"\sin\theta+\cos\theta=%s"%L(s_))+"。両辺を2乗：</p>"+D(r"1+2\sin\theta\cos\theta=%s\ \Rightarrow\ \sin\theta\cos\theta=%s"%(L(s_**2),L(w)))),
-        ("3乗の和の公式","<p>"+I(r"a^3+b^3=(a+b)^3-3ab(a+b)")+"。</p>"+D(r"\sin^3\theta+\cos^3\theta=%s^3-3\cdot%s\cdot%s"%(L(s_),L(w),L(s_)))),
+        ("3乗の和の公式","<p>"+I(r"a^3+b^3=(a+b)^3-3ab(a+b)")+"。</p>"+D(r"\sin^3\theta+\cos^3\theta=\left(%s\right)^3-3\cdot%s\cdot%s"%(L(s_),L(w),L(s_)))+D(r"=%s-%s=%s"%(L(s_**3),L(3*w*s_),L(s_**3-3*w*s_)))),
         ("計算",D(r"=%s"%L(v)))]
     return r"$\sin\theta+\cos\theta=%s$ のとき、$\sin^3\theta+\cos^3\theta$ の値を求めよ。"%L(s_),st,L(v)
 o=[b6(*v) for v in [(3,4,5),(5,12,13),(8,15,17),(7,24,25),(20,21,29)]]
@@ -52,9 +52,9 @@ def b9(r1,r2):
     # roots sinθ=r1/2 (if in range) & sinθ=-r2 (out of range for 0<=θ<=180 since negative)
     th0=round(math.degrees(math.asin(r1/2)))
     exp=sorted({th0,180-th0}); assert sols==exp,(sols,exp)
-    st=[("$\\sin\\theta$ で整理","<p>"+I("s=\\sin\\theta")+" とおく。</p>"+D(r"2s^2%+ds%+d=0\ \Rightarrow\ (2s-%d)(s+%d)=0"%(bb,cc,r1,r2))),
+    st=[("$\\sin\\theta$ で整理","<p>"+I("s=\\sin\\theta")+" とおく。</p>"+D(r"2s^2%+ds%+d=0"%(bb,cc))+"<p>たすき掛けで因数分解する（展開して確かめる）。</p>"+D(r"(2s-%d)(s+%d)=2s^2+%ds-%ds-%d=2s^2%+ds%+d"%(r1,r2,2*r2,r1,r1*r2,bb,cc))+D(r"(2s-%d)(s+%d)=0"%(r1,r2))),
         ("範囲を確認","<p>"+I(r"0^\circ\leqq\theta\leqq180^\circ")+" より "+I(r"0\leqq s\leqq1")+"。</p>"+D(r"s=\dfrac{%d}{2}\ \text{または}\ s=-%d"%(r1,r2))+"<p>"+I("s=-%d"%r2)+" は範囲外。</p>"),
-        ("角を求める",D(r"\sin\theta=\dfrac{%d}{2}\ \Rightarrow\ \theta=%s^\circ"%(r1,r",\ ".join(str(v) for v in exp))))]
+        ("角を求める","<p>単位円で、"+I(r"y=\dfrac{%d}{2}"%r1)+" の高さの直線と円の交点を探す。"+I(r"0^\circ\leqq\theta\leqq180^\circ")+" は上半分。</p>"+uceq("u141_9_%d_%d"%(r1,r2),"sin",r1/2,pts=[(math.radians(v),"%d^\\circ"%v) for v in exp])+D(r"\sin\theta=\dfrac{%d}{2}\ \Rightarrow\ \theta=%s"%(r1,r",\ ".join("%d^\\circ"%v for v in exp))))]
     return r"$0^\circ\leqq\theta\leqq180^\circ$ のとき、方程式 $2\sin^2\theta%+d\sin\theta%+d=0$ を解け。"%(bb,cc),st,r"\theta=%s^\circ"%(r",\ ".join(str(v) for v in exp))
 o=[b9(*v) for v in [(1,2),(1,3),(2,2),(1,1) if False else (1,4),(1,5)]]
 build(Z,CH,"三角比の2次方程式（範囲に注意）",o,r"<p>$\sin\theta=s$ と置き換えて因数分解。<b>$0^\circ\leqq\theta\leqq180^\circ$ では $0\leqq\sin\theta\leqq1$</b>、これを外れる解は捨てる。$\sin$ は $\theta$ と $180^\circ-\theta$ で同じ値。</p>","置き換えたら、$s$ の範囲もチェック。",9)

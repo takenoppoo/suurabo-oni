@@ -34,8 +34,8 @@ build(Z,CH,"背理法（√p+√q は無理数）",o,r"<p>結論を否定して�
 # 9 対偶で倍数
 def b9(p):
     st=[("対偶をつくる","<p>"+I(r"n^2\text{が%dの倍数}\Rightarrow n\text{が%dの倍数}"%(p,p))+" の対偶：</p>"+D(r"n\text{が%dの倍数でない}\Rightarrow n^2\text{が%dの倍数でない}"%(p,p))),
-        ("余りで場合分け","<p>"+I(r"n=%dk+r\ (1\leqq r\leqq %d)"%(p,p-1))+" とおく。</p>"+D(r"n^2=%dk(%dk+%dr)+r^2"%(p,p,2)+r"\ \Rightarrow\ n^2\ \text{を}%d\text{でわった余りは }r^2\text{の余り}"%p)),
-        ("$r^2$ は $%d$ の倍数でない"%p,"<p>"+I("%d"%p)+" は素数で "+I(r"1\leqq r\leqq%d"%(p-1))+" なので、"+I("r^2")+" は "+I("%d"%p)+" の倍数でない。</p>"),
+        ("余りで場合分け","<p>"+I(r"n=%dk+r\ (1\leqq r\leqq %d)"%(p,p-1))+" とおく。</p>"+D(r"n^2=(%dk+r)^2=%dk^2+2\cdot%dk\cdot r+r^2=%dk(%dk+2r)+r^2"%(p,p*p,p,p,p)+r"\ \Rightarrow\ n^2\ \text{を}%d\text{でわった余りは }r^2\text{の余り}"%p)),
+        ("$r^2$ は $%d$ の倍数でない"%p,"<p>"+I("%d"%p)+" は素数で "+I(r"1\leqq r\leqq%d"%(p-1))+" なので、"+I("r^2")+" は "+I("%d"%p)+" の倍数でない。実際に調べると</p>"+wtable([I("r")]+[I(str(r_)) for r_ in range(1,p)],[[I("r^2")]+[I(str(r_*r_)) for r_ in range(1,p)],["%dでわった余り"%p]+[I(str(r_*r_%p)) for r_ in range(1,p)]])+"<p>余りはどれも 0 でない。</p>"),
         ("結論","<p>対偶が真なので、もとの命題も真。</p>")]
     return r"整数 $n$ について、「$n^2$ が $%d$ の倍数ならば $n$ は $%d$ の倍数である」ことを、対偶を利用して証明せよ。"%(p,p),st,r"\text{証明終}"
 o=[b9(v) for v in [5,7,3,11,13]]

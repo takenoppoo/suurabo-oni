@@ -39,7 +39,7 @@ def b9(p1,p2,total,box):
     n=10; xs=[xi for xi in range(0,n+1) if p1*xi+p2*(n-xi)+box<=total]; mx=max(xs)
     st=[("文字を決める","<p>りんごを "+I("x")+" 個とすると、なしは "+I("(%d-x)"%n)+" 個。</p>"),
         ("不等式を立てる","<p>代金の合計が予算以下：</p>"+D(r"%d x+%d(%d-x)+%d\leqq %d"%(p1,p2,n,box,total))),
-        ("解く",D(r"%d-%dx\leqq%d\ \Rightarrow\ x\geqq %s"%(n*p2+box if False else (p1-p2)*0+n*p2+box,p2-p1,total,"?")) if False else D(r"%s\ x\leqq %d"%(L(p1-p2),total-n*p2-box))+"<p>"+(I("x\\leqq %s"%L(R(total-n*p2-box,p1-p2))) if p1>p2 else I("x\\geqq %s"%L(R(total-n*p2-box,p1-p2))))+"。"+I("0\\leqq x\\leqq%d"%n)+" の整数で最大は "+I(str(mx))+"。</p>")]
+        ("解く",D(r"%d-%dx\leqq%d\ \Rightarrow\ x\geqq %s"%(n*p2+box if False else (p1-p2)*0+n*p2+box,p2-p1,total,"?")) if False else "<p>かっこをはずして "+I("x")+" の項と数に分ける。</p>"+D(r"%d x+%d-%dx+%d\leqq %d"%(p1,p2*n,p2,box,total))+D(r"%s\ x+%d\leqq %d"%(L(p1-p2),p2*n+box,total))+D(r"%s\ x\leqq %d-%d=%d"%(L(p1-p2),total,p2*n+box,total-n*p2-box))+"<p>"+(I("x\\leqq %s"%L(R(total-n*p2-box,p1-p2))) if p1>p2 else I("x\\geqq %s"%L(R(total-n*p2-box,p1-p2))))+"。"+I("0\\leqq x\\leqq%d"%n)+" の整数で最大は "+I(str(mx))+"。</p>")]
     return r"1個 $%d$ 円のりんごと1個 $%d$ 円のなしを合わせて $%d$ 個買い、$%d$ 円の箱に入れる。代金の合計を $%d$ 円以下にするとき、りんごは最大で何個買えるか。"%(p1,p2,n,box,total),st,str(mx)
 o=[b9(*v) for v in [(120,80,1100,150),(150,90,1300,200),(130,70,1000,100),(180,100,1500,250),(140,60,900,100)]]
 build(Z,CH,"不等式の文章題（最大の個数）",o,r"<p>個数を $x$ とおき、<b>代金＋箱代 $\leqq$ 予算</b>の不等式を作る。解いたあと、<b>整数で、$0\leqq x\leqq$ 合計の個数</b>という条件で絞る。</p>","まず式、次に整数・範囲のチェック。計算の最後で答えが現実に合うか見る。",9)
@@ -49,7 +49,7 @@ def b10(w,c1,c2):
     xmin=R(w*c1,c2)-w
     st=[("食塩の量","<p>食塩の量は "+I(r"%d\times\dfrac{%d}{100}=%s\ \text{(g)}"%(w,c1,L(R(w*c1,100))))+"（水を加えても変わらない）。</p>"),
         ("不等式",D(r"\dfrac{%s}{%d+x}\times100\leqq %d"%(L(R(w*c1,100)),w,c2))),
-        ("解く","<p>"+I("%d+x>0"%w)+" なので両辺にかけて</p>"+D(r"%d\leqq %d(%d+x)\ \Rightarrow\ x\geqq %s"%(w*c1,c2,w,L(xmin))))]
+        ("解く","<p>"+I("%d+x>0"%w)+" なので両辺にかけて</p>"+D(r"%d\leqq %d(%d+x)"%(w*c1,c2,w))+D(r"%d\leqq %d+%dx"%(w*c1,c2*w,c2))+D(r"%dx\geqq %d-%d=%d\ \Rightarrow\ x\geqq %s"%(c2,w*c1,c2*w,w*c1-c2*w,L(xmin))))]
     return r"濃度 $%d\%%$ の食塩水 $%d$ g に水を加えて、濃度を $%d\%%$ 以下にしたい。水を何 g 以上加えればよいか。"%(c1,w,c2),st,r"%s\ \text{g以上}"%L(xmin)
 o=[b10(*v) for v in [(200,12,8),(300,10,6),(150,20,12),(400,15,9),(250,8,5)]]
 build(Z,CH,"濃度の不等式",o,r"<p>水を加えても<b>食塩の量は変わらない</b>。濃度 $=\dfrac{\text{食塩}}{\text{全体}}\times100$ を不等式にし、分母は正なので両辺にかけて解く。</p>","薄めても塩の量は不変。変わるのは全体の重さだけ。",10)

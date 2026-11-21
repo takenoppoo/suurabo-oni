@@ -45,12 +45,16 @@ def b7(a,b,lo,hi):
     def dr(ax):
         xs=np.linspace(lo-.3,hi+.3,300); ax.plot(xs,a*np.sin(xs)+b*np.cos(xs),color="#b81f36",lw=2)
         for tt in [ts[v.argmax()],ts[v.argmin()]]: mark(ax,tt,a*math.sin(tt)+b*math.cos(tt))
+    _al=R(round(al/math.pi*12),12)*pi; _lo=R(round(lo/math.pi*12),12)*pi+_al; _hi=R(round(hi/math.pi*12),12)*pi+_al
+    _cand=[_lo,_hi]+[sp.pi/2+k*sp.pi for k in range(-3,6) if float(_lo)<=float(sp.pi/2+k*sp.pi)<=float(_hi)]
+    _vals=[sp.nsimplify(sp.simplify(sp.sqrt(a*a+b*b)*sp.sin(c_))) for c_ in _cand]
+    EX=(max(_vals,key=float),min(_vals,key=float)); assert abs(float(EX[0])-mx)<1e-5 and abs(float(EX[1])-mn)<1e-5
     fg=gplane("x233_7_%d_%d_%d_%d"%(a+9,b+9,int(lo*10),int(hi*10)),(lo-.4,hi+.4),(-r-.7,r+.7),dr,size=(4.4,3),w=54,xs=np.pi/2,ys=1)
     # exact: r=sqrt(a^2+b^2)=2 or 2sqrt? 
     st=[("合成","<p>"+D(r"%d\sin\theta+%d\cos\theta=%s\sin\left(\theta+%s\right)"%(a,b,L(sp.sqrt(a*a+b*b)),L(sp.nsimplify(al/math.pi,[sp.pi])*pi if False else R(round(al/math.pi*12),12)*pi)))),
         ("範囲","<p>"+I(r"%s\leqq\theta\leqq%s"%(L(R(round(lo/math.pi*12),12)*pi),L(R(round(hi/math.pi*12),12)*pi)))+" より "+I(r"\theta+%s"%L(R(round(al/math.pi*12),12)*pi))+" の範囲は "+I(r"%s\sim%s"%(L((R(round(lo/math.pi*12),12)+R(round(al/math.pi*12),12))*pi),L((R(round(hi/math.pi*12),12)+R(round(al/math.pi*12),12))*pi)))+"。</p>"+fg),
-        ("最大・最小","<p>"+D(r"\text{最大 }%s,\qquad \text{最小 }%s"%(L(sp.nsimplify(round(mx,6),[sp.sqrt(3),sp.sqrt(2)])),L(sp.nsimplify(round(mn,6),[sp.sqrt(3),sp.sqrt(2)])))))]
-    return r"$%s\leqq\theta\leqq%s$ のとき、$y=%d\sin\theta+%d\cos\theta$ の最大値と最小値を求めよ。"%(L(R(round(lo/math.pi*12),12)*pi),L(R(round(hi/math.pi*12),12)*pi),a,b),st,r"\text{最大 }%s,\ \text{最小 }%s"%(L(sp.nsimplify(round(mx,6),[sp.sqrt(3),sp.sqrt(2)])),L(sp.nsimplify(round(mn,6),[sp.sqrt(3),sp.sqrt(2)])))
+        ("最大・最小","<p>"+"合成後の角 "+I(r"t=\theta+%s"%L(R(round(al/math.pi*12),12)*pi))+" は上の範囲を動く。"+"</p>"+D(r"\text{最大 }%s,\qquad \text{最小 }%s"%(L(EX[0]),L(EX[1]))))]
+    return r"$%s\leqq\theta\leqq%s$ のとき、$y=%d\sin\theta+%d\cos\theta$ の最大値と最小値を求めよ。"%(L(R(round(lo/math.pi*12),12)*pi),L(R(round(hi/math.pi*12),12)*pi),a,b),st,r"\text{最大 }%s,\ \text{最小 }%s"%(L(EX[0]),L(EX[1]))
 o=[b7(*v) for v in [(1,math.sqrt(3) if False else 1,0,math.pi),(1,1,0,math.pi/2),(1,-1,0,math.pi),(1,1,math.pi/2,math.pi),(-1,1,0,math.pi)]]
 build(Z,CH,"範囲つきの合成と最大・最小",o,"<p>$r\\sin(\\theta+\\alpha)$ に合成し、<b>$\\theta+\\alpha$ のとりうる範囲</b>で $\\sin$ の最大・最小を調べる（端点も要チェック）。</p>","合成のあと、角の範囲が変わることに注意。",7)
 # 8 tan を含む不等式

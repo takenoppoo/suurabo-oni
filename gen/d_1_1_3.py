@@ -15,7 +15,7 @@ ex(title="二重根号をはずす",
  steps=[
   step(1,r"\(2\sqrt{\ \ }\) の形に直す","<p>"+I("6\\sqrt2=2\\times3\\sqrt2")+"。"+I("3\\sqrt2=\\sqrt{9\\times2}=\\sqrt{18}")+" なので、</p>"+D(r"6\sqrt2=2\sqrt{18}\ \Rightarrow\ \sqrt{11+6\sqrt2}=\sqrt{11+2\sqrt{18}}")),
   step(2,"足して11、かけて18になる2数を探す","<p>18の約数の組 "+I("(1,18),\\ (2,9),\\ (3,6)")+" のうち、足して11になるのは "+I("2+9=11")+"。</p>"),
-  step(3,"公式を使う",D(r"\sqrt{11+2\sqrt{18}}=\sqrt9+\sqrt2=3+\sqrt2")),
+  step(3,"公式を使う","<p>"+I(r"\sqrt{a+b+2\sqrt{ab}}=\sqrt a+\sqrt b")+"（"+I("a=9,\\ b=2")+"）を使う。"+I("9+2=11,\\ 9\\times2=18")+" である。</p>"+D(r"\sqrt{11+2\sqrt{18}}=\sqrt{9+2+2\sqrt{9\cdot2}}=\sqrt{(\sqrt9+\sqrt2)^2}=\sqrt9+\sqrt2=3+\sqrt2")),
   step(4,"確かめる（2乗する）",D(r"(3+\sqrt2)^2=9+6\sqrt2+2=11+6\sqrt2"))],
  answer=r"3+\sqrt2",
  practice=[r"\sqrt{7+4\sqrt3}",r"\sqrt{12-2\sqrt{35}}",r"\sqrt{6+2\sqrt5}"],
