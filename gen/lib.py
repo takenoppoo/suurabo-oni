@@ -11,14 +11,6 @@ SITE_NAME="数ラボ鬼"
 def I(s): return "\\("+s.replace("<","&lt;")+"\\)"
 def D(s): return "\\["+s.replace("<","&lt;")+"\\]"
 def step(n,t,b): return f'<div class="step"><div class="sh2"><span class="badge">STEP {n}</span> {t}</div><div class="sb">{b}</div></div>'
-def wtable(head,rows):
-    """「なぜそうなる？」用の表。head=見出しのリスト、rows=行のリスト（各セルはHTML／数式は \\( \\) で書く）"""
-    h="".join(f"<th>{c}</th>" for c in head)
-    r="".join("<tr>"+"".join(f"<td>{c}</td>" for c in row)+"</tr>" for row in rows)
-    return f'<table class="tbl"><tr>{h}</tr>{r}</table>'
-def why_items(items):
-    """items=[(見出し,本文HTML),...] を「なぜ？」の箱の中身にする"""
-    return "".join(f'<div class="wy"><p class="wq">❓ {q}</p><div class="wa">{a}</div></div>' for q,a in items)
 def img(name,w=60,cap=""):
     c=f'<div class="cap">{cap}</div>' if cap else ""
     return f'<div class="figbox"><img class="fig" src="fig/{name}.svg" style="width:{w}%" alt="{html.escape(cap or name)}">{c}</div>'
@@ -66,7 +58,6 @@ CSS='''
 .lesson .bar h2{margin:0 0 3px;font-size:1em;color:#b81f36}
 .lesson .bar p{margin:3px 0}
 .lesson .bar .katex-display{margin:.35em 0;font-size:1.1em}
-.lesson .why{border-color:#1f6fb8}.lesson .why h2{background:#1f6fb8}.lesson .wy{margin:6px 0 8px}.lesson .wq{font-weight:700;color:#1f6fb8;margin:4px 0 2px}.lesson .wa{margin-left:6px;padding-left:10px;border-left:3px solid #cfe2f5}.lesson .wa p{margin:3px 0}
 .lesson .kotsu{border:1.4px dashed #1f8a5b;border-radius:8px;background:#f1faf5;padding:3px 10px;margin:6px 0;font-size:.95em}
 .lesson .kotsu b{background:#1f8a5b;color:#fff;border-radius:4px;padding:0 6px;margin-right:6px}
 .lesson .step{margin:5px 0}.lesson .sh2{font-weight:700}
@@ -111,14 +102,13 @@ def M(p):
     if re.search(r'\\text\{[^{}]{8,}\}',p): return _split_text(p)
     return p if isM(p) else I(p)
 
-def ex_block(i,e,sub,with_prac=True,with_why=True):
+def ex_block(i,e,sub,with_prac=True):
     pr="".join(f"<li>{M(p)}</li>" for p in e['practice'])
     return (lh(f"例題 {i}",f"{sub}　"+e['title'])+
      f'<div class="qbox"><p>{e["problem"]}</p></div>'
      f'<div class="bar"><h2>解き方（まず考え方）</h2>{e["approach"]}<div class="kotsu"><b>コツ</b>{e["kotsu"]}</div></div>'
      f'<div class="bar sol"><h2>解答</h2>{"".join(e["steps"])}</div>'
      f'<div class="abox"><p class="ah">【答案（テストに書く形）】</p>{D(e["answer"])}<p class="mark">答</p></div>'
-     +(f'<div class="bar why"><h2>なぜそうなる？（理由とイメージ）</h2>{e["why"]}</div>' if with_why and e.get("why") else "")
      +(f'<div class="bar"><h2>練習問題 {i}</h2><ol class="prac">{pr}</ol></div>' if with_prac else ""))
 def ans_item(label,prob,steps,ans):
     ab=f'<div class="abox"><p class="ah">【答案】</p>{D(ans)}<p class="mark">答</p></div>' if ans else ""
@@ -151,7 +141,7 @@ def make_pdf(pages,outname):
     return pdf
 def unit_pdfs(U,uid):
     sub=U['chapter']
-    main=[ex_block(i,e,sub,with_why=False) for i,e in enumerate(U['examples'],1)]
+    main=[ex_block(i,e,sub) for i,e in enumerate(U['examples'],1)]
     main.append(lh("章末問題",U['name'])+f'<p>例題1〜{len(U["examples"])}で学んだ手順だけで解ける問題です。まず、どの例題の型かを見分けるところから始めましょう。</p><ol class="cl">{ch_list(U)}</ol>')
     make_pdf(main,f"{uid}-mondai.pdf")
     bk=[lh("別冊",f"練習問題 {i} の解答　"+e['title'])+prac_answers(i,e) for i,e in enumerate(U['examples'],1)]
