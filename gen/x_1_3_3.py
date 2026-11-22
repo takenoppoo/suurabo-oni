@@ -44,14 +44,16 @@ def b9(kk):
     a=sp.Symbol('a'); ineq=kk**2-2*a*kk+3*a-2
     lin=sp.expand(ineq); c1=lin.coeff(a,1); c0=lin.coeff(a,0)
     sol=sp.solve(ineq<0,a)
+    _b=sp.Rational(-c0,1)/c1; ANS=(r"a<%s"%L(_b)) if c1>0 else (r"a>%s"%L(_b))
+    SOLV=(r"%s<0\ \Rightarrow\ %s"%(L(lin),ANS)) if c1==1 else (r"%s<0\ \Rightarrow\ %sa<%s\ \Rightarrow\ %s"%(L(lin),L(c1) if c1!=1 else "",L(-c0),ANS)) if c1>0 else (r"%s<0\ \Rightarrow\ %sa<%s\ \Rightarrow\ %s"%(L(lin),L(c1),L(-c0),ANS))
     st=[("$f(x)$ とおく","<p>"+I(r"f(x)=x^2-2ax+3a-2")+"。"+I("x^2")+" の係数が正（下に凸）なので、2つの解の間に "+I("x=%d"%kk)+" があるための条件は "+I(r"f(%d)<0"%kk)+"。</p>"),
         ("不等式にする",D(r"f(%d)=%d-%da+3a-2=%s<0"%(kk,kk*kk,2*kk,L(lin)))),
-        ("解く",D(r"%s"%sp.latex(sol).replace("\\frac","\\dfrac")))]
+        ("解く",D(SOLV))]
     a0=[v_ for v_ in range(-10,11) if (ineq.subs(a,v_)<0)][0]
     f0=x**2-2*a0*x+3*a0-2; r0=sorted(sp.solve(f0,x))
     fg=quadfig("x133_9_%d"%(kk+9),[(f0,"#b81f36")],[(kk,f0.subs(x,kk),"x=%d"%kk),(r0[0],0,""),(r0[1],0,"")],axis=kk)
     st[0]=(st[0][0],st[0][1]+"<p>例として "+I("a=%d"%a0)+" のグラフ。点線の位置 "+I("x=%d"%kk)+" で "+I("f(x)<0")+" になり、解（"+I("x")+" 軸との交点）が両側に1つずつある。</p>"+fg)
-    return r"2次方程式 $x^2-2ax+3a-2=0$ が、$%d$ より大きい解と $%d$ より小さい解を1つずつもつような定数 $a$ の範囲を求めよ。"%(kk,kk),st,r"%s"%sp.latex(sol).replace("\\frac","\\dfrac")
+    return r"2次方程式 $x^2-2ax+3a-2=0$ が、$%d$ より大きい解と $%d$ より小さい解を1つずつもつような定数 $a$ の範囲を求めよ。"%(kk,kk),st,ANS
 o=[b9(v) for v in [1,2,0,3,-1]]
 build(Z,CH,"2つの解の間に数がある条件",o,r"<p>下に凸の $f(x)$ で、解の間に $k$ があるのは<b>$f(k)<0$</b>。$D>0$ は自動的に成り立つので、確認は不要。</p>","谷底より上でなく、谷底の下にくる点が2解の間。",9)
 # 10 整数解
