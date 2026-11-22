@@ -104,7 +104,8 @@ def top():
 <h2 class="sh">目次</h2>
 <div class="cards">{cards}</div>
 <p class="small">※「準備中」の単元は、できあがり次第公開します。</p>
-<div class="cards"><a class="card" href="https://takenoppoo.github.io/index.html"><span class="lbadge">関連サイト</span><strong>数ラボ</strong><span class="small">基礎から学びたい方はこちら</span></a></div>
+<h2 class="sh">関連サイト</h2>
+<div class="cards"><a class="card" href="https://takenoppoo.github.io/index.html" style="grid-column:1/-1"><span class="lbadge">基礎</span><strong>基礎から学ぶ（数ラボ）</strong><span class="small">数ラボ鬼の前に、まず基礎を固めたい人向け。</span></a></div>
 {AD_BTM}
 """
     return page(SITE_NAME,"高校数学（数学I・A・II・B・III・C）の難問を、例題の手順を追って練習できる問題集。",b)
