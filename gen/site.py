@@ -6,7 +6,7 @@ sys.path.insert(0,os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from lib import *
 from curriculum import SUBJECTS
 SITE_URL="https://example.github.io/suu-lab-oni"
-EMAIL="your-address@example.com"
+EMAIL="suugakuworakuni@gmail.com"
 OWNER_TEXT="数学教師を目指して勉強している大学生が運営しています。"
 AD_TOP="<!-- 広告枠（上）：AdSense承認後、ここに広告コードを貼る -->"
 AD_BTM="<!-- 広告枠（下）：AdSense承認後、ここに広告コードを貼る -->"
