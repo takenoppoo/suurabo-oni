@@ -161,10 +161,34 @@ _SEG=_re.compile(r'(\\\(.+?\\\)|\\\[.+?\\\])',_re.S)
 _TXT=_re.compile(r'(\\text\{[^{}]*\}|\\mathrm\{[^{}]*\})')
 _CMD=r'(?:sin|cos|tan|log|ln|sqrt|pi|alpha|beta|gamma|theta|omega|vec|overrightarrow|overline|left|lim)'
 _NB=r'((?:[^{}]|\{[^{}]*\})+)'
+_EXPP=_re.compile(r'(?<![\d.^_a-zA-Z}])(\d+)\s*(?:\\cdot|\\times)\s*\1\^(\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}|[a-zA-Z])')
+def _expadd(e):
+    e=e.strip()
+    if e.startswith("{") and e.endswith("}"): e=e[1:-1].strip()
+    m=_re.fullmatch(r'([a-zA-Z])',e)
+    if m: return e+"+1"
+    m=_re.fullmatch(r'([a-zA-Z])\s*-\s*(\d+)',e)
+    if m: k=int(m.group(2))-1; return m.group(1) if k==0 else "%s-%d"%(m.group(1),k)
+    m=_re.fullmatch(r'([a-zA-Z])\s*\+\s*(\d+)',e)
+    if m: return "%s+%d"%(m.group(1),int(m.group(2))+1)
+    m=_re.fullmatch(r'(\d*[a-zA-Z])',e)
+    if m: return e+"+1"
+    m=_re.fullmatch(r'\\d?frac\{(\d+)\}\{(\d+)\}',e)
+    if m: return r"\dfrac{%d}{%s}"%(int(m.group(1))+int(m.group(2)),m.group(2))
+    return None
+def _expmerge(t):
+    """k・k^n → k^{n+1}（誘導の途中「k^{n+1}=k・k^n」や置換 t^2 の式は除く）"""
+    if _re.search(r't\^\{?2\}?',t): return t
+    def f(m):
+        ne=_expadd(m.group(2))
+        if ne is None: return m.group(0)
+        if _re.search(r'\d+\^\{[^{}]+\}(?:-\d+)?=\s*$',t[:m.start()]): return m.group(0)
+        return "%s^{%s}"%(m.group(1),ne)
+    return _EXPP.sub(f,t)
 def _tm(s):
     parts=_TXT.split(s)
     for i in range(0,len(parts),2):
-        t=parts[i]
+        t=_expmerge(parts[i])
         for _ in range(2):
             t=_re.sub(r'\+\s*-','-',t); t=_re.sub(r'-\s*\+','-',t); t=_re.sub(r'(?<![-\\])--(?!-)','+',t)
             t=_re.sub(r'(?<![\d.\\a-zA-Z_^])1(?=[a-zA-Z]|\\'+_CMD+r'(?![a-zA-Z]))','',t)
