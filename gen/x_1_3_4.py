@@ -37,6 +37,8 @@ def b7(p,q):
 o=[b7(*v) for v in [(-1,2),(0,3),(1,4),(-2,1),(2,5)]]
 build(Z,CH,"連立不等式の整数解がちょうど1つ",o,r"<p>$A$ の範囲は固定、$B$ の範囲は $k$ で動く。<b>$k$ が大きいとき・小さいときで場合分け</b>し、共通部分に入る整数を数え上げる。端点の等号に注意。</p>","動く区間が、固定区間の穴に何個の整数を取り込むかを数える。",7)
 # 8 解から別の不等式
+def Q(e): return L(e) if e>=0 else P(e)
+def Qm(e): return L(-e) if e<0 else "+"+L(e) if False else (("+"+L(e)) if e>=0 else ("-"+L(-e)))
 def b8(al,be,a):
     assert al*be!=0 and a<0
     bb=-a*(al+be); cc=a*al*be
@@ -48,7 +50,7 @@ def b8(al,be,a):
     v=f(xs); m=np.abs(xs-float(r1))>1e-3; m&=np.abs(xs-float(r2))>1e-3
     assert ((v[m]<0)==chk(xs[m])).all()
     q=sp.expand(al*be*x**2-(al+be)*x+1)
-    st=[("$b,\\ c$ を $a$ で表す","<p>解が "+I(r"%s<x<%s"%(L(al),L(be)) if al<be else r"%s<x<%s"%(L(be),L(al)))+" なので "+I("a<0")+"、2解は "+I(r"%s,\ %s"%(L(al),L(be)))+"。</p>"+D(r"b=-a(%s+%s)=%s\,a,\qquad c=a\cdot%s\cdot%s=%s\,a"%(L(al),P(be),L(-(al+be)),L(al),P(be),L(al*be)))),
+    st=[("$b,\\ c$ を $a$ で表す","<p>解が "+I(r"%s<x<%s"%(L(al),L(be)) if al<be else r"%s<x<%s"%(L(be),L(al)))+" なので "+I("a<0")+"、2解は "+I(r"%s,\ %s"%(L(al),L(be)))+"。</p>"+D(r"ax^2+bx+c=a(x-%s)(x-%s)\ \text{と書ける}"%(Q(al),Q(be)))+D(r"=ax^2-a(%s+%s)x+a\cdot%s\cdot%s"%(L(al),Q(be),Q(al),Q(be)))+D(r"b=-a(%s+%s)=%s\,a,\qquad c=a\cdot%s\cdot%s=%s\,a"%(L(al),Q(be),L(-(al+be)),Q(al),Q(be),L(al*be)))),
         ("新しい不等式に代入","<p>"+I(r"cx^2+bx+a<0")+" を "+I("a")+" でわる。"+I("a<0")+" なので<b>不等号の向きが逆</b>になる。</p>"+D(r"%sx^2%sx+1>0"%(L(al*be),("+"+L(-(al+be)) if -(al+be)>0 else L(-(al+be)))))),
         ("因数分解して解く","<p>"+I(r"%s=(%sx-1)(%sx-1)"%(L(q),L(al),L(be)))+"。2解は "+I(r"x=%s,\ %s"%(L(R(1,al)),L(R(1,be))))+"。"+I("x^2")+" の係数 "+I(L(al*be))+" が"+("正" if al*be>0 else "負")+"なので</p>"+D(ans))]
     f0=a*x**2+bb*x+cc; lo_,hi_=sorted([al,be]); xv=R(-bb,2*a)

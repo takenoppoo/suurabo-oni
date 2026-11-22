@@ -24,7 +24,7 @@ build(Z,CH,"a^n+b^n 型の極限（大きい底でわる）",o,"<p>$|r|<1$ な�
 def b8(a,b):
     lim=sp.exp(a*b); 
     st=[("e の定義","<p>"+I(r"\lim_{m\to\infty}\left(1+\dfrac1m\right)^m=e")+"。</p>"),
-        ("形をそろえる","<p>"+I("m=\\dfrac{n}{%d}"%a)+" とおくと "+I(r"\dfrac%dn=\dfrac1m"%a if False else r"\dfrac{%d}{n}=\dfrac1m"%a)+"。</p>"+D(r"\left(1+\dfrac{%d}{n}\right)^{%dn}=\left\{\left(1+\dfrac1m\right)^{m}\right\}^{%d}"%(a,b,a*b))),
+        ("形をそろえる","<p>"+I("m=%s"%(r"\dfrac{n}{%d}"%a if a!=1 else "n"))+" とおくと "+I(r"\dfrac%dn=\dfrac1m"%a if False else r"\dfrac{%d}{n}=\dfrac1m"%a)+"。</p>"+D(r"\left(1+\dfrac{%d}{n}\right)^{%dn}=\left\{\left(1+\dfrac1m\right)^{m}\right\}^{%d}"%(a,b,a*b))),
         ("極限","<p>"+D(r"\to e^{%d}"%(a*b)))]
     return r"$\displaystyle\lim_{n\to\infty}\left(1+\dfrac{%d}{n}\right)^{%dn}$ を求めよ。"%(a,b),st,r"e^{%d}"%(a*b)
 o=[b8(*v) for v in [(1,2),(2,1),(3,2),(1,5),(2,3)]]

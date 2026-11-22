@@ -14,11 +14,15 @@ V=[(3,2,1,2,-1,5),(5,-3,2,4,1,1),(2,7,-1,6,3,2),(7,1,0,3,-2,4),(4,-5,6,8,0,1)]
 o=[b1(*v) for v in V]
 build(Z,CH,"分数式の極限（最高次でわる）",o,r"<p>分母・分子を<b>分母の最高次の項</b>でわる。$\dfrac1n,\ \dfrac1{n^2},\cdots\to0$ を使う。$\dfrac{\infty}{\infty}$ のまま判断しない。</p>","一番強い項（最高次）だけが、$n$ が大きいときの勝負を決める。",1)
 # 例題2 有理化
+def IN(p,q):
+    return "1"+("" if p==0 else r"%s\dfrac{%s}{n}"%("+" if p>0 else "-",L(abs(p))))+("" if q==0 else r"%s\dfrac{%s}{n^2}"%("+" if q>0 else "-",L(abs(q))))
 def b2(p,q,r_,s):
     e=sp.sqrt(n**2+p*n+q)-sp.sqrt(n**2+r_*n+s); ans=R(p-r_,2); assert abs(float(e.subs(n,10**7))-float(ans))<1e-5
     st=[("$\\infty-\\infty$ の形","<p>そのままでは不定形。<b>分子の有理化</b>をする。</p>"),
         ("有理化する",D(r"\sqrt{%s}-\sqrt{%s}=\dfrac{(%s)-(%s)}{\sqrt{%s}+\sqrt{%s}}=\dfrac{%s}{\sqrt{%s}+\sqrt{%s}}"%(L(n**2+p*n+q),L(n**2+r_*n+s),L(n**2+p*n+q),L(n**2+r_*n+s),L(n**2+p*n+q),L(n**2+r_*n+s),L(sp.expand((p-r_)*n+q-s)),L(n**2+p*n+q),L(n**2+r_*n+s)))),
-        ("$n$ でわって極限",D(r"=\dfrac{%s}{\sqrt{1+\frac{%s}{n}+\frac{%s}{n^2}}+\sqrt{1+\frac{%s}{n}+\frac{%s}{n^2}}}"%(L(sp.expand(((p-r_)*n+q-s)/n)),L(p),L(q),L(r_),L(s)))+D(r"\to\dfrac{%s}{1+1}=%s"%(L(p-r_),L(ans))))]
+        ("根号の中から $n$ をくくり出す","<p>"+I(r"n>0")+" なので "+I(r"\sqrt{n^2}=n")+"。</p>"+D(r"\sqrt{%s}=n\sqrt{%s},\qquad \sqrt{%s}=n\sqrt{%s}"%(L(n**2+p*n+q),IN(p,q),L(n**2+r_*n+s),IN(r_,s)))+"<p>分母・分子を "+I("n")+" でわる。</p>"),
+        ("$n$ でわる",D(r"=\dfrac{%s}{\sqrt{%s}+\sqrt{%s}}"%(L(sp.expand(((p-r_)*n+q-s)/n)),IN(p,q),IN(r_,s)))),
+        ("極限を求める","<p>"+I(r"\dfrac1n\to0,\ \dfrac1{n^2}\to0")+" だから、</p>"+D(r"\to\dfrac{%s}{\sqrt1+\sqrt1}=\dfrac{%s}{2}=%s"%(L(p-r_),L(p-r_),L(ans))))]
     return r"次の極限値を求めよ。 $$\lim_{n\to\infty}\left(\sqrt{%s}-\sqrt{%s}\right)$$"%(L(n**2+p*n+q),L(n**2+r_*n+s)),st,L(ans)
 V=[(4,1,0,2),(6,0,2,3),(5,2,1,1),(8,3,2,0),(3,1,-1,2)]
 o=[b2(*v) for v in V]

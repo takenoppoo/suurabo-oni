@@ -6,10 +6,13 @@ Z=U_(); CH=[]; R=sp.Rational; x=sp.symbols("x")
 # 6 (1-cos ax)/x^2
 def b6(a,b):
     lim=sp.limit((1-sp.cos(a*x))/(b*x**2),x,0); assert lim==R(a*a,2*b)
-    st=[("半角の形に","<p>"+D(r"1-\cos%dx=2\sin^2\dfrac{%dx}{2}"%(a,a))),
-        ("基本極限に直す","<p>"+I(r"\lim_{t\to0}\dfrac{\sin t}{t}=1")+"。</p>"+D(r"\dfrac{1-\cos%dx}{%dx^2}=\dfrac{2}{%d}\left(\dfrac{\sin\dfrac{%d}{2}x}{x}\right)^2=\dfrac{2}{%d}\cdot\left(\dfrac{%d}{2}\right)^2\left(\dfrac{\sin\frac{%d}{2}x}{\frac{%d}{2}x}\right)^2"%(a,b,b,a,b,a,a,a))),
-        ("極限","<p>"+D(r"\to\dfrac{2}{%d}\cdot\dfrac{%d}{4}=%s"%(b,a*a,L(lim))))]
-    return r"$\displaystyle\lim_{x\to0}\dfrac{1-\cos%dx}{%dx^2}$ を求めよ。"%(a,b),st,L(lim)
+    A="" if a==1 else str(a); ux=L(R(a,2))+"x" if a!=2 else "x"; ux=ux.replace(r"\dfrac12x",r"\dfrac x2") if a==1 else ux
+    Bc="" if b==1 else str(b); dn=r"\dfrac{2}{%d}"%b if b>1 else "2"
+    st=[("半角の公式で書きかえる","<p>"+I(r"1-\cos\theta=2\sin^2\dfrac\theta2")+" で "+I(r"\theta=%sx"%A)+" とする。</p>"+D(r"1-\cos %sx=2\sin^2%s"%(A,ux))),
+        ("式に代入して整理する","<p>"+D(r"\dfrac{1-\cos %sx}{%sx^2}=\dfrac{2\sin^2%s}{%sx^2}=%s\left(\dfrac{\sin %s}{x}\right)^2"%(A,Bc,ux,Bc,dn,ux))),
+        ("基本形にそろえる",("<p>"+I(r"\dfrac{\sin x}{x}")+" はそのまま基本形。</p>"+D(r"%s\left(\dfrac{\sin x}{x}\right)^2"%dn)) if a==2 else ("<p>"+I(r"u=%s"%ux)+" とおくと "+I("x=%su"%(L(R(2,a)) if a!=1 else "2"))+"。"+I(r"\dfrac{\sin u}{x}")+" を "+I(r"\dfrac{\sin u}{u}")+" の形にするため、"+I("u")+" をかけてわる。</p>"+D(r"\dfrac{\sin u}{x}=\dfrac{\sin u}{u}\cdot\dfrac{u}{x}=\dfrac{\sin u}{u}\cdot%s"%L(R(a,2)))+D(r"%s\left(\dfrac{\sin u}{x}\right)^2=%s\cdot\left(%s\right)^2\left(\dfrac{\sin u}{u}\right)^2"%(dn,dn,L(R(a,2)))))),
+        ("極限を求める","<p>"+I(r"x\to0")+" のとき "+I(r"u\to0")+"、"+I(r"\dfrac{\sin u}{u}\to1")+"。</p>"+D(r"\to%s\cdot%s\cdot1^2=%s"%(dn,L(R(a*a,4)),L(lim)) if a!=2 else r"\to%s\cdot1^2=%s"%(dn,L(lim))))]
+    return r"$\displaystyle\lim_{x\to0}\dfrac{1-\cos %sx}{%sx^2}$ を求めよ。"%(A,Bc),st,L(lim)
 o=[b6(*v) for v in [(2,1),(4,3),(3,2),(6,5),(1,1)]]
 build(Z,CH,"(1−cos ax)/x² の極限",o,"<p>$1-\\cos t=2\\sin^2\\dfrac t2$ とし、$\\dfrac{\\sin u}{u}\\to1$ の形に整理。（$\\dfrac{1-\\cos x}{x^2}\\to\\dfrac12$ は公式として覚える。）</p>","1−cos は、sin の2乗にして基本形へ。",6)
 # 7 (e^x - 1)/x 型
@@ -38,8 +41,8 @@ def b9(a):
     f=(x**2-a*a)/abs(x-a)
     lp=sp.limit(f,x,a,'+'); lm=sp.limit(f,x,a,'-'); assert lp==2*a and lm==-2*a
     st=[("場合分け","<p>"+I("x>%d"%a)+" のとき "+I("|x-%d|=x-%d"%(a,a))+"、"+I("x<%d"%a)+" のとき "+I("|x-%d|=-(x-%d)"%(a,a))+"。</p>"),
-        ("右側から","<p>"+D(r"\lim_{x\to%d+0}\dfrac{(x-%d)(x+%d)}{x-%d}=%d"%(a,a,a,a,2*a))),
-        ("左側から","<p>"+D(r"\lim_{x\to%d-0}\dfrac{(x-%d)(x+%d)}{-(x-%d)}=-%d"%(a,a,a,a,2*a))+"<p>右側と左側が異なるので、極限は<b>存在しない</b>。</p>")]
+        ("右側から","<p>"+D(r"\lim_{x\to%d{+}0}\dfrac{(x-%d)(x+%d)}{x-%d}=%d"%(a,a,a,a,2*a))),
+        ("左側から","<p>"+D(r"\lim_{x\to%d{-}0}\dfrac{(x-%d)(x+%d)}{-(x-%d)}=-%d"%(a,a,a,a,2*a))+"<p>右側と左側が異なるので、極限は<b>存在しない</b>。</p>")]
     return r"$\displaystyle\lim_{x\to%d}\dfrac{x^2-%d}{|x-%d|}$ は存在するか。右側極限・左側極限を調べて答えよ。"%(a,a*a,a),st,r"\text{右側 }%d,\ \text{左側 }-%d\ \text{より極限は存在しない}"%(2*a,2*a)
 o=[b9(a) for a in [1,2,3,4,5]]
 build(Z,CH,"絶対値を含む関数の片側極限",o,"<p>絶対値は<b>$x>a$ と $x<a$ で場合分け</b>して外す。右側極限と左側極限が<b>一致すれば</b>極限が存在、異なれば存在しない。</p>","右から近づく値と左から近づく値が違えば、極限は決まらない。",9)

@@ -2,15 +2,17 @@
 from bh import *
 import math
 Z=U_(); CH=[]
+def Q(e): return L(e) if e>=0 else r'\left('+L(e)+r'\right)'
+def co(c): return '' if c==1 else ('-' if c==-1 else L(c))
 R=sp.Rational; n=sp.Symbol('n',positive=True); k_=sp.Symbol('k'); xx=sp.Symbol('x',real=True); _c=[0]
 # 例題1 部分分数の級数
 def b1(c,k):
     S=sp.together(R(c,k)*(sum(R(1,j) for j in range(1,k+1))-sum(1/(n+j) for j in range(1,k+1)))); ans=R(c,k)*sum(R(1,j) for j in range(1,k+1))
     assert all(sum(R(c,i*(i+k)) for i in range(1,N+1))==S.subs(n,N) for N in (1,4,9))
     head=r"\left(\dfrac11-\dfrac1{%d}\right)+\left(\dfrac12-\dfrac1{%d}\right)+\cdots+\left(\dfrac1n-\dfrac1{n+%d}\right)"%(1+k,2+k,k)
-    st=[("部分分数に分ける",D(r"\dfrac{%d}{n(n+%d)}=%s\left(\dfrac1n-\dfrac1{n+%d}\right)"%(c,k,L(R(c,k)),k))),
-        ("部分和 $S_n$ を求める","<p>初項から第 $n$ 項までの和は、途中の項が消えて</p>"+D(r"S_n=%s\left\{%s\right\}"%(L(R(c,k)),head))+D(r"S_n=%s\left\{%s-%s\right\}"%(L(R(c,k)),"+".join(r"\dfrac1{%d}"%j for j in range(1,k+1)),"-".join(["0"]) if False else "+".join(r"\dfrac1{n+%d}"%j for j in range(1,k+1))))),
-        ("$n\\to\\infty$","<p>"+I(r"\dfrac1{n+j}\to0")+"。</p>"+D(r"\sum_{n=1}^{\infty}\dfrac{%d}{n(n+%d)}=\lim_{n\to\infty}S_n=%s"%(c,k,L(ans))))]
+    st=[("部分分数に分ける","<p>"+I(r"\dfrac1n-\dfrac1{n+%d}=\dfrac{(n+%d)-n}{n(n+%d)}=\dfrac{%d}{n(n+%d)}"%(k,k,k,k,k))+" だから、"+I(r"\dfrac1{n(n+%d)}=\dfrac1{%d}\left(\dfrac1n-\dfrac1{n+%d}\right)"%(k,k,k))+"。</p>"+D(r"\dfrac{%d}{n(n+%d)}=%s\left(\dfrac1n-\dfrac1{n+%d}\right)"%(c,k,co(R(c,k)),k))),
+        ("部分和 $S_n$ を求める","<p>初項から第 $n$ 項までの和は、途中の項が消えて</p>"+D(r"S_n=%s\left\{%s\right\}"%(co(R(c,k)),head))+D(r"S_n=%s\left\{\left(%s\right)-\left(%s\right)\right\}"%(co(R(c,k)),"+".join(r"\dfrac1{%d}"%j for j in range(1,k+1)),"-".join(["0"]) if False else "+".join(r"\dfrac1{n+%d}"%j for j in range(1,k+1))))),
+        ("$n\\to\\infty$","<p>"+I(r"n\to\infty")+" のとき "+I(r"\dfrac1{n+j}\to0")+"（"+I("j=1,\\dots,%d"%k)+"）。</p>"+D(r"\sum_{n=1}^{\infty}\dfrac{%d}{n(n+%d)}=\lim_{n\to\infty}S_n=%s\left(%s\right)=%s"%(c,k,co(R(c,k)),"+".join(r"\dfrac1{%d}"%j for j in range(1,k+1)),L(ans))))]
     return r"無限級数 $\displaystyle\sum_{n=1}^{\infty}\dfrac{%d}{n(n+%d)}$ の和を求めよ。"%(c,k),st,L(ans)
 V=[(1,1),(2,2),(1,2),(3,3),(1,3)]
 o=[b1(*v) for v in V]
@@ -20,8 +22,8 @@ def b2(a,r1,b,r2):
     r1=R(r1); r2=R(r2); assert abs(r1)<1 and abs(r2)<1; S1=a*r1/(1-r1); S2=b*r2/(1-r2); S=S1+S2
     assert abs(float(sum(a*r1**i+b*r2**i for i in range(1,200)))-float(S))<1e-9
     st=[("収束を確認","<p>公比 "+I(L(r1))+"、"+I(L(r2))+" はどちらも絶対値が 1 より小さいので、2つの無限等比級数は収束する。</p>"),
-        ("それぞれの和","<p>"+I(r"\sum_{n=1}^\infty ar^{n}=\dfrac{ar}{1-r}")+"（初項 $ar$、公比 $r$）。</p>"+D(r"\sum_{n=1}^{\infty}%s\left(%s\right)^n=\dfrac{%s}{1-\left(%s\right)}=%s"%(L(a),L(r1),L(a*r1),L(r1),L(S1)))+D(r"\sum_{n=1}^{\infty}%s\left(%s\right)^n=\dfrac{%s}{1-\left(%s\right)}=%s"%(L(b),L(r2),L(b*r2),L(r2),L(S2)))),
-        ("たし合わせる","<p>収束する2つの級数は項ごとにたしてよい。</p>"+D(r"%s+\left(%s\right)=%s"%(L(S1),L(S2),L(S))))]
+        ("それぞれの和","<p>"+I(r"\sum_{n=1}^\infty ar^{n}=\dfrac{ar}{1-r}")+"（初項 $ar$、公比 $r$）。</p>"+D(r"\sum_{n=1}^{\infty}%s\left(%s\right)^n:\ \text{初項 }%s,\ \text{公比 }%s\ \Rightarrow\ \dfrac{%s}{1-%s}=\dfrac{%s}{%s}=%s"%(co(a),L(r1),L(a*r1),L(r1),L(a*r1),Q(r1),L(a*r1),L(1-r1),L(S1)))+D(r"\sum_{n=1}^{\infty}%s\left(%s\right)^n:\ \text{初項 }%s,\ \text{公比 }%s\ \Rightarrow\ \dfrac{%s}{1-%s}=\dfrac{%s}{%s}=%s"%(co(b),L(r2),L(b*r2),L(r2),L(b*r2),Q(r2),L(b*r2),L(1-r2),L(S2)))),
+        ("たし合わせる","<p>収束する2つの級数は項ごとにたしてよい。</p>"+D(r"%s+%s=%s"%(L(S1),Q(S2),L(S))))]
     return r"無限級数 $\displaystyle\sum_{n=1}^{\infty}\left\{%s\left(%s\right)^n+%s\left(%s\right)^n\right\}$ の和を求めよ。"%(L(a),L(r1),L(b),L(r2)),st,L(S)
 V=[(2,R(1,2),3,R(1,3)),(1,R(1,3),4,R(-1,2)),(3,R(2,3),2,R(-1,3)),(5,R(1,4),1,R(3,4)),(4,R(-1,2),6,R(1,5))]
 o=[b2(*v) for v in V]
