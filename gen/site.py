@@ -104,6 +104,7 @@ def top():
 <h2 class="sh">目次</h2>
 <div class="cards">{cards}</div>
 <p class="small">※「準備中」の単元は、できあがり次第公開します。</p>
+<div class="cards"><a class="card" href="https://takenoppoo.github.io/index.html"><span class="lbadge">関連サイト</span><strong>数ラボ</strong><span class="small">基礎から学びたい方はこちら</span></a></div>
 {AD_BTM}
 """
     return page(SITE_NAME,"高校数学（数学I・A・II・B・III・C）の難問を、例題の手順を追って練習できる問題集。",b)
@@ -138,7 +139,7 @@ def privacy():
 <section class="bar navy"><h2>免責事項</h2><p>内容の正確さに努めていますが、完全性を保証するものではありません。利用により生じた損害について、責任を負いかねます。</p></section>""")
 W("index.html",top()); W("about.html",about()); W("contact.html",contact()); W("privacy.html",privacy())
 for S in SUBJECTS: W(f"subject-{S['id']}.html",subject(S))
-for f,h in pages.items(): open(os.path.join(OUT,f),"w",encoding="utf-8").write(h)
+for f,h in pages.items(): open(os.path.join(OUT,f),"w",encoding="utf-8").write(tidy_math(h))
 open(os.path.join(OUT,"robots.txt"),"w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n")
 open(os.path.join(OUT,"sitemap.xml"),"w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"<url><loc>{SITE_URL}/{f}</loc></url>\n" for f in pages if not f.startswith(("a-","ca-","subject-")) or True)+"</urlset>\n")
 print(len(pages),"pages;",len(UNITS),"units")

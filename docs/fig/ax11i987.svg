@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-22T00:47:03.325574</dc:date>
+    <dc:date>2026-11-22T10:09:56.241650</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -34,26 +34,26 @@ z
 L 210.47746 150.908696 
 L 102.259278 29.917091 
 L 27.859278 150.908696 
-" clip-path="url(#pea44504bc6)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: square"/>
+" clip-path="url(#p9d411f1494)" style="fill: none; stroke: #333333; stroke-width: 1.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 102.259278 29.917091 
 L 113.081097 150.908696 
-" clip-path="url(#pea44504bc6)" style="fill: none; stroke: #b81f36; stroke-width: 1.6; stroke-linecap: square"/>
+" clip-path="url(#p9d411f1494)" style="fill: none; stroke: #b81f36; stroke-width: 1.6; stroke-linecap: square"/>
    </g>
    <g id="line2d_3">
     <path d="M 27.859278 150.908696 
 L 109.022915 105.536844 
-" clip-path="url(#pea44504bc6)" style="fill: none; stroke-dasharray: 5.92,2.56; stroke-dashoffset: 0; stroke: #2a7fd0; stroke-width: 1.6"/>
+" clip-path="url(#p9d411f1494)" style="fill: none; stroke-dasharray: 5.92,2.56; stroke-dashoffset: 0; stroke: #2a7fd0; stroke-width: 1.6"/>
    </g>
    <g id="line2d_4">
     <path d="M 210.47746 150.908696 
 L 109.022915 105.536844 
-" clip-path="url(#pea44504bc6)" style="fill: none; stroke-dasharray: 5.92,2.56; stroke-dashoffset: 0; stroke: #2a7fd0; stroke-width: 1.6"/>
+" clip-path="url(#p9d411f1494)" style="fill: none; stroke-dasharray: 5.92,2.56; stroke-dashoffset: 0; stroke: #2a7fd0; stroke-width: 1.6"/>
    </g>
    <g id="line2d_5">
     <defs>
-     <path id="m5cd31f274b" d="M 0 1.75 
+     <path id="m46d387f022" d="M 0 1.75 
 C 0.464105 1.75 0.909265 1.565609 1.237437 1.237437 
 C 1.565609 0.909265 1.75 0.464105 1.75 0 
 C 1.75 -0.464105 1.565609 -0.909265 1.237437 -1.237437 
@@ -65,28 +65,28 @@ C -0.909265 1.565609 -0.464105 1.75 0 1.75
 z
 " style="stroke: #333333"/>
     </defs>
-    <g clip-path="url(#pea44504bc6)">
-     <use xlink:href="#m5cd31f274b" x="102.259278" y="29.917091" style="fill: #333333; stroke: #333333"/>
+    <g clip-path="url(#p9d411f1494)">
+     <use xlink:href="#m46d387f022" x="102.259278" y="29.917091" style="fill: #333333; stroke: #333333"/>
     </g>
    </g>
    <g id="line2d_6">
-    <g clip-path="url(#pea44504bc6)">
-     <use xlink:href="#m5cd31f274b" x="27.859278" y="150.908696" style="fill: #333333; stroke: #333333"/>
+    <g clip-path="url(#p9d411f1494)">
+     <use xlink:href="#m46d387f022" x="27.859278" y="150.908696" style="fill: #333333; stroke: #333333"/>
     </g>
    </g>
    <g id="line2d_7">
-    <g clip-path="url(#pea44504bc6)">
-     <use xlink:href="#m5cd31f274b" x="210.47746" y="150.908696" style="fill: #333333; stroke: #333333"/>
+    <g clip-path="url(#p9d411f1494)">
+     <use xlink:href="#m46d387f022" x="210.47746" y="150.908696" style="fill: #333333; stroke: #333333"/>
     </g>
    </g>
    <g id="line2d_8">
-    <g clip-path="url(#pea44504bc6)">
-     <use xlink:href="#m5cd31f274b" x="113.081097" y="150.908696" style="fill: #333333; stroke: #333333"/>
+    <g clip-path="url(#p9d411f1494)">
+     <use xlink:href="#m46d387f022" x="113.081097" y="150.908696" style="fill: #333333; stroke: #333333"/>
     </g>
    </g>
    <g id="line2d_9">
-    <g clip-path="url(#pea44504bc6)">
-     <use xlink:href="#m5cd31f274b" x="109.022915" y="105.536844" style="fill: #333333; stroke: #333333"/>
+    <g clip-path="url(#p9d411f1494)">
+     <use xlink:href="#m46d387f022" x="109.022915" y="105.536844" style="fill: #333333; stroke: #333333"/>
     </g>
    </g>
    <g id="text_1">
@@ -211,7 +211,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pea44504bc6">
+  <clipPath id="p9d411f1494">
    <rect x="18.728369" y="23.867511" width="200.88" height="133.090766"/>
   </clipPath>
  </defs>

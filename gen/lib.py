@@ -156,6 +156,27 @@ def normfig(name,a,b,w=50):
     make_fig(name,fn_,size=(4.2,2.4))
     return img(name,w)
 
+import re as _re
+_SEG=_re.compile(r'(\\\(.+?\\\)|\\\[.+?\\\])',_re.S)
+_TXT=_re.compile(r'(\\text\{[^{}]*\}|\\mathrm\{[^{}]*\})')
+_CMD=r'(?:sin|cos|tan|log|ln|sqrt|pi|alpha|beta|gamma|theta|omega|vec|overrightarrow|overline|left|lim)'
+_NB=r'((?:[^{}]|\{[^{}]*\})+)'
+def _tm(s):
+    parts=_TXT.split(s)
+    for i in range(0,len(parts),2):
+        t=parts[i]
+        for _ in range(2):
+            t=_re.sub(r'\+\s*-','-',t); t=_re.sub(r'-\s*\+','-',t); t=_re.sub(r'(?<![-\\])--(?!-)','+',t)
+            t=_re.sub(r'(?<![\d.\\a-zA-Z_^])1(?=[a-zA-Z]|\\'+_CMD+r'(?![a-zA-Z]))','',t)
+            t=_re.sub(r'\\cdot1(?=[a-zA-Z])',r'\\cdot ',t)
+            t=_re.sub(r'(?<!_)([a-zA-Z])\^\{1\}(?![\d.])',r'\1',t); t=_re.sub(r'(?<!_)([a-zA-Z])\^1(?![\d.{])',r'\1',t)
+            t=_re.sub(r'\\d?frac\{'+_NB+r'\}\{1\}',lambda m:m.group(1) if _re.fullmatch(r'[a-zA-Z0-9^{}\\ ]+',m.group(1)) or (_re.fullmatch(r'[a-zA-Z0-9^{}\\ +\-]+',m.group(1)) and _re.search(r'(?:^|[=,]|\\quad|\\ )$',t[:m.start()])) else m.group(0),t)
+        parts[i]=t
+    return "".join(parts)
+def tidy_math(h):
+    """数式中の見苦しい表記（+-、係数1、1乗、分母1）を整える"""
+    return _SEG.sub(lambda m:_tm(m.group(0)),h)
+
 def ucsum(name,a,b,sign,cx,sy,w=46):
     """加法定理用の単位円。角α、β（度）と α±β の動径を描き、α±β の点の座標を書く。imgタグを返す"""
     import numpy as np
@@ -223,7 +244,7 @@ def pdf_html(pages):
      'document.querySelectorAll(".pg").forEach(function(pg){var L=pg.firstChild;var h=L.getBoundingClientRect().height;var z=1;if(h>1015){z=1015/h;if(z<0.72){z=Math.min(0.85,2000/h);}}var sw=L.scrollWidth,cw=L.clientWidth;if(sw>cw+1){z=Math.min(z,cw/sw*0.98);}pg.style.zoom=z;});</script></body></html>')
 def make_pdf(pages,outname):
     tmp=os.path.join(OUT,"_tmp_"+outname+".html")
-    open(tmp,"w",encoding="utf-8").write(pdf_html(pages))
+    open(tmp,"w",encoding="utf-8").write(tidy_math(pdf_html(pages)))
     pdf=os.path.join(PDFD,outname)
     subprocess.run(["google-chrome","--headless","--no-sandbox","--disable-gpu","--no-pdf-header-footer","--virtual-time-budget=15000","--print-to-pdf="+pdf,"file://"+tmp],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,check=True)
     os.remove(tmp)
