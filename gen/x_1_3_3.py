@@ -38,24 +38,28 @@ def b8(p,q):
     return r"$x^2-%dx+%d=0$ の2つの解を $\alpha,\ \beta$ とするとき、$\alpha^2,\ \beta^2$ を解とする2次方程式を1つ求めよ。"%(p,q),st,r"x^2-%dx+%d=0"%(s,pr)
 o=[b8(*v) for v in [(4,1),(5,3),(6,2),(3,1),(7,5)]]
 build(Z,CH,"解の式を解とする2次方程式",o,r"<p>新しい2解の<b>和と積</b>を $\alpha+\beta,\ \alpha\beta$ で表し、$x^2-(\text{和})x+(\text{積})=0$ に入れる。</p>","解そのものを求めず、和と積だけで新しい方程式を作る。",8)
-# 9 1つは k より大, 1つは小
-def b9(kk):
-    # x^2 - 2a x + a + 2? choose: x^2 -2ax + 3a -2 = 0 ; roots one >kk one <kk ⇒ f(kk)<0 ⇒ kk^2 -2a kk +3a-2<0
-    a=sp.Symbol('a'); ineq=kk**2-2*a*kk+3*a-2
-    lin=sp.expand(ineq); c1=lin.coeff(a,1); c0=lin.coeff(a,0)
-    sol=sp.solve(ineq<0,a)
-    _b=sp.Rational(-c0,1)/c1; ANS=(r"a<%s"%L(_b)) if c1>0 else (r"a>%s"%L(_b))
-    SOLV=(r"%s<0\ \Rightarrow\ %s"%(L(lin),ANS)) if c1==1 else (r"%s<0\ \Rightarrow\ %sa<%s\ \Rightarrow\ %s"%(L(lin),L(c1) if c1!=1 else "",L(-c0),ANS)) if c1>0 else (r"%s<0\ \Rightarrow\ %sa<%s\ \Rightarrow\ %s"%(L(lin),L(c1),L(-c0),ANS))
-    st=[("$f(x)$ とおく","<p>"+I(r"f(x)=x^2-2ax+3a-2")+"。"+I("x^2")+" の係数が正（下に凸）なので、2つの解の間に "+I("x=%d"%kk)+" があるための条件は "+I(r"f(%d)<0"%kk)+"。</p>"),
-        ("不等式にする",D(r"f(%d)=%d-%da+3a-2=%s<0"%(kk,kk*kk,2*kk,L(lin)))),
-        ("解く",D(SOLV))]
-    a0=[v_ for v_ in range(-10,11) if (ineq.subs(a,v_)<0)][0]
+# 9 p<x<q の範囲に解をただ1つもつ
+def b9(p,q):
+    a=sp.Symbol('a'); A=sp.Rational
+    fp=sp.expand(p*p-2*a*p+3*a-2); fq=sp.expand(q*q-2*a*q+3*a-2)
+    c1,c0=fp.coeff(a,1),fp.coeff(a,0); d1,d0=fq.coeff(a,1),fq.coeff(a,0)
+    r1,r2=sorted([A(-c0)/c1,A(-d0)/d1]); assert r1!=r2
+    inside=(c1*d1>0)
+    ANS=(r"%s<a<%s"%(L(r1),L(r2))) if inside else (r"a<%s,\ \ %s<a"%(L(r1),L(r2)))
+    def good(v):
+        f=x**2-2*v*x+3*v-2; return f.subs(x,p)*f.subs(x,q)<0
+    a0=next((sp.Integer(v) for v in range(-10,11) if good(sp.Integer(v))),None)
+    if a0 is None: a0=(r1+r2)/2
     f0=x**2-2*a0*x+3*a0-2; r0=sorted(sp.solve(f0,x))
-    fg=quadfig("x133_9_%d"%(kk+9),[(f0,"#b81f36")],[(kk,f0.subs(x,kk),"x=%d"%kk),(r0[0],0,""),(r0[1],0,"")],axis=kk)
-    st[0]=(st[0][0],st[0][1]+"<p>例として "+I("a=%d"%a0)+" のグラフ。点線の位置 "+I("x=%d"%kk)+" で "+I("f(x)<0")+" になり、解（"+I("x")+" 軸との交点）が両側に1つずつある。</p>"+fg)
-    return r"2次方程式 $x^2-2ax+3a-2=0$ が、$%d$ より大きい解と $%d$ より小さい解を1つずつもつような定数 $a$ の範囲を求めよ。"%(kk,kk),st,ANS
-o=[b9(v) for v in [1,2,0,3,-1]]
-build(Z,CH,"2つの解の間に数がある条件",o,r"<p>下に凸の $f(x)$ で、解の間に $k$ があるのは<b>$f(k)<0$</b>。$D>0$ は自動的に成り立つので、確認は不要。</p>","谷底より上でなく、谷底の下にくる点が2解の間。",9)
+    fg=quadfig("x133_9_%d_%d"%(p+9,q+9),[(f0,"#b81f36")],[(p,f0.subs(x,p),"x=%d"%p),(q,f0.subs(x,q),"x=%d"%q),(r0[0],0,""),(r0[1],0,"")])
+    ineq=D(r"f(%d)\,f(%d)=(%s)(%s)<0"%(p,q,L(fp),L(fq)))
+    st=[("$f(x)$ とおく","<p>"+I(r"f(x)=x^2-2ax+3a-2")+" とおく。"+I("x^2")+" の係数が正（下に凸）。"+I("%d<x<%d"%(p,q))+" の範囲に解がただ1つあるとき、"+I("x=%d"%p)+" と "+I("x=%d"%q)+" では "+I("f(x)")+" の符号が逆になる。</p>"+D(r"f(%d)\,f(%d)<0"%(p,q))+"<p>例として "+I("a=%s"%L(a0))+" のグラフ。"+I("x=%d"%p)+" と "+I("x=%d"%q)+" の間で解（"+I("x")+" 軸との交点）が1つ、範囲の外にもう1つある。</p>"+fg),
+        ("$f(%d),\\ f(%d)$ を求める"%(p,q),D(r"f(%d)=%d-%da+3a-2=%s"%(p,p*p,2*p,L(fp)))+D(r"f(%d)=%d-%da+3a-2=%s"%(q,q*q,2*q,L(fq)))),
+        ("不等式にする",ineq),
+        ("解く","<p>左辺が0になるのは "+I("a=%s"%L(r1))+"、"+I("a=%s"%L(r2))+"。"+I("a^2")+" の係数が"+("正" if inside else "負")+"なので、"+("0より小さいのは2つの値の間。" if inside else "0より小さいのは2つの値の外側。")+"</p>"+D(ANS))]
+    return r"2次方程式 $x^2-2ax+3a-2=0$ が、$%d$ より大きく $%d$ より小さい範囲に、解をただ1つだけもつような定数 $a$ の範囲を求めよ。"%(p,q),st,ANS
+o=[b9(*v) for v in [(1,2),(0,1),(-1,0),(2,3),(-1,1)]]
+build(Z,CH,"ある範囲に解をただ1つもつ条件",o,r"<p>$f(x)$ が連続なので、$p<x<q$ に解がただ1つあるとき <b>$f(p)$ と $f(q)$ の符号が逆</b>、すなわち $f(p)f(q)<0$。</p>","両端で符号が逆なら、間でx軸を横切る。",9)
 # 10 整数解
 def b10(N):
     # x^2 + k x + N=0 ; 整数解をもつ整数 k (N>0)
