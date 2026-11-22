@@ -168,7 +168,7 @@ def clean(s):
         s=s.replace("--","+")
         s=_re.sub(r"\+\s*-","-",s)
         s=_re.sub(r"(?<![0-9A-Za-z\\.{^_])1(?=[xyab]\b|[xyab]\^|[xyab][xyab\\(])","",s)
-        s=_re.sub(r"\+0(?![0-9.])","",s)
+        s=_re.sub(r"\+0(?![0-9.a-zA-Z\\])","",s)
         return s
     if isinstance(s,list): return [clean(t) for t in s]
     if isinstance(s,tuple): return tuple(clean(t) for t in s)

@@ -177,6 +177,64 @@ def tidy_math(h):
     """数式中の見苦しい表記（+-、係数1、1乗、分母1）を整える"""
     return _SEG.sub(lambda m:_tm(m.group(0)),h)
 
+def sp3(name,vecs=(),pts=(),segs=(),polys=(),spheres=(),circles=(),arcs=(),guides=(),w=54,size=(4.6,3.8),axlen=None):
+    """空間図（斜投影）。vecs=[(始点,終点,ラベル,色)]、pts=[(点,ラベル,(dx,dy))]、segs=[(P,Q,'-'|'--',色)]、
+    polys=[([点..],色)]、spheres=[(中心,半径)]、circles=[(中心,半径,'x'|'y'|'z')]、arcs=[(O,a,b,半径,ラベル)]、guides=[点]（座標面への点線）"""
+    import numpy as np
+    K1,K2=0.46,0.30
+    def pr(P): return (P[1]-K1*P[0], P[2]-K2*P[0])
+    def f(v): return float(v)
+    def fn_(ax):
+        ax.set_aspect("equal"); ax.axis("off")
+        allp=[]
+        for a_,b_,*_r in vecs: allp+= [a_,b_]
+        allp+=[p[0] for p in pts]
+        for s_ in segs: allp+=[s_[0],s_[1]]
+        for pl_,_c in polys: allp+=list(pl_)
+        for c_,r_ in spheres: allp+=[(c_[0]+r_,c_[1]+r_,c_[2]+r_),(c_[0]-r_,c_[1]-r_,c_[2]-r_)]
+        allp+=list(guides)
+        M=max([abs(f(c)) for p in allp for c in p]+[1.0])
+        L_=axlen if axlen else M*1.15
+        # 座標軸
+        for k,(lab,e) in enumerate((("x",(L_,0,0)),("y",(0,L_,0)),("z",(0,0,L_)))):
+            sx,sy=pr(e); ax.annotate("",xy=(sx,sy),xytext=(0,0),arrowprops=dict(arrowstyle="->",lw=1.1,color="#444"))
+            ax.text(sx*1.06+(0.05*L_ if k else -0.05*L_),sy*1.06+(0.04*L_),lab,fontsize=10,style="italic",color="#444",ha="center")
+        ax.text(-0.09*L_,0.03*L_,"O",fontsize=10,color="#444",ha="center")
+        for pl_,c_ in polys:
+            q=np.array([pr([f(t) for t in p]) for p in pl_]); ax.fill(q[:,0],q[:,1],color=c_,alpha=.30,zorder=1); ax.plot(list(q[:,0])+[q[0,0]],list(q[:,1])+[q[0,1]],color=c_,lw=1.5,zorder=2)
+        for c_,r_ in spheres:
+            cx,cy=pr([f(t) for t in c_]); th=np.linspace(0,2*np.pi,200); ax.plot(cx+f(r_)*np.cos(th),cy+f(r_)*np.sin(th),color="#1f6fb8",lw=1.6)
+            e=np.array([pr([f(c_[0])+f(r_)*np.cos(a)*0,f(c_[1])+f(r_)*np.cos(a),f(c_[2])+0*a]) for a in th]); 
+            ax.plot(cx+f(r_)*np.cos(th),cy+0.32*f(r_)*np.sin(th),color="#1f6fb8",lw=.9,ls="--")
+        for c_,r_,nm in circles:
+            th=np.linspace(0,2*np.pi,200); cc=[f(t) for t in c_]
+            Q=[ (cc[0],cc[1]+f(r_)*np.cos(a),cc[2]+f(r_)*np.sin(a)) if nm=="x" else (cc[0]+f(r_)*np.cos(a),cc[1],cc[2]+f(r_)*np.sin(a)) if nm=="y" else (cc[0]+f(r_)*np.cos(a),cc[1]+f(r_)*np.sin(a),cc[2]) for a in th]
+            q=np.array([pr(p) for p in Q]); ax.plot(q[:,0],q[:,1],color="#b81f36",lw=2,zorder=4)
+        for g in guides:
+            gx,gy,gz=[f(t) for t in g]
+            for a_,b_ in [((gx,gy,gz),(gx,gy,0)),((gx,gy,0),(gx,0,0)),((gx,gy,0),(0,gy,0))]:
+                p1,p2=pr(a_),pr(b_); ax.plot([p1[0],p2[0]],[p1[1],p2[1]],color="#999",lw=.9,ls=":",zorder=0)
+        for s_ in segs:
+            a_,b_=s_[0],s_[1]; st=s_[2] if len(s_)>2 else "-"; col=s_[3] if len(s_)>3 else "#333"
+            p1,p2=pr([f(t) for t in a_]),pr([f(t) for t in b_]); ax.plot([p1[0],p2[0]],[p1[1],p2[1]],color=col,lw=1.5,ls=("--" if st=="--" else "-"),zorder=3)
+        for a_,b_,lab,col in vecs:
+            p1,p2=pr([f(t) for t in a_]),pr([f(t) for t in b_]); ax.annotate("",xy=p2,xytext=p1,arrowprops=dict(arrowstyle="-|>",lw=2,color=col),zorder=4)
+            ax.text((p1[0]+p2[0])/2+0.04*L_,(p1[1]+p2[1])/2+0.06*L_,"$"+lab+"$",fontsize=11,color=col)
+        for O,a_,b_,r_,lab in arcs:
+            O=np.array([f(t) for t in O]); u=np.array([f(t) for t in a_])-O; v=np.array([f(t) for t in b_])-O
+            u/=np.linalg.norm(u); v/=np.linalg.norm(v); ang=np.arccos(np.clip(u@v,-1,1)); w_=v-(u@v)*u; w_/=np.linalg.norm(w_)
+            q=np.array([pr(O+f(r_)*(np.cos(s)*u+np.sin(s)*w_)) for s in np.linspace(0,ang,40)]); ax.plot(q[:,0],q[:,1],color="#b81f36",lw=1.6)
+            mid=pr(O+1.5*f(r_)*(np.cos(ang/2)*u+np.sin(ang/2)*w_)); ax.text(mid[0],mid[1],"$"+lab+"$",fontsize=11,color="#b81f36",ha="center",va="center")
+        for p,lab,off in pts:
+            q=pr([f(t) for t in p]); ax.plot([q[0]],[q[1]],"o",color="#b81f36",ms=5,zorder=5)
+            dx,dy=((off[0]*L_,off[1]*L_) if off else (0.05*L_,0.06*L_)); ax.text(q[0]+dx,q[1]+dy,"$"+lab+"$",fontsize=11,color="#222",zorder=6)
+        xs=[];ys=[]
+        for p in allp+[(L_,0,0),(0,L_,0),(0,0,L_)]:
+            q=pr([f(t) for t in p]); xs.append(q[0]); ys.append(q[1])
+        ax.set_xlim(min(xs)-0.25*L_,max(xs)+0.25*L_); ax.set_ylim(min(ys)-0.2*L_,max(ys)+0.2*L_)
+    make_fig(name,fn_,size=size)
+    return img(name,w)
+
 def ucsum(name,a,b,sign,cx,sy,w=46):
     """加法定理用の単位円。角α、β（度）と α±β の動径を描き、α±β の点の座標を書く。imgタグを返す"""
     import numpy as np
