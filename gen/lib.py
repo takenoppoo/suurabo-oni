@@ -196,6 +196,7 @@ def _tm(s):
             t=_re.sub(r'\(([a-zA-Z])\s*[-+]\s*0\)',lambda m:m.group(0) if (t[m.end():m.end()+1]=='(' and _re.search(r'\\log_(?:\{[^{}]*\}|\w)$',t[:m.start()])) else m.group(1),t)
             t=_re.sub(r'\(([a-zA-Z])\)(?=\()',r'\1',t); t=_re.sub(r'(?<=\))\(([a-zA-Z])\)',r'\1',t)
             t=_re.sub(r'\^\{1\(',r'^{(',t)
+            t=_re.sub(r'(\\times|\\cdot|=)\s*\\left\((\d+(?:\.\d+)?)\\right\)(?![\^\d.])',r'\1 \2',t)
             t=_re.sub(r'(?<![\d.\\a-zA-Z_^{])1(?=\\left)','',t); t=_re.sub(r'\\d?frac1\{1\}(?![\d])','1',t); t=_re.sub(r'\\d?frac\{1\}\{1\}(?![\d])','1',t)
             t=_re.sub(r'=(\\d?frac\{[^{}]+\}\{[^{}]+\})=\1(?![\w{])',r'=\1',t); t=_re.sub(r'=([-\d.]{1,8})=\1(?![\w.{^_(])',r'=\1',t)
             t=_re.sub(r'(?<![\d.^_a-zA-Z])1\s*\\,\s*(?=[a-zA-Z])','',t)
